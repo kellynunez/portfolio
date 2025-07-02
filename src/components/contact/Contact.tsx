@@ -6,7 +6,7 @@ export const Contact = () => {
       <div className="mt-10">
         <TerminalContact />
       </div>
-      <div className="w-full text-center mt-">
+      <div className="w-full text-center mt-28">
         <span className="text-zinc-700 text-sm">© 2011 - 2025 Kelly Núñez. Todos los derechos reservados.</span>
       </div>
     </section>

@@ -173,9 +173,9 @@ const Summary = ({ questions, setQuestions }: SummaryProps) => {
   return (
     <>
       {complete ? (
-        <p className="text-[#00FF85] mt-2">
+        <p className="text-[#00FF85] my-2">
           <FiCheckCircle className="inline-block mr-2" />
-          <span>¡Enviado! Te responderé lo antes posible 😎</span>
+          <span>¡Enviado! Te responderé lo antes posible 🦄</span>
         </p>
       ) : (
         <div className="flex gap-2 mt-6">
