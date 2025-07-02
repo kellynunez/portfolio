@@ -34,6 +34,7 @@ interface EducationCardProps {
 
 export const Education = () => {
   const [position, setPosition] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const shiftLeft = () => {
     if (position > 0) {
@@ -45,6 +46,10 @@ export const Education = () => {
     if (position < education.length - 1) {
       setPosition((pv) => pv + 1);
     }
+  };
+
+  const goToPosition = (newPosition: number) => {
+    setPosition(newPosition);
   };
 
   return (
@@ -71,6 +76,39 @@ export const Education = () => {
       <div className="flex gap-4 overflow-hidden">
         {education.map((edu, index) => (
           <EducationCard {...edu} key={index} position={position} index={index} />
+        ))}
+      </div>
+      
+      {/* Numeración de navegación */}
+      <div className="flex justify-center gap-2 mt-8 relative">
+        {education.map((edu, index) => (
+          <div
+            key={index}
+            onClick={() => goToPosition(index)}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+            className={`w-10 h-10 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 text-sm font-medium relative ${
+              position === index
+                ? "bg-[#00FF85] text-black"
+                : "bg-zinc-800 text-zinc-300 hover:bg-zinc-700"
+            }`}
+          >
+            {index + 1}
+            
+            {/* Tooltip personalizado */}
+            {hoveredIndex === index && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                className="absolute top-full center-1/2 -translate-x-1/2 mt-2 px-4 py-2 bg-black text-white text-xs rounded-lg shadow-lg whitespace-nowrap z-20 min-w-max flex items-center justify-center"
+                style={{ pointerEvents: 'none' }}
+              >
+                {edu.title}
+                <div className="absolute bottom-full center1/2 -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-b-4 border-transparent border-b-zinc-900"></div>
+              </motion.div>
+            )}
+          </div>
         ))}
       </div>
     </section>
@@ -125,13 +163,13 @@ const education = [
     title: "Comunicación y Publicidad",
     institution: "Universidad San Ignasio de Loyola (USIL)",
     degree: "Bachiller",
-    period: "2021 - 2025",
-    time: "5 años",
+    period: "2021 - 2024",
+    time: "4 Años",
     Icon: FiVolume2,
     description:
-        "Lorem ipsum...",
+        "Adquirí conocimientos técnicos en teoría de la comunicación, marketing, publicidad, investigación de mercados y gestión de marcas, desarrollando habilidades en redacción, diseño, y estrategias de comunicación digital y tradicional.",
     achievements: [
-        "Lorem ipsum...",
+        "Desarrollé liderazgo de equipo y capacidad de decisión en proyectos del área.",
         "Tercio Superior"
     ]
   },
@@ -143,24 +181,24 @@ const education = [
     time: "108 Horas",
     Icon: FiMinimize2,
     description:
-        "Lorem ipsum...",
+        "Materialización de prototipos interactivos de alta fidelidad en Figma (con implementación de componentes, flujos funcionales y organización de *design systems",
     achievements: [
-        "Lorem ipsum...",
+        "Prototipos navegables, incluyendo lógica condicional para botones y simulación de flujos de usuario complejos, optimizando la gestión de componentes y *assets* para la eficiencia del *workflow",
         "Tercio Superior"
     ]
   },
   {
     title: "Desarrollo Frontend",
     institution: "Codecademy",
-    degree: "Certificados",
+    degree: "Certificación",
     period: "2021",
     time: "80 Horas",
     Icon: FiCode,
     description:
-        "Aprendizaje autodidacta en JavaScript, Tailwind CSS, Jekyll.js, Netlify, Git and Github.",
+        "Experto/a en el flujo de trabajo frontend completo, desde la construcción de sitios estáticos eficientes con Jekyll.js y la creación de interfaces interactivas con JavaScript y Tailwind CSS, hasta el despliegue continuo con Netlify y la colaboración con Git/GitHub.",
     achievements: [
-        "Lorem ipsum...",
-        "Lorem ipsum..."
+        "Construcción y Despliegue de Sitios Web Estáticos Optimizado",
+        "Desarrollo de Interfaces Interactivas y Gestión Colaborativa"
     ]
   },
   {
@@ -171,7 +209,7 @@ const education = [
     time: "100 Horas",
     Icon: FiMessageSquare,
     description:
-        "Aprendizaje presencial 1:1 de vocabulario y pronunciación.",
+        "Aprendizaje del idioma inglés de manera presencial priorizando el vocabulario y la pronunciación.",
     achievements: [
         "Buena pronunciación en el idioma",
         "Fluidez en la conversación"
@@ -185,24 +223,24 @@ const education = [
     time: "100 Horas",
     Icon: FiTag,
     description:
-        "Lorem ipsum...",
+        "Me especialicé en la creación y gestión integral de marcas, abarcando desde la estrategia de branding y el diseño de identidad visual hasta el storytelling y el marketing digital.",
     achievements: [
-        "Lorem ipsum...",
+        "Experto/a en Diseño de Marca y Estilo Visual Distintivo",
         "Quinto Superior"
     ]
   },
   {
     title: "Desarrollo de Aplicaciones Web",
     institution: "Udemy",
-    degree: "Certificados",
+    degree: "Certificación",
     period: "2018",
     time: "40 Horas",
     Icon: FiGitPullRequest,
     description:
-        "Aprendizaje autodidacta en Bootstrap, Materialize, Node.js y Vue.js.",
+        "Adquirí experiencia práctica con frameworks front-end como Bootstrap, Materialize y Vue.js, y conocimientos esenciales en Node.js para el desarrollo back-end.",
     achievements: [
-        "Lorem ipsum...",
-        "Lorem ipsum..."
+        "Personalización de estilos en las interfaces de usuario",
+        "Experiencia práctica"
     ]
   },
   {
@@ -213,9 +251,9 @@ const education = [
     time: "100 Horas",
     Icon: FiTable,
     description:
-        "Lorem ipsum...",
+        "Aprendí a traducir ideas en experiencias digitales intuitivas y atractivas, desde la investigación y conceptualización hasta el prototipado y la validación con usuarios reales.",
     achievements: [
-        "Lorem ipsum...",
+        "Construir soluciones web y móviles en prototipos interactivos",
         "Quinto Superior"
     ]
   },
@@ -227,30 +265,30 @@ const education = [
     time: "18 Meses",
     Icon: FiHardDrive,
     description:
-        "Lorem ipsum...",
+        "Dominio en programación (Java, algoritmia y estructuras de datos), desarrollo web (HTML5, CSS3, JavaScript), bases de datos (SQL Server) y modelado de procesos de negocio (BPMN).",
     achievements: [
-        "Lorem ipsum...",
+        "Desarrollo Frontend Robusto e Interactivo",
         "Tercio Superior"
     ]
   },
   {
     title: "Diseño Web Responsive",
     institution: "Codecademy",
-    degree: "Certificados",
+    degree: "Certificación",
     period: "2016",
     time: "50 Horas",
     Icon: FiGrid,
     description:
         "Aprendizaje autodidacta en HTML, CSS Intermedio, Media Queries y Javascript.",
     achievements: [
-        "Buen manejo de html, css, javascript, bootstrap, etc.",
+        "Sitios web responsivos y adaptables a diferentes dispositivos",
         "Personalización de estilos en las interfaces de usuario"
     ]
   },
   {
     title: "Inglés Básico, Medio y Avanzado",
     institution: "Británico",
-    degree: "Certificado de Idioma Extranjero",
+    degree: "Certificación",
     period: "2015 - 2016",
     time: "1 Año 7 Meses",
     Icon: FiGlobe,
@@ -266,7 +304,7 @@ const education = [
     institution: "Instituto Leo Design",
     degree: "Titulado de Carrera Técnica",
     period: "2011 - 2014",
-    time: "3 años",
+    time: "3 Años",
     Icon: FiPenTool,
     description:
       "Formación especializada en diseño gráfico, identidad visual y comunicación visual. Aprendizaje de herramientas de software de diseño gráfico y dibujo técnico.",

@@ -10,8 +10,10 @@ import { Contact } from "./contact/Contact";
 
 export const HomPage = () => {
   return (
-    <div className="grid grid-cols-[54px_1fr]">
-      <SideBar />
+    <div className="grid grid-cols-1 md:grid-cols-[54px_1fr]">
+      <div className="hidden sm:block">
+        <SideBar />
+      </div>
       <main>
         <Header />
         <div className="mx-auto max-w-5xl px-4 md:px-8 space-y-32 pb-24">
