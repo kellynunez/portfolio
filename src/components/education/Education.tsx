@@ -151,9 +151,9 @@ const education = [
     time: "5 años",
     Icon: GraduationCap,
     description:
-        "Lorem ipsum...",
+        "Adquirí conocimientos técnicos en teoría de la comunicación, marketing, publicidad, investigación de mercados y gestión de marcas, desarrollando habilidades en redacción, diseño, y estrategias de comunicación digital y tradicional.",
     achievements: [
-        "Lorem ipsum...",
+        "Desarrollé liderazgo de equipo y capacidad de decisión en proyectos del área.",
         "Tercio Superior"
     ]
   },
@@ -165,9 +165,9 @@ const education = [
     time: "108 horas",
     Icon: HandHelping,
     description:
-        "Lorem ipsum...",
+        "Materialización de prototipos interactivos de alta fidelidad en Figma (con implementación de componentes, flujos funcionales y organización de design systems",
     achievements: [
-        "Lorem ipsum...",
+        "Prototipos navegables, incluyendo lógica condicional para botones y simulación de flujos de usuario complejos, optimizando la gestión de componentes y *assets* para la eficiencia del workflow",
         "Tercio Superior"
     ]
   },
@@ -179,10 +179,10 @@ const education = [
     time: "80 horas",
     Icon: SquareTerminal,
     description:
-        "Aprendizaje autodidacta en JavaScript, Tailwind CSS, Jekyll.js, Netlify, Git and Github.",
+        "Experto/a en el flujo de trabajo frontend completo, desde la construcción de sitios estáticos eficientes con Jekyll.js y la creación de interfaces interactivas con JavaScript y Tailwind CSS, hasta el despliegue continuo con Netlify y la colaboración con Git/GitHub.",
     achievements: [
-        "Lorem ipsum...",
-        "Lorem ipsum..."
+        "Construcción y Despliegue de Sitios Web Estáticos Optimizado",
+        "Desarrollo de Interfaces Interactivas y Gestión Colaborativa"
     ]
   },
   {
@@ -193,7 +193,7 @@ const education = [
     time: "100 horas",
     Icon: Languages,
     description:
-        "Aprendizaje presencial 1:1 de vocabulario y pronunciación.",
+        "Aprendizaje del idioma inglés de manera presencial priorizando el vocabulario y la pronunciación.",
     achievements: [
         "Buena pronunciación en el idioma",
         "Fluidez en la conversación"
@@ -207,9 +207,9 @@ const education = [
     time: "100 horas",
     Icon: BookHeart,
     description:
-        "Lorem ipsum...",
+        "Me especialicé en la creación y gestión integral de marcas, abarcando desde la estrategia de branding y el diseño de identidad visual hasta el storytelling y el marketing digital.",
     achievements: [
-        "Lorem ipsum...",
+        "Experto/a en diseño de marca y estilo visual distintivo",
         "Quinto Superior"
     ]
   },
@@ -221,10 +221,10 @@ const education = [
     time: "40 horas",
     Icon: FiGitPullRequest,
     description:
-        "Aprendizaje autodidacta en Bootstrap, Materialize, Node.js y Vue.js.",
+        "Adquirí experiencia práctica con frameworks front-end como Bootstrap, Materialize y Vue.js, y conocimientos esenciales en Node.js para el desarrollo back-end.",
     achievements: [
-        "Lorem ipsum...",
-        "Lorem ipsum..."
+        "Personalización de estilos en las interfaces de usuario",
+        "Experiencia web práctica"
     ]
   },
   {
@@ -235,9 +235,9 @@ const education = [
     time: "100 horas",
     Icon: PanelsTopLeft,
     description:
-        "Lorem ipsum...",
+        "Aprendí a traducir ideas en experiencias digitales intuitivas y atractivas, desde la investigación y conceptualización hasta el prototipado y la validación con usuarios reales.",
     achievements: [
-        "Lorem ipsum...",
+        "Construir soluciones web y móviles en prototipos interactivos",
         "Quinto Superior"
     ]
   },
@@ -249,9 +249,9 @@ const education = [
     time: "18 meses",
     Icon: Computer,
     description:
-        "Lorem ipsum...",
+        "Dominio en programación (Java, algoritmia y estructuras de datos), desarrollo web (HTML5, CSS3, JavaScript), bases de datos (SQL Server) y modelado de procesos de negocio (BPMN).",
     achievements: [
-        "Lorem ipsum...",
+        "Desarrollo Web robusto e interactivo",
         "Tercio Superior"
     ]
   },
