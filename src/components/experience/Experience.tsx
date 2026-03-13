@@ -31,19 +31,9 @@ export const Experience = () => {
 
 const experience = [
   {
-    title: "Freelance",
-    position: "Digital Product Design",
-    time: "2021 - Actualidad",
-    location: "Global",
-    mode: "Remoto",
-    description:
-      "Diseño prototipos interactivos y desarrollo sitios web responsivos con enfoque en UI/UX. Además realizo diseno grafico e identidad visual, documentando todos los activos gráficos para su uso coherente en productos y comunicaciones.",
-    tech: ["React", "Framer Motion", "TailwindCSS", "GitHub", "Cursor", "Figma", "Adobe CC", "Powerpoint"],
-  },
-  {
     title: "Voltron Data",
     position: "Manager, Design & Web Development",
-    time: "2021 - 2024",
+    time: "2021 - 2025",
     location: "Mountain View, CA",
     mode: "Remoto",
     description:
@@ -59,6 +49,16 @@ const experience = [
     description:
       "Desarrollé interfaces UI/UX y sitios web interactivos, trabajé en aplicaciones web con enfoque en usabilidad y rendimiento, lideré el rediseño de marca en múltiples canales y elaboré presentaciones corporativas consistentes desde el slide master.",
     tech: ["Vue", "Jekyll", "JavaScript", "Material Design", "Less", "Figma", "Illustrator", "Photoshop"],
+  },
+  {
+    title: "Freelance",
+    position: "Digital Product Design",
+    time: "2015 - Actualidad",
+    location: "Global",
+    mode: "Remoto",
+    description:
+      "Diseño prototipos interactivos y desarrollo sitios web responsivos con enfoque en UI/UX. Además realizo diseno grafico e identidad visual, documentando todos los activos gráficos para su uso coherente en productos y comunicaciones.",
+    tech: ["React", "Framer Motion", "TailwindCSS", "GitHub", "Cursor", "Figma", "Adobe CC", "Powerpoint"],
   },
   {
     title: "Simply Technology",
@@ -91,13 +91,13 @@ const experience = [
     tech: ["CorelDraw", "Photoshop", "Acrobat", "Microsoft Word"],
   },
   {
-    title: "My little world",
+    title: "My Little World",
     position: "Auxiliar de Inicial",
     time: "2013",
     location: "Lima, Perú",
     mode: "Presencial",
     description:
-      "Realicé manualidades, decoraciones, inventarios de utiles escolares y revisión de tareas de los alumnos.",
+      "Realicé manualidades, decoraciones festivas, inventarios de útiles y revisión de tareas a los alumnos.",
     tech: ["Photoshop", "Microsoft Office"],
   },
 ];

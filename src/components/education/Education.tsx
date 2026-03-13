@@ -4,19 +4,12 @@ import {
   FiChevronLeft,
   FiChevronRight,
   FiPenTool,
-  FiMessageSquare,
   FiAward,
   FiCalendar,
-  FiVolume2,
-  FiMinimize2,
-  FiCode,
   FiGlobe,
-  FiTag,
   FiGitPullRequest,
-  FiTable,
-  FiHardDrive,
-  FiGrid
 } from "react-icons/fi";
+import { GraduationCap, HandHelping, SquareTerminal, Languages, BookHeart, Computer, LayoutTemplate, PanelsTopLeft, GlobeLock, SquaresIntersect } from 'lucide-react';
 import { SectionHeader } from "../util/SectionHeader";
 
 interface EducationCardProps {
@@ -49,18 +42,18 @@ export const Education = () => {
 
   return (
     <section className="section-wrapper" id="education">
-      <div className="mb-8 flex justify-between gap-4">
+      <div className="flex justify-between gap-4">
         <SectionHeader title="Education" dir="l" />
         <div className="flex gap-2">
           <button
-            className="h-fit bg-zinc-800 hover:bg-zinc-700 p-4 text-2xl text-zinc-300 transition-colors rounded-lg"
+            className="h-fit bg-zinc-800 hover:bg-zinc-700 p-3 text-2xl text-zinc-300 transition-colors rounded-lg"
             onClick={shiftLeft}
             disabled={position === 0}
           >
             <FiChevronLeft />
           </button>
           <button
-            className="h-fit bg-zinc-800 hover:bg-zinc-700 p-4 text-2xl text-zinc-300 transition-colors rounded-lg"
+            className="h-fit bg-zinc-800 hover:bg-zinc-700 p-3 text-2xl text-zinc-300 transition-colors rounded-lg"
             onClick={shiftRight}
             disabled={position === education.length - 1}
           >
@@ -92,7 +85,7 @@ const EducationCard = ({ position, index, title, institution, degree, period, ti
         index % 2 ? "bg-zinc-800 text-white" : "bg-zinc-900 text-zinc-300 border border-zinc-700"
       }`}
     >
-      <Icon className="absolute right-2 top-2 text-7xl opacity-20" />
+      <Icon className="absolute right-3 top-2 opacity-20 size-14 stroke-[0.5px]" />
       <div>
         <h3 className="mb-4 text-2xl font-bold text-[#00FF85]">{title}</h3>
         <p className="mb-2 text-lg font-semibold">{institution}</p>
@@ -122,12 +115,41 @@ const EducationCard = ({ position, index, title, institution, degree, period, ti
 
 const education = [
   {
+    title: "Diseño y Desarrollo Web",
+    institution: "ISIL Educación Ejecutiva",
+    degree: "Diplomado",
+    period: "2026",
+    time: "4 meses",
+    Icon: GlobeLock,
+    description:
+        "Formación que abarca desde la arquitectura Frontend y lógica Backend (Python/JS), hasta la gestión E-commerce (Shopify/WordPress) y Ciberseguridad.",
+    achievements: [
+        "Optimización del flujo de implementación Frontend",
+        "Fortalecimiento de la integridad digital (Ethical Hacking)",
+        "Gestión de plataformas E-commerce"
+    ]
+  },
+  {
+    title: "Prototipado UI Avanzado en Figma: Interactividad y Animación",
+    institution: "Facultad de Arte y Diseño (PUCP)",
+    degree: "Taller",
+    period: "2025",
+    time: "21 horas",
+    Icon: SquaresIntersect,
+    description:
+        "Creación de prototipos con interactividad avanzada. Uso de variables, condicionales y componentes para diseñar flujos complejos y sistemas visuales inteligentes listos para desarrollo.",
+    achievements: [
+        "Arquitectura de Prototipos Inteligentes",
+        "Sistematización y Escalabilidad Visual de alta complejidad"
+    ]
+  },
+  {
     title: "Comunicación y Publicidad",
     institution: "Universidad San Ignasio de Loyola (USIL)",
-    degree: "Bachiller",
+    degree: "Bachiller. Licenciatura en progreso.",
     period: "2021 - 2025",
     time: "5 años",
-    Icon: FiVolume2,
+    Icon: GraduationCap,
     description:
         "Lorem ipsum...",
     achievements: [
@@ -140,8 +162,8 @@ const education = [
     institution: "Pontificia Universidad Católica del Perú (PUCP)",
     degree: "Especialización",
     period: "2022",
-    time: "108 Horas",
-    Icon: FiMinimize2,
+    time: "108 horas",
+    Icon: HandHelping,
     description:
         "Lorem ipsum...",
     achievements: [
@@ -154,8 +176,8 @@ const education = [
     institution: "Codecademy",
     degree: "Certificados",
     period: "2021",
-    time: "80 Horas",
-    Icon: FiCode,
+    time: "80 horas",
+    Icon: SquareTerminal,
     description:
         "Aprendizaje autodidacta en JavaScript, Tailwind CSS, Jekyll.js, Netlify, Git and Github.",
     achievements: [
@@ -168,8 +190,8 @@ const education = [
     institution: "Instituto Privateacher",
     degree: "Especialización",
     period: "2019 - 2020",
-    time: "100 Horas",
-    Icon: FiMessageSquare,
+    time: "100 horas",
+    Icon: Languages,
     description:
         "Aprendizaje presencial 1:1 de vocabulario y pronunciación.",
     achievements: [
@@ -182,8 +204,8 @@ const education = [
     institution: "Instituto Toulouse Lautrec",
     degree: "Especialización",
     period: "2019 - 2020",
-    time: "100 Horas",
-    Icon: FiTag,
+    time: "100 horas",
+    Icon: BookHeart,
     description:
         "Lorem ipsum...",
     achievements: [
@@ -194,9 +216,9 @@ const education = [
   {
     title: "Desarrollo de Aplicaciones Web",
     institution: "Udemy",
-    degree: "Certificados",
+    degree: "Certificación",
     period: "2018",
-    time: "40 Horas",
+    time: "40 horas",
     Icon: FiGitPullRequest,
     description:
         "Aprendizaje autodidacta en Bootstrap, Materialize, Node.js y Vue.js.",
@@ -210,8 +232,8 @@ const education = [
     institution: "Instituto Toulouse Lautrec",
     degree: "Especialización",
     period: "2017",
-    time: "100 Horas",
-    Icon: FiTable,
+    time: "100 horas",
+    Icon: PanelsTopLeft,
     description:
         "Lorem ipsum...",
     achievements: [
@@ -224,8 +246,8 @@ const education = [
     institution: "Instituto Cibertec",
     degree: "Diplomado",
     period: "2016 - 2017",
-    time: "18 Meses",
-    Icon: FiHardDrive,
+    time: "18 meses",
+    Icon: Computer,
     description:
         "Lorem ipsum...",
     achievements: [
@@ -238,8 +260,8 @@ const education = [
     institution: "Codecademy",
     degree: "Certificados",
     period: "2016",
-    time: "50 Horas",
-    Icon: FiGrid,
+    time: "50 horas",
+    Icon: LayoutTemplate,
     description:
         "Aprendizaje autodidacta en HTML, CSS Intermedio, Media Queries y Javascript.",
     achievements: [
@@ -250,9 +272,9 @@ const education = [
   {
     title: "Inglés Básico, Medio y Avanzado",
     institution: "Británico",
-    degree: "Certificado de Idioma Extranjero",
+    degree: "Certificación",
     period: "2015 - 2016",
-    time: "1 Año 7 Meses",
+    time: "1 año 7 meses",
     Icon: FiGlobe,
     description:
       "Formación especializada en inglés básico, intermedio y avanzado. Aprendizaje de gramática, vocabulario y pronunciación.",
@@ -264,10 +286,10 @@ const education = [
   {
     title: "Diseño Gráfico Publicitario",
     institution: "Instituto Leo Design",
-    degree: "Titulado de Carrera Técnica",
+    degree: "Licenciatura Técnica",
     period: "2011 - 2014",
     time: "3 años",
-    Icon: FiPenTool,
+    Icon: GraduationCap,
     description:
       "Formación especializada en diseño gráfico, identidad visual y comunicación visual. Aprendizaje de herramientas de software de diseño gráfico y dibujo técnico.",
     achievements: [

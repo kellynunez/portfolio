@@ -13,15 +13,14 @@ export const Stats2 = () => {
               <span className="font-bold ml-2">Entorno y construcción</span>
             </h4>
             <div className="flex flex-wrap gap-2 mb-12">
-            <Chip>JekyllRB</Chip>
-            <Chip>NodeJS</Chip>
-            <Chip>Linux</Chip>
-            <Chip>Git</Chip>
-            <Chip>GitHub</Chip>
-            <Chip>Netlify</Chip>
-            <Chip>Sanity</Chip>
-            <Chip>Webflow</Chip>
-            <Chip>Wordpress</Chip>
+              <Chip>NodeJS</Chip>
+              <Chip>Git / GitHub</Chip>
+              <Chip>NPM / Yarn</Chip>
+              <Chip>Linux</Chip>
+              <Chip>Netlify</Chip>
+              <Chip>Webflow</Chip>
+              <Chip>Wordpress</Chip>
+              <Chip>Shopify</Chip>
             </div>
           </div>
         </Reveal>
@@ -32,13 +31,12 @@ export const Stats2 = () => {
               <span className="font-bold ml-2">IA y asistentes creativos</span>
             </h4>
             <div className="flex flex-wrap gap-2 mb-12">
-            <Chip>Adobe Firefly</Chip>
-            <Chip>Midjourney</Chip>
-            <Chip>Copilot</Chip>
+            <Chip>Midjourney v6</Chip>
+            <Chip>Figma AI</Chip>
             <Chip>Cursor</Chip>
-            <Chip>DeepSeek</Chip>
-            <Chip>ChatGPT</Chip>
-            <Chip>Gemini</Chip>
+            <Chip>Claude 3.5</Chip>
+            <Chip>ChatGPT 4o</Chip>
+            <Chip>Gemini 1.5</Chip>
             </div>
           </div>
         </Reveal>
