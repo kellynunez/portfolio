@@ -3,7 +3,7 @@ import { useState } from "react";
 import {
   FiChevronLeft,
   FiChevronRight,
-  FiPenTool,
+  FiEye,
   FiAward,
   FiCalendar,
   FiGlobe,
@@ -88,8 +88,14 @@ const EducationCard = ({ position, index, title, institution, degree, period, ti
       <Icon className="absolute right-3 top-2 opacity-20 size-14 stroke-[0.5px]" />
       <div>
         <h3 className="mb-4 text-2xl font-bold text-[#00FF85]">{title}</h3>
-        <p className="mb-2 text-lg font-semibold">{institution}</p>
-        <p className="mb-2 text-sm text-zinc-400">{degree}</p>
+        <p className="mb-4 text-lg font-semibold">{institution}</p>
+
+        {/* Agregar modal que cargue una imagen diferente para cada uno */}
+        <p className="mb-2 text-sm text-zinc-400">          
+          <FiEye className="text-blue-600 hover:text-blue-500 cursor-pointer inline-block mr-2" />
+          Ver {degree}
+        </p>
+
         <div className="flex items-center gap-2 mb-4 text-sm text-zinc-400">
           <FiCalendar className="text-[#FF0099]" />
           <span>{period}</span> ({time})
@@ -117,22 +123,23 @@ const education = [
   {
     title: "Diseño y Desarrollo Web",
     institution: "ISIL Educación Ejecutiva",
-    degree: "Diplomado",
+    degree: "Diplomado - 'En curso'",
     period: "2026",
     time: "4 meses",
     Icon: GlobeLock,
     description:
-        "Formación que abarca desde la arquitectura Frontend y lógica Backend (Python/JS), hasta la gestión E-commerce (Shopify/WordPress) y Ciberseguridad.",
+        "Formación que abarca desde la arquitectura Frontend y lógica Backend (Python/JS), hasta la integración de ecosistemas E-commerce (Shopify/WordPress) y protocolos de Ciberseguridad.",
     achievements: [
         "Optimización del flujo de implementación Frontend",
         "Fortalecimiento de la integridad digital (Ethical Hacking)",
-        "Gestión de plataformas E-commerce"
+        /* "Gestión de plataformas E-commerce" */
+        "...",
     ]
   },
   {
     title: "Prototipado UI Avanzado en Figma: Interactividad y Animación",
     institution: "Facultad de Arte y Diseño (PUCP)",
-    degree: "Taller",
+    degree: "Certificado",
     period: "2025",
     time: "21 horas",
     Icon: SquaresIntersect,
@@ -151,9 +158,9 @@ const education = [
     time: "5 años",
     Icon: GraduationCap,
     description:
-        "Adquirí conocimientos técnicos en teoría de la comunicación, marketing, publicidad, investigación de mercados y gestión de marcas, desarrollando habilidades en redacción, diseño, y estrategias de comunicación digital y tradicional.",
+        "Conocimientos técnicos en teorías de la comunicación, marketing, publicidad, investigación de mercados y gestión de marcas, desarrollando habilidades en redacción, diseño, y estrategias de comunicación digital y tradicional.",
     achievements: [
-        "Desarrollé liderazgo de equipo y capacidad de decisión en proyectos del área.",
+        "Liderazgo de equipo y capacidad de decisión en proyectos del área.",
         "Tercio Superior"
     ]
   },
@@ -188,7 +195,7 @@ const education = [
   {
     title: "Inglés Comunicacional",
     institution: "Instituto Privateacher",
-    degree: "Especialización",
+    degree: "Certificado",
     period: "2019 - 2020",
     time: "100 horas",
     Icon: Languages,
@@ -216,7 +223,7 @@ const education = [
   {
     title: "Desarrollo de Aplicaciones Web",
     institution: "Udemy",
-    degree: "Certificación",
+    degree: "Certificado",
     period: "2018",
     time: "40 horas",
     Icon: FiGitPullRequest,
@@ -258,7 +265,7 @@ const education = [
   {
     title: "Diseño Web Responsive",
     institution: "Codecademy",
-    degree: "Certificados",
+    degree: "Certificado",
     period: "2016",
     time: "50 horas",
     Icon: LayoutTemplate,
@@ -272,7 +279,7 @@ const education = [
   {
     title: "Inglés Básico, Medio y Avanzado",
     institution: "Británico",
-    degree: "Certificación",
+    degree: "Certificado",
     period: "2015 - 2016",
     time: "1 año 7 meses",
     Icon: FiGlobe,
