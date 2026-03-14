@@ -66,7 +66,7 @@ export const ProjectModal = ({
 
           <div>
             <p className="font-bold mb-2 text-xl text-gray-800">
-              Project Links<span className="text-indigo-500">.</span>
+              Project Link<span className="text-indigo-500">.</span>
             </p>
             <div className="flex items-center gap-4 text-sm">
               <Link
