@@ -10,7 +10,6 @@ interface Props {
   setIsOpen: Function;
   title: string;
   imgSrc: string;
-  code: string;
   projectLink: string;
   tech: string[];
   modalContent: JSX.Element;
@@ -23,7 +22,6 @@ export const ProjectModal = ({
   imgSrc,
   isOpen,
   title,
-  code,
   tech,
 }: Props) => {
   useEffect(() => {
@@ -71,14 +69,6 @@ export const ProjectModal = ({
               Project Links<span className="text-indigo-500">.</span>
             </p>
             <div className="flex items-center gap-4 text-sm">
-              <Link
-                target="_blank"
-                rel="nofollow"
-                className="text-zinc-300 hover:text-indigo-300 transition-colors flex items-center gap-1"
-                href={code}
-              >
-                <AiFillGithub /> Source Code
-              </Link>
               <Link
                 target="_blank"
                 rel="nofollow"

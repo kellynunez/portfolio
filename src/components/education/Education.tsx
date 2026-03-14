@@ -153,14 +153,14 @@ const education = [
   {
     title: "Comunicación y Publicidad",
     institution: "Universidad San Ignasio de Loyola (USIL)",
-    degree: "Bachiller. Licenciatura en progreso.",
+    degree: "Licenciatura",
     period: "2021 - 2025",
     time: "5 años",
     Icon: GraduationCap,
     description:
         "Conocimientos técnicos en teorías de la comunicación, marketing, publicidad, investigación de mercados y gestión de marcas, desarrollando habilidades en redacción, diseño, y estrategias de comunicación digital y tradicional.",
     achievements: [
-        "Liderazgo de equipo y capacidad de decisión en proyectos del área.",
+        "Desarrollo de estrategias de comunicación integral.",
         "Tercio Superior"
     ]
   },
