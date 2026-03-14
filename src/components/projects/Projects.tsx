@@ -1,6 +1,7 @@
 import React from "react";
 import { SectionHeader } from "../util/SectionHeader";
 import { Project } from "./Project";
+import { style } from "framer-motion/client";
 
 export const Projects = () => {
   return (
@@ -27,10 +28,6 @@ const projects = [
     modalContent: (
       <>
         <p>
-          Pain.app is a real-time coaching app for students learning to paint.
-          This app is my baby, designed and built on my own.
-        </p>
-        <p>
           Because this isn&apos;t real, here&apos;s some gibberish to fill space{" "}
           {":)"}
         </p>
@@ -48,7 +45,6 @@ const projects = [
       <>
         <p>
           Pain.app is a real-time coaching app for students learning to paint.
-          This app is my baby, designed and built on my own.
         </p>
       </>
     ),
@@ -57,15 +53,27 @@ const projects = [
     title: "Website Corporative",
     imgSrc: "project-imgs/web-corporative.png",
     projectLink: "",
-    tech: ["Node", "JekyllRB", "TailwindCSS", "Markdown", "Lottie Files"],
+    tech: ["Node", "JekyllRB", "TailwindCSS", "Markdown", "Figma", "Lottie Files"],
     description:
       "A social community for painters to connect with others in their community. I handle everything backend (50K monthly active users).",
     modalContent: (
       <>
-        <p>
-          The Canvas Club is a social community for painters to connect with
-          others in their community.
+        <p className="mb-8">
+          Liderazgo en el rediseño y optimización de la plataforma corporativa Voltron Data.
         </p>
+        <img src="project-imgs/web-corporative/web-header.png" alt="Website Corporative"/>
+        <img src="project-imgs/web-corporative/web-about.png" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-design.png" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-moodboard.png" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-system.png" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-laptop.png" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-wireframes.png" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-kit.png" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-mockup.png" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-home.png" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-laptop-news.png" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-news.png" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-contact.png" alt="Website Corporative" className="!mt-0"/>
       </>
     ),
   },
@@ -165,3 +173,4 @@ const projects = [
     ),
   },
 ];
+
