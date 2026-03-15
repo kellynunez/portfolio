@@ -5,7 +5,7 @@ import TypewriterText from "../util/TypewriterText";
 
 const Hero = () => {
   return (
-    <section className="text-slat-100 overflow-hidden py-24 md:py-32 relative">
+    <section className="text-slat-100 overflow-hidden py-24 md:py-28 pb-10 md:pb-0 relative">
       <div className="relative z-10">
         <div className="pointer-events-none relative z-10">
           <Reveal>

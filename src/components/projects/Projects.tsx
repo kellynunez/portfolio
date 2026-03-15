@@ -58,9 +58,6 @@ const projects = [
       "A social community for painters to connect with others in their community. I handle everything backend (50K monthly active users).",
     modalContent: (
       <>
-        <p className="mb-8">
-          Liderazgo en el rediseño y optimización de la plataforma corporativa Voltron Data.
-        </p>
         <img src="project-imgs/web-corporative/web-header.png" alt="Website Corporative"/>
         <img src="project-imgs/web-corporative/web-about.png" alt="Website Corporative" className="!mt-0"/>
         <img src="project-imgs/web-corporative/web-design.png" alt="Website Corporative" className="!mt-0"/>
