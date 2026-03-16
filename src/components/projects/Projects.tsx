@@ -78,12 +78,18 @@ const projects = [
     title: "Brand Identity",
     imgSrc: "project-imgs/brand-identity.png",
     projectLink: "",
-    tech: ["Notion", "Illustrator", "Acrobat"],
+    tech: ["Notion", "Adobe CC", "Midjourney", "Google Slides", "Acrobat"],
     description:
       "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
     modalContent: (
       <>
-        <p>Alright, you got me. I&apos;m all out of paint references.</p>
+        <img src="project-imgs/brand-identity/branding-header.png" alt="Brand Identity"/>
+        <img src="project-imgs/brand-identity/branding-notion.png" alt="Brand Identity" className="!mt-0"/>
+        <img src="project-imgs/brand-identity/branding-letterhead.png" alt="Brand Identity" className="!mt-0"/>
+        <img src="project-imgs/brand-identity/branding-icons.png" alt="Brand Identity" className="!mt-0"/>
+        <img src="project-imgs/brand-identity/branding-stationary.png" alt="Brand Identity" className="!mt-0"/>
+        <img src="project-imgs/brand-identity/branding-merch.png" alt="Brand Identity" className="!mt-0"/>
+        <img src="project-imgs/brand-identity/branding-booth.png" alt="Brand Identity" className="!mt-0"/>
       </>
     ),
   },
@@ -96,7 +102,12 @@ const projects = [
       "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
     modalContent: (
       <>
-        <p>Alright, you got me. I&apos;m all out of paint references.</p>
+        <img src="project-imgs/social-media/social-header.png" alt="Social Media"/>
+        <img src="project-imgs/social-media/social-size.png" alt="Social Media" className="!mt-0"/>
+        <img src="project-imgs/social-media/social-linkedin.png" alt="Social Media" className="!mt-0"/>
+        <img src="project-imgs/social-media/social-seo.png" alt="Social Media" className="!mt-0"/>
+        <img src="project-imgs/social-media/social-post.png" alt="Social Media" className="!mt-0"/>
+        <img src="project-imgs/social-media/social-monopoly.png" alt="Social Media" className="!mt-0"/>
       </>
     ),
   },
@@ -109,7 +120,15 @@ const projects = [
       "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
     modalContent: (
       <>
-        <p>Alright, you got me. I&apos;m all out of paint references.</p>
+        <img src="project-imgs/pitch-deck/slides-header.png" alt="Pitch Deck"/>
+        <img src="project-imgs/pitch-deck/slides-guides.png" alt="Pitch Deck" className="!mt-0"/>
+        <img src="project-imgs/pitch-deck/slides-spacedat.png" alt="Pitch Deck" className="!mt-0"/>
+        <img src="project-imgs/pitch-deck/slides-niubiz.png" alt="Pitch Deck" className="!mt-0"/>
+        <img src="project-imgs/pitch-deck/slides-rappi.png" alt="Pitch Deck" className="!mt-0"/>
+        <img src="project-imgs/pitch-deck/slides-avelina.png" alt="Pitch Deck" className="!mt-0"/>
+        <img src="project-imgs/pitch-deck/slides-lalucha.png" alt="Pitch Deck" className="!mt-0"/>
+        <img src="project-imgs/pitch-deck/slides-cybergarden.png" alt="Pitch Deck" className="!mt-0"/>
+        <img src="project-imgs/pitch-deck/slides-university.png" alt="Pitch Deck" className="!mt-0"/>
       </>
     ),
   },
@@ -122,7 +141,16 @@ const projects = [
       "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
     modalContent: (
       <>
-        <p>Alright, you got me. I&apos;m all out of paint references.</p>
+        <img src="project-imgs/app-project/app-header.png" alt="WebApp Projects"/>
+        <img src="project-imgs/app-project/app-login.png" alt="WebApp Projects" className="!mt-0"/>
+        <img src="project-imgs/app-project/app-blazing.png" alt="WebApp Projects" className="!mt-0"/>
+        <img src="project-imgs/app-project/app-dev.png" alt="WebApp Projects" className="!mt-0"/>
+        <img src="project-imgs/app-project/app-spacedat.png" alt="WebApp Projects" className="!mt-0"/>
+        <img src="project-imgs/app-project/app-navbar.png" alt="WebApp Projects" className="!mt-0"/>
+        <img src="project-imgs/app-project/app-dashboard.png" alt="WebApp Projects" className="!mt-0"/>
+        <img src="project-imgs/app-project/app-mystery.png" alt="WebApp Projects" className="!mt-0"/>
+        <img src="project-imgs/app-project/app-livetrade.png" alt="WebApp Projects" className="!mt-0"/>
+        <img src="project-imgs/app-project/app-mobile.png" alt="WebApp Projects" className="!mt-0"/>
       </>
     ),
   },
@@ -135,24 +163,31 @@ const projects = [
       "Think Zapier but for paint. Built with a team of four college friends and scaled to > 1 billion requests per day. This was a fun one.",
     modalContent: (
       <>
-        <p>
-          Brush wire is essentially Zapier but for paint. Built with a team of
-          four college friends and scaled to {">"} 1 billion requests per day.
-          This was a fun one.
-        </p>
+        <img src="project-imgs/user-interface/ui-header.png" alt="User Interfaces"/>
+        <img src="project-imgs/user-interface/ui-page.png" alt="User Interfaces" className="!mt-0"/>
+        <img src="project-imgs/user-interface/ui-hero.png" alt="User Interfaces" className="!mt-0"/>
+        <img src="project-imgs/user-interface/ui-content.png" alt="User Interfaces" className="!mt-0"/>
+        <img src="project-imgs/user-interface/ui-conference.png" alt="User Interfaces" className="!mt-0"/>
+        <img src="project-imgs/user-interface/ui-web.png" alt="User Interfaces" className="!mt-0"/>
       </>
     ),
   },
   {
     title: "POS Systems Interface",
-    imgSrc: "project-imgs/app-niubiz.png",
+    imgSrc: "project-imgs/pos-niubiz.png",
     projectLink: "",
-    tech: ["Figma", "Illustrator"],
+    tech: ["Figma", "Illustrator", "Miro"],
     description:
       "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
     modalContent: (
       <>
-        <p>Alright, you got me. I&apos;m all out of paint references.</p>
+        <img src="project-imgs/pos-niubiz/pos-header.png" alt="POS Systems Interface"/>
+        <img src="project-imgs/pos-niubiz/pos-user.png" alt="POS Systems Interface" className="!mt-0"/>
+        <img src="project-imgs/pos-niubiz/pos-niubiz.png" alt="POS Systems Interface" className="!mt-0"/>
+        <img src="project-imgs/pos-niubiz/pos-mobile.png" alt="POS Systems Interface" className="!mt-0"/>
+        <img src="project-imgs/pos-niubiz/pos-landing.png" alt="POS Systems Interface" className="!mt-0"/>
+        <img src="project-imgs/pos-niubiz/pos-ux1.png" alt="POS Systems Interface" className="!mt-0"/>
+        <img src="project-imgs/pos-niubiz/pos-ux2.png" alt="POS Systems Interface" className="!mt-0"/>
       </>
     ),
   },
@@ -165,7 +200,15 @@ const projects = [
       "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
     modalContent: (
       <>
-        <p>Alright, you got me. I&apos;m all out of paint references.</p>
+        <img src="project-imgs/ads-campaigns/ads-header.png" alt="Advertising Campaigns"/>
+        <img src="project-imgs/ads-campaigns/ads-feed.png" alt="Advertising Campaigns" className="!mt-0"/>
+        <img src="project-imgs/ads-campaigns/ads-label.png" alt="Advertising Campaigns" className="!mt-0"/>
+        <img src="project-imgs/ads-campaigns/ads-banner.png" alt="Advertising Campaigns" className="!mt-0"/>
+        <img src="project-imgs/ads-campaigns/ads-exterior.png" alt="Advertising Campaigns" className="!mt-0"/>
+        <img src="project-imgs/ads-campaigns/ads-jingle.png" alt="Advertising Campaigns" className="!mt-0"/>
+        <img src="project-imgs/ads-campaigns/ads-mockup.png" alt="Advertising Campaigns" className="!mt-0"/>
+        <img src="project-imgs/ads-campaigns/ads-news.png" alt="Advertising Campaigns" className="!mt-0"/>
+        <img src="project-imgs/ads-campaigns/ads-flyer.png" alt="Advertising Campaigns" className="!mt-0"/>
       </>
     ),
   },
