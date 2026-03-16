@@ -38,7 +38,7 @@ export const About = () => {
           <Reveal>
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-4 text-sm text-[#1E90FF]">
-                <span>My links</span>
+                <span>Mis redes</span>
                 <AiOutlineArrowRight />
               </div>
               <MyLinks />

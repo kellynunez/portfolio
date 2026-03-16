@@ -118,7 +118,7 @@ const NeuFollowButton: React.FC<NeuFollowButtonProps> = ({
         <div className="px-6 h-[80px] w-[165px] flex items-center bg-white font-jetbrains-mono">
           <Copy>{text}</Copy>
         </div>
-        <div className="px-6 group-hover:pl-3 group-hover:pr-6 border-l border-black group-hover:bg-[#00FF85] border-r-0 group-hover:text-[#FFFFFF] h-[80px] flex items-center">
+        <div className="px-7 group-hover:pl-7 group-hover:pr-9 border-l border-black group-hover:bg-[#00FF85] border-r-0 group-hover:text-[#FFFFFF] h-[80px] flex items-center">
           <Arrow />
         </div>
         

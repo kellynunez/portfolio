@@ -1,7 +1,7 @@
 import { useAnimation, useInView, motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { AiFillGithub, AiOutlineExport } from "react-icons/ai";
+import { AiOutlineExport } from "react-icons/ai";
 import { ProjectModal } from "./ProjectModal";
 import Reveal from "../util/Reveal";
 
@@ -12,7 +12,6 @@ interface Props {
   imgSrc: string;
   tech: string[];
   title: string;
-  code: string;
 }
 
 export const Project = ({
@@ -21,7 +20,6 @@ export const Project = ({
   description,
   imgSrc,
   title,
-  code,
   tech,
 }: Props) => {
   const [hovered, setHovered] = useState(false);
@@ -63,7 +61,7 @@ export const Project = ({
             src={imgSrc}
             alt={`An image of the ${title} project.`}
             style={{
-              width: hovered ? "90%" : "85%",
+              width: hovered ? "92%" : "90%",
               rotate: hovered ? "2deg" : "0deg",
             }}
             className="w-[85%] absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/4 transition-all rounded"
@@ -76,10 +74,10 @@ export const Project = ({
                 {title}
               </h4>
               <div className="w-full h-[1px] bg-zinc-600" />
-
+{/* 
               <Link href={code} target="_blank" rel="nofollow">
                 <AiFillGithub className="text-xl text-zinc-300 hover:text-indigo-300 transition-colors" />
-              </Link>
+              </Link> */}
 
               <Link href={projectLink} target="_blank" rel="nofollow">
                 <AiOutlineExport className="text-xl text-zinc-300 hover:text-indigo-300 transition-colors" />
@@ -111,7 +109,6 @@ export const Project = ({
         isOpen={isOpen}
         imgSrc={imgSrc}
         title={title}
-        code={code}
         tech={tech}
       />
     </>

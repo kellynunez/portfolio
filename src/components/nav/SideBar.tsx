@@ -65,7 +65,7 @@ export const SideBar = () => {
         value="education"
         href="#education"
       >
-        Edu.
+        Education
       </SideBarLink>
       <SideBarLink
         selected={selected}

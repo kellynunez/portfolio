@@ -1,6 +1,7 @@
 import React from "react";
 import { SectionHeader } from "../util/SectionHeader";
 import { Project } from "./Project";
+import { style } from "framer-motion/client";
 
 export const Projects = () => {
   return (
@@ -18,135 +19,198 @@ export const Projects = () => {
 
 const projects = [
   {
-    title: "Paint.app",
-    imgSrc: "project-imgs/example-project.jpg",
-    code: "https://www.github.com",
-    projectLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    tech: ["Flutter", "MUI", "Python", "FastAPI"],
+    title: "Maternal Health App UI",
+    imgSrc: "project-imgs/my-portfolio.png",
+    projectLink: "",
+    tech: ["Figma", "Illustrator"],
+    description:
+      "A real-time coaching app for students learning to paint. This app is my baby, designed and built on my own.",
+    modalContent: (
+      <>
+        <p>
+          Because this isn&apos;t real, here&apos;s some gibberish to fill space{" "}
+          {":)"}
+        </p>
+      </>
+    ),
+  },
+  {
+    title: "Theseus Dark Theme",
+    imgSrc: "project-imgs/my-portfolio.png",
+    projectLink: "",
+    tech: ["ReactJS", "TailwindCSS", "Sanity", "Motion", "Cursor"],
     description:
       "A real-time coaching app for students learning to paint. This app is my baby, designed and built on my own.",
     modalContent: (
       <>
         <p>
           Pain.app is a real-time coaching app for students learning to paint.
-          This app is my baby, designed and built on my own.
-        </p>
-        <p>
-          The tech stack is based on top of Flutter for the mobile app,
-          connected to a Python & FastAPI backend, with data stored in Postgres,
-          deployed on Heroku.
-        </p>
-        <p>
-          Because this isn&apos;t real, here&apos;s some gibberish to fill space{" "}
-          {":)"}
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur
-          quia officia odio nulla consectetur aperiam ad tempora magni magnam
-          nesciunt.
-        </p>
-        <p>
-          Fuga id sapiente facere ipsa eius exercitationem officiis deleniti,
-          rerum dolorum. Deserunt soluta modi culpa animi.
         </p>
       </>
     ),
   },
   {
-    title: "The Canvas Club",
-    imgSrc: "project-imgs/example-project.jpg",
-    code: "https://www.github.com",
-    projectLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    tech: ["Node", "Express", "Postgres", "Kafka", "Redis"],
+    title: "Website Corporative",
+    imgSrc: "project-imgs/web-corporative.png",
+    projectLink: "",
+    tech: ["Node", "JekyllRB", "TailwindCSS", "Markdown", "Figma", "Lottie Files"],
     description:
       "A social community for painters to connect with others in their community. I handle everything backend (50K monthly active users).",
     modalContent: (
       <>
-        <p>
-          The Canvas Club is a social community for painters to connect with
-          others in their community.
-        </p>
-        <p>
-          I work primarily on the backend, a collection of Node & Express
-          microservices. Data is stored primarily in Postgres & cached in Redis.
-        </p>
-        <p>
-          The team in total consists of 5 developers. This is a passion project
-          for all of us.
-        </p>
-        <p>
-          Because this isn&apos;t real, here&apos;s some gibberish to fill space{" "}
-          {":)"}
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur
-          quia officia odio nulla consectetur aperiam ad tempora magni magnam
-          nesciunt.
-        </p>
-        <p>
-          Fuga id sapiente facere ipsa eius exercitationem officiis deleniti,
-          rerum dolorum. Deserunt soluta modi culpa animi.
-        </p>
+        <img src="project-imgs/web-corporative/web-header.png" alt="Website Corporative"/>
+        <img src="project-imgs/web-corporative/web-about.png" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-design.png" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-moodboard.png" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-system.png" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-laptop.png" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-wireframes.png" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-kit.png" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-mockup.png" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-home.png" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-laptop-news.png" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-news.png" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-contact.png" alt="Website Corporative" className="!mt-0"/>
       </>
     ),
   },
   {
-    title: "BrushWire",
-    imgSrc: "project-imgs/example-project.jpg",
-    code: "https://www.github.com",
-    projectLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    tech: ["NextJS", "Java", "Spring", "AWS Aurora"],
-    description:
-      "Think Zapier but for paint. Built with a team of four college friends and scaled to > 1 billion requests per day. This was a fun one.",
-    modalContent: (
-      <>
-        <p>
-          Brush wire is essentially Zapier but for paint. Built with a team of
-          four college friends and scaled to {">"} 1 billion requests per day.
-          This was a fun one.
-        </p>
-        <p>
-          Since &quot;Zapier for paint&quot; doesn&apos;t mean anything, be
-          creative {":)"}
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur
-          quia officia odio nulla consectetur aperiam ad tempora magni magnam
-          nesciunt.
-        </p>
-        <p>
-          Fuga id sapiente facere ipsa eius exercitationem officiis deleniti,
-          rerum dolorum. Deserunt soluta modi culpa animi.
-        </p>
-      </>
-    ),
-  },
-  {
-    title: "Paint Reference 4",
-    imgSrc: "project-imgs/example-project.jpg",
-    code: "https://www.github.com",
-    projectLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    tech: ["Python", "FastAPI", "SQLAlchemy"],
+    title: "Brand Identity",
+    imgSrc: "project-imgs/brand-identity.png",
+    projectLink: "",
+    tech: ["Notion", "Adobe CC", "Midjourney", "Google Slides", "Acrobat"],
     description:
       "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
     modalContent: (
       <>
-        <p>Alright, you got me. I&apos;m all out of paint references.</p>
-        <p>
-          Point is, use this space to explain a bit further WHAT this project
-          is, as well as what YOU contributed to it.
-        </p>
-        <p>You get the idea. Now more lorem {":)"}</p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur
-          quia officia odio nulla consectetur aperiam ad tempora magni magnam
-          nesciunt.
-        </p>
-        <p>
-          Fuga id sapiente facere ipsa eius exercitationem officiis deleniti,
-          rerum dolorum. Deserunt soluta modi culpa animi.
-        </p>
+        <img src="project-imgs/brand-identity/branding-header.png" alt="Brand Identity"/>
+        <img src="project-imgs/brand-identity/branding-notion.png" alt="Brand Identity" className="!mt-0"/>
+        <img src="project-imgs/brand-identity/branding-letterhead.png" alt="Brand Identity" className="!mt-0"/>
+        <img src="project-imgs/brand-identity/branding-icons.png" alt="Brand Identity" className="!mt-0"/>
+        <img src="project-imgs/brand-identity/branding-stationary.png" alt="Brand Identity" className="!mt-0"/>
+        <img src="project-imgs/brand-identity/branding-merch.png" alt="Brand Identity" className="!mt-0"/>
+        <img src="project-imgs/brand-identity/branding-booth.png" alt="Brand Identity" className="!mt-0"/>
+      </>
+    ),
+  },
+  {
+    title: "Social Media",
+    imgSrc: "project-imgs/social-media.png",
+    projectLink: "",
+    tech: ["Illustrator", "Photoshop"],
+    description:
+      "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
+    modalContent: (
+      <>
+        <img src="project-imgs/social-media/social-header.png" alt="Social Media"/>
+        <img src="project-imgs/social-media/social-size.png" alt="Social Media" className="!mt-0"/>
+        <img src="project-imgs/social-media/social-linkedin.png" alt="Social Media" className="!mt-0"/>
+        <img src="project-imgs/social-media/social-seo.png" alt="Social Media" className="!mt-0"/>
+        <img src="project-imgs/social-media/social-post.png" alt="Social Media" className="!mt-0"/>
+        <img src="project-imgs/social-media/social-monopoly.png" alt="Social Media" className="!mt-0"/>
+      </>
+    ),
+  },
+  {
+    title: "Creative Pitch Deck",
+    imgSrc: "project-imgs/pitch-deck.png",
+    projectLink: "",
+    tech: ["Google Drive", "Keynote", "Illustrator"],
+    description:
+      "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
+    modalContent: (
+      <>
+        <img src="project-imgs/pitch-deck/slides-header.png" alt="Pitch Deck"/>
+        <img src="project-imgs/pitch-deck/slides-guides.png" alt="Pitch Deck" className="!mt-0"/>
+        <img src="project-imgs/pitch-deck/slides-spacedat.png" alt="Pitch Deck" className="!mt-0"/>
+        <img src="project-imgs/pitch-deck/slides-niubiz.png" alt="Pitch Deck" className="!mt-0"/>
+        <img src="project-imgs/pitch-deck/slides-rappi.png" alt="Pitch Deck" className="!mt-0"/>
+        <img src="project-imgs/pitch-deck/slides-avelina.png" alt="Pitch Deck" className="!mt-0"/>
+        <img src="project-imgs/pitch-deck/slides-lalucha.png" alt="Pitch Deck" className="!mt-0"/>
+        <img src="project-imgs/pitch-deck/slides-cybergarden.png" alt="Pitch Deck" className="!mt-0"/>
+        <img src="project-imgs/pitch-deck/slides-university.png" alt="Pitch Deck" className="!mt-0"/>
+      </>
+    ),
+  },
+  {
+    title: "Web App Projects",
+    imgSrc: "project-imgs/webapp-project.png",
+    projectLink: "",
+    tech: ["Linux", "VueJS", "Sass", "Materialize"],
+    description:
+      "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
+    modalContent: (
+      <>
+        <img src="project-imgs/app-project/app-header.png" alt="WebApp Projects"/>
+        <img src="project-imgs/app-project/app-login.png" alt="WebApp Projects" className="!mt-0"/>
+        <img src="project-imgs/app-project/app-blazing.png" alt="WebApp Projects" className="!mt-0"/>
+        <img src="project-imgs/app-project/app-dev.png" alt="WebApp Projects" className="!mt-0"/>
+        <img src="project-imgs/app-project/app-spacedat.png" alt="WebApp Projects" className="!mt-0"/>
+        <img src="project-imgs/app-project/app-navbar.png" alt="WebApp Projects" className="!mt-0"/>
+        <img src="project-imgs/app-project/app-dashboard.png" alt="WebApp Projects" className="!mt-0"/>
+        <img src="project-imgs/app-project/app-mystery.png" alt="WebApp Projects" className="!mt-0"/>
+        <img src="project-imgs/app-project/app-livetrade.png" alt="WebApp Projects" className="!mt-0"/>
+        <img src="project-imgs/app-project/app-mobile.png" alt="WebApp Projects" className="!mt-0"/>
+      </>
+    ),
+  },
+  {
+    title: "User Interfaces",
+    imgSrc: "project-imgs/user-interfaces.png",
+    projectLink: "",
+    tech: ["TailwindCSS", "Figma"],
+    description:
+      "Think Zapier but for paint. Built with a team of four college friends and scaled to > 1 billion requests per day. This was a fun one.",
+    modalContent: (
+      <>
+        <img src="project-imgs/user-interface/ui-header.png" alt="User Interfaces"/>
+        <img src="project-imgs/user-interface/ui-page.png" alt="User Interfaces" className="!mt-0"/>
+        <img src="project-imgs/user-interface/ui-hero.png" alt="User Interfaces" className="!mt-0"/>
+        <img src="project-imgs/user-interface/ui-content.png" alt="User Interfaces" className="!mt-0"/>
+        <img src="project-imgs/user-interface/ui-conference.png" alt="User Interfaces" className="!mt-0"/>
+        <img src="project-imgs/user-interface/ui-web.png" alt="User Interfaces" className="!mt-0"/>
+      </>
+    ),
+  },
+  {
+    title: "POS Systems Interface",
+    imgSrc: "project-imgs/pos-niubiz.png",
+    projectLink: "",
+    tech: ["Figma", "Illustrator", "Miro"],
+    description:
+      "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
+    modalContent: (
+      <>
+        <img src="project-imgs/pos-niubiz/pos-header.png" alt="POS Systems Interface"/>
+        <img src="project-imgs/pos-niubiz/pos-user.png" alt="POS Systems Interface" className="!mt-0"/>
+        <img src="project-imgs/pos-niubiz/pos-niubiz.png" alt="POS Systems Interface" className="!mt-0"/>
+        <img src="project-imgs/pos-niubiz/pos-mobile.png" alt="POS Systems Interface" className="!mt-0"/>
+        <img src="project-imgs/pos-niubiz/pos-landing.png" alt="POS Systems Interface" className="!mt-0"/>
+        <img src="project-imgs/pos-niubiz/pos-ux1.png" alt="POS Systems Interface" className="!mt-0"/>
+        <img src="project-imgs/pos-niubiz/pos-ux2.png" alt="POS Systems Interface" className="!mt-0"/>
+      </>
+    ),
+  },
+  {
+    title: "Advertising Campaigns",
+    imgSrc: "project-imgs/ads-campaigns.png",
+    projectLink: "",
+    tech: ["Photoshop", "Office"],
+    description:
+      "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
+    modalContent: (
+      <>
+        <img src="project-imgs/ads-campaigns/ads-header.png" alt="Advertising Campaigns"/>
+        <img src="project-imgs/ads-campaigns/ads-feed.png" alt="Advertising Campaigns" className="!mt-0"/>
+        <img src="project-imgs/ads-campaigns/ads-label.png" alt="Advertising Campaigns" className="!mt-0"/>
+        <img src="project-imgs/ads-campaigns/ads-banner.png" alt="Advertising Campaigns" className="!mt-0"/>
+        <img src="project-imgs/ads-campaigns/ads-exterior.png" alt="Advertising Campaigns" className="!mt-0"/>
+        <img src="project-imgs/ads-campaigns/ads-jingle.png" alt="Advertising Campaigns" className="!mt-0"/>
+        <img src="project-imgs/ads-campaigns/ads-mockup.png" alt="Advertising Campaigns" className="!mt-0"/>
+        <img src="project-imgs/ads-campaigns/ads-news.png" alt="Advertising Campaigns" className="!mt-0"/>
+        <img src="project-imgs/ads-campaigns/ads-flyer.png" alt="Advertising Campaigns" className="!mt-0"/>
       </>
     ),
   },
 ];
+
