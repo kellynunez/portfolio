@@ -1,4 +1,4 @@
-# Hey! Welcome to the template!
+# My Portfolio
 
 All of Hover's templates are built with React, NextJS and TailwindCSS. If you're already comfortable with NextJS, feel free to dig in and get started. If not, we'll provide some details below to get you up and running.
 
