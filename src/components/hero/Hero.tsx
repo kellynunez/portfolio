@@ -32,13 +32,13 @@ const Hero = () => {
                   animation: 'gradient-shift 3s ease-in-out infinite'
                 }}
               >
-                Visual & UI/UX Designer | Frontend Developer
+                Principal Designer & Frontend Developer
               </span>
             </h2>
           </Reveal>
           <Reveal>
-            <p className="pointer-events-auto leading-relaxed md:leading-relaxed max-w-2xl text-sm md:text-xl text-[zinc-300] font-normal tracking-wide">
-              Transformando ideas en experiencias digitales interactivas y fluidas con desarrollo <b>frontend</b> de vanguardia y <b>diseño</b> visual estratégico.
+            <p className="pointer-events-auto leading-relaxed md:leading-relaxed max-w-3xl text-sm md:text-xl text-[zinc-300] font-normal tracking-wide">
+              Transformando el ADN de las marcas en experiencias UI/UX interactivas, construidas con un desarrollo frontend de vanguardia y diseño visual estratégico.
             </p>
           </Reveal>
           <Reveal>

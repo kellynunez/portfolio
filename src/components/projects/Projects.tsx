@@ -37,8 +37,8 @@ const projects = [
   {
     title: "Theseus Dark Theme",
     imgSrc: "project-imgs/my-portfolio.png",
-    projectLink: "",
-    tech: ["ReactJS", "TailwindCSS", "Sanity", "Motion", "Cursor"],
+    projectLink: "https://voltron-data.netlify.app",
+    tech: ["ReactJS", "TailwindCSS", "Sanity", "Motion", "Cursor", "Lottie Files"],
     description:
       "A real-time coaching app for students learning to paint. This app is my baby, designed and built on my own.",
     modalContent: (
@@ -53,7 +53,7 @@ const projects = [
     title: "Website Corporative",
     imgSrc: "project-imgs/web-corporative.png",
     projectLink: "",
-    tech: ["Node", "JekyllRB", "TailwindCSS", "Markdown", "Figma", "Lottie Files"],
+    tech: ["Node", "JekyllRB", "TailwindCSS", "Markdown", "Figma", "Midjourney"],
     description:
       "A social community for painters to connect with others in their community. I handle everything backend (50K monthly active users).",
     modalContent: (
