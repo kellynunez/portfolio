@@ -45,12 +45,12 @@ const experience = [
     position: "Lead, Design & Front-End",
     time: "2015 - 2021",
     location: "Austin, TX",
-    mode: "Remoto",
+    mode: "Híbrido",
     description:
       "Desarrollé interfaces UI/UX y sitios web interactivos, trabajé en aplicaciones web con enfoque en usabilidad y rendimiento, lideré el rediseño de marca en múltiples canales y elaboré presentaciones corporativas consistentes desde el slide master.",
     tech: ["Vue", "Jekyll", "JavaScript", "Material Design", "Less", "Figma", "Illustrator", "Photoshop"],
   },
-  {
+/*   {
     title: "Freelance",
     position: "Digital Product Design",
     time: "2015 - Actualidad",
@@ -59,7 +59,7 @@ const experience = [
     description:
       "Diseño prototipos interactivos y desarrollo sitios web responsivos con enfoque en UI/UX. También realicé diseño grafico e identidad visual, documentando todos los activos gráficos para su uso coherente en productos y comunicaciones.",
     tech: ["React", "Framer Motion", "TailwindCSS", "GitHub", "Cursor", "Figma", "Adobe CC", "Powerpoint"],
-  },
+  }, */
   {
     title: "Simply Technology",
     position: "Diseñadora UI/UX Senior",

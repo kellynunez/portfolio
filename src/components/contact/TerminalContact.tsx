@@ -272,7 +272,7 @@ export default TerminalContact;
 const QUESTIONS: QuestionType[] = [
   {
     key: "email",
-    text: "Para empezar, ¿podrías darme ",
+    text: "Para empezar, ¿podrías compartirme ",
     postfix: "tu email?",
     complete: false,
     value: "",

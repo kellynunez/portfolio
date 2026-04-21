@@ -1,6 +1,7 @@
-import { Chip } from "../util/Chip";
 import Reveal from "../util/Reveal";
-import { AiFillCode, AiFillLayout } from "react-icons/ai";
+import { Chip } from "../util/Chip";
+import { AiFillCode, AiFillLayout, AiOutlineArrowRight } from "react-icons/ai";
+import { MyLinks } from "../nav/Header";
 
 export const Stats = () => {
   return (
@@ -23,6 +24,7 @@ export const Stats = () => {
             <Chip>Illustrator</Chip>
             <Chip>InDesign</Chip>
             <Chip>Premiere</Chip>
+            <Chip>Elementor</Chip>
           </div>
         </div>
       </Reveal>
@@ -47,7 +49,6 @@ export const Stats = () => {
             <Chip>Framer Motion</Chip>
             <Chip>AnimeJS</Chip>
             <Chip>TailwindCSS</Chip>
-            <Chip>Shadcn/ui</Chip>
           </div>
         </div>
       </Reveal>

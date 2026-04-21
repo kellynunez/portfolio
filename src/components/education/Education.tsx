@@ -1,9 +1,10 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import {
   FiChevronLeft,
   FiChevronRight,
   FiEye,
+  FiEyeOff,
   FiAward,
   FiCalendar,
   FiGlobe,
@@ -23,10 +24,13 @@ interface EducationCardProps {
   description: string;
   Icon: React.ComponentType<{ className?: string }>;
   achievements?: string[];
+  image?: string; // Propiedad añadida
+  onOpenModal: (img: string) => void; // Ajustada para recibir la imagen
 }
 
 export const Education = () => {
   const [position, setPosition] = useState(0);
+  const [selectedImg, setSelectedImg] = useState<string | null>(null);
 
   const shiftLeft = () => {
     if (position > 0) {
@@ -63,16 +67,74 @@ export const Education = () => {
       </div>
       <div className="flex gap-4 overflow-hidden">
         {education.map((edu, index) => (
-          <EducationCard {...edu} key={index} position={position} index={index} />
+          <EducationCard 
+            {...edu} 
+            key={index} 
+            position={position} 
+            index={index} 
+            onOpenModal={(img) => setSelectedImg(img)}
+          />
         ))}
       </div>
+      {/* Modal Creativo */}
+      <AnimatePresence>
+        {selectedImg && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImg(null)}
+            className="fixed inset-0 z-[150] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md cursor-zoom-out"
+          >
+            <motion.div
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-5xl w-full bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden shadow-2xl cursor-default"
+            >
+              <div className="flex items-center justify-between p-4 border-b border-zinc-800 bg-zinc-900/50">
+                <span className="text-zinc-400 text-sm font-medium">Vista de Certificado</span>
+                <button 
+                  onClick={() => setSelectedImg(null)}
+                  className="p-2 hover:bg-zinc-800 rounded-full text-zinc-400 hover:text-white transition-colors"
+                >
+                  ✕
+                </button>
+              </div>
+              <div className="p-2 flex justify-center bg-zinc-950">
+                <img 
+                  src={selectedImg} 
+                  alt="Certificado" 
+                  className="max-h-[75vh] w-auto object-contain shadow-lg rounded-sm"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
 
-const EducationCard = ({ position, index, title, institution, degree, period, time, description, Icon, achievements }: EducationCardProps) => {
-  const translateAmt =
-    position >= index ? index * 100 : index * 100 - 100 * (index - position);
+const EducationCard = ({ 
+  position, 
+  index, 
+  title, 
+  institution, 
+  degree, 
+  period, 
+  time, 
+  description, 
+  Icon, 
+  achievements, 
+  image, 
+  onOpenModal 
+}: EducationCardProps) => { // Usamos la interface aquí
+  
+  const translateAmt = position >= index ? index * 100 : index * 100 - 100 * (index - position);
+
+  const hasCertificate = Boolean(image);
 
   return (
     <motion.div
@@ -90,17 +152,36 @@ const EducationCard = ({ position, index, title, institution, degree, period, ti
         <h3 className="mb-4 text-2xl font-bold text-[#00FF85]">{title}</h3>
         <p className="mb-4 text-lg font-semibold">{institution}</p>
 
-        {/* Agregar modal que cargue una imagen diferente para cada uno */}
-        <p className="mb-2 text-sm text-zinc-400">          
-          <FiEye className="text-blue-600 hover:text-blue-500 cursor-pointer inline-block mr-2" />
-          Ver {degree}
-        </p>
+        <button 
+          onClick={() => hasCertificate && image ? onOpenModal(image) : null}
+          disabled={!hasCertificate}
+          className={`group mb-2 text-sm flex items-center transition-colors ${
+            hasCertificate 
+              ? "text-zinc-400 hover:text-[#00FF85] cursor-pointer" 
+              : "text-zinc-600 cursor-not-allowed"
+          }`}
+        >          
+          {hasCertificate ? (
+            <>
+              <FiEye className="text-blue-600 group-hover:text-[#00FF85] inline-block mr-2 transition-colors" />
+              <span className="underline underline-offset-4 decoration-zinc-700 group-hover:decoration-[#00FF85]">
+                Ver {degree}
+              </span>
+            </>
+          ) : (
+            <>
+              <FiEyeOff className="inline-block mr-2 text-zinc-600" />
+              <span>Certificado {degree}</span>
+            </>
+          )}
+        </button>
 
         <div className="flex items-center gap-2 mb-4 text-sm text-zinc-400">
           <FiCalendar className="text-[#FF0099]" />
           <span>{period}</span> ({time})
         </div>
         <p className="mb-4 leading-relaxed">{description}</p>
+        
         {achievements && achievements.length > 0 && (
           <div>
             <h4 className="mb-2 font-normal text-[#FF0099]">Logros destacados:</h4>
@@ -123,7 +204,7 @@ const education = [
   {
     title: "Diseño y Desarrollo Web",
     institution: "ISIL Educación Ejecutiva",
-    degree: "Diplomado - 'En curso'",
+    degree: "[En curso]",
     period: "2026",
     time: "4 meses",
     Icon: GlobeLock,
@@ -142,6 +223,7 @@ const education = [
     degree: "Certificado",
     period: "2025",
     time: "21 horas",
+    image: "/certs/pucp-prototipado.png",
     Icon: SquaresIntersect,
     description:
         "Creación de prototipos con interactividad avanzada. Uso de variables, condicionales y componentes para diseñar flujos complejos y sistemas visuales inteligentes listos para desarrollo.",
@@ -156,6 +238,7 @@ const education = [
     degree: "Licenciatura",
     period: "2021 - 2025",
     time: "5 años",
+    image: "/certs/pucp-prototipado.png",
     Icon: GraduationCap,
     description:
         "Conocimientos técnicos en teorías de la comunicación, marketing, publicidad, investigación de mercados y gestión de marcas, desarrollando habilidades en redacción, diseño, y estrategias de comunicación digital y tradicional.",
@@ -170,6 +253,7 @@ const education = [
     degree: "Especialización",
     period: "2022",
     time: "108 horas",
+    image: "/certs/pucp-prototipado.png",
     Icon: HandHelping,
     description:
         "Materialización de prototipos interactivos de alta fidelidad en Figma (con implementación de componentes, flujos funcionales y organización de design systems",
@@ -184,6 +268,7 @@ const education = [
     degree: "Certificados",
     period: "2021",
     time: "80 horas",
+    image: "/certs/pucp-prototipado.png",
     Icon: SquareTerminal,
     description:
         "Experto/a en el flujo de trabajo frontend completo, desde la construcción de sitios estáticos eficientes con Jekyll.js y la creación de interfaces interactivas con JavaScript y Tailwind CSS, hasta el despliegue continuo con Netlify y la colaboración con Git/GitHub.",
@@ -198,6 +283,7 @@ const education = [
     degree: "Certificado",
     period: "2019 - 2020",
     time: "100 horas",
+    image: "/certs/pucp-prototipado.png",
     Icon: Languages,
     description:
         "Aprendizaje del idioma inglés de manera presencial priorizando el vocabulario y la pronunciación.",
@@ -212,6 +298,7 @@ const education = [
     degree: "Especialización",
     period: "2019 - 2020",
     time: "100 horas",
+    image: "/certs/pucp-prototipado.png",
     Icon: BookHeart,
     description:
         "Me especialicé en la creación y gestión integral de marcas, abarcando desde la estrategia de branding y el diseño de identidad visual hasta el storytelling y el marketing digital.",
@@ -226,6 +313,7 @@ const education = [
     degree: "Certificado",
     period: "2018",
     time: "40 horas",
+    image: "/certs/pucp-prototipado.png",
     Icon: FiGitPullRequest,
     description:
         "Adquirí experiencia práctica con frameworks front-end como Bootstrap, Materialize y Vue.js, y conocimientos esenciales en Node.js para el desarrollo back-end.",
@@ -240,6 +328,7 @@ const education = [
     degree: "Especialización",
     period: "2017",
     time: "100 horas",
+    image: "/certs/pucp-prototipado.png",
     Icon: PanelsTopLeft,
     description:
         "Aprendí a traducir ideas en experiencias digitales intuitivas y atractivas, desde la investigación y conceptualización hasta el prototipado y la validación con usuarios reales.",
@@ -254,6 +343,7 @@ const education = [
     degree: "Diplomado",
     period: "2016 - 2017",
     time: "18 meses",
+    image: "/certs/pucp-prototipado.png",
     Icon: Computer,
     description:
         "Dominio en programación (Java, algoritmia y estructuras de datos), desarrollo web (HTML5, CSS3, JavaScript), bases de datos (SQL Server) y modelado de procesos de negocio (BPMN).",
@@ -268,6 +358,7 @@ const education = [
     degree: "Certificado",
     period: "2016",
     time: "50 horas",
+    image: "/certs/pucp-prototipado.png",
     Icon: LayoutTemplate,
     description:
         "Aprendizaje autodidacta en HTML, CSS Intermedio, Media Queries y Javascript.",
@@ -282,6 +373,7 @@ const education = [
     degree: "Certificado",
     period: "2015 - 2016",
     time: "1 año 7 meses",
+    image: "/certs/pucp-prototipado.png",
     Icon: FiGlobe,
     description:
       "Formación especializada en inglés básico, intermedio y avanzado. Aprendizaje de gramática, vocabulario y pronunciación.",
@@ -296,6 +388,7 @@ const education = [
     degree: "Licenciatura Técnica",
     period: "2011 - 2014",
     time: "3 años",
+    image: "/certs/pucp-prototipado.png",
     Icon: GraduationCap,
     description:
       "Formación especializada en diseño gráfico, identidad visual y comunicación visual. Aprendizaje de herramientas de software de diseño gráfico y dibujo técnico.",

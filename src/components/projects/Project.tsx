@@ -1,5 +1,5 @@
 import { useAnimation, useInView, motion } from "framer-motion";
-import Link from "next/link";
+// import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { AiOutlineExport } from "react-icons/ai";
 import { ProjectModal } from "./ProjectModal";
@@ -17,7 +17,7 @@ interface Props {
 export const Project = ({
   modalContent,
   projectLink,
-  description,
+  // description,
   imgSrc,
   title,
   tech,
@@ -79,17 +79,18 @@ export const Project = ({
                 <AiFillGithub className="text-xl text-zinc-300 hover:text-indigo-300 transition-colors" />
               </Link> */}
 
-              <Link href={projectLink} target="_blank" rel="nofollow">
-                <AiOutlineExport className="text-xl text-zinc-300 hover:text-indigo-300 transition-colors" />
-              </Link>
+              {/* <Link href={projectLink} target="_blank" rel="nofollow"> */}
+              {/* <Link href={projectLink} target="_blank" rel="nofollow"> */}
+                <AiOutlineExport className="w-8 text-zinc-300 hover:text-green-400 transition-colors cursor-pointer" onClick={() => setIsOpen(true)} />
+              {/* </Link> */}
             </div>
           </Reveal>
           <Reveal>
-            <div className="flex flex-wrap gap-4 text-sm text-indigo-300 my-2">
+            <div className="flex flex-wrap gap-4 text-sm text-green-400 my-2">
               {tech.join(" - ")}
             </div>
           </Reveal>
-          <Reveal>
+{/*           <Reveal>
             <p className="text-zinc-300 leading-relaxed">
               {description}{" "}
               <span
@@ -99,7 +100,7 @@ export const Project = ({
                 Learn more {">"}
               </span>
             </p>
-          </Reveal>
+          </Reveal> */}
         </div>
       </motion.div>
       <ProjectModal
