@@ -38,7 +38,7 @@ const experience = [
     mode: "Remoto",
     description:
       "Lideré y rediseñé la identidad visual y el sistema de diseño digital, aplicando metodologías ágiles para asegurar entregas iterativas. Migré el sitio de WordPress a Jekyll y blog en Markdown, y luego reconstruí las más de 20 páginas en React.js a modo oscuro.",
-    tech: ["React",  "NextJS", "Netlify", "TailwindCSS", "Markdown", "Figma", "GitHub", "Illustrator", "Midjourney"],
+    tech: ["React",  "NextJS", "Netlify", "TailwindCSS", "Markdown", "Figma", "GitHub", "Illustrator", "Midjourney", "Notion"],
   },
   {
     title: "BlazingSQL",
@@ -48,18 +48,8 @@ const experience = [
     mode: "Híbrido",
     description:
       "Desarrollé interfaces UI/UX y sitios web interactivos, trabajé en aplicaciones web con enfoque en usabilidad y rendimiento, lideré el rediseño de marca en múltiples canales y elaboré presentaciones corporativas consistentes desde el slide master.",
-    tech: ["Vue", "Jekyll", "JavaScript", "Material Design", "Less", "Figma", "Illustrator", "Photoshop"],
+    tech: ["Vue", "Jekyll", "JavaScript", "Less", "Figma", "Illustrator", "Photoshop", "ClickUp"],
   },
-/*   {
-    title: "Freelance",
-    position: "Digital Product Design",
-    time: "2015 - Actualidad",
-    location: "Global",
-    mode: "Remoto",
-    description:
-      "Diseño prototipos interactivos y desarrollo sitios web responsivos con enfoque en UI/UX. También realicé diseño grafico e identidad visual, documentando todos los activos gráficos para su uso coherente en productos y comunicaciones.",
-    tech: ["React", "Framer Motion", "TailwindCSS", "GitHub", "Cursor", "Figma", "Adobe CC", "Powerpoint"],
-  }, */
   {
     title: "Simply Technology",
     position: "Diseñadora UI/UX Senior",
@@ -91,6 +81,16 @@ const experience = [
     tech: ["CorelDraw", "Photoshop", "Acrobat", "Microsoft Word"],
   },
   {
+    title: "Freelance",
+    position: "Digital Product Design",
+    time: "2012 - Actualidad",
+    location: "Global",
+    mode: "Remoto",
+    description:
+      "Diseño prototipos interactivos y desarrollo sitios web responsivos con enfoque en UI/UX. También realicé diseño grafico e identidad visual, documentando todos los activos gráficos para su uso coherente en productos y comunicaciones.",
+    tech: ["React", "Framer Motion", "GitHub", "Cursor", "Figma", "Adobe CC", "Powerpoint"],
+  },
+/*   {
     title: "My Little World",
     position: "Auxiliar de Inicial",
     time: "2013",
@@ -99,5 +99,5 @@ const experience = [
     description:
       "Realicé manualidades, decoraciones festivas, inventarios de útiles y revisión de tareas a los alumnos.",
     tech: ["Photoshop", "Microsoft Office"],
-  },
+  }, */
 ];
