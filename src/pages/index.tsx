@@ -13,7 +13,7 @@ export default function Home() {
     <>
       {/* SEO */}
       <Head>
-        <title>Kelly Núñez | Principal Designer & Frontend Developer</title>
+        <title>Kelly Núñez | Principal Product Designer & Frontend Developer</title>
         <meta name="description" content="Especialista en identidad de marca y desarrollo frontend con más de 10 años de experiencia unificando la estrategia de branding con la ejecución técnica de productos digitales escalables." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

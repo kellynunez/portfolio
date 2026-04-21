@@ -20,7 +20,7 @@ const Hero = () => {
             </h1>
           </Reveal>
           <Reveal>
-            <h2 className="pointer-events-auto my-2 text-xl sm:text-2xl text-zinc-300 md:my-4 md:text-4xl">
+            <h2 className="pointer-events-auto my-2 text-xl sm:text-2xl text-zinc-100 md:my-4 md:text-4xl">
               <span 
                 className="font-semibold"
                 style={{
@@ -32,12 +32,12 @@ const Hero = () => {
                   animation: 'gradient-shift 3s ease-in-out infinite'
                 }}
               >
-                Principal Designer & Frontend Developer
+                Principal Product Designer & Frontend Developer
               </span>
             </h2>
           </Reveal>
           <Reveal>
-            <p className="pointer-events-auto leading-relaxed md:leading-relaxed max-w-3xl text-sm md:text-xl text-[zinc-300] font-normal tracking-wide">
+            <p className="pointer-events-auto leading-relaxed md:leading-relaxed max-w-3xl text-sm md:text-lg text-zinc-300 font-medium tracking-wide">
               Transformando el ADN de las marcas en experiencias UI/UX interactivas, construidas con un desarrollo frontend de vanguardia y diseño visual estratégico.
             </p>
           </Reveal>

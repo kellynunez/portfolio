@@ -19,6 +19,7 @@ export const Stats2 = () => {
               <Chip>Linux</Chip>
               <Chip>Netlify</Chip>
               <Chip>Webflow</Chip>
+              <Chip>PostCSS</Chip>
               <Chip>Wordpress</Chip>
               <Chip>Shopify</Chip>
             </div>
@@ -31,12 +32,15 @@ export const Stats2 = () => {
               <span className="font-bold ml-2">IA y asistentes creativos</span>
             </h4>
             <div className="flex flex-wrap gap-2 mb-12">
-            <Chip>Midjourney v6</Chip>
-            <Chip>Figma AI</Chip>
-            <Chip>Cursor</Chip>
-            <Chip>Claude 3.5</Chip>
-            <Chip>ChatGPT 4o</Chip>
-            <Chip>Gemini 1.5</Chip>
+              <Chip>Cursor</Chip>
+              <Chip>Figma AI</Chip>
+              <Chip>v0.dev</Chip>
+              <Chip>Relume</Chip>
+              <Chip>Perplexity</Chip>
+              <Chip>Claude Design</Chip>
+              <Chip>ChatGPT / Gemini</Chip>
+              <Chip>Midjourney</Chip>
+              <Chip>Adobe Firefly</Chip>
             </div>
           </div>
         </Reveal>
@@ -48,13 +52,11 @@ export const Stats2 = () => {
             </h4>
             <div className="flex flex-wrap gap-2 mb-12">
             <Chip>Notion</Chip>
+            <Chip>Airtable</Chip>
             <Chip>Jira</Chip>
             <Chip>Confluence</Chip>
             <Chip>Trello</Chip>
             <Chip>ClickUp</Chip>
-            <Chip>Airtable</Chip>
-            <Chip>Microsoft Office</Chip>
-            <Chip>Google Workspace</Chip>
             </div>
           </div>
         </Reveal>
