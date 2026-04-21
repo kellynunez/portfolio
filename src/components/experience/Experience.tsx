@@ -52,7 +52,7 @@ const experience = [
   },
   {
     title: "Simply Technology",
-    position: "Diseñadora UI/UX Senior",
+    position: "Diseñadora UI/UX Sr.",
     time: "2015",
     location: "Lima, Perú",
     mode: "Híbrido",
@@ -62,7 +62,7 @@ const experience = [
   },
   {
     title: "Outofthebox",
-    position: "Diseñadora Publicitaria",
+    position: "Diseñadora Gráfica Publicitaria",
     time: "2012-2014",
     location: "Lima, Perú",
     mode: "Presencial",
@@ -72,8 +72,8 @@ const experience = [
   },
   {
     title: "Cargraft",
-    position: "Diseñadora Gráfica",
-    time: "2012-2014",
+    position: "Diseñadora Gráfica Jr.",
+    time: "2011",
     location: "Lima, Perú",
     mode: "Presencial",
     description:
@@ -82,8 +82,8 @@ const experience = [
   },
   {
     title: "Freelance",
-    position: "Digital Product Design",
-    time: "2012 - Actualidad",
+    position: "Diseñadora y Desarrolladora Web",
+    time: "2010 - Actualidad",
     location: "Global",
     mode: "Remoto",
     description:
