@@ -181,7 +181,7 @@ const EducationCard = ({
           <span>{period}</span> ({time})
         </div>
         <p className="mb-4 leading-relaxed">{description}</p>
-        
+
         {achievements && achievements.length > 0 && (
           <div>
             <h4 className="mb-2 font-normal text-[#FF0099]">Logros destacados:</h4>
@@ -238,7 +238,7 @@ const education = [
     degree: "Licenciatura",
     period: "2021 - 2025",
     time: "5 años",
-    image: "/certs/pucp-prototipado.png",
+    image: "/certs/usil-bachiller-comunicacion-publicidad.png",
     Icon: GraduationCap,
     description:
         "Conocimientos técnicos en teorías de la comunicación, marketing, publicidad, investigación de mercados y gestión de marcas, desarrollando habilidades en redacción, diseño, y estrategias de comunicación digital y tradicional.",
@@ -253,7 +253,7 @@ const education = [
     degree: "Especialización",
     period: "2022",
     time: "108 horas",
-    image: "/certs/pucp-prototipado.png",
+    image: "/certs/pucp-human-centered-design.png",
     Icon: HandHelping,
     description:
         "Materialización de prototipos interactivos de alta fidelidad en Figma (con implementación de componentes, flujos funcionales y organización de design systems",
@@ -283,7 +283,7 @@ const education = [
     degree: "Certificado",
     period: "2019 - 2020",
     time: "100 horas",
-    image: "/certs/pucp-prototipado.png",
+    image: "/certs/privateacher-ingles.png",
     Icon: Languages,
     description:
         "Aprendizaje del idioma inglés de manera presencial priorizando el vocabulario y la pronunciación.",
@@ -298,7 +298,7 @@ const education = [
     degree: "Especialización",
     period: "2019 - 2020",
     time: "100 horas",
-    image: "/certs/pucp-prototipado.png",
+    image: "/certs/toulouse-branding.png",
     Icon: BookHeart,
     description:
         "Me especialicé en la creación y gestión integral de marcas, abarcando desde la estrategia de branding y el diseño de identidad visual hasta el storytelling y el marketing digital.",
@@ -388,7 +388,7 @@ const education = [
     degree: "Licenciatura Técnica",
     period: "2011 - 2014",
     time: "3 años",
-    image: "/certs/pucp-prototipado.png",
+    image: "/certs/leodesign-titulo-publicidad.jpg",
     Icon: GraduationCap,
     description:
       "Formación especializada en diseño gráfico, identidad visual y comunicación visual. Aprendizaje de herramientas de software de diseño gráfico y dibujo técnico.",
