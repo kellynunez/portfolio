@@ -94,7 +94,7 @@ export const Education = () => {
               className="relative max-w-5xl w-full bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden shadow-2xl cursor-default"
             >
               <div className="flex items-center justify-between p-4 border-b border-zinc-800 bg-zinc-900/50">
-                <span className="text-zinc-400 text-sm font-medium">Vista de Certificado</span>
+                <span className="text-zinc-400 text-sm font-medium">Vista previa</span>
                 <button 
                   onClick={() => setSelectedImg(null)}
                   className="p-2 hover:bg-zinc-800 rounded-full text-zinc-400 hover:text-white transition-colors"
@@ -171,7 +171,7 @@ const EducationCard = ({
           ) : (
             <>
               <FiEyeOff className="inline-block mr-2 text-zinc-600" />
-              <span>Certificado {degree}</span>
+              <span>{degree}</span>
             </>
           )}
         </button>
@@ -209,11 +209,10 @@ const education = [
     time: "4 meses",
     Icon: GlobeLock,
     description:
-        "Formación que abarca desde la arquitectura Frontend y lógica Backend (Python/JS), hasta la integración de ecosistemas E-commerce (Shopify/WordPress) y protocolos de Ciberseguridad.",
+        "Formación que abarca desde la arquitectura Frontend y lógica Backend (Python/JS), hasta la integración de ecosistemas E-commerce y protocolos de ciberseguridad.",
     achievements: [
-        "Optimización del flujo de implementación Frontend",
         "Fortalecimiento de la integridad digital (Ethical Hacking)",
-        /* "Gestión de plataformas E-commerce" */
+        "Gestión de plataformas E-commerce: Woocommerce y Shopify",
         "...",
     ]
   },
@@ -235,7 +234,7 @@ const education = [
   {
     title: "Comunicación y Publicidad",
     institution: "Universidad San Ignasio de Loyola (USIL)",
-    degree: "Licenciatura",
+    degree: "Bachiller",
     period: "2021 - 2025",
     time: "5 años",
     image: "/certs/usil-bachiller-comunicacion-publicidad.png",
@@ -265,10 +264,9 @@ const education = [
   {
     title: "Desarrollo Frontend",
     institution: "Codecademy",
-    degree: "Certificados",
-    period: "2021",
+    degree: "[Autodidacta]",
+    period: "2022",
     time: "80 horas",
-    image: "/certs/pucp-prototipado.png",
     Icon: SquareTerminal,
     description:
         "Experto/a en el flujo de trabajo frontend completo, desde la construcción de sitios estáticos eficientes con Jekyll.js y la creación de interfaces interactivas con JavaScript y Tailwind CSS, hasta el despliegue continuo con Netlify y la colaboración con Git/GitHub.",
@@ -281,7 +279,7 @@ const education = [
     title: "Inglés Comunicacional",
     institution: "Instituto Privateacher",
     degree: "Certificado",
-    period: "2019 - 2020",
+    period: "2020 - 2022",
     time: "100 horas",
     image: "/certs/privateacher-ingles.png",
     Icon: Languages,
@@ -310,10 +308,9 @@ const education = [
   {
     title: "Desarrollo de Aplicaciones Web",
     institution: "Udemy",
-    degree: "Certificado",
+    degree: "[Autodidacta]",
     period: "2018",
     time: "40 horas",
-    image: "/certs/pucp-prototipado.png",
     Icon: FiGitPullRequest,
     description:
         "Adquirí experiencia práctica con frameworks front-end como Bootstrap, Materialize y Vue.js, y conocimientos esenciales en Node.js para el desarrollo back-end.",
@@ -323,12 +320,12 @@ const education = [
     ]
   },
   {
-    title: "Especialización en Diseño UI/UX",
+    title: "Especialización en Diseño de Experiencia de Usuario",
     institution: "Instituto Toulouse Lautrec",
     degree: "Especialización",
     period: "2017",
     time: "100 horas",
-    image: "/certs/pucp-prototipado.png",
+    image: "/certs/toulouse-experiencia-usuario.png",
     Icon: PanelsTopLeft,
     description:
         "Aprendí a traducir ideas en experiencias digitales intuitivas y atractivas, desde la investigación y conceptualización hasta el prototipado y la validación con usuarios reales.",
@@ -340,15 +337,14 @@ const education = [
   {
     title: "Computación e Informática",
     institution: "Instituto Cibertec",
-    degree: "Diplomado",
+    degree: "[No culminado]",
     period: "2016 - 2017",
     time: "18 meses",
-    image: "/certs/pucp-prototipado.png",
     Icon: Computer,
     description:
         "Dominio en programación (Java, algoritmia y estructuras de datos), desarrollo web (HTML5, CSS3, JavaScript), bases de datos (SQL Server) y modelado de procesos de negocio (BPMN).",
     achievements: [
-        "Desarrollo Web robusto e interactivo",
+        "Desarrollo web robusto e interactivo",
         "Tercio Superior"
     ]
   },
@@ -358,7 +354,7 @@ const education = [
     degree: "Certificado",
     period: "2016",
     time: "50 horas",
-    image: "/certs/pucp-prototipado.png",
+    image: "/certs/codecademy-html-css.png",
     Icon: LayoutTemplate,
     description:
         "Aprendizaje autodidacta en HTML, CSS Intermedio, Media Queries y Javascript.",
@@ -371,9 +367,9 @@ const education = [
     title: "Inglés Básico, Medio y Avanzado",
     institution: "Británico",
     degree: "Certificado",
-    period: "2015 - 2016",
-    time: "1 año 7 meses",
-    image: "/certs/pucp-prototipado.png",
+    period: "2014 - 2016",
+    time: "2 años",
+    image: "/certs/britanico-ingles-avanzado.png",
     Icon: FiGlobe,
     description:
       "Formación especializada en inglés básico, intermedio y avanzado. Aprendizaje de gramática, vocabulario y pronunciación.",
