@@ -163,11 +163,26 @@ const Summary = ({ questions, setQuestions }: SummaryProps) => {
     const formData = questions.reduce((acc, val) => {
       return { ...acc, [val.key]: val.value };
     }, {});
-
-    // Send this data to your server or whatever :)
-    console.log(formData);
-
-    setComplete(true);
+  
+    // Aseguramos que el cuerpo incluya el nombre del formulario
+    const body = new URLSearchParams({
+      "form-name": "contact-customer",
+      ...formData,
+    }).toString();
+  
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: body,
+    })
+      .then((res) => {
+        if (res.ok) {
+          setComplete(true);
+        } else {
+          console.error("Error en servidor:", res.status);
+        }
+      })
+      .catch((err) => console.error("Error de red:", err));
   };
 
   return (
@@ -272,7 +287,7 @@ export default TerminalContact;
 const QUESTIONS: QuestionType[] = [
   {
     key: "email",
-    text: "Para empezar, ¿podrías darme ",
+    text: "Para empezar, ¿podrías compartirme ",
     postfix: "tu email?",
     complete: false,
     value: "",

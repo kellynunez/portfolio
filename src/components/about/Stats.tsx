@@ -1,6 +1,7 @@
-import { Chip } from "../util/Chip";
 import Reveal from "../util/Reveal";
-import { AiFillCode, AiFillSmile, AiFillSetting, AiFillLayout, AiFillEdit } from "react-icons/ai";
+import { Chip } from "../util/Chip";
+import { AiFillCode, AiFillLayout, AiOutlineArrowRight } from "react-icons/ai";
+import { MyLinks } from "../nav/Header";
 
 export const Stats = () => {
   return (
@@ -12,18 +13,18 @@ export const Stats = () => {
             <span className="font-bold ml-2">Diseño y prototipado</span>
           </h4>
           <div className="flex flex-wrap gap-2 mb-12">
-          <Chip>Figma</Chip>
-          <Chip>FigJam</Chip>
-          <Chip>Lucidchart</Chip>
-          <Chip>Miro</Chip>
-          <Chip>Framer</Chip>
-          <Chip>Canva</Chip>
-          <Chip>Photoshop</Chip>
-          <Chip>Illustrator</Chip>
-          <Chip>InDesign</Chip>
-          <Chip>Premiere</Chip>
-          <Chip>CorelDraw</Chip>
-          <Chip>Capcut</Chip>
+            <Chip>Figma</Chip>
+            <Chip>ProtoPie</Chip>
+            <Chip>Storybook</Chip>
+            <Chip>LottieFiles</Chip>
+            <Chip>Lucidchart</Chip>
+            <Chip>Miro</Chip>
+            <Chip>Framer</Chip>
+            <Chip>Photoshop</Chip>
+            <Chip>Illustrator</Chip>
+            <Chip>InDesign</Chip>
+            <Chip>Premiere</Chip>
+            <Chip>Elementor</Chip>
           </div>
         </div>
       </Reveal>
@@ -41,15 +42,13 @@ export const Stats = () => {
             <Chip>JavaScript</Chip>
             <Chip>TypeScript</Chip>
             <Chip>PHP</Chip>
-            <Chip>React</Chip>
             <Chip>NextJS</Chip>
+            <Chip>React</Chip>
             <Chip>Vue</Chip>
-            <Chip>jQuery</Chip>
+            <Chip>Vite</Chip>
             <Chip>Framer Motion</Chip>
             <Chip>AnimeJS</Chip>
             <Chip>TailwindCSS</Chip>
-            <Chip>Bootstrap</Chip>
-            <Chip>Materialize</Chip>
           </div>
         </div>
       </Reveal>
