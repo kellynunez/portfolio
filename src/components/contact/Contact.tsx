@@ -13,15 +13,6 @@ export const Contact = () => {
       <div className="w-full text-center mb-0 md:mb-10">
         <span className="text-zinc-700 text-sm">© 2011 - 2026 Kelly Núñez. Todos los derechos reservados.</span>
       </div>
-
-      {/* Formulario oculto para que Netlify detecte los campos */}
-      <form name="contact-customer" data-netlify="true" netlify-honeypot="bot-field" hidden>
-        <input type="hidden" name="form-name" value="contact-customer" />
-        <input name="bot-field" /> {/* Campo trampa para bots */}
-        <input type="email" name="email" />
-        <input type="text" name="nombre" />
-        <textarea name="comentario"></textarea>
-      </form>
     </section>
   );
 };

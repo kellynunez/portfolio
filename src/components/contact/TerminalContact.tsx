@@ -164,7 +164,7 @@ const Summary = ({ questions, setQuestions }: SummaryProps) => {
       return { ...acc, [val.key]: val.value };
     }, {});
   
-    // Asegúrate de incluir 'form-name' y que coincida con el HTML
+    // Aseguramos que el cuerpo incluya el nombre del formulario
     const body = new URLSearchParams({
       "form-name": "contact-customer",
       ...formData,
@@ -179,13 +179,10 @@ const Summary = ({ questions, setQuestions }: SummaryProps) => {
         if (res.ok) {
           setComplete(true);
         } else {
-          throw new Error("Error en la respuesta del servidor");
+          console.error("Error en servidor:", res.status);
         }
       })
-      .catch((error) => {
-        console.error("Error al enviar:", error);
-        alert("Hubo un fallo al enviar el mensaje.");
-      });
+      .catch((err) => console.error("Error de red:", err));
   };
 
   return (
