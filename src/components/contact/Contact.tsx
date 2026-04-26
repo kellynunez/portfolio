@@ -15,7 +15,9 @@ export const Contact = () => {
       </div>
 
       {/* Formulario oculto para que Netlify detecte los campos */}
-      <form name="contact-customer" data-netlify="true" hidden>
+      <form name="contact-customer" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="contact-customer" />
+        <input name="bot-field" /> {/* Campo trampa para bots */}
         <input type="email" name="email" />
         <input type="text" name="nombre" />
         <textarea name="comentario"></textarea>

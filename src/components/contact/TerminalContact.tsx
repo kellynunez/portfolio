@@ -164,20 +164,28 @@ const Summary = ({ questions, setQuestions }: SummaryProps) => {
       return { ...acc, [val.key]: val.value };
     }, {});
   
-    // Preparamos los datos para Netlify
+    // Asegúrate de incluir 'form-name' y que coincida con el HTML
+    const body = new URLSearchParams({
+      "form-name": "contact-customer",
+      ...formData,
+    }).toString();
+  
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({
-        "form-name": "contact-customer", // Debe coincidir con el nombre del form oculto
-        ...formData,
-      }).toString(),
+      body: body,
     })
-      .then(() => {
-        setComplete(true);
-        console.log("Formulario enviado con éxito");
+      .then((res) => {
+        if (res.ok) {
+          setComplete(true);
+        } else {
+          throw new Error("Error en la respuesta del servidor");
+        }
       })
-      .catch((error) => alert("Error al enviar: " + error));
+      .catch((error) => {
+        console.error("Error al enviar:", error);
+        alert("Hubo un fallo al enviar el mensaje.");
+      });
   };
 
   return (
