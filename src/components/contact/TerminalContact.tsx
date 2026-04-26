@@ -163,11 +163,21 @@ const Summary = ({ questions, setQuestions }: SummaryProps) => {
     const formData = questions.reduce((acc, val) => {
       return { ...acc, [val.key]: val.value };
     }, {});
-
-    // Send this data to your server or whatever :)
-    console.log(formData);
-
-    setComplete(true);
+  
+    // Preparamos los datos para Netlify
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        "form-name": "contact-customer", // Debe coincidir con el nombre del form oculto
+        ...formData,
+      }).toString(),
+    })
+      .then(() => {
+        setComplete(true);
+        console.log("Formulario enviado con éxito");
+      })
+      .catch((error) => alert("Error al enviar: " + error));
   };
 
   return (
