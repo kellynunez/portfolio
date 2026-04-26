@@ -202,7 +202,7 @@ const EducationCard = ({
 
 const education = [
   {
-    title: "Diseño y Desarrollo Web",
+    title: "E-commerce y Gestión de Contenidos",
     institution: "ISIL Educación Ejecutiva",
     degree: "[En curso]",
     period: "2026",
@@ -264,7 +264,7 @@ const education = [
   {
     title: "Desarrollo Frontend",
     institution: "Codecademy",
-    degree: "[Autodidacta]",
+    degree: "Autodidacta",
     period: "2022",
     time: "80 horas",
     Icon: SquareTerminal,
@@ -308,7 +308,7 @@ const education = [
   {
     title: "Desarrollo de Aplicaciones Web",
     institution: "Udemy",
-    degree: "[Autodidacta]",
+    degree: "Autodidacta",
     period: "2018",
     time: "40 horas",
     Icon: FiGitPullRequest,
@@ -337,7 +337,7 @@ const education = [
   {
     title: "Computación e Informática",
     institution: "Instituto Cibertec",
-    degree: "[No culminado]",
+    degree: "5 ciclos",
     period: "2016 - 2017",
     time: "18 meses",
     Icon: Computer,
@@ -364,12 +364,11 @@ const education = [
     ]
   },
   {
-    title: "Inglés Básico, Medio y Avanzado",
+    title: "Inglés Básico, Intermedio y Avanzado",
     institution: "Británico",
-    degree: "Certificado",
+    degree: "Superintensivo",
     period: "2014 - 2016",
     time: "2 años",
-    image: "/certs/britanico-ingles-avanzado.png",
     Icon: FiGlobe,
     description:
       "Formación especializada en inglés básico, intermedio y avanzado. Aprendizaje de gramática, vocabulario y pronunciación.",
