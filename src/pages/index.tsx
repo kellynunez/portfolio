@@ -26,6 +26,13 @@ export default function Home() {
 
       <main className={`font-satoshi ${jetbrainsMono.variable}`}>
         <HomPage />
+        <form name="contact-customer" data-netlify="true" netlify-honeypot="bot-field" hidden>
+          <input type="hidden" name="form-name" value="contact-customer" />
+          <input type="text" name="bot-field" />
+          <input type="email" name="email" />
+          <input type="text" name="nombre" />
+          <textarea name="comentario"></textarea>
+        </form>
       </main>
     </>
   );

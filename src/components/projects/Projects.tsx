@@ -115,7 +115,7 @@ const projects = [
     title: "Creative Pitch Deck",
     imgSrc: "project-imgs/pitch-deck.png",
     projectLink: "",
-    tech: ["Google Drive", "Keynote", "Illustrator"],
+    tech: ["Google Slides", "Keynote", "Illustrator"],
     description:
       "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
     modalContent: (

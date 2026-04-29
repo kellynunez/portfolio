@@ -16,7 +16,7 @@ const Hero = () => {
                 delay={500}
                 className="text-zinc-100"
               />
-              <span className="text-[#F5F000]">🦄</span>
+              {/* <span className="text-[#F5F000]">🦄</span> */}
             </h1>
           </Reveal>
           <Reveal>
