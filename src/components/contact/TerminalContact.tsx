@@ -164,13 +164,12 @@ const Summary = ({ questions, setQuestions }: SummaryProps) => {
       return { ...acc, [val.key]: val.value };
     }, {});
   
-    // Aseguramos que el cuerpo incluya el nombre del formulario
     const body = new URLSearchParams({
-      "form-name": "contact-customer",
+      "form-name": "contact-customer", // ESTRICTO: debe ser igual al name del form
       ...formData,
     }).toString();
   
-    fetch("/", {
+    fetch("/__forms.html", { // Prueba apuntando directamente al archivo estático
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: body,
