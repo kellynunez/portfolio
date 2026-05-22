@@ -16,7 +16,7 @@ const Hero = () => {
                 delay={500}
                 className="text-zinc-100"
               />
-              {/* <span className="text-[#F5F000]">🦄</span> */}
+              {<span className="text-[#F5F000]">🦄</span>}
             </h1>
           </Reveal>
           <Reveal>
@@ -32,7 +32,7 @@ const Hero = () => {
                   animation: 'gradient-shift 3s ease-in-out infinite'
                 }}
               >
-                Principal Product Designer & Frontend Developer
+                Lead Product Designer & Web Dev
               </span>
             </h2>
           </Reveal>
