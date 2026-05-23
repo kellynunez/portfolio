@@ -16,7 +16,7 @@ const Hero = () => {
                 delay={500}
                 className="text-zinc-100"
               />
-              {/* <span className="text-[#F5F000]">🦄</span> */}
+              {<span className="text-[#F5F000]">🦄</span>}
             </h1>
           </Reveal>
           <Reveal>
@@ -32,13 +32,13 @@ const Hero = () => {
                   animation: 'gradient-shift 3s ease-in-out infinite'
                 }}
               >
-                Principal Product Designer & Frontend Developer
+                Lead Product Designer & Web Developer
               </span>
             </h2>
           </Reveal>
           <Reveal>
             <p className="pointer-events-auto leading-relaxed md:leading-relaxed max-w-3xl text-sm md:text-lg text-zinc-300 font-medium tracking-wide">
-              Transformando el ADN de las marcas en experiencias UI/UX interactivas, construidas con un desarrollo frontend de vanguardia y diseño visual estratégico.
+              Consistencia de marca con viabilidad técnica en producción. Enfocada en la intersección de Diseño de Producto, Sistemas Escalables y Desarrollo Frontend.
             </p>
           </Reveal>
           <Reveal>

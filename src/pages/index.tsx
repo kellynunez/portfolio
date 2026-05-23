@@ -13,13 +13,13 @@ export default function Home() {
     <>
       {/* SEO */}
       <Head>
-        <title>Kelly Núñez | Principal Product Designer & Frontend Developer</title>
+        <title>Kelly Núñez | Lead Product Designer & Web Dev</title>
         <meta name="description" content="Especialista en identidad de marca y desarrollo frontend con más de 10 años de experiencia unificando la estrategia de branding con la ejecución técnica de productos digitales escalables." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" href="/icon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-icon.png" />
-        <meta property="og:title" content="Kelly Núñez | Principal Designer & Frontend Developer" />
+        <meta property="og:title" content="Kelly Núñez | Lead Product Designer & Web Dev" />
         <meta property="og:description" content="Especialista en identidad de marca y desarrollo frontend con más de 10 años de experiencia unificando la estrategia de branding con la ejecución técnica de productos digitales escalables." />
         <meta property="og:image" content="/kelly-nunez-portfolio.png" />
       </Head>

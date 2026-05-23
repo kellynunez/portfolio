@@ -15,7 +15,7 @@ export const About = () => {
           <Reveal>
             <p className="leading-relaxed text-zinc-300">
               <span className="bg-[#00FF85] text-black py-2 px-3 rounded font-bold mr-1 float-left text-2xl">
-                H
+                S
               </span>
               oy Kelly Núñez, una profesional tech-creativa con más de 10 años de trayectoria liderando la intersección entre diseño y tecnología. Mi carrera se ha caracterizado por una constante búsqueda de la excelencia académica y el liderazgo de equipos para crear productos digitales con identidad propia. Implemento metodologías de vanguardia como el prototipado generativo con IA, lo que me permite explorar conceptos de marca e interfaces con una agilidad superior, optimizando los tiempos de iteración y validando soluciones de alto impacto con mayor precisión.
             </p>

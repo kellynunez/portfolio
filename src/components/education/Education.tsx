@@ -201,7 +201,7 @@ const EducationCard = ({
 };
 
 const education = [
-  {
+/*   {
     title: "E-commerce y Gestión de Contenidos",
     institution: "ISIL Educación Ejecutiva",
     degree: "[En curso]",
@@ -215,7 +215,7 @@ const education = [
         "Gestión de plataformas E-commerce: Woocommerce y Shopify",
         "...",
     ]
-  },
+  }, */
   {
     title: "Prototipado UI Avanzado en Figma: Interactividad y Animación",
     institution: "Facultad de Arte y Diseño (PUCP)",
