@@ -38,7 +38,7 @@ const Hero = () => {
           </Reveal>
           <Reveal>
             <p className="pointer-events-auto leading-relaxed md:leading-relaxed max-w-3xl text-sm md:text-lg text-zinc-300 font-medium tracking-wide">
-              Consistencia de marca con viabilidad técnica en producción. Enfocada en la intersección de Diseño de Producto, Sistemas Escalables y Desarrollo Frontend.
+              Enfocada en la intersección de Diseño de Producto, Sistemas Escalables y Desarrollo Frontend. Experiencia en consistencia de marca con viabilidad técnica en producción.
             </p>
           </Reveal>
           <Reveal>
