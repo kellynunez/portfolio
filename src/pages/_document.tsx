@@ -1,17 +1,22 @@
 import { Html, Head, Main, NextScript } from "next/document";
 
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID ?? "GTM-TNJFVSDZ";
+
 export default function Document() {
   return (
     <Html lang="es">
       <Head>
+        {/* Google Tag Manager */}
+        <script dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_ID}');` }} />
+
         {/* Charset y Viewport */}
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-
-        {/* Meta tags de control */}
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-        <meta name="googlebot" content="index, follow" />
 
         {/* Theme color */}
         <meta name="theme-color" content="#09090b" />
@@ -31,6 +36,11 @@ export default function Document() {
         <link rel="dns-prefetch" href="https://fonts.cdnfonts.com" />
       </Head>
       <body id="root" className="bg-zinc-900 text-zinc-50">
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0" width="0" style={{ display: "none", visibility: "hidden" }} />
+        </noscript>
         <Main />
         <NextScript />
       </body>
