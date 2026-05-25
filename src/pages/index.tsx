@@ -9,19 +9,67 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export default function Home() {
+  const description = "Especialista en identidad de marca y desarrollo frontend con más de 10 años de experiencia unificando la estrategia de branding con la ejecución técnica de productos digitales escalables.";
+  const title = "Kelly Núñez | Lead Product Designer & Web Dev";
+  const url = "https://kelly-nunez.com";
+  const image = `${url}/kelly-nunez-portfolio.png`;
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Kelly Núñez",
+    url: url,
+    jobTitle: "Lead Product Designer & Web Developer",
+    description: description,
+    image: image,
+    sameAs: [
+      "https://linkedin.com/in/kelly-nunez",
+      "https://twitter.com/kellynunez",
+      "https://github.com/kellynunez"
+    ],
+    contact: {
+      "@type": "ContactPoint",
+      contactType: "Customer Service",
+      email: "kellynunezhu@gmail.com"
+    }
+  };
+
   return (
     <>
       {/* SEO */}
       <Head>
-        <title>Kelly Núñez | Lead Product Designer & Web Dev</title>
-        <meta name="description" content="Especialista en identidad de marca y desarrollo frontend con más de 10 años de experiencia unificando la estrategia de branding con la ejecución técnica de productos digitales escalables." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="icon" href="/icon.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/apple-icon.png" />
-        <meta property="og:title" content="Kelly Núñez | Lead Product Designer & Web Dev" />
-        <meta property="og:description" content="Especialista en identidad de marca y desarrollo frontend con más de 10 años de experiencia unificando la estrategia de branding con la ejecución técnica de productos digitales escalables." />
-        <meta property="og:image" content="/kelly-nunez-portfolio.png" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content="Product Designer, Web Developer, UI/UX, Frontend, Brand Identity, Digital Products" />
+        <meta name="author" content="Kelly Núñez" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href={url} />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={url} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={image} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="es_ES" />
+        
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={url} />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={image} />
+        <meta name="twitter:creator" content="@kellynunez" />
+        
+        {/* Additional SEO */}
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="alternate" hrefLang="es" href={url} />
+        
+        {/* Structured Data - JSON-LD */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </Head>
 
       <main className={`font-satoshi ${jetbrainsMono.variable}`}>
