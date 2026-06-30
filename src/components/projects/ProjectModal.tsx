@@ -26,13 +26,14 @@ export const ProjectModal = ({
   tech,
 }: Props) => {
   useEffect(() => {
-    const body = document.querySelector("body");
+    const body = document.body;
+    const previousOverflowY = body.style.overflowY;
 
-    if (isOpen) {
-      body!.style.overflowY = "hidden";
-    } else {
-      body!.style.overflowY = "scroll";
-    }
+    body.style.overflowY = "hidden";
+
+    return () => {
+      body.style.overflowY = previousOverflowY || "scroll";
+    };
   }, [isOpen]);
 
   const content = (
