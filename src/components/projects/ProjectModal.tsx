@@ -2,21 +2,21 @@ import { useEffect } from "react";
 import ReactDOM from "react-dom";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { AiFillGithub, AiOutlineExport } from "react-icons/ai";
+import { AiOutlineExport } from "react-icons/ai";
 import { MdClose } from "react-icons/md";
 
 interface Props {
   isOpen: boolean;
-  setIsOpen: Function;
+  setIsOpen: (isOpen: boolean) => void;
   title: string;
   imgSrc: string;
   projectLink: string;
   tech: string[];
-  modalContent: JSX.Element;
+  galleryImages: string[];
 }
 
 export const ProjectModal = ({
-  modalContent,
+  galleryImages,
   projectLink,
   setIsOpen,
   imgSrc,
@@ -63,7 +63,15 @@ export const ProjectModal = ({
           </div>
 
           <div className="space-y-4 my-6 leading-relaxed text-sm text-gray-800">
-            {modalContent}
+            {galleryImages.map((imageSrc) => (
+              <img
+                key={imageSrc}
+                src={imageSrc}
+                loading="lazy"
+                decoding="async"
+                alt={`${title} showcase`}
+              />
+            ))}
           </div>
 
           {projectLink.trim() && (

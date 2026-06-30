@@ -1,12 +1,17 @@
 import { useAnimation, useInView, motion } from "framer-motion";
 // import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import { AiOutlineExport } from "react-icons/ai";
-import { ProjectModal } from "./ProjectModal";
 import Reveal from "../util/Reveal";
 
+const ProjectModal = dynamic(
+  () => import("./ProjectModal").then((mod) => mod.ProjectModal),
+  { ssr: false }
+);
+
 interface Props {
-  modalContent: JSX.Element;
+  galleryImages: string[];
   description: string;
   projectLink: string;
   imgSrc: string;
@@ -15,7 +20,7 @@ interface Props {
 }
 
 export const Project = ({
-  modalContent,
+  galleryImages,
   projectLink,
   // description,
   imgSrc,
@@ -105,15 +110,17 @@ export const Project = ({
           </Reveal> */}
         </div>
       </motion.div>
-      <ProjectModal
-        modalContent={modalContent}
-        projectLink={projectLink}
-        setIsOpen={setIsOpen}
-        isOpen={isOpen}
-        imgSrc={imgSrc}
-        title={title}
-        tech={tech}
-      />
+      {isOpen && (
+        <ProjectModal
+          galleryImages={galleryImages}
+          projectLink={projectLink}
+          setIsOpen={setIsOpen}
+          isOpen={isOpen}
+          imgSrc={imgSrc}
+          title={title}
+          tech={tech}
+        />
+      )}
     </>
   );
 };
