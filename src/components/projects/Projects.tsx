@@ -181,13 +181,13 @@ const projects = [
       "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
     modalContent: (
       <>
-        <img src="project-imgs/pos-niubiz/pos-header.png" alt="POS Systems Interface"/>
-        <img src="project-imgs/pos-niubiz/pos-user.png" alt="POS Systems Interface" className="!mt-0"/>
-        <img src="project-imgs/pos-niubiz/pos-niubiz.png" alt="POS Systems Interface" className="!mt-0"/>
-        <img src="project-imgs/pos-niubiz/pos-mobile.png" alt="POS Systems Interface" className="!mt-0"/>
-        <img src="project-imgs/pos-niubiz/pos-landing.png" alt="POS Systems Interface" className="!mt-0"/>
-        <img src="project-imgs/pos-niubiz/pos-ux1.png" alt="POS Systems Interface" className="!mt-0"/>
-        <img src="project-imgs/pos-niubiz/pos-ux2.png" alt="POS Systems Interface" className="!mt-0"/>
+        <img src="project-imgs/pos-niubiz/pos-header.webp" alt="POS Systems Interface"/>
+        <img src="project-imgs/pos-niubiz/pos-user.webp" alt="POS Systems Interface" className="!mt-0"/>
+        <img src="project-imgs/pos-niubiz/pos-niubiz.webp" alt="POS Systems Interface" className="!mt-0"/>
+        <img src="project-imgs/pos-niubiz/pos-mobile.webp" alt="POS Systems Interface" className="!mt-0"/>
+        <img src="project-imgs/pos-niubiz/pos-landing.webp" alt="POS Systems Interface" className="!mt-0"/>
+        <img src="project-imgs/pos-niubiz/pos-ux1.webp" alt="POS Systems Interface" className="!mt-0"/>
+        <img src="project-imgs/pos-niubiz/pos-ux2.webp" alt="POS Systems Interface" className="!mt-0"/>
       </>
     ),
   },
