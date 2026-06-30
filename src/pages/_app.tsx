@@ -5,7 +5,13 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID;
-const SHOULD_LOAD_GA = process.env.NODE_ENV === "production" && Boolean(GA_MEASUREMENT_ID);
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
+const ANALYTICS_ENABLED =
+  process.env.NODE_ENV === "production" &&
+  process.env.NEXT_PUBLIC_ENABLE_ANALYTICS === "true";
+// Si GTM esta activo, GA se gestiona desde GTM para evitar doble carga.
+const SHOULD_LOAD_GA =
+  ANALYTICS_ENABLED && !Boolean(GTM_ID) && Boolean(GA_MEASUREMENT_ID);
 
 const pageview = (url: string) => {
   if (!GA_MEASUREMENT_ID || typeof window.gtag !== "function") return;

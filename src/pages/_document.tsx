@@ -1,7 +1,10 @@
 import { Html, Head, Main, NextScript } from "next/document";
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
-const SHOULD_LOAD_GTM = process.env.NODE_ENV === "production" && Boolean(GTM_ID);
+const SHOULD_LOAD_GTM =
+  process.env.NODE_ENV === "production" &&
+  process.env.NEXT_PUBLIC_ENABLE_ANALYTICS === "true" &&
+  Boolean(GTM_ID);
 
 export default function Document() {
   return (
