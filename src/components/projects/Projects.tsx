@@ -163,12 +163,12 @@ const projects = [
       "Think Zapier but for paint. Built with a team of four college friends and scaled to > 1 billion requests per day. This was a fun one.",
     modalContent: (
       <>
-        <img src="project-imgs/user-interface/ui-header.png" alt="User Interfaces"/>
-        <img src="project-imgs/user-interface/ui-page.png" alt="User Interfaces" className="!mt-0"/>
-        <img src="project-imgs/user-interface/ui-hero.png" alt="User Interfaces" className="!mt-0"/>
-        <img src="project-imgs/user-interface/ui-content.png" alt="User Interfaces" className="!mt-0"/>
-        <img src="project-imgs/user-interface/ui-conference.png" alt="User Interfaces" className="!mt-0"/>
-        <img src="project-imgs/user-interface/ui-web.png" alt="User Interfaces" className="!mt-0"/>
+        <img src="project-imgs/user-interface/ui-header.webp" alt="User Interfaces"/>
+        <img src="project-imgs/user-interface/ui-page.webp" alt="User Interfaces" className="!mt-0"/>
+        <img src="project-imgs/user-interface/ui-hero.webp" alt="User Interfaces" className="!mt-0"/>
+        <img src="project-imgs/user-interface/ui-content.webp" alt="User Interfaces" className="!mt-0"/>
+        <img src="project-imgs/user-interface/ui-conference.webp" alt="User Interfaces" className="!mt-0"/>
+        <img src="project-imgs/user-interface/ui-web.webp" alt="User Interfaces" className="!mt-0"/>
       </>
     ),
   },
