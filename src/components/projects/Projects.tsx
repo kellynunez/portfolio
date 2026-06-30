@@ -102,12 +102,12 @@ const projects = [
       "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
     modalContent: (
       <>
-        <img src="project-imgs/social-media/social-header.png" alt="Social Media"/>
-        <img src="project-imgs/social-media/social-size.png" alt="Social Media" className="!mt-0"/>
-        <img src="project-imgs/social-media/social-linkedin.png" alt="Social Media" className="!mt-0"/>
-        <img src="project-imgs/social-media/social-seo.png" alt="Social Media" className="!mt-0"/>
-        <img src="project-imgs/social-media/social-post.png" alt="Social Media" className="!mt-0"/>
-        <img src="project-imgs/social-media/social-monopoly.png" alt="Social Media" className="!mt-0"/>
+        <img src="project-imgs/social-media/social-header.webp" alt="Social Media"/>
+        <img src="project-imgs/social-media/social-size.webp" alt="Social Media" className="!mt-0"/>
+        <img src="project-imgs/social-media/social-linkedin.webp" alt="Social Media" className="!mt-0"/>
+        <img src="project-imgs/social-media/social-seo.webp" alt="Social Media" className="!mt-0"/>
+        <img src="project-imgs/social-media/social-post.webp" alt="Social Media" className="!mt-0"/>
+        <img src="project-imgs/social-media/social-monopoly.webp" alt="Social Media" className="!mt-0"/>
       </>
     ),
   },
