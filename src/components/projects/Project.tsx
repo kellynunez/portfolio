@@ -59,6 +59,8 @@ export const Project = ({
         >
           <img
             src={imgSrc}
+            loading="lazy"
+            decoding="async"
             alt={`An image of the ${title} project.`}
             style={{
               width: hovered ? "92%" : "90%",

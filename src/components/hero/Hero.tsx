@@ -53,7 +53,9 @@ const Hero = () => {
             </div>
           </Reveal>
         </div>
-        <DotGrid />
+        <div className="hidden md:block motion-reduce:hidden">
+          <DotGrid />
+        </div>
       </div>
     </section>
   );

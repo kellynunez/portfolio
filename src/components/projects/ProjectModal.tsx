@@ -52,6 +52,8 @@ export const ProjectModal = ({
         <img
           className="w-full"
           src={imgSrc}
+          loading="lazy"
+          decoding="async"
           alt={`An image of the ${title} project.`}
         />
         <div className="p-8">
@@ -64,21 +66,23 @@ export const ProjectModal = ({
             {modalContent}
           </div>
 
-          <div>
-            <p className="font-bold mb-2 text-xl text-gray-800">
-              Project Link<span className="text-indigo-500">.</span>
-            </p>
-            <div className="flex items-center gap-4 text-sm">
-              <Link
-                target="_blank"
-                rel="nofollow"
-                className="text-blue-500 hover:text-blue-700 transition-colors flex items-center gap-1"
-                href={projectLink}
-              >
-                <AiOutlineExport /> Live Project
-              </Link>
+          {projectLink.trim() && (
+            <div>
+              <p className="font-bold mb-2 text-xl text-gray-800">
+                Project Link<span className="text-indigo-500">.</span>
+              </p>
+              <div className="flex items-center gap-4 text-sm">
+                <Link
+                  target="_blank"
+                  rel="nofollow"
+                  className="text-blue-500 hover:text-blue-700 transition-colors flex items-center gap-1"
+                  href={projectLink}
+                >
+                  <AiOutlineExport /> Live Project
+                </Link>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </motion.div>
     </div>
