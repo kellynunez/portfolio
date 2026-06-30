@@ -51,7 +51,7 @@ const projects = [
   }, */
   {
     title: "Website Corporative",
-    imgSrc: "project-imgs/web-corporative.png",
+    imgSrc: "project-imgs/web-corporative.webp",
     projectLink: "",
     tech: ["Node", "JekyllRB", "TailwindCSS", "Markdown", "Figma", "Midjourney"],
     description:
@@ -76,7 +76,7 @@ const projects = [
   },
   {
     title: "Brand Identity",
-    imgSrc: "project-imgs/brand-identity.png",
+    imgSrc: "project-imgs/brand-identity.webp",
     projectLink: "",
     tech: ["Notion", "Adobe CC", "Midjourney", "Google Slides", "Acrobat"],
     description:
@@ -95,7 +95,7 @@ const projects = [
   },
   {
     title: "Social Media",
-    imgSrc: "project-imgs/social-media.png",
+    imgSrc: "project-imgs/social-media.webp",
     projectLink: "",
     tech: ["Illustrator", "Photoshop"],
     description:
@@ -113,7 +113,7 @@ const projects = [
   },
   {
     title: "Creative Pitch Deck",
-    imgSrc: "project-imgs/pitch-deck.png",
+    imgSrc: "project-imgs/pitch-deck.webp",
     projectLink: "",
     tech: ["Google Slides", "Keynote", "Illustrator"],
     description:
@@ -134,7 +134,7 @@ const projects = [
   },
   {
     title: "Web App Projects",
-    imgSrc: "project-imgs/webapp-project.png",
+    imgSrc: "project-imgs/webapp-project.webp",
     projectLink: "",
     tech: ["Linux", "VueJS", "Sass", "Materialize"],
     description:
@@ -156,7 +156,7 @@ const projects = [
   },
   {
     title: "User Interfaces",
-    imgSrc: "project-imgs/user-interfaces.png",
+    imgSrc: "project-imgs/user-interfaces.webp",
     projectLink: "",
     tech: ["TailwindCSS", "Figma"],
     description:
@@ -174,7 +174,7 @@ const projects = [
   },
   {
     title: "POS Systems Interface",
-    imgSrc: "project-imgs/pos-niubiz.png",
+    imgSrc: "project-imgs/pos-niubiz.webp",
     projectLink: "",
     tech: ["Figma", "Illustrator", "Miro"],
     description:
@@ -193,7 +193,7 @@ const projects = [
   },
   {
     title: "Advertising Campaigns",
-    imgSrc: "project-imgs/ads-campaigns.png",
+    imgSrc: "project-imgs/ads-campaigns.webp",
     projectLink: "",
     tech: ["Photoshop", "Office"],
     description:
