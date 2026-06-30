@@ -141,16 +141,16 @@ const projects = [
       "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
     modalContent: (
       <>
-        <img src="project-imgs/app-project/app-header.png" alt="WebApp Projects"/>
-        <img src="project-imgs/app-project/app-login.png" alt="WebApp Projects" className="!mt-0"/>
-        <img src="project-imgs/app-project/app-blazing.png" alt="WebApp Projects" className="!mt-0"/>
-        <img src="project-imgs/app-project/app-dev.png" alt="WebApp Projects" className="!mt-0"/>
-        <img src="project-imgs/app-project/app-spacedat.png" alt="WebApp Projects" className="!mt-0"/>
-        <img src="project-imgs/app-project/app-navbar.png" alt="WebApp Projects" className="!mt-0"/>
-        <img src="project-imgs/app-project/app-dashboard.png" alt="WebApp Projects" className="!mt-0"/>
-        <img src="project-imgs/app-project/app-mystery.png" alt="WebApp Projects" className="!mt-0"/>
-        <img src="project-imgs/app-project/app-livetrade.png" alt="WebApp Projects" className="!mt-0"/>
-        <img src="project-imgs/app-project/app-mobile.png" alt="WebApp Projects" className="!mt-0"/>
+        <img src="project-imgs/app-project/app-header.webp" alt="WebApp Projects"/>
+        <img src="project-imgs/app-project/app-login.webp" alt="WebApp Projects" className="!mt-0"/>
+        <img src="project-imgs/app-project/app-blazing.webp" alt="WebApp Projects" className="!mt-0"/>
+        <img src="project-imgs/app-project/app-dev.webp" alt="WebApp Projects" className="!mt-0"/>
+        <img src="project-imgs/app-project/app-spacedat.webp" alt="WebApp Projects" className="!mt-0"/>
+        <img src="project-imgs/app-project/app-navbar.webp" alt="WebApp Projects" className="!mt-0"/>
+        <img src="project-imgs/app-project/app-dashboard.webp" alt="WebApp Projects" className="!mt-0"/>
+        <img src="project-imgs/app-project/app-mystery.webp" alt="WebApp Projects" className="!mt-0"/>
+        <img src="project-imgs/app-project/app-livetrade.webp" alt="WebApp Projects" className="!mt-0"/>
+        <img src="project-imgs/app-project/app-mobile.webp" alt="WebApp Projects" className="!mt-0"/>
       </>
     ),
   },
