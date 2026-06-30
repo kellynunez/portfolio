@@ -120,15 +120,15 @@ const projects = [
       "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
     modalContent: (
       <>
-        <img src="project-imgs/pitch-deck/slides-header.png" alt="Pitch Deck"/>
-        <img src="project-imgs/pitch-deck/slides-guides.png" alt="Pitch Deck" className="!mt-0"/>
-        <img src="project-imgs/pitch-deck/slides-spacedat.png" alt="Pitch Deck" className="!mt-0"/>
-        <img src="project-imgs/pitch-deck/slides-niubiz.png" alt="Pitch Deck" className="!mt-0"/>
-        <img src="project-imgs/pitch-deck/slides-rappi.png" alt="Pitch Deck" className="!mt-0"/>
-        <img src="project-imgs/pitch-deck/slides-avelina.png" alt="Pitch Deck" className="!mt-0"/>
-        <img src="project-imgs/pitch-deck/slides-lalucha.png" alt="Pitch Deck" className="!mt-0"/>
-        <img src="project-imgs/pitch-deck/slides-cybergarden.png" alt="Pitch Deck" className="!mt-0"/>
-        <img src="project-imgs/pitch-deck/slides-university.png" alt="Pitch Deck" className="!mt-0"/>
+        <img src="project-imgs/pitch-deck/slides-header.webp" alt="Pitch Deck"/>
+        <img src="project-imgs/pitch-deck/slides-guides.webp" alt="Pitch Deck" className="!mt-0"/>
+        <img src="project-imgs/pitch-deck/slides-spacedat.webp" alt="Pitch Deck" className="!mt-0"/>
+        <img src="project-imgs/pitch-deck/slides-niubiz.webp" alt="Pitch Deck" className="!mt-0"/>
+        <img src="project-imgs/pitch-deck/slides-rappi.webp" alt="Pitch Deck" className="!mt-0"/>
+        <img src="project-imgs/pitch-deck/slides-avelina.webp" alt="Pitch Deck" className="!mt-0"/>
+        <img src="project-imgs/pitch-deck/slides-lalucha.webp" alt="Pitch Deck" className="!mt-0"/>
+        <img src="project-imgs/pitch-deck/slides-cybergarden.webp" alt="Pitch Deck" className="!mt-0"/>
+        <img src="project-imgs/pitch-deck/slides-university.webp" alt="Pitch Deck" className="!mt-0"/>
       </>
     ),
   },
