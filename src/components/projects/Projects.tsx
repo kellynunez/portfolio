@@ -83,13 +83,13 @@ const projects = [
       "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
     modalContent: (
       <>
-        <img src="project-imgs/brand-identity/branding-header.png" alt="Brand Identity"/>
-        <img src="project-imgs/brand-identity/branding-notion.png" alt="Brand Identity" className="!mt-0"/>
-        <img src="project-imgs/brand-identity/branding-letterhead.png" alt="Brand Identity" className="!mt-0"/>
-        <img src="project-imgs/brand-identity/branding-icons.png" alt="Brand Identity" className="!mt-0"/>
-        <img src="project-imgs/brand-identity/branding-stationary.png" alt="Brand Identity" className="!mt-0"/>
-        <img src="project-imgs/brand-identity/branding-merch.png" alt="Brand Identity" className="!mt-0"/>
-        <img src="project-imgs/brand-identity/branding-booth.png" alt="Brand Identity" className="!mt-0"/>
+        <img src="project-imgs/brand-identity/branding-header.webp" alt="Brand Identity"/>
+        <img src="project-imgs/brand-identity/branding-notion.webp" alt="Brand Identity" className="!mt-0"/>
+        <img src="project-imgs/brand-identity/branding-letterhead.webp" alt="Brand Identity" className="!mt-0"/>
+        <img src="project-imgs/brand-identity/branding-icons.webp" alt="Brand Identity" className="!mt-0"/>
+        <img src="project-imgs/brand-identity/branding-stationary.webp" alt="Brand Identity" className="!mt-0"/>
+        <img src="project-imgs/brand-identity/branding-merch.webp" alt="Brand Identity" className="!mt-0"/>
+        <img src="project-imgs/brand-identity/branding-booth.webp" alt="Brand Identity" className="!mt-0"/>
       </>
     ),
   },
