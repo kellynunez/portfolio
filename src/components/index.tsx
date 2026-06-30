@@ -1,12 +1,21 @@
 import React from "react";
+import dynamic from "next/dynamic";
 import { SideBar } from "./nav/SideBar";
 import { Header } from "./nav/Header";
 import Hero from "./hero/Hero";
 import { About } from "./about/About";
 import { Projects } from "./projects/Projects";
 import { Experience } from "./experience/Experience";
-import { Education } from "./education/Education";
-import { Contact } from "./contact/Contact";
+
+const Education = dynamic(
+  () => import("./education/Education").then((mod) => mod.Education),
+  { ssr: false }
+);
+
+const Contact = dynamic(
+  () => import("./contact/Contact").then((mod) => mod.Contact),
+  { ssr: false }
+);
 
 export const HomPage = () => {
   return (

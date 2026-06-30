@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 import anime from "animejs";
 
-const GRID_WIDTH = 18;
-const GRID_HEIGHT = 12;
+const GRID_WIDTH = 12;
+const GRID_HEIGHT = 8;
 
 const DotGrid = () => {
   const animationRef = useRef<any>(null);
