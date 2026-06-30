@@ -1,12 +1,14 @@
 import { useEffect, useRef } from "react";
 import anime from "animejs";
 
-const GRID_WIDTH = 25;
-const GRID_HEIGHT = 20;
+const GRID_WIDTH = 12;
+const GRID_HEIGHT = 8;
 
 const DotGrid = () => {
   const animationRef = useRef<any>(null);
   const wavePositionRef = useRef<number>(0);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const isActiveRef = useRef(true);
 
   const animateWave = () => {
     if (animationRef.current) {
@@ -33,19 +35,25 @@ const DotGrid = () => {
         from: wavePositionRef.current,
       }),
       complete: () => {
+        if (!isActiveRef.current) return;
         // Mover la posición de la ola al siguiente punto
         wavePositionRef.current = (wavePositionRef.current + 1) % (GRID_WIDTH * GRID_HEIGHT);
         // Programar la siguiente ola
-        setTimeout(animateWave, 200);
+        timeoutRef.current = setTimeout(animateWave, 200);
       },
     });
   };
 
   useEffect(() => {
+    isActiveRef.current = true;
     // Iniciar la ola continua
     animateWave();
 
     return () => {
+      isActiveRef.current = false;
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
       if (animationRef.current) {
         animationRef.current.pause();
       }
@@ -81,8 +89,10 @@ const DotGrid = () => {
         from: clickedIndex,
       }),
       complete: () => {
+        if (!isActiveRef.current) return;
         // Reanudar la ola continua después de la interacción
-        setTimeout(() => {
+        timeoutRef.current = setTimeout(() => {
+          if (!isActiveRef.current) return;
           wavePositionRef.current = (clickedIndex + 1) % (GRID_WIDTH * GRID_HEIGHT);
           animateWave();
         }, 1000);

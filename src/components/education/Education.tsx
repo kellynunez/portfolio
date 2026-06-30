@@ -222,7 +222,7 @@ const education = [
     degree: "Certificado",
     period: "2025",
     time: "21 horas",
-    image: "/certs/pucp-prototipado.png",
+    image: "/certs/pucp-prototipado.webp",
     Icon: SquaresIntersect,
     description:
         "Creación de prototipos con interactividad avanzada. Uso de variables, condicionales y componentes para diseñar flujos complejos y sistemas visuales inteligentes listos para desarrollo.",
@@ -237,7 +237,7 @@ const education = [
     degree: "Bachiller",
     period: "2021 - 2025",
     time: "5 años",
-    image: "/certs/usil-bachiller-comunicacion-publicidad.png",
+    image: "/certs/usil-bachiller-comunicacion-publicidad.webp",
     Icon: GraduationCap,
     description:
         "Conocimientos técnicos en teorías de la comunicación, marketing, publicidad, investigación de mercados y gestión de marcas, desarrollando habilidades en redacción, diseño, y estrategias de comunicación digital y tradicional.",
@@ -252,7 +252,7 @@ const education = [
     degree: "Especialización",
     period: "2022",
     time: "108 horas",
-    image: "/certs/pucp-human-centered-design.png",
+    image: "/certs/pucp-human-centered-design.webp",
     Icon: HandHelping,
     description:
         "Materialización de prototipos interactivos de alta fidelidad en Figma (con implementación de componentes, flujos funcionales y organización de design systems",
@@ -281,7 +281,7 @@ const education = [
     degree: "Certificado",
     period: "2020 - 2022",
     time: "100 horas",
-    image: "/certs/privateacher-ingles.png",
+    image: "/certs/privateacher-ingles.webp",
     Icon: Languages,
     description:
         "Aprendizaje del idioma inglés de manera presencial priorizando el vocabulario y la pronunciación.",
@@ -296,7 +296,7 @@ const education = [
     degree: "Especialización",
     period: "2019 - 2020",
     time: "100 horas",
-    image: "/certs/toulouse-branding.png",
+    image: "/certs/toulouse-branding.webp",
     Icon: BookHeart,
     description:
         "Me especialicé en la creación y gestión integral de marcas, abarcando desde la estrategia de branding y el diseño de identidad visual hasta el storytelling y el marketing digital.",
@@ -325,7 +325,7 @@ const education = [
     degree: "Especialización",
     period: "2017",
     time: "100 horas",
-    image: "/certs/toulouse-experiencia-usuario.png",
+    image: "/certs/toulouse-experiencia-usuario.webp",
     Icon: PanelsTopLeft,
     description:
         "Aprendí a traducir ideas en experiencias digitales intuitivas y atractivas, desde la investigación y conceptualización hasta el prototipado y la validación con usuarios reales.",
@@ -354,7 +354,7 @@ const education = [
     degree: "Certificado",
     period: "2016",
     time: "50 horas",
-    image: "/certs/codecademy-html-css.png",
+    image: "/certs/codecademy-html-css.webp",
     Icon: LayoutTemplate,
     description:
         "Aprendizaje autodidacta en HTML, CSS Intermedio, Media Queries y Javascript.",
@@ -383,7 +383,7 @@ const education = [
     degree: "Licenciatura Técnica",
     period: "2011 - 2014",
     time: "3 años",
-    image: "/certs/leodesign-titulo-publicidad.jpg",
+    image: "/certs/leodesign-titulo-publicidad.webp",
     Icon: GraduationCap,
     description:
       "Formación especializada en diseño gráfico, identidad visual y comunicación visual. Aprendizaje de herramientas de software de diseño gráfico y dibujo técnico.",

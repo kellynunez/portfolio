@@ -1,7 +1,6 @@
 import React from "react";
 import { SectionHeader } from "../util/SectionHeader";
 import { Project } from "./Project";
-import { style } from "framer-motion/client";
 
 export const Projects = () => {
   return (
@@ -20,7 +19,7 @@ export const Projects = () => {
 const projects = [
 /*   {
     title: "Maternal Health App UI",
-    imgSrc: "project-imgs/my-portfolio.png",
+    imgSrc: "/project-imgs/my-portfolio.png",
     projectLink: "",
     tech: ["Figma", "Illustrator"],
     description:
@@ -36,7 +35,7 @@ const projects = [
   },
   {
     title: "Theseus Dark Theme",
-    imgSrc: "project-imgs/my-portfolio.png",
+    imgSrc: "/project-imgs/my-portfolio.png",
     projectLink: "https://voltron-data.netlify.app",
     tech: ["ReactJS", "TailwindCSS", "Sanity", "Motion", "Cursor", "Lottie Files"],
     description:
@@ -51,166 +50,150 @@ const projects = [
   }, */
   {
     title: "Website Corporative",
-    imgSrc: "project-imgs/web-corporative.png",
+    imgSrc: "/project-imgs/web-corporative.webp",
     projectLink: "",
     tech: ["Node", "JekyllRB", "TailwindCSS", "Markdown", "Figma", "Midjourney"],
     description:
       "A social community for painters to connect with others in their community. I handle everything backend (50K monthly active users).",
-    modalContent: (
-      <>
-        <img src="project-imgs/web-corporative/web-header.png" alt="Website Corporative"/>
-        <img src="project-imgs/web-corporative/web-about.png" alt="Website Corporative" className="!mt-0"/>
-        <img src="project-imgs/web-corporative/web-design.png" alt="Website Corporative" className="!mt-0"/>
-        <img src="project-imgs/web-corporative/web-moodboard.png" alt="Website Corporative" className="!mt-0"/>
-        <img src="project-imgs/web-corporative/web-system.png" alt="Website Corporative" className="!mt-0"/>
-        <img src="project-imgs/web-corporative/web-laptop.png" alt="Website Corporative" className="!mt-0"/>
-        <img src="project-imgs/web-corporative/web-wireframes.png" alt="Website Corporative" className="!mt-0"/>
-        <img src="project-imgs/web-corporative/web-kit.png" alt="Website Corporative" className="!mt-0"/>
-        <img src="project-imgs/web-corporative/web-mockup.png" alt="Website Corporative" className="!mt-0"/>
-        <img src="project-imgs/web-corporative/web-home.png" alt="Website Corporative" className="!mt-0"/>
-        <img src="project-imgs/web-corporative/web-laptop-news.png" alt="Website Corporative" className="!mt-0"/>
-        <img src="project-imgs/web-corporative/web-news.png" alt="Website Corporative" className="!mt-0"/>
-        <img src="project-imgs/web-corporative/web-contact.png" alt="Website Corporative" className="!mt-0"/>
-      </>
-    ),
+    galleryImages: [
+      "/project-imgs/web-corporative/web-header.webp",
+      "/project-imgs/web-corporative/web-about.webp",
+      "/project-imgs/web-corporative/web-design.webp",
+      "/project-imgs/web-corporative/web-moodboard.webp",
+      "/project-imgs/web-corporative/web-system.webp",
+      "/project-imgs/web-corporative/web-laptop.webp",
+      "/project-imgs/web-corporative/web-wireframes.webp",
+      "/project-imgs/web-corporative/web-kit.webp",
+      "/project-imgs/web-corporative/web-mockup.webp",
+      "/project-imgs/web-corporative/web-home.webp",
+      "/project-imgs/web-corporative/web-laptop-news.webp",
+      "/project-imgs/web-corporative/web-news.webp",
+      "/project-imgs/web-corporative/web-contact.webp",
+    ],
   },
   {
     title: "Brand Identity",
-    imgSrc: "project-imgs/brand-identity.png",
+    imgSrc: "/project-imgs/brand-identity.webp",
     projectLink: "",
     tech: ["Notion", "Adobe CC", "Midjourney", "Google Slides", "Acrobat"],
     description:
       "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
-    modalContent: (
-      <>
-        <img src="project-imgs/brand-identity/branding-header.png" alt="Brand Identity"/>
-        <img src="project-imgs/brand-identity/branding-notion.png" alt="Brand Identity" className="!mt-0"/>
-        <img src="project-imgs/brand-identity/branding-letterhead.png" alt="Brand Identity" className="!mt-0"/>
-        <img src="project-imgs/brand-identity/branding-icons.png" alt="Brand Identity" className="!mt-0"/>
-        <img src="project-imgs/brand-identity/branding-stationary.png" alt="Brand Identity" className="!mt-0"/>
-        <img src="project-imgs/brand-identity/branding-merch.png" alt="Brand Identity" className="!mt-0"/>
-        <img src="project-imgs/brand-identity/branding-booth.png" alt="Brand Identity" className="!mt-0"/>
-      </>
-    ),
+    galleryImages: [
+      "/project-imgs/brand-identity/branding-header.webp",
+      "/project-imgs/brand-identity/branding-notion.webp",
+      "/project-imgs/brand-identity/branding-letterhead.webp",
+      "/project-imgs/brand-identity/branding-icons.webp",
+      "/project-imgs/brand-identity/branding-stationary.webp",
+      "/project-imgs/brand-identity/branding-merch.webp",
+      "/project-imgs/brand-identity/branding-booth.webp",
+    ],
   },
   {
     title: "Social Media",
-    imgSrc: "project-imgs/social-media.png",
+    imgSrc: "/project-imgs/social-media.webp",
     projectLink: "",
     tech: ["Illustrator", "Photoshop"],
     description:
       "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
-    modalContent: (
-      <>
-        <img src="project-imgs/social-media/social-header.png" alt="Social Media"/>
-        <img src="project-imgs/social-media/social-size.png" alt="Social Media" className="!mt-0"/>
-        <img src="project-imgs/social-media/social-linkedin.png" alt="Social Media" className="!mt-0"/>
-        <img src="project-imgs/social-media/social-seo.png" alt="Social Media" className="!mt-0"/>
-        <img src="project-imgs/social-media/social-post.png" alt="Social Media" className="!mt-0"/>
-        <img src="project-imgs/social-media/social-monopoly.png" alt="Social Media" className="!mt-0"/>
-      </>
-    ),
+    galleryImages: [
+      "/project-imgs/social-media/social-header.webp",
+      "/project-imgs/social-media/social-size.webp",
+      "/project-imgs/social-media/social-linkedin.webp",
+      "/project-imgs/social-media/social-seo.webp",
+      "/project-imgs/social-media/social-post.webp",
+      "/project-imgs/social-media/social-monopoly.webp",
+    ],
   },
   {
     title: "Creative Pitch Deck",
-    imgSrc: "project-imgs/pitch-deck.png",
+    imgSrc: "/project-imgs/pitch-deck.webp",
     projectLink: "",
     tech: ["Google Slides", "Keynote", "Illustrator"],
     description:
       "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
-    modalContent: (
-      <>
-        <img src="project-imgs/pitch-deck/slides-header.png" alt="Pitch Deck"/>
-        <img src="project-imgs/pitch-deck/slides-guides.png" alt="Pitch Deck" className="!mt-0"/>
-        <img src="project-imgs/pitch-deck/slides-spacedat.png" alt="Pitch Deck" className="!mt-0"/>
-        <img src="project-imgs/pitch-deck/slides-niubiz.png" alt="Pitch Deck" className="!mt-0"/>
-        <img src="project-imgs/pitch-deck/slides-rappi.png" alt="Pitch Deck" className="!mt-0"/>
-        <img src="project-imgs/pitch-deck/slides-avelina.png" alt="Pitch Deck" className="!mt-0"/>
-        <img src="project-imgs/pitch-deck/slides-lalucha.png" alt="Pitch Deck" className="!mt-0"/>
-        <img src="project-imgs/pitch-deck/slides-cybergarden.png" alt="Pitch Deck" className="!mt-0"/>
-        <img src="project-imgs/pitch-deck/slides-university.png" alt="Pitch Deck" className="!mt-0"/>
-      </>
-    ),
+    galleryImages: [
+      "/project-imgs/pitch-deck/slides-header.webp",
+      "/project-imgs/pitch-deck/slides-guides.webp",
+      "/project-imgs/pitch-deck/slides-spacedat.webp",
+      "/project-imgs/pitch-deck/slides-niubiz.webp",
+      "/project-imgs/pitch-deck/slides-rappi.webp",
+      "/project-imgs/pitch-deck/slides-avelina.webp",
+      "/project-imgs/pitch-deck/slides-lalucha.webp",
+      "/project-imgs/pitch-deck/slides-cybergarden.webp",
+      "/project-imgs/pitch-deck/slides-university.webp",
+    ],
   },
   {
     title: "Web App Projects",
-    imgSrc: "project-imgs/webapp-project.png",
+    imgSrc: "/project-imgs/webapp-project.webp",
     projectLink: "",
     tech: ["Linux", "VueJS", "Sass", "Materialize"],
     description:
       "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
-    modalContent: (
-      <>
-        <img src="project-imgs/app-project/app-header.png" alt="WebApp Projects"/>
-        <img src="project-imgs/app-project/app-login.png" alt="WebApp Projects" className="!mt-0"/>
-        <img src="project-imgs/app-project/app-blazing.png" alt="WebApp Projects" className="!mt-0"/>
-        <img src="project-imgs/app-project/app-dev.png" alt="WebApp Projects" className="!mt-0"/>
-        <img src="project-imgs/app-project/app-spacedat.png" alt="WebApp Projects" className="!mt-0"/>
-        <img src="project-imgs/app-project/app-navbar.png" alt="WebApp Projects" className="!mt-0"/>
-        <img src="project-imgs/app-project/app-dashboard.png" alt="WebApp Projects" className="!mt-0"/>
-        <img src="project-imgs/app-project/app-mystery.png" alt="WebApp Projects" className="!mt-0"/>
-        <img src="project-imgs/app-project/app-livetrade.png" alt="WebApp Projects" className="!mt-0"/>
-        <img src="project-imgs/app-project/app-mobile.png" alt="WebApp Projects" className="!mt-0"/>
-      </>
-    ),
+    galleryImages: [
+      "/project-imgs/app-project/app-header.webp",
+      "/project-imgs/app-project/app-login.webp",
+      "/project-imgs/app-project/app-blazing.webp",
+      "/project-imgs/app-project/app-dev.webp",
+      "/project-imgs/app-project/app-spacedat.webp",
+      "/project-imgs/app-project/app-navbar.webp",
+      "/project-imgs/app-project/app-dashboard.webp",
+      "/project-imgs/app-project/app-mystery.webp",
+      "/project-imgs/app-project/app-livetrade.webp",
+      "/project-imgs/app-project/app-mobile.webp",
+    ],
   },
   {
     title: "User Interfaces",
-    imgSrc: "project-imgs/user-interfaces.png",
+    imgSrc: "/project-imgs/user-interfaces.webp",
     projectLink: "",
     tech: ["TailwindCSS", "Figma"],
     description:
       "Think Zapier but for paint. Built with a team of four college friends and scaled to > 1 billion requests per day. This was a fun one.",
-    modalContent: (
-      <>
-        <img src="project-imgs/user-interface/ui-header.png" alt="User Interfaces"/>
-        <img src="project-imgs/user-interface/ui-page.png" alt="User Interfaces" className="!mt-0"/>
-        <img src="project-imgs/user-interface/ui-hero.png" alt="User Interfaces" className="!mt-0"/>
-        <img src="project-imgs/user-interface/ui-content.png" alt="User Interfaces" className="!mt-0"/>
-        <img src="project-imgs/user-interface/ui-conference.png" alt="User Interfaces" className="!mt-0"/>
-        <img src="project-imgs/user-interface/ui-web.png" alt="User Interfaces" className="!mt-0"/>
-      </>
-    ),
+    galleryImages: [
+      "/project-imgs/user-interface/ui-header.webp",
+      "/project-imgs/user-interface/ui-page.webp",
+      "/project-imgs/user-interface/ui-hero.webp",
+      "/project-imgs/user-interface/ui-content.webp",
+      "/project-imgs/user-interface/ui-conference.webp",
+      "/project-imgs/user-interface/ui-web.webp",
+    ],
   },
   {
     title: "POS Systems Interface",
-    imgSrc: "project-imgs/pos-niubiz.png",
+    imgSrc: "/project-imgs/pos-niubiz.webp",
     projectLink: "",
     tech: ["Figma", "Illustrator", "Miro"],
     description:
       "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
-    modalContent: (
-      <>
-        <img src="project-imgs/pos-niubiz/pos-header.png" alt="POS Systems Interface"/>
-        <img src="project-imgs/pos-niubiz/pos-user.png" alt="POS Systems Interface" className="!mt-0"/>
-        <img src="project-imgs/pos-niubiz/pos-niubiz.png" alt="POS Systems Interface" className="!mt-0"/>
-        <img src="project-imgs/pos-niubiz/pos-mobile.png" alt="POS Systems Interface" className="!mt-0"/>
-        <img src="project-imgs/pos-niubiz/pos-landing.png" alt="POS Systems Interface" className="!mt-0"/>
-        <img src="project-imgs/pos-niubiz/pos-ux1.png" alt="POS Systems Interface" className="!mt-0"/>
-        <img src="project-imgs/pos-niubiz/pos-ux2.png" alt="POS Systems Interface" className="!mt-0"/>
-      </>
-    ),
+    galleryImages: [
+      "/project-imgs/pos-niubiz/pos-header.webp",
+      "/project-imgs/pos-niubiz/pos-user.webp",
+      "/project-imgs/pos-niubiz/pos-niubiz.webp",
+      "/project-imgs/pos-niubiz/pos-mobile.webp",
+      "/project-imgs/pos-niubiz/pos-landing.webp",
+      "/project-imgs/pos-niubiz/pos-ux1.webp",
+      "/project-imgs/pos-niubiz/pos-ux2.webp",
+    ],
   },
   {
     title: "Advertising Campaigns",
-    imgSrc: "project-imgs/ads-campaigns.png",
+    imgSrc: "/project-imgs/ads-campaigns.webp",
     projectLink: "",
     tech: ["Photoshop", "Office"],
     description:
       "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
-    modalContent: (
-      <>
-        <img src="project-imgs/ads-campaigns/ads-header.png" alt="Advertising Campaigns"/>
-        <img src="project-imgs/ads-campaigns/ads-feed.png" alt="Advertising Campaigns" className="!mt-0"/>
-        <img src="project-imgs/ads-campaigns/ads-label.png" alt="Advertising Campaigns" className="!mt-0"/>
-        <img src="project-imgs/ads-campaigns/ads-banner.png" alt="Advertising Campaigns" className="!mt-0"/>
-        <img src="project-imgs/ads-campaigns/ads-exterior.png" alt="Advertising Campaigns" className="!mt-0"/>
-        <img src="project-imgs/ads-campaigns/ads-jingle.png" alt="Advertising Campaigns" className="!mt-0"/>
-        <img src="project-imgs/ads-campaigns/ads-mockup.png" alt="Advertising Campaigns" className="!mt-0"/>
-        <img src="project-imgs/ads-campaigns/ads-news.png" alt="Advertising Campaigns" className="!mt-0"/>
-        <img src="project-imgs/ads-campaigns/ads-flyer.png" alt="Advertising Campaigns" className="!mt-0"/>
-      </>
-    ),
+    galleryImages: [
+      "/project-imgs/ads-campaigns/ads-header.webp",
+      "/project-imgs/ads-campaigns/ads-feed.webp",
+      "/project-imgs/ads-campaigns/ads-label.webp",
+      "/project-imgs/ads-campaigns/ads-banner.webp",
+      "/project-imgs/ads-campaigns/ads-exterior.webp",
+      "/project-imgs/ads-campaigns/ads-jingle.webp",
+      "/project-imgs/ads-campaigns/ads-mockup.webp",
+      "/project-imgs/ads-campaigns/ads-news.webp",
+      "/project-imgs/ads-campaigns/ads-flyer.webp",
+    ],
   },
 ];
 

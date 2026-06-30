@@ -5,6 +5,13 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID;
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
+const ANALYTICS_ENABLED =
+  process.env.NODE_ENV === "production" &&
+  process.env.NEXT_PUBLIC_ENABLE_ANALYTICS === "true";
+// Si GTM esta activo, GA se gestiona desde GTM para evitar doble carga.
+const SHOULD_LOAD_GA =
+  ANALYTICS_ENABLED && !Boolean(GTM_ID) && Boolean(GA_MEASUREMENT_ID);
 
 const pageview = (url: string) => {
   if (!GA_MEASUREMENT_ID || typeof window.gtag !== "function") return;
@@ -17,7 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   useEffect(() => {
-    if (!GA_MEASUREMENT_ID) return;
+    if (!SHOULD_LOAD_GA) return;
 
     const handleRouteChange = (url: string) => {
       pageview(url);
@@ -31,7 +38,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      {GA_MEASUREMENT_ID && (
+      {SHOULD_LOAD_GA && (
         <>
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}

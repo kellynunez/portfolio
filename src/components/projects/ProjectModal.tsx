@@ -2,21 +2,22 @@ import { useEffect } from "react";
 import ReactDOM from "react-dom";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { AiFillGithub, AiOutlineExport } from "react-icons/ai";
+import Image from "next/image";
+import { AiOutlineExport } from "react-icons/ai";
 import { MdClose } from "react-icons/md";
 
 interface Props {
   isOpen: boolean;
-  setIsOpen: Function;
+  setIsOpen: (isOpen: boolean) => void;
   title: string;
   imgSrc: string;
   projectLink: string;
   tech: string[];
-  modalContent: JSX.Element;
+  galleryImages: string[];
 }
 
 export const ProjectModal = ({
-  modalContent,
+  galleryImages,
   projectLink,
   setIsOpen,
   imgSrc,
@@ -25,13 +26,14 @@ export const ProjectModal = ({
   tech,
 }: Props) => {
   useEffect(() => {
-    const body = document.querySelector("body");
+    const body = document.body;
+    const previousOverflowY = body.style.overflowY;
 
-    if (isOpen) {
-      body!.style.overflowY = "hidden";
-    } else {
-      body!.style.overflowY = "scroll";
-    }
+    body.style.overflowY = "hidden";
+
+    return () => {
+      body.style.overflowY = previousOverflowY || "scroll";
+    };
   }, [isOpen]);
 
   const content = (
@@ -49,9 +51,12 @@ export const ProjectModal = ({
         onClick={(e) => e.stopPropagation()}
         className="w-full max-w-2xl h-fit rounded-lg overflow-hidden bg-slate-100 shadow-lg cursor-auto"
       >
-        <img
-          className="w-full"
+        <Image
+          className="w-full h-auto"
           src={imgSrc}
+          width={1200}
+          height={675}
+          sizes="(max-width: 768px) 95vw, 900px"
           alt={`An image of the ${title} project.`}
         />
         <div className="p-8">
@@ -61,24 +66,36 @@ export const ProjectModal = ({
           </div>
 
           <div className="space-y-4 my-6 leading-relaxed text-sm text-gray-800">
-            {modalContent}
+            {galleryImages.map((imageSrc) => (
+              <Image
+                key={imageSrc}
+                src={imageSrc}
+                width={1200}
+                height={675}
+                sizes="(max-width: 768px) 95vw, 900px"
+                className="w-full h-auto"
+                alt={`${title} showcase`}
+              />
+            ))}
           </div>
 
-          <div>
-            <p className="font-bold mb-2 text-xl text-gray-800">
-              Project Link<span className="text-indigo-500">.</span>
-            </p>
-            <div className="flex items-center gap-4 text-sm">
-              <Link
-                target="_blank"
-                rel="nofollow"
-                className="text-blue-500 hover:text-blue-700 transition-colors flex items-center gap-1"
-                href={projectLink}
-              >
-                <AiOutlineExport /> Live Project
-              </Link>
+          {projectLink.trim() && (
+            <div>
+              <p className="font-bold mb-2 text-xl text-gray-800">
+                Project Link<span className="text-indigo-500">.</span>
+              </p>
+              <div className="flex items-center gap-4 text-sm">
+                <Link
+                  target="_blank"
+                  rel="nofollow"
+                  className="text-blue-500 hover:text-blue-700 transition-colors flex items-center gap-1"
+                  href={projectLink}
+                >
+                  <AiOutlineExport /> Live Project
+                </Link>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </motion.div>
     </div>
