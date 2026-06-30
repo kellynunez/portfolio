@@ -200,15 +200,15 @@ const projects = [
       "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
     modalContent: (
       <>
-        <img src="project-imgs/ads-campaigns/ads-header.png" alt="Advertising Campaigns"/>
-        <img src="project-imgs/ads-campaigns/ads-feed.png" alt="Advertising Campaigns" className="!mt-0"/>
-        <img src="project-imgs/ads-campaigns/ads-label.png" alt="Advertising Campaigns" className="!mt-0"/>
-        <img src="project-imgs/ads-campaigns/ads-banner.png" alt="Advertising Campaigns" className="!mt-0"/>
-        <img src="project-imgs/ads-campaigns/ads-exterior.png" alt="Advertising Campaigns" className="!mt-0"/>
-        <img src="project-imgs/ads-campaigns/ads-jingle.png" alt="Advertising Campaigns" className="!mt-0"/>
-        <img src="project-imgs/ads-campaigns/ads-mockup.png" alt="Advertising Campaigns" className="!mt-0"/>
-        <img src="project-imgs/ads-campaigns/ads-news.png" alt="Advertising Campaigns" className="!mt-0"/>
-        <img src="project-imgs/ads-campaigns/ads-flyer.png" alt="Advertising Campaigns" className="!mt-0"/>
+        <img src="project-imgs/ads-campaigns/ads-header.webp" alt="Advertising Campaigns"/>
+        <img src="project-imgs/ads-campaigns/ads-feed.webp" alt="Advertising Campaigns" className="!mt-0"/>
+        <img src="project-imgs/ads-campaigns/ads-label.webp" alt="Advertising Campaigns" className="!mt-0"/>
+        <img src="project-imgs/ads-campaigns/ads-banner.webp" alt="Advertising Campaigns" className="!mt-0"/>
+        <img src="project-imgs/ads-campaigns/ads-exterior.webp" alt="Advertising Campaigns" className="!mt-0"/>
+        <img src="project-imgs/ads-campaigns/ads-jingle.webp" alt="Advertising Campaigns" className="!mt-0"/>
+        <img src="project-imgs/ads-campaigns/ads-mockup.webp" alt="Advertising Campaigns" className="!mt-0"/>
+        <img src="project-imgs/ads-campaigns/ads-news.webp" alt="Advertising Campaigns" className="!mt-0"/>
+        <img src="project-imgs/ads-campaigns/ads-flyer.webp" alt="Advertising Campaigns" className="!mt-0"/>
       </>
     ),
   },
