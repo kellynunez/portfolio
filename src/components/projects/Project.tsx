@@ -2,6 +2,7 @@ import { useAnimation, useInView, motion } from "framer-motion";
 // import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import { AiOutlineExport } from "react-icons/ai";
 import Reveal from "../util/Reveal";
 
@@ -62,14 +63,16 @@ export const Project = ({
           onClick={() => setIsOpen(true)}
           className="w-full aspect-video bg-zinc-700 cursor-pointer relative rounded-lg overflow-hidden"
         >
-          <img
+          <Image
             src={imgSrc}
-            loading="lazy"
-            decoding="async"
+            width={1200}
+            height={675}
+            sizes="(max-width: 768px) 92vw, (max-width: 1200px) 46vw, 520px"
             alt={`An image of the ${title} project.`}
             style={{
               width: hovered ? "92%" : "90%",
               rotate: hovered ? "2deg" : "0deg",
+              height: "auto",
             }}
             className="w-[85%] absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/4 transition-all rounded"
           />

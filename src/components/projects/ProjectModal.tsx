@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import ReactDOM from "react-dom";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { AiOutlineExport } from "react-icons/ai";
 import { MdClose } from "react-icons/md";
 
@@ -49,11 +50,12 @@ export const ProjectModal = ({
         onClick={(e) => e.stopPropagation()}
         className="w-full max-w-2xl h-fit rounded-lg overflow-hidden bg-slate-100 shadow-lg cursor-auto"
       >
-        <img
-          className="w-full"
+        <Image
+          className="w-full h-auto"
           src={imgSrc}
-          loading="lazy"
-          decoding="async"
+          width={1200}
+          height={675}
+          sizes="(max-width: 768px) 95vw, 900px"
           alt={`An image of the ${title} project.`}
         />
         <div className="p-8">
@@ -64,11 +66,13 @@ export const ProjectModal = ({
 
           <div className="space-y-4 my-6 leading-relaxed text-sm text-gray-800">
             {galleryImages.map((imageSrc) => (
-              <img
+              <Image
                 key={imageSrc}
                 src={imageSrc}
-                loading="lazy"
-                decoding="async"
+                width={1200}
+                height={675}
+                sizes="(max-width: 768px) 95vw, 900px"
+                className="w-full h-auto"
                 alt={`${title} showcase`}
               />
             ))}
