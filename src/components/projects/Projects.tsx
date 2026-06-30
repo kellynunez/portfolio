@@ -58,19 +58,19 @@ const projects = [
       "A social community for painters to connect with others in their community. I handle everything backend (50K monthly active users).",
     modalContent: (
       <>
-        <img src="project-imgs/web-corporative/web-header.png" alt="Website Corporative"/>
-        <img src="project-imgs/web-corporative/web-about.png" alt="Website Corporative" className="!mt-0"/>
-        <img src="project-imgs/web-corporative/web-design.png" alt="Website Corporative" className="!mt-0"/>
-        <img src="project-imgs/web-corporative/web-moodboard.png" alt="Website Corporative" className="!mt-0"/>
-        <img src="project-imgs/web-corporative/web-system.png" alt="Website Corporative" className="!mt-0"/>
-        <img src="project-imgs/web-corporative/web-laptop.png" alt="Website Corporative" className="!mt-0"/>
-        <img src="project-imgs/web-corporative/web-wireframes.png" alt="Website Corporative" className="!mt-0"/>
-        <img src="project-imgs/web-corporative/web-kit.png" alt="Website Corporative" className="!mt-0"/>
-        <img src="project-imgs/web-corporative/web-mockup.png" alt="Website Corporative" className="!mt-0"/>
-        <img src="project-imgs/web-corporative/web-home.png" alt="Website Corporative" className="!mt-0"/>
-        <img src="project-imgs/web-corporative/web-laptop-news.png" alt="Website Corporative" className="!mt-0"/>
-        <img src="project-imgs/web-corporative/web-news.png" alt="Website Corporative" className="!mt-0"/>
-        <img src="project-imgs/web-corporative/web-contact.png" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-header.webp" alt="Website Corporative"/>
+        <img src="project-imgs/web-corporative/web-about.webp" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-design.webp" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-moodboard.webp" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-system.webp" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-laptop.webp" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-wireframes.webp" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-kit.webp" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-mockup.webp" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-home.webp" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-laptop-news.webp" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-news.webp" alt="Website Corporative" className="!mt-0"/>
+        <img src="project-imgs/web-corporative/web-contact.webp" alt="Website Corporative" className="!mt-0"/>
       </>
     ),
   },
