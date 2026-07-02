@@ -25,6 +25,10 @@ export const ProjectModal = ({
   title,
   tech,
 }: Props) => {
+  const blockImageActions = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+  };
+
   useEffect(() => {
     const body = document.body;
     const previousOverflowY = body.style.overflowY;
@@ -49,16 +53,31 @@ export const ProjectModal = ({
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         onClick={(e) => e.stopPropagation()}
+        onContextMenu={blockImageActions}
         className="w-full max-w-2xl h-fit rounded-lg overflow-hidden bg-slate-100 shadow-lg cursor-auto"
       >
-        <Image
-          className="w-full h-auto"
-          src={imgSrc}
-          width={1200}
-          height={675}
-          sizes="(max-width: 768px) 95vw, 900px"
-          alt={`An image of the ${title} project.`}
-        />
+        <div
+          className="relative"
+          onContextMenu={blockImageActions}
+          onDragStart={blockImageActions}
+        >
+          <Image
+            className="w-full h-auto select-none"
+            src={imgSrc}
+            width={1200}
+            height={675}
+            sizes="(max-width: 768px) 95vw, 900px"
+            unoptimized
+            alt={`An image of the ${title} project.`}
+            draggable={false}
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 z-10 bg-transparent"
+            onContextMenu={blockImageActions}
+            onDragStart={blockImageActions}
+          />
+        </div>
         <div className="p-8">
           <h4 className="text-3xl font-bold mb-2 text-gray-800">{title}</h4>
           <div className="flex flex-wrap gap-2 text-sm text-slate-400">
@@ -67,15 +86,29 @@ export const ProjectModal = ({
 
           <div className="space-y-4 my-6 leading-relaxed text-sm text-gray-800">
             {galleryImages.map((imageSrc) => (
-              <Image
+              <div
                 key={imageSrc}
-                src={imageSrc}
-                width={1200}
-                height={675}
-                sizes="(max-width: 768px) 95vw, 900px"
-                className="w-full h-auto"
-                alt={`${title} showcase`}
-              />
+                className="relative"
+                onContextMenu={blockImageActions}
+                onDragStart={blockImageActions}
+              >
+                <Image
+                  src={imageSrc}
+                  width={1200}
+                  height={675}
+                  sizes="(max-width: 768px) 95vw, 900px"
+                  unoptimized
+                  className="w-full h-auto select-none"
+                  alt={`${title} showcase`}
+                  draggable={false}
+                />
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 z-10 bg-transparent"
+                  onContextMenu={blockImageActions}
+                  onDragStart={blockImageActions}
+                />
+              </div>
             ))}
           </div>
 

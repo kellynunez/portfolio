@@ -45,6 +45,10 @@ export const Project = ({
     }
   }, [isInView, controls]);
 
+  const blockImageActions = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+  };
+
   return (
     <>
       <motion.div
@@ -61,20 +65,30 @@ export const Project = ({
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
           onClick={() => setIsOpen(true)}
-          className="w-full aspect-video bg-zinc-700 cursor-pointer relative rounded-lg overflow-hidden"
+          onContextMenu={blockImageActions}
+          onDragStart={blockImageActions}
+          className="w-full aspect-video bg-zinc-700 cursor-pointer relative rounded-lg overflow-hidden select-none"
         >
           <Image
             src={imgSrc}
             width={1200}
             height={675}
             sizes="(max-width: 768px) 92vw, (max-width: 1200px) 46vw, 520px"
+            unoptimized
             alt={`An image of the ${title} project.`}
+            draggable={false}
             style={{
               width: hovered ? "92%" : "90%",
               rotate: hovered ? "2deg" : "0deg",
               height: "auto",
             }}
             className="w-[85%] absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/4 transition-all rounded"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 z-10 bg-transparent"
+            onContextMenu={blockImageActions}
+            onDragStart={blockImageActions}
           />
         </div>
         <div className="mt-6">
