@@ -12,7 +12,7 @@ export default function Home() {
   const description = "Especialista en identidad de marca y desarrollo frontend con más de 10 años de experiencia unificando la estrategia de branding con la ejecución técnica de productos digitales escalables.";
   const title = "Kelly Núñez | Lead Product Designer & Web Dev";
   const url = "https://kelly-nunez.com";
-  const image = `${url}/kelly-nunez-portfolio.png`;
+  const image = `${url}/project-imgs/kelly-nunez-portfolio.png`;
 
   const structuredData = {
     "@context": "https://schema.org",
