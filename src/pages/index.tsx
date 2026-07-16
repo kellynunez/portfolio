@@ -12,7 +12,7 @@ export default function Home() {
   const description = "Diseño y desarrollo soluciones digitales escalables. Especialista en la intersección del diseño gráfico, UI/UX y el desarrollo frontend. Enfocada en crear productos coherentes que combinan estética de marca y viabilidad técnica.";
   const title = "Kelly Núñez | Design Engineer: Branding, UI/UX & Frontend";
   const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://kelly-nunez.com").replace(/\/$/, "");
-  const imagePath = "/project-imgs/kelly-nunez-portfolio.png";
+  const imagePath = "/kelly-nunez-portfolio.png";
   const image = `${siteUrl}${imagePath}`;
 
   const structuredData = {
