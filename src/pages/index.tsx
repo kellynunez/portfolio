@@ -1,6 +1,6 @@
 import { JetBrains_Mono } from "next/font/google";
 import { HomPage } from "@/components";
-import Head from "next/head"; // 1. Importa el componente Head
+import Head from "next/head";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -9,17 +9,18 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export default function Home() {
-  const description = "Especialista en identidad de marca y desarrollo frontend con más de 10 años de experiencia unificando la estrategia de branding con la ejecución técnica de productos digitales escalables.";
-  const title = "Kelly Núñez | Lead Product Designer & Web Dev";
-  const url = "https://kelly-nunez.com";
-  const image = `${url}/kelly-nunez-portfolio.png`;
+  const description = "Diseño y desarrollo soluciones digitales escalables. Especialista en la intersección del diseño gráfico, UI/UX y el desarrollo frontend. Enfocada en crear productos coherentes que combinan estética de marca y viabilidad técnica.";
+  const title = "Kelly Núñez | Design Engineer: Branding, UI/UX & Frontend";
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://kelly-nunez.com").replace(/\/$/, "");
+  const imagePath = "/kelly-nunez-portfolio.png";
+  const image = `${siteUrl}${imagePath}`;
 
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Kelly Núñez",
-    url: url,
-    jobTitle: "Lead Product Designer & Web Developer",
+    url: siteUrl,
+    jobTitle: "Design Engineer | Branding, UI/UX & Frontend",
     description: description,
     image: image,
     sameAs: [
@@ -40,33 +41,38 @@ export default function Home() {
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
-        <meta name="keywords" content="Product Designer, Web Developer, UI/UX, Frontend, Brand Identity, Digital Products" />
+        <meta name="keywords" content="Design Engineer, Graphic, Publicity, Product Designer, Web Developer, UI/UX, Frontend, Brand Identity, Branding Digital Products" />
         <meta name="author" content="Kelly Núñez" />
         
         {/* Canonical URL */}
-        <link rel="canonical" href={url} />
+        <link rel="canonical" href={siteUrl} />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={url} />
+        <meta property="og:url" content={siteUrl} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
+        <meta property="og:image:url" content={image} />
+        <meta property="og:image:secure_url" content={image} />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:alt" content="Vista previa del portafolio de Kelly Núñez" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:locale" content="es_ES" />
         
         {/* Twitter */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content={url} />
-        <meta property="twitter:title" content={title} />
-        <meta property="twitter:description" content={description} />
-        <meta property="twitter:image" content={image} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={siteUrl} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={image} />
+        <meta name="twitter:image:alt" content="Preview of the portfolio of Kelly Núñez" />
         <meta name="twitter:creator" content="@kellynunez" />
         
         {/* Additional SEO */}
         <meta name="format-detection" content="telephone=no" />
-        <link rel="alternate" hrefLang="es" href={url} />
+        <link rel="alternate" hrefLang="es" href={siteUrl} />
         
         {/* Structured Data - JSON-LD */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
