@@ -3,11 +3,19 @@ import dynamic from "next/dynamic";
 import { SideBar } from "./nav/SideBar";
 import { Header } from "./nav/Header";
 import Hero from "./hero/Hero";
-import { About } from "./about/About";
-import { Experience } from "./experience/Experience";
 
 const Projects = dynamic(
   () => import("./projects/Projects").then((mod) => mod.Projects),
+  { ssr: false }
+);
+
+const About = dynamic(
+  () => import("./about/About").then((mod) => mod.About),
+  { ssr: false }
+);
+
+const Experience = dynamic(
+  () => import("./experience/Experience").then((mod) => mod.Experience),
   { ssr: false }
 );
 

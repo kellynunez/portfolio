@@ -1,5 +1,6 @@
 import Reveal from "../util/Reveal";
 import NeuFollowButton from "../buttons/NeuFollowButton";
+import DotGrid from "./DotGrid";
 import TypewriterText from "../util/TypewriterText";
 
 const Hero = () => {
@@ -9,13 +10,13 @@ const Hero = () => {
         <div className="pointer-events-none relative z-10">
           <Reveal>
             <h1 className="pointer-events-auto text-4xl sm:text-6xl font-black text-zinc-100 md:text-8xl leading-tight pb-3">
-              <TypewriterText 
-                text="Hola, soy Kelly" 
-                speed={150} 
+              <TypewriterText
+                text="Hola, soy Kelly"
+                speed={150}
                 delay={500}
                 className="text-zinc-100"
               />
-              {<span className="text-[#F5F000]">🦄</span>}
+              <span className="text-[#F5F000]">🦄</span>
             </h1>
           </Reveal>
           <Reveal>
@@ -31,7 +32,7 @@ const Hero = () => {
                   animation: 'gradient-shift 3s ease-in-out infinite'
                 }}
               >
-                Design Engineer: Branding, UI/UX & Frontend
+                &lt;Design Engineer /&gt;
               </span>
             </h2>
           </Reveal>
@@ -52,10 +53,9 @@ const Hero = () => {
             </div>
           </Reveal>
         </div>
-        <div
-          aria-hidden="true"
-          className="pointer-events-none hidden md:block absolute right-0 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full border border-zinc-700/40 bg-[radial-gradient(circle_at_center,rgba(0,255,133,0.16),transparent_55%),radial-gradient(circle_at_70%_30%,rgba(255,0,153,0.12),transparent_32%),radial-gradient(circle_at_30%_70%,rgba(30,144,255,0.12),transparent_30%)] blur-3xl"
-        />
+        <div className="block motion-reduce:hidden">
+          <DotGrid />
+        </div>
       </div>
     </section>
   );

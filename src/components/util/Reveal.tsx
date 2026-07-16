@@ -1,47 +1,56 @@
-import { useEffect, useRef } from "react";
-import { useAnimation, useInView, motion } from "framer-motion";
+import { ReactNode, useEffect, useRef, useState } from "react";
 
 interface RevealProps {
-  children: JSX.Element;
+  children: ReactNode;
   width?: string;
 }
 
 export const Reveal = ({ children, width = "w-fit" }: RevealProps) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  const mainControls = useAnimation();
-  const slideControls = useAnimation();
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (isInView) {
-      mainControls.start("visible");
-      slideControls.start("visible");
+    const element = ref.current;
+    if (!element) return;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setIsVisible(true);
+      return;
     }
-  }, [isInView]);
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.15,
+        rootMargin: "0px 0px -8% 0px",
+      }
+    );
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div ref={ref} className={`relative overflow-hidden ${width}`}>
-      <motion.div
-        variants={{
-          hidden: { opacity: 0, y: 75 },
-          visible: { opacity: 1, y: 0 },
-        }}
-        initial="hidden"
-        animate={mainControls}
-        transition={{ duration: 0.5, delay: 0.25 }}
+      <div
+        style={{ willChange: "transform, opacity" }}
+        className={`transition-all duration-700 ease-out ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+        }`}
       >
         {children}
-      </motion.div>
-      <motion.div
-        variants={{
-          hidden: { left: 0 },
-          visible: { left: "100%" },
-        }}
-        initial="hidden"
-        animate={slideControls}
-        transition={{ duration: 0.5, ease: "easeIn" }}
-        className="absolute bottom-1 left-0 right-0 top-1 z-20 bg-[#00FF85]"
+      </div>
+      <div
+        aria-hidden="true"
+        className={`pointer-events-none absolute inset-0 z-10 bg-zinc-900 transition-transform duration-700 ease-out ${
+          isVisible ? "translate-x-full" : "translate-x-0"
+        }`}
       />
     </div>
   );

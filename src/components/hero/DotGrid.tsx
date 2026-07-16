@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 import anime from "animejs";
 
-const GRID_WIDTH = 12;
-const GRID_HEIGHT = 8;
+const GRID_WIDTH = 14;
+const GRID_HEIGHT = 10;
 
 const DotGrid = () => {
   const animationRef = useRef<any>(null);
@@ -15,38 +15,34 @@ const DotGrid = () => {
       animationRef.current.pause();
     }
 
-    // Crear una ola que se propaga desde la posición actual
     animationRef.current = anime({
       targets: ".dot-point",
       scale: [
-        { value: 1.35, easing: "easeOutSine", duration: 300 },
-        { value: 1, easing: "easeInOutQuad", duration: 300 },
+        { value: 1.45, easing: "easeOutSine", duration: 420 },
+        { value: 1, easing: "easeInOutQuad", duration: 420 },
       ],
       translateY: [
-        { value: -15, easing: "easeOutSine", duration: 300 },
-        { value: 0, easing: "easeInOutQuad", duration: 300 },
+        { value: -18, easing: "easeOutSine", duration: 420 },
+        { value: 0, easing: "easeInOutQuad", duration: 420 },
       ],
       opacity: [
-        { value: 1, easing: "easeOutSine", duration: 300 },
-        { value: 0.5, easing: "easeInOutQuad", duration: 300 },
+        { value: 1, easing: "easeOutSine", duration: 420 },
+        { value: 0.55, easing: "easeInOutQuad", duration: 420 },
       ],
-      delay: anime.stagger(50, {
+      delay: anime.stagger(42, {
         grid: [GRID_WIDTH, GRID_HEIGHT],
         from: wavePositionRef.current,
       }),
       complete: () => {
         if (!isActiveRef.current) return;
-        // Mover la posición de la ola al siguiente punto
         wavePositionRef.current = (wavePositionRef.current + 1) % (GRID_WIDTH * GRID_HEIGHT);
-        // Programar la siguiente ola
-        timeoutRef.current = setTimeout(animateWave, 200);
+        timeoutRef.current = setTimeout(animateWave, 260);
       },
     });
   };
 
   useEffect(() => {
     isActiveRef.current = true;
-    // Iniciar la ola continua
     animateWave();
 
     return () => {
@@ -61,41 +57,38 @@ const DotGrid = () => {
   }, []);
 
   const handleDotClick = (e: any) => {
-    // Pausar la ola actual
     if (animationRef.current) {
       animationRef.current.pause();
     }
 
-    // Animar desde el punto clickeado
     const clickedIndex = parseInt(e.target.dataset.index);
     wavePositionRef.current = clickedIndex;
 
     anime({
       targets: ".dot-point",
       scale: [
-        { value: 1.35, easing: "easeOutSine", duration: 250 },
-        { value: 1, easing: "easeInOutQuad", duration: 500 },
+        { value: 1.45, easing: "easeOutSine", duration: 340 },
+        { value: 1, easing: "easeInOutQuad", duration: 620 },
       ],
       translateY: [
-        { value: -15, easing: "easeOutSine", duration: 250 },
-        { value: 0, easing: "easeInOutQuad", duration: 500 },
+        { value: -18, easing: "easeOutSine", duration: 340 },
+        { value: 0, easing: "easeInOutQuad", duration: 620 },
       ],
       opacity: [
-        { value: 1, easing: "easeOutSine", duration: 250 },
-        { value: 0.5, easing: "easeInOutQuad", duration: 500 },
+        { value: 1, easing: "easeOutSine", duration: 340 },
+        { value: 0.55, easing: "easeInOutQuad", duration: 620 },
       ],
-      delay: anime.stagger(100, {
+      delay: anime.stagger(90, {
         grid: [GRID_WIDTH, GRID_HEIGHT],
         from: clickedIndex,
       }),
       complete: () => {
         if (!isActiveRef.current) return;
-        // Reanudar la ola continua después de la interacción
         timeoutRef.current = setTimeout(() => {
           if (!isActiveRef.current) return;
           wavePositionRef.current = (clickedIndex + 1) % (GRID_WIDTH * GRID_HEIGHT);
           animateWave();
-        }, 1000);
+        }, 1100);
       },
     });
   };
@@ -107,7 +100,7 @@ const DotGrid = () => {
     for (let j = 0; j < GRID_HEIGHT; j++) {
       dots.push(
         <div
-          className="group cursor-crosshair rounded-full p-2 transition-colors hover:bg-[#1E90FF]/30"
+          className="group cursor-crosshair rounded-full p-3.5 transition-colors hover:bg-[#1E90FF]/30"
           data-index={index}
           key={`${i}-${j}`}
         >
@@ -125,7 +118,7 @@ const DotGrid = () => {
     <div
       onClick={handleDotClick}
       style={{ gridTemplateColumns: `repeat(${GRID_WIDTH}, 1fr)` }}
-      className="absolute right-0 top-[50%] z-0 grid max-w-[75%] -translate-y-[50%]"
+      className="absolute right-0 -bottom-20 z-0 grid max-w-[110%] scale-75 origin-bottom-right sm:-bottom-16 sm:max-w-[104%] sm:scale-90 md:-bottom-20 md:max-w-[96%] md:scale-100"
     >
       {dots}
     </div>
