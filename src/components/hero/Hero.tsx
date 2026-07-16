@@ -9,18 +9,18 @@ const Hero = () => {
       <div className="relative z-10">
         <div className="pointer-events-none relative z-10">
           <Reveal>
-            <h1 className="pointer-events-auto text-4xl sm:text-6xl font-black text-zinc-100 md:text-8xl leading-tight pb-3">
+            <h1 className="pointer-events-auto text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-zinc-100 leading-tight pb-3">
               <TypewriterText
                 text="Hola, soy Kelly"
                 speed={150}
                 delay={500}
                 className="text-zinc-100"
               />
-              <span className="text-[#F5F000]">🦄</span>
+              <span className="ml-2 inline-block text-[#F5F000]">🦄</span>
             </h1>
           </Reveal>
           <Reveal>
-            <h2 className="pointer-events-auto my-2 text-xl sm:text-2xl text-zinc-100 md:my-4 md:text-4xl">
+            <h2 className="pointer-events-auto my-2 md:my-4 text-2xl md:text-3xl lg:text-4xl text-zinc-100">
               <span 
                 className="font-semibold"
                 style={{
@@ -37,7 +37,7 @@ const Hero = () => {
             </h2>
           </Reveal>
           <Reveal>
-            <p className="pointer-events-auto leading-relaxed md:leading-relaxed max-w-3xl text-sm md:text-lg text-zinc-300 font-medium tracking-wide">
+            <p className="pointer-events-auto leading-relaxed md:leading-relaxed max-w-3xl text-base md:text-lg text-zinc-300 font-medium tracking-wide">
               Especialista en arquitectura de interfaces. Integración de identidad de marca, diseño publicitario y sistemas UI/UX en arquitecturas frontend escalables.
             </p>
           </Reveal>

@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import { SideBar } from "./nav/SideBar";
 import { Header } from "./nav/Header";
 import Hero from "./hero/Hero";
+import RibbonWords from "./hero/RibbonWords";
 
 const Projects = dynamic(
   () => import("./projects/Projects").then((mod) => mod.Projects),
@@ -42,6 +43,7 @@ export const HomPage = () => {
     <Header />
     <div className="mx-auto max-w-md md:max-w-3xl lg:max-w-5xl px-4 md:px-8 space-y-32 pb-24">
       <Hero />
+      <RibbonWords />
       <About />
       <Projects />
       <Experience />

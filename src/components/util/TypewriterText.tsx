@@ -7,6 +7,7 @@ interface TypewriterTextProps {
   className?: string;
   preserveStyles?: boolean;
   onComplete?: () => void;
+  showCursorAfterComplete?: boolean;
 }
 
 const TypewriterText: React.FC<TypewriterTextProps> = ({ 
@@ -15,11 +16,13 @@ const TypewriterText: React.FC<TypewriterTextProps> = ({
   delay = 0,
   className = "",
   preserveStyles = false,
-  onComplete
+  onComplete,
+  showCursorAfterComplete = false
 }) => {
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isStarted, setIsStarted] = useState(false);
+  const [isComplete, setIsComplete] = useState(false);
 
   useEffect(() => {
     if (delay > 0) {
@@ -43,9 +46,14 @@ const TypewriterText: React.FC<TypewriterTextProps> = ({
 
       return () => clearTimeout(timer);
     } else if (isStarted && currentIndex >= text.length && onComplete) {
+      setIsComplete(true);
       onComplete();
+    } else if (isStarted && currentIndex >= text.length) {
+      setIsComplete(true);
     }
   }, [currentIndex, text, speed, isStarted, onComplete]);
+
+  const shouldShowCursor = !isComplete || showCursorAfterComplete;
 
   if (preserveStyles) {
     return (
@@ -63,7 +71,7 @@ const TypewriterText: React.FC<TypewriterTextProps> = ({
   return (
     <span className={className}>
       {displayText}
-      <span className="animate-pulse">|</span>
+      {shouldShowCursor && <span className="animate-pulse">|</span>}
     </span>
   );
 };
