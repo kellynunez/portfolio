@@ -45,7 +45,11 @@ export const ProjectModal = ({
       className="fixed inset-0 z-50 px-4 py-12 bg-zinc-950/50 backdrop-blur overflow-y-scroll flex justify-center cursor-pointer"
       onClick={() => setIsOpen(false)}
     >
-      <button className="absolute top-4 md:top-6 text-xl right-4">
+      <button
+        type="button"
+        onClick={() => setIsOpen(false)}
+        className="absolute top-4 md:top-6 text-xl right-4"
+      >
         <MdClose />
       </button>
 
@@ -136,6 +140,5 @@ export const ProjectModal = ({
 
   if (!isOpen) return <></>;
 
-  // @ts-ignore
-  return ReactDOM.createPortal(content, document.getElementById("root"));
+  return ReactDOM.createPortal(content, document.body);
 };

@@ -1,5 +1,4 @@
 import Reveal from "../util/Reveal";
-import DotGrid from "./DotGrid";
 import NeuFollowButton from "../buttons/NeuFollowButton";
 import TypewriterText from "../util/TypewriterText";
 
@@ -53,9 +52,10 @@ const Hero = () => {
             </div>
           </Reveal>
         </div>
-        <div className="hidden md:block motion-reduce:hidden">
-          <DotGrid />
-        </div>
+        <div
+          aria-hidden="true"
+          className="pointer-events-none hidden md:block absolute right-0 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full border border-zinc-700/40 bg-[radial-gradient(circle_at_center,rgba(0,255,133,0.16),transparent_55%),radial-gradient(circle_at_70%_30%,rgba(255,0,153,0.12),transparent_32%),radial-gradient(circle_at_30%_70%,rgba(30,144,255,0.12),transparent_30%)] blur-3xl"
+        />
       </div>
     </section>
   );

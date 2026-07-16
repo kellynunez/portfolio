@@ -4,8 +4,12 @@ import { SideBar } from "./nav/SideBar";
 import { Header } from "./nav/Header";
 import Hero from "./hero/Hero";
 import { About } from "./about/About";
-import { Projects } from "./projects/Projects";
 import { Experience } from "./experience/Experience";
+
+const Projects = dynamic(
+  () => import("./projects/Projects").then((mod) => mod.Projects),
+  { ssr: false }
+);
 
 const Education = dynamic(
   () => import("./education/Education").then((mod) => mod.Education),
