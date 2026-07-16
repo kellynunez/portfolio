@@ -1,6 +1,6 @@
 import { JetBrains_Mono } from "next/font/google";
 import { HomPage } from "@/components";
-import Head from "next/head"; // 1. Importa el componente Head
+import Head from "next/head";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -9,8 +9,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export default function Home() {
-  const description = "Especialista en identidad de marca y desarrollo frontend con más de 10 años de experiencia unificando la estrategia de branding con la ejecución técnica de productos digitales escalables.";
-  const title = "Kelly Núñez | Lead Product Designer & Web Dev";
+  const description = "Diseño y desarrollo soluciones digitales escalables. Especialista en la intersección del diseño gráfico, UI/UX y el desarrollo frontend. Enfocada en crear productos coherentes que combinan estética de marca y viabilidad técnica.";
+  const title = "Kelly Núñez | Design Engineer | Branding, UI/UX & Frontend";
   const url = "https://kelly-nunez.com";
   const image = `${url}/project-imgs/kelly-nunez-portfolio.png`;
 
@@ -19,7 +19,7 @@ export default function Home() {
     "@type": "Person",
     name: "Kelly Núñez",
     url: url,
-    jobTitle: "Lead Product Designer & Web Developer",
+    jobTitle: "Design Engineer | Branding, UI/UX & Frontend",
     description: description,
     image: image,
     sameAs: [
@@ -40,7 +40,7 @@ export default function Home() {
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
-        <meta name="keywords" content="Product Designer, Web Developer, UI/UX, Frontend, Brand Identity, Digital Products" />
+        <meta name="keywords" content="Design Engineer, Graphic, Publicity, Product Designer, Web Developer, UI/UX, Frontend, Brand Identity, Branding Digital Products" />
         <meta name="author" content="Kelly Núñez" />
         
         {/* Canonical URL */}

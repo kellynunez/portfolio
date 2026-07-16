@@ -32,13 +32,13 @@ const Hero = () => {
                   animation: 'gradient-shift 3s ease-in-out infinite'
                 }}
               >
-                Lead Product Designer & Web Developer
+                Design Engineer | Branding, UI/UX & Frontend
               </span>
             </h2>
           </Reveal>
           <Reveal>
             <p className="pointer-events-auto leading-relaxed md:leading-relaxed max-w-3xl text-sm md:text-lg text-zinc-300 font-medium tracking-wide">
-              Enfocada en la intersección de Diseño de Producto, Sistemas Escalables y Desarrollo Frontend. Experiencia en consistencia de marca con viabilidad técnica en producción.
+              Especialista en arquitectura de interfaces. Integración de identidad de marca, diseño publicitario y sistemas UI/UX en arquitecturas frontend escalables.
             </p>
           </Reveal>
           <Reveal>
