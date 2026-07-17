@@ -9,7 +9,7 @@ const csp = [
   "img-src 'self' data: blob: https:",
   "font-src 'self' data:",
   "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com",
-  "frame-src https://www.googletagmanager.com",
+  "frame-src https://www.googletagmanager.com https://app.netlify.com",
   "form-action 'self'",
   "upgrade-insecure-requests",
 ].join('; ');
