@@ -11,7 +11,7 @@ const ProjectModal = dynamic(
 );
 
 interface Props {
-  galleryImages: string[];
+  galleryImages?: string[];
   description: string;
   projectLink: string;
   imgSrc: string;
@@ -117,7 +117,7 @@ export const Project = ({
       </motion.div>
       {isOpen && (
         <ProjectModal
-          galleryImages={galleryImages}
+          galleryImages={galleryImages ?? [imgSrc]}
           projectLink={projectLink}
           setIsOpen={setIsOpen}
           isOpen={isOpen}
