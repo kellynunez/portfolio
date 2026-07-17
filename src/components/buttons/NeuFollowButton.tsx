@@ -96,7 +96,7 @@ const NeuFollowButton: React.FC<NeuFollowButtonProps> = ({
   };
 
   return (
-    <div className={`h-20 w-92 max-w-92 bg-black ${className}`}>
+    <div className={`w-92 max-w-92 bg-black ${className}`}>
       <motion.button
         ref={ref}
         style={{
@@ -112,8 +112,7 @@ const NeuFollowButton: React.FC<NeuFollowButtonProps> = ({
         onMouseDown={handleReset}
         onClick={onClick}
         className="group flex h-[70px] md:h-[80px] w-full items-center justify-between text-black 
-         text-xl font-semibold 
-         bg-gradient-to-r from-[#FF0099] via-[#00FF85] to-[#FF0099] bg-[length:200%_100%] animate-gradient-x"
+         text-xl font-semibold bg-gradient-to-r from-[#FF0099] via-[#00FF85] to-[#FF0099] bg-[length:200%_100%] animate-gradient-x"
       >
         <div className="px-6 h-[70px] md:h-[80px] w-[165px] flex items-center bg-white font-jetbrains-mono">
           <Copy>{text}</Copy>

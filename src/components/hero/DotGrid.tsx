@@ -118,7 +118,7 @@ const DotGrid = () => {
     <div
       onClick={handleDotClick}
       style={{ gridTemplateColumns: `repeat(${GRID_WIDTH}, 1fr)` }}
-      className="absolute right-0 -bottom-20 z-0 grid max-w-[110%] scale-75 origin-bottom-right sm:-bottom-16 sm:max-w-[104%] sm:scale-90 md:-bottom-20 md:max-w-[96%] md:scale-100"
+      className="absolute right-0 -bottom-24 z-0 grid max-w-[80%] scale-75 origin-bottom-right sm:-bottom-16 sm:max-w-[104%] sm:scale-90 md:-bottom-20 md:max-w-[96%] md:scale-100"
     >
       {dots}
     </div>
