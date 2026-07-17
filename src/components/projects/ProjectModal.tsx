@@ -58,7 +58,7 @@ export const ProjectModal = ({
         animate={{ y: 0, opacity: 1 }}
         onClick={(e) => e.stopPropagation()}
         onContextMenu={blockImageActions}
-        className="w-full max-w-2xl h-fit rounded-lg overflow-hidden bg-slate-100 shadow-lg cursor-auto"
+        className="w-full max-w-2xl h-fit overflow-hidden bg-slate-100 shadow-lg cursor-auto"
       >
         <div
           className="relative"

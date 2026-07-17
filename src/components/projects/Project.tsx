@@ -66,7 +66,7 @@ export const Project = ({
           onClick={() => setIsOpen(true)}
           onContextMenu={blockImageActions}
           onDragStart={blockImageActions}
-          className="w-full aspect-video bg-zinc-700 cursor-pointer relative rounded-lg overflow-hidden select-none"
+          className="w-full aspect-video bg-zinc-700 cursor-pointer relative overflow-hidden select-none"
         >
           <Image
             src={imgSrc}

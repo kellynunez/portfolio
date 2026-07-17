@@ -19,7 +19,7 @@ export const Experience = () => {
         <div className="flex justify-center mt-8">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="px-6 py-3 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 rounded-lg transition-colors duration-200 border border-zinc-700 hover:border-zinc-600"
+            className="px-6 py-3 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 transition-colors duration-200 border border-zinc-700 hover:border-zinc-600"
           >
             {showAll ? "Mostrar menos" : `Mostrar ${experience.length - 3} más`}
           </button>
