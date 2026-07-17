@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import {
   FiChevronLeft,
+  FiChevronDown,
   FiChevronRight,
   FiEye,
   FiEyeOff,
@@ -53,7 +54,7 @@ export const Education = () => {
             type="button"
             aria-label="Ver educación anterior"
             title="Ver educación anterior"
-            className="h-fit bg-zinc-800 hover:bg-zinc-700 p-3 text-2xl text-zinc-300 transition-colors rounded-lg"
+            className="h-fit bg-zinc-800 hover:bg-zinc-700 p-3 text-2xl text-zinc-300 transition-colors border border-zinc-700"
             onClick={shiftLeft}
             disabled={position === 0}
           >
@@ -63,7 +64,7 @@ export const Education = () => {
             type="button"
             aria-label="Ver siguiente educación"
             title="Ver siguiente educación"
-            className="h-fit bg-zinc-800 hover:bg-zinc-700 p-3 text-2xl text-zinc-300 transition-colors rounded-lg"
+            className="h-fit bg-zinc-800 hover:bg-zinc-700 p-3 text-2xl text-zinc-300 transition-colors border border-zinc-700"
             onClick={shiftRight}
             disabled={position === education.length - 1}
           >
@@ -97,13 +98,13 @@ export const Education = () => {
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-5xl w-full bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden shadow-2xl cursor-default"
+              className="relative max-w-5xl w-full bg-zinc-900 border border-zinc-800 overflow-hidden shadow-2xl cursor-default"
             >
               <div className="flex items-center justify-between p-4 border-b border-zinc-800 bg-zinc-900/50">
                 <span className="text-zinc-400 text-sm font-medium">Vista previa</span>
                 <button 
                   onClick={() => setSelectedImg(null)}
-                  className="p-2 hover:bg-zinc-800 rounded-full text-zinc-400 hover:text-white transition-colors"
+                  className="p-2 hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors"
                 >
                   ✕
                 </button>
@@ -112,7 +113,7 @@ export const Education = () => {
                 <img 
                   src={selectedImg} 
                   alt="Certificado" 
-                  className="max-h-[75vh] w-auto object-contain shadow-lg rounded-sm"
+                  className="max-h-[75vh] w-auto object-contain shadow-lg"
                 />
               </div>
             </motion.div>
@@ -141,6 +142,7 @@ const EducationCard = ({
   const translateAmt = position >= index ? index * 100 : index * 100 - 100 * (index - position);
 
   const hasCertificate = Boolean(image);
+  const [showAchievements, setShowAchievements] = useState(false);
 
   return (
     <motion.div
@@ -149,7 +151,7 @@ const EducationCard = ({
         ease: "easeInOut",
         duration: 0.35,
       }}
-      className={`relative flex min-h-[300px] w-10/12 max-w-lg shrink-0 flex-col justify-between overflow-hidden p-8 shadow-lg md:w-3/5 rounded-lg ${
+      className={`relative flex min-h-[300px] w-10/12 max-w-lg shrink-0 flex-col justify-between overflow-hidden p-8 shadow-lg md:w-3/5 ${
         index % 2 ? "bg-zinc-800 text-white" : "bg-zinc-900 text-zinc-300 border border-zinc-700"
       }`}
     >
@@ -190,15 +192,27 @@ const EducationCard = ({
 
         {achievements && achievements.length > 0 && (
           <div>
-            <h4 className="mb-2 font-normal text-[#FF0099]">Logros destacados:</h4>
-            <ul className="space-y-1">
-              {achievements.map((achievement, idx) => (
-                <li key={idx} className="text-sm flex items-start gap-2">
-                  <FiAward className="text-[#00FF85] mt-1 flex-shrink-0" />
-                  <span>{achievement}</span>
-                </li>
-              ))}
-            </ul>
+            <button
+              type="button"
+              onClick={() => setShowAchievements((pv) => !pv)}
+              className="mb-2 flex items-center gap-2 text-sm font-base text-[#00FF85] hover:opacity-90 transition-opacity"
+            >
+              <span>{showAchievements ? "Ver menos" : "Ver logros"}</span>
+              <FiChevronDown
+                className={`transition-transform duration-200 ${showAchievements ? "rotate-180" : "rotate-0"}`}
+              />
+            </button>
+
+            {showAchievements && (
+              <ul className="space-y-1">
+                {achievements.map((achievement, idx) => (
+                  <li key={idx} className="text-sm flex items-start gap-2">
+                    <FiAward className="text-[#00FF85] mt-1 flex-shrink-0" />
+                    <span>{achievement}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         )}
       </div>
@@ -207,10 +221,10 @@ const EducationCard = ({
 };
 
 const education = [
-/*   {
-    title: "E-commerce y Gestión de Contenidos",
+  {
+    title: "Frontend & Backend",
     institution: "ISIL Educación Ejecutiva",
-    degree: "[En curso]",
+    degree: "Certificado en espera",
     period: "2026",
     time: "4 meses",
     Icon: GlobeLock,
@@ -219,9 +233,9 @@ const education = [
     achievements: [
         "Fortalecimiento de la integridad digital (Ethical Hacking)",
         "Gestión de plataformas E-commerce: Woocommerce y Shopify",
-        "...",
+        "Proyecto frontend y backend integrados con bases de datos y APIs",
     ]
-  }, */
+  },
   {
     title: "Prototipado UI Avanzado en Figma: Interactividad y Animación",
     institution: "Facultad de Arte y Diseño (PUCP)",
@@ -240,7 +254,7 @@ const education = [
   {
     title: "Comunicación y Publicidad",
     institution: "Universidad San Ignasio de Loyola (USIL)",
-    degree: "Bachiller",
+    degree: "Licenciatura en trámite Sunedu",
     period: "2021 - 2025",
     time: "5 años",
     image: "/certs/usil-bachiller-comunicacion-publicidad.webp",
@@ -248,8 +262,8 @@ const education = [
     description:
         "Conocimientos técnicos en teorías de la comunicación, marketing, publicidad, investigación de mercados y gestión de marcas, desarrollando habilidades en redacción, diseño, y estrategias de comunicación digital y tradicional.",
     achievements: [
-        "Desarrollo de estrategias de comunicación integral.",
-        "Tercio Superior"
+        "Tercio Superior según ranking académico de la universidad",
+        "Mencion Honorífica en tesis de licenciatura = 19"
     ]
   },
   {
@@ -343,7 +357,7 @@ const education = [
   {
     title: "Computación e Informática",
     institution: "Instituto Cibertec",
-    degree: "5 ciclos",
+    degree: "4 ciclos",
     period: "2016 - 2017",
     time: "18 meses",
     Icon: Computer,

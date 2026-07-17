@@ -17,7 +17,7 @@ export const Projects = () => {
 };
 
 const projects = [
-/*   {
+  {
     title: "Maternal Health App UI",
     imgSrc: "/project-imgs/my-portfolio.png",
     projectLink: "",
@@ -47,7 +47,7 @@ const projects = [
         </p>
       </>
     ),
-  }, */
+  },
   {
     title: "Website Corporative",
     imgSrc: "/project-imgs/web-corporative.webp",
