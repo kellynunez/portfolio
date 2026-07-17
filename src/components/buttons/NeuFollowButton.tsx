@@ -111,14 +111,14 @@ const NeuFollowButton: React.FC<NeuFollowButtonProps> = ({
         onMouseEnter={scramble}
         onMouseDown={handleReset}
         onClick={onClick}
-        className="group flex min-h-[50px] h-full w-full items-center justify-between text-black 
+        className="group flex h-[70px] md:h-[80px] w-full items-center justify-between text-black 
          text-xl font-semibold 
-         transition-all duration-300 bg-gradient-to-r from-[#FF0099] via-[#00FF85] to-[#FF0099] bg-[length:200%_100%] animate-gradient-x"
+         bg-gradient-to-r from-[#FF0099] via-[#00FF85] to-[#FF0099] bg-[length:200%_100%] animate-gradient-x"
       >
-        <div className="px-6 h-[80px] w-[165px] flex items-center bg-white font-jetbrains-mono">
+        <div className="px-6 h-[70px] md:h-[80px] w-[165px] flex items-center bg-white font-jetbrains-mono">
           <Copy>{text}</Copy>
         </div>
-        <div className="px-7 group-hover:pl-7 group-hover:pr-9 border-l border-black group-hover:bg-[#00FF85] border-r-0 group-hover:text-[#FFFFFF] h-[80px] flex items-center">
+        <div className="px-7 group-hover:pl-7 group-hover:pr-9 border-l border-black group-hover:bg-[#00FF85] border-r-0 group-hover:text-[#FFFFFF] h-[70px] md:h-[80px] flex items-center">
           <Arrow />
         </div>
         

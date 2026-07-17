@@ -4,17 +4,9 @@ const WORDS = ["Branding", "🖌️", "UI/UX", "📐", "Frontend", "🌐"];
 
 const RibbonWords = () => {
   return (
-    <section className="relative left-1/2 w-screen -translate-x-1/2 -mt-8 mb-2 overflow-hidden py-2">
-      <div className="flex translate-y-1/2 rotate-3 scale-110 overflow-hidden border-y-2 border-zinc-700 bg-zinc-100">
-        <TranslateWrapper>
-          <WordItems />
-        </TranslateWrapper>
-        <TranslateWrapper>
-          <WordItems />
-        </TranslateWrapper>
-      </div>
+    <section className="relative left-1/2 -ml-[50vw] -mr-[50vw] -mt-8 mb-2 w-screen max-w-none overflow-hidden py-2">
 
-      <div className="flex -translate-y-1/2 -rotate-2 scale-110 overflow-hidden border-y-2 border-zinc-700 bg-zinc-100">
+      <div className="flex scale-110 overflow-hidden border-y border-transparent bg-white">
         <TranslateWrapper reverse>
           <WordItems />
         </TranslateWrapper>
@@ -51,7 +43,7 @@ const WordItems = () => (
       WORDS.map((word, wordIndex) => (
         <span
           key={`${rowIndex}-${wordIndex}-${word}`}
-          className="px-5 py-5 text-lg font-extrabold tracking-wide text-black md:px-8 md:py-6"
+          className="px-5 py-5 text-lg font-extrabold tracking-wide !text-black md:px-8 md:py-6"
         >
           {word}
         </span>
