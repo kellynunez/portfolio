@@ -19,7 +19,7 @@ export const Projects = () => {
 const projects = [
   {
     title: "Maternal Health App UI",
-    imgSrc: "/project-imgs/my-portfolio.png",
+    imgSrc: "/project-imgs/web-corporative.png",
     projectLink: "",
     tech: ["Figma", "Illustrator"],
     description:
@@ -35,7 +35,7 @@ const projects = [
   },
   {
     title: "Theseus Dark Theme",
-    imgSrc: "/project-imgs/my-portfolio.png",
+    imgSrc: "/project-imgs/web-corporative.png",
     projectLink: "https://voltron-data.netlify.app",
     tech: ["ReactJS", "TailwindCSS", "Sanity", "Motion", "Cursor", "Lottie Files"],
     description:
