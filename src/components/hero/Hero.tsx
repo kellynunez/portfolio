@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="relative z-10">
         <div className="pointer-events-none relative z-10">
           <Reveal>
-            <h1 className="pointer-events-auto text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-zinc-100 leading-tight pb-3">
+            <h1 className="pointer-events-auto text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-zinc-100 leading-tight pb-3">
               <TypewriterText
                 text="Hola, soy Kelly"
                 speed={150}
@@ -37,7 +37,7 @@ const Hero = () => {
             </h2>
           </Reveal>
           <Reveal>
-            <p className="pointer-events-auto leading-relaxed md:leading-relaxed max-w-3xl text-base md:text-lg text-zinc-300 font-medium tracking-wide">
+            <p className="pointer-events-auto leading-relaxed md:leading-relaxed max-w-3xl text-base md:text-lg text-zinc-200 font-medium tracking-wide">
               Especialista en arquitectura de interfaces. Integración de identidad de marca, diseño publicitario y sistemas UI/UX en arquitecturas frontend escalables.
             </p>
           </Reveal>
@@ -53,7 +53,7 @@ const Hero = () => {
             </div>
           </Reveal>
         </div>
-        <div className="block motion-reduce:hidden">
+        <div className="block motion-reduce:hidden opacity-50">
           <DotGrid />
         </div>
       </div>
