@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import { SideBarLink } from "./SideBarLink";
 
 export const SideBar = () => {
@@ -26,10 +25,7 @@ export const SideBar = () => {
   }, []);
 
   return (
-    <motion.nav
-      initial={{ x: -70 }}
-      animate={{ x: 0 }}
-      transition={{ duration: 0.5 }}
+    <nav
       className="no-scrollbar bg-zinc-950 h-screen sticky top-0 left-0 z-20 flex flex-col items-center overflow-y-scroll"
     >
       <span className="shrink-0 text-xl font-black leading-[1] size-10 flex items-center justify-center my-4">
@@ -75,6 +71,6 @@ export const SideBar = () => {
       >
         Contact
       </SideBarLink>
-    </motion.nav>
+    </nav>
   );
 };

@@ -17,13 +17,13 @@ export const About = () => {
               <span className="bg-[#00FF85] text-black py-2 px-3 rounded font-bold mr-1 float-left text-2xl">
                 S
               </span>
-              oy Kelly Núñez, una profesional tech-creativa con más de 10 años de trayectoria liderando la intersección entre diseño y tecnología. Mi carrera se ha caracterizado por una constante búsqueda de la excelencia académica y el liderazgo de equipos para crear productos digitales con identidad propia. Implemento metodologías de vanguardia como el prototipado generativo con IA, lo que me permite explorar conceptos de marca e interfaces con una agilidad superior, optimizando los tiempos de iteración y validando soluciones de alto impacto con mayor precisión.
+              oy Kelly Núñez, Design Engineer con más de 10 años de trayectoria liderando la intersección entre diseño estratégico y desarrollo técnico. Mi enfoque combina la agilidad del prototipado moderno con una visión creativa sólida, permitiéndome transformar conceptos de marca en interfaces digitales de alto impacto. Mi trabajo se orienta a optimizar procesos de iteración y validación, asegurando que cada solución no solo sea estética, sino funcionalmente superior.
             </p>
           </Reveal>
           
           <Reveal>
             <p className="leading-relaxed text-zinc-300">
-              Mi enfoque técnico se centra en la construcción de sitios web nativos desde cero, garantizando un control total sobre el rendimiento y la escalabilidad. Domino el desarrollo frontend moderno con React, Next.js y Tailwind CSS, además de gestionar ecosistemas CMS y e-commerce de alto rendimiento. Utilizo TypeScript y entornos colaborativos en GitHub para asegurar que cada línea de código sea robusta, mantenible y esté alineada con los estándares de una arquitectura de software profesional y la implementación de sistemas de diseño escalables.
+              En el ámbito técnico, me especializo en la arquitectura de sitios web nativos, priorizando el rendimiento, la escalabilidad y la mantenibilidad del código. Domino el desarrollo frontend mediante un stack moderno que incluye React, Next.js, Tailwind CSS y TypeScript, además de gestionar ecosistemas e-commerce complejos. Potencio mi flujo de trabajo integrando agentes de IA para el desarrollo y diseño, garantizando que cada componente desarrollado sea eficiente, modular y escalable.
             </p>
           </Reveal>
 
@@ -43,7 +43,7 @@ export const About = () => {
             {/* Envolvemos en un Fragment para que Reveal reciba un solo hijo */}
             <>
               <p className="leading-relaxed text-zinc-300">
-                Como Principal Product Designer, mi labor es asegurar la coherencia absoluta entre el branding y la experiencia de usuario. Diseño sistemas visuales escalables que no solo cumplen objetivos estéticos, sino que están construidos para evolucionar técnicamente. Estoy buscando nuevos desafíos donde mi visión estratégica y mi dominio del código puedan impulsar productos digitales innovadores. Si buscas una colaboración donde la ejecución técnica y la sensibilidad creativa se encuentren, ¡hablemos!
+                Mi rol principal es asegurar una coherencia absoluta entre el branding y la experiencia de usuario final. Diseño sistemas visuales construidos para evolucionar técnica y gráficamente, asegurando que la identidad de marca se traduzca con precisión al código. Estoy en búsqueda constante de desafíos donde mi visión estratégica y mi dominio técnico puedan impulsar productos innovadores; si buscas una colaboración que integre rigor técnico y sensibilidad creativa, ¡hablemos!.
               </p>
               <button 
                 onClick={() => setShowMore(false)}

@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { AiOutlineExport } from "react-icons/ai";
-import Reveal from "../util/Reveal";
 
 const ProjectModal = dynamic(
   () => import("./ProjectModal").then((mod) => mod.ProjectModal),
@@ -12,7 +11,7 @@ const ProjectModal = dynamic(
 );
 
 interface Props {
-  galleryImages: string[];
+  galleryImages?: string[];
   description: string;
   projectLink: string;
   imgSrc: string;
@@ -67,7 +66,7 @@ export const Project = ({
           onClick={() => setIsOpen(true)}
           onContextMenu={blockImageActions}
           onDragStart={blockImageActions}
-          className="w-full aspect-video bg-zinc-700 cursor-pointer relative rounded-lg overflow-hidden select-none"
+          className="w-full aspect-video bg-zinc-700 cursor-pointer relative overflow-hidden select-none"
         >
           <Image
             src={imgSrc}
@@ -92,28 +91,17 @@ export const Project = ({
           />
         </div>
         <div className="mt-6">
-          <Reveal width="w-full">
-            <div className="flex items-center gap-2 w-full">
-              <h4 className="font-bold text-lg shrink-0 max-w-[calc(100%_-_150px)]">
-                {title}
-              </h4>
-              <div className="w-full h-[1px] bg-zinc-600" />
-{/* 
-              <Link href={code} target="_blank" rel="nofollow">
-                <AiFillGithub className="text-xl text-zinc-300 hover:text-indigo-300 transition-colors" />
-              </Link> */}
+          <div className="flex items-center gap-2 w-full">
+            <h4 className="font-bold text-lg shrink-0 max-w-[calc(100%_-_150px)]">
+              {title}
+            </h4>
+            <div className="w-full h-[1px] bg-zinc-600" />
 
-              {/* <Link href={projectLink} target="_blank" rel="nofollow"> */}
-              {/* <Link href={projectLink} target="_blank" rel="nofollow"> */}
-                <AiOutlineExport className="w-8 text-zinc-300 hover:text-green-400 transition-colors cursor-pointer" onClick={() => setIsOpen(true)} />
-              {/* </Link> */}
-            </div>
-          </Reveal>
-          <Reveal>
-            <div className="flex flex-wrap gap-4 text-sm text-green-400 my-2">
-              {tech.join(" - ")}
-            </div>
-          </Reveal>
+            <AiOutlineExport className="w-8 text-zinc-300 hover:text-green-400 transition-colors cursor-pointer" onClick={() => setIsOpen(true)} />
+          </div>
+          <div className="flex flex-wrap gap-4 text-sm text-green-400 my-2">
+            {tech.join(" - ")}
+          </div>
 {/*           <Reveal>
             <p className="text-zinc-300 leading-relaxed">
               {description}{" "}
@@ -129,7 +117,7 @@ export const Project = ({
       </motion.div>
       {isOpen && (
         <ProjectModal
-          galleryImages={galleryImages}
+          galleryImages={galleryImages ?? [imgSrc]}
           projectLink={projectLink}
           setIsOpen={setIsOpen}
           isOpen={isOpen}

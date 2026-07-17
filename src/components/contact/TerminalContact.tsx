@@ -6,11 +6,34 @@ import {
   FormEvent,
   Fragment,
   MutableRefObject,
+  ReactNode,
   SetStateAction,
   useEffect,
   useRef,
   useState,
 } from "react";
+
+const RotatingGradientBorder = ({
+  children,
+  className = "",
+  duration = 6,
+}: {
+  children: ReactNode;
+  className?: string;
+  duration?: number;
+}) => {
+  return (
+    <div className={`relative rounded-lg p-px ${className}`}>
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div
+          className="h-[200%] w-[200%] -translate-x-1/4 -translate-y-1/4 animate-spin"
+
+        />
+      </div>
+      <div className="relative">{children}</div>
+    </div>
+  );
+};
 
 const TerminalContact = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -21,24 +44,27 @@ const TerminalContact = () => {
       
       className="px-4 pt-12 pb-5 max-w-xl mx-auto"
     >
-      <TerminalHeader />
-      <div
-        ref={containerRef}
-        onClick={() => {
-          inputRef.current?.focus();
-        }}
-        className="h-auto px-10 pb-12 bg-zinc-800 backdrop-blur rounded-b-lg w-full max-w-3xl mx-auto overflow-y-scroll shadow-xl cursor-text font-mono"
-      >
-        
-        <TerminalBody inputRef={inputRef} containerRef={containerRef} />
-      </div>
+      <RotatingGradientBorder className="w-full max-w-3xl mx-auto" duration={14}>
+        <div className="overflow-hidden">
+          <TerminalHeader />
+          <div
+            ref={containerRef}
+            onClick={() => {
+              inputRef.current?.focus();
+            }}
+            className="h-auto px-10 pb-12 bg-zinc-800 backdrop-blur w-full overflow-y-scroll shadow-xl cursor-text font-mono"
+          >
+            <TerminalBody inputRef={inputRef} containerRef={containerRef} />
+          </div>
+        </div>
+      </RotatingGradientBorder>
     </section>
   );
 };
 
 const TerminalHeader = () => {
   return (
-    <div className="w-full pt-16 bg-zinc-800 rounded-t-lg flex items-center flex-col gap-1 sticky top-0">
+    <div className="w-full pt-16 bg-zinc-800 flex items-center flex-col gap-1 sticky top-0">
       <span className="text-4xl md:text-5xl text-center font-black">
         Contacto<span className="text-[#00FF85]">.</span>
       </span>
@@ -248,7 +274,11 @@ const CurLine = ({
   return (
     <>
       <form onSubmit={onSubmit}>
+        <label htmlFor="terminal-contact-input" className="sr-only">
+          Campo de respuesta del formulario de contacto
+        </label>
         <input
+          id="terminal-contact-input"
           ref={inputRef}
           onChange={onChange}
           value={text}

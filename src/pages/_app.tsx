@@ -38,6 +38,20 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      {GTM_ID && ANALYTICS_ENABLED && (
+        <>
+          <Script id="gtm-init" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+            `}
+          </Script>
+          <Script
+            src={`https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`}
+            strategy="lazyOnload"
+          />
+        </>
+      )}
       {SHOULD_LOAD_GA && (
         <>
           <Script

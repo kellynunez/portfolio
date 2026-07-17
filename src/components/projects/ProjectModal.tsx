@@ -45,7 +45,11 @@ export const ProjectModal = ({
       className="fixed inset-0 z-50 px-4 py-12 bg-zinc-950/50 backdrop-blur overflow-y-scroll flex justify-center cursor-pointer"
       onClick={() => setIsOpen(false)}
     >
-      <button className="absolute top-4 md:top-6 text-xl right-4">
+      <button
+        type="button"
+        onClick={() => setIsOpen(false)}
+        className="absolute top-4 md:top-6 text-xl right-4"
+      >
         <MdClose />
       </button>
 
@@ -54,7 +58,7 @@ export const ProjectModal = ({
         animate={{ y: 0, opacity: 1 }}
         onClick={(e) => e.stopPropagation()}
         onContextMenu={blockImageActions}
-        className="w-full max-w-2xl h-fit rounded-lg overflow-hidden bg-slate-100 shadow-lg cursor-auto"
+        className="w-full max-w-2xl h-fit overflow-hidden bg-slate-100 shadow-lg cursor-auto"
       >
         <div
           className="relative"
@@ -136,6 +140,5 @@ export const ProjectModal = ({
 
   if (!isOpen) return <></>;
 
-  // @ts-ignore
-  return ReactDOM.createPortal(content, document.getElementById("root"));
+  return ReactDOM.createPortal(content, document.body);
 };

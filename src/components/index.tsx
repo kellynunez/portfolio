@@ -3,9 +3,22 @@ import dynamic from "next/dynamic";
 import { SideBar } from "./nav/SideBar";
 import { Header } from "./nav/Header";
 import Hero from "./hero/Hero";
-import { About } from "./about/About";
-import { Projects } from "./projects/Projects";
-import { Experience } from "./experience/Experience";
+import RibbonWords from "./hero/RibbonWords";
+
+const Projects = dynamic(
+  () => import("./projects/Projects").then((mod) => mod.Projects),
+  { ssr: false }
+);
+
+const About = dynamic(
+  () => import("./about/About").then((mod) => mod.About),
+  { ssr: false }
+);
+
+const Experience = dynamic(
+  () => import("./experience/Experience").then((mod) => mod.Experience),
+  { ssr: false }
+);
 
 const Education = dynamic(
   () => import("./education/Education").then((mod) => mod.Education),
@@ -30,6 +43,7 @@ export const HomPage = () => {
     <Header />
     <div className="mx-auto max-w-md md:max-w-3xl lg:max-w-5xl px-4 md:px-8 space-y-32 pb-24">
       <Hero />
+      <RibbonWords />
       <About />
       <Projects />
       <Experience />
