@@ -50,6 +50,9 @@ export const Education = () => {
         <SectionHeader title="Education" dir="l" />
         <div className="flex gap-2">
           <button
+            type="button"
+            aria-label="Ver educación anterior"
+            title="Ver educación anterior"
             className="h-fit bg-zinc-800 hover:bg-zinc-700 p-3 text-2xl text-zinc-300 transition-colors rounded-lg"
             onClick={shiftLeft}
             disabled={position === 0}
@@ -57,6 +60,9 @@ export const Education = () => {
             <FiChevronLeft />
           </button>
           <button
+            type="button"
+            aria-label="Ver siguiente educación"
+            title="Ver siguiente educación"
             className="h-fit bg-zinc-800 hover:bg-zinc-700 p-3 text-2xl text-zinc-300 transition-colors rounded-lg"
             onClick={shiftRight}
             disabled={position === education.length - 1}

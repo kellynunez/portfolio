@@ -248,7 +248,11 @@ const CurLine = ({
   return (
     <>
       <form onSubmit={onSubmit}>
+        <label htmlFor="terminal-contact-input" className="sr-only">
+          Campo de respuesta del formulario de contacto
+        </label>
         <input
+          id="terminal-contact-input"
           ref={inputRef}
           onChange={onChange}
           value={text}
