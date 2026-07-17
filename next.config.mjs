@@ -1,4 +1,19 @@
 /** @type {import('next').NextConfig} */
+const csp = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "frame-ancestors 'self'",
+  "object-src 'none'",
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob: https:",
+  "font-src 'self' data:",
+  "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com",
+  "frame-src https://www.googletagmanager.com",
+  "form-action 'self'",
+  "upgrade-insecure-requests",
+].join('; ');
+
 const nextConfig = {
   reactStrictMode: true,
   
@@ -38,6 +53,10 @@ const nextConfig = {
           {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=()'
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: csp
           }
         ],
       }
