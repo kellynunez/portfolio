@@ -14,15 +14,14 @@ export const Stats2 = () => {
             </h4>
             <div className="flex flex-wrap gap-2 mb-6">
               <Chip>NodeJS</Chip>
-              <Chip>Git / GitHub</Chip>
               <Chip>NPM / Yarn</Chip>
-              <Chip>Linux</Chip>
-              <Chip>Netlify</Chip>
-              <Chip>Webflow</Chip>
               <Chip>PostCSS</Chip>
-              <Chip>Wordpress</Chip>
+              <Chip>Git / GitHub</Chip>
+              <Chip>Linux</Chip>
               <Chip>Shopify</Chip>
-              <Chip>WooCommerce</Chip>
+              <Chip>Wordpress + WooCommerce</Chip>
+              <Chip>Webflow</Chip>
+              <Chip>Netlify</Chip>
             </div>
           </div>
         </Reveal>
@@ -34,12 +33,12 @@ export const Stats2 = () => {
             </h4>
             <div className="flex flex-wrap gap-2 mb-6">
               <Chip>Cursor</Chip>
-              <Chip>Figma AI</Chip>
-              <Chip>v0.dev</Chip>
+              <Chip>v0</Chip>
+              <Chip>Figma</Chip>
               <Chip>Relume</Chip>
-              <Chip>Perplexity</Chip>
               <Chip>Claude Design</Chip>
-              <Chip>ChatGPT / Gemini</Chip>
+              <Chip>Perplexity</Chip>
+              <Chip>LLMs</Chip>
               <Chip>Midjourney</Chip>
               <Chip>Adobe Firefly</Chip>
             </div>
@@ -54,10 +53,10 @@ export const Stats2 = () => {
             <div className="flex flex-wrap gap-2 mb-6">
             <Chip>Notion</Chip>
             <Chip>Airtable</Chip>
-            <Chip>Jira</Chip>
             <Chip>Confluence</Chip>
-            <Chip>Trello</Chip>
+            <Chip>Jira</Chip>
             <Chip>ClickUp</Chip>
+            <Chip>Trello</Chip>
             </div>
           </div>
         </Reveal>

@@ -17,11 +17,11 @@ export const Projects = () => {
 };
 
 const projects = [
-/*   {
+   {
     title: "System Design: Atomic",
     imgSrc: "/project-imgs/web-corporative.webp",
     projectLink: "https://the-composable-codex.netlify.app",
-    tech: ["ReactJS", "TailwindCSS", "Sanity", "Motion", "Cursor", "Lottie Files"],
+    tech: ["TailwindCSS", "Figma", "Lottie Files", "Analytics Tools", "Office Suite"],
     description:
       "Xyz",
     modalContent: (
@@ -46,7 +46,7 @@ const projects = [
         </p>
       </>
     ),
-  }, */
+  },
   {
     title: "Website Corporative",
     imgSrc: "/project-imgs/web-corporative.webp",
