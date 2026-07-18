@@ -101,7 +101,7 @@ export const Education = () => {
               onClick={(e) => e.stopPropagation()}
               className="relative max-w-5xl w-full bg-zinc-900 border border-zinc-800 overflow-hidden shadow-2xl cursor-default"
             >
-              <div className="flex items-center justify-between p-4 border-b border-zinc-800 bg-zinc-900/50">
+              <div className="flex items-center justify-between p-6 border-b border-zinc-800 bg-zinc-900/50">
                 <span className="text-zinc-400 text-sm font-medium">Vista previa</span>
                 <button 
                   onClick={() => setSelectedImg(null)}
@@ -152,7 +152,7 @@ const EducationCard = ({
         ease: "easeInOut",
         duration: 0.35,
       }}
-      className={`relative flex min-h-[300px] w-10/12 max-w-lg shrink-0 flex-col justify-between overflow-hidden p-8 shadow-lg md:w-3/5 ${
+      className={`relative flex min-h-[300px] w-10/12 max-w-lg shrink-0 flex-col justify-between overflow-hidden p-8 md:p-10 shadow-lg md:w-3/5 ${
         index % 2 ? "bg-zinc-800 text-white" : "bg-zinc-900 text-zinc-300 border border-zinc-700"
       }`}
     >
