@@ -13,28 +13,6 @@ import {
   useState,
 } from "react";
 
-const RotatingGradientBorder = ({
-  children,
-  className = "",
-  duration = 6,
-}: {
-  children: ReactNode;
-  className?: string;
-  duration?: number;
-}) => {
-  return (
-    <div className={`relative rounded-lg p-px ${className}`}>
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div
-          className="h-[200%] w-[200%] -translate-x-1/4 -translate-y-1/4 animate-spin"
-
-        />
-      </div>
-      <div className="relative">{children}</div>
-    </div>
-  );
-};
-
 const TerminalContact = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -42,9 +20,8 @@ const TerminalContact = () => {
   return (
     <section
       
-      className="px-4 pt-12 pb-5 max-w-xl mx-auto"
+      className="px-0 pt-5 pb-8 max-w-xl mx-auto"
     >
-      <RotatingGradientBorder className="w-full max-w-3xl mx-auto" duration={14}>
         <div className="overflow-hidden">
           <TerminalHeader />
           <div
@@ -52,24 +29,23 @@ const TerminalContact = () => {
             onClick={() => {
               inputRef.current?.focus();
             }}
-            className="h-auto px-10 pb-12 bg-zinc-800 backdrop-blur w-full overflow-y-scroll shadow-xl cursor-text font-mono"
+            className="h-auto px-6 md:px-10 pb-14 bg-zinc-800 backdrop-blur w-full overflow-y-scroll shadow-xl cursor-text font-mono"
           >
             <TerminalBody inputRef={inputRef} containerRef={containerRef} />
           </div>
         </div>
-      </RotatingGradientBorder>
     </section>
   );
 };
 
 const TerminalHeader = () => {
   return (
-    <div className="w-full pt-16 bg-zinc-800 flex items-center flex-col gap-1 sticky top-0">
+    <div className="w-full pt-14 bg-zinc-800 flex items-center flex-col gap-1 sticky top-0">
       <span className="text-4xl md:text-5xl text-center font-black">
         Contacto<span className="text-[#00FF85]">.</span>
       </span>
        
-      <p className="text-center my-8 text-zinc-300 tracking-wide">¿Te gustaría conversar?<br />Déjame tus datos y te responderé a la brevedad.</p>
+      <p className="text-center pt-3 pb-4 md:pb-0 md:my-4 px-8 md:px-11 text-zinc-300 tracking-wide">Déjame tus datos y te responderé en breve.</p>
     </div>
   );
 };
@@ -114,7 +90,7 @@ const TerminalBody = ({ containerRef, inputRef }: TerminalBodyProps) => {
   };
 
   return (
-    <div className="p-2 text-slate-100 text-sm leading-[2]">
+    <div className="px-2 md:px-1 text-slate-100 text-sm leading-[2]">
       <PreviousQuestions questions={questions} />
       <CurrentQuestion curQuestion={curQuestion} />
       {error && (
@@ -220,17 +196,18 @@ const Summary = ({ questions, setQuestions }: SummaryProps) => {
       ) : (
         <div className="flex gap-2 mt-6">
           <button
-            onClick={handleReset}
-            className="px-4 py-2 text-sm hover:opacity-90 transition-opacity rounded bg-slate-100 text-black"
-          >
-            Reiniciar
-          </button>
-          <button
             onClick={handleSend}
-            className="px-4 py-2 text-sm hover:opacity-90 transition-opacity rounded bg-blue-600 text-white"
+            className="px-4 py-1.5 text-base font-medium hover:opacity-90 transition-opacity bg-slate-100 text-zinc-800"
           >
             Enviar
           </button>
+          <button
+            onClick={handleReset}
+            className="px-3.5 pt-[3.5px] pb-1.5 text-lg hover:opacity-90 transition-opacity bg-blue-600 text-white"
+          >
+            <span className="text-white">↺</span>
+          </button>
+          
         </div>
       )}
     </>
@@ -316,7 +293,7 @@ export default TerminalContact;
 const QUESTIONS: QuestionType[] = [
   {
     key: "email",
-    text: "Para empezar, ¿podrías compartirme ",
+    text: "¿Podrías compartirme ",
     postfix: "tu email?",
     complete: false,
     value: "",

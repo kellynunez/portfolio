@@ -13,6 +13,7 @@ import {
 } from "react-icons/fi";
 import { GraduationCap, HandHelping, SquareTerminal, Languages, BookHeart, Computer, LayoutTemplate, PanelsTopLeft, GlobeLock, SquaresIntersect } from 'lucide-react';
 import { SectionHeader } from "../util/SectionHeader";
+import Reveal from "../util/Reveal";
 
 interface EducationCardProps {
   position: number;
@@ -100,7 +101,7 @@ export const Education = () => {
               onClick={(e) => e.stopPropagation()}
               className="relative max-w-5xl w-full bg-zinc-900 border border-zinc-800 overflow-hidden shadow-2xl cursor-default"
             >
-              <div className="flex items-center justify-between p-4 border-b border-zinc-800 bg-zinc-900/50">
+              <div className="flex items-center justify-between p-6 border-b border-zinc-800 bg-zinc-900/50">
                 <span className="text-zinc-400 text-sm font-medium">Vista previa</span>
                 <button 
                   onClick={() => setSelectedImg(null)}
@@ -151,71 +152,75 @@ const EducationCard = ({
         ease: "easeInOut",
         duration: 0.35,
       }}
-      className={`relative flex min-h-[300px] w-10/12 max-w-lg shrink-0 flex-col justify-between overflow-hidden p-8 shadow-lg md:w-3/5 ${
+      className={`relative flex min-h-[300px] w-10/12 max-w-lg shrink-0 flex-col justify-between overflow-hidden p-8 md:p-10 shadow-lg md:w-3/5 ${
         index % 2 ? "bg-zinc-800 text-white" : "bg-zinc-900 text-zinc-300 border border-zinc-700"
       }`}
     >
+    
       <Icon className="absolute right-3 top-2 opacity-20 size-14 stroke-[0.5px]" />
-      <div>
-        <h3 className="mb-4 text-2xl font-bold text-[#00FF85]">{title}</h3>
-        <p className="mb-4 text-lg font-semibold">{institution}</p>
+    
+      <Reveal>
+        <div>
+          <h3 className="mb-4 text-2xl font-bold text-[#00FF85]">{title}</h3>
+          <p className="mb-4 text-lg font-semibold">{institution}</p>
 
-        <button 
-          onClick={() => hasCertificate && image ? onOpenModal(image) : null}
-          disabled={!hasCertificate}
-          className={`group mb-2 text-sm flex items-center transition-colors ${
-            hasCertificate 
-              ? "text-zinc-400 hover:text-[#00FF85] cursor-pointer" 
-              : "text-zinc-600 cursor-not-allowed"
-          }`}
-        >          
-          {hasCertificate ? (
-            <>
-              <FiEye className="text-blue-600 group-hover:text-[#00FF85] inline-block mr-2 transition-colors" />
-              <span className="underline underline-offset-4 decoration-zinc-700 group-hover:decoration-[#00FF85]">
-                Ver {degree}
-              </span>
-            </>
-          ) : (
-            <>
-              <FiEyeOff className="inline-block mr-2 text-zinc-600" />
-              <span>{degree}</span>
-            </>
-          )}
-        </button>
-
-        <div className="flex items-center gap-2 mb-4 text-sm text-zinc-400">
-          <FiCalendar className="text-[#FF0099]" />
-          <span>{period}</span> ({time})
-        </div>
-        <p className="mb-4 leading-relaxed">{description}</p>
-
-        {achievements && achievements.length > 0 && (
-          <div>
-            <button
-              type="button"
-              onClick={() => setShowAchievements((pv) => !pv)}
-              className="mb-2 flex items-center gap-2 text-sm font-base text-[#00FF85] hover:opacity-90 transition-opacity"
-            >
-              <span>{showAchievements ? "Ver menos" : "Ver logros"}</span>
-              <FiChevronDown
-                className={`transition-transform duration-200 ${showAchievements ? "rotate-180" : "rotate-0"}`}
-              />
-            </button>
-
-            {showAchievements && (
-              <ul className="space-y-1">
-                {achievements.map((achievement, idx) => (
-                  <li key={idx} className="text-sm flex items-start gap-2">
-                    <FiAward className="text-[#00FF85] mt-1 flex-shrink-0" />
-                    <span>{achievement}</span>
-                  </li>
-                ))}
-              </ul>
+          <button 
+            onClick={() => hasCertificate && image ? onOpenModal(image) : null}
+            disabled={!hasCertificate}
+            className={`group mb-2 text-sm flex items-center transition-colors ${
+              hasCertificate 
+                ? "text-zinc-400 hover:text-[#00FF85] cursor-pointer" 
+                : "text-zinc-600 cursor-not-allowed"
+            }`}
+          >          
+            {hasCertificate ? (
+              <>
+                <FiEye className="text-blue-600 group-hover:text-[#00FF85] inline-block mr-2 transition-colors" />
+                <span className="underline underline-offset-4 decoration-zinc-700 group-hover:decoration-[#00FF85]">
+                  Ver {degree}
+                </span>
+              </>
+            ) : (
+              <>
+                <FiEyeOff className="inline-block mr-2 text-zinc-600" />
+                <span>{degree}</span>
+              </>
             )}
+          </button>
+
+          <div className="flex items-center gap-2 mb-4 text-sm text-zinc-400">
+            <FiCalendar className="text-[#FF0099]" />
+            <span>{period}</span> ({time})
           </div>
-        )}
-      </div>
+          <p className="mb-4 leading-relaxed">{description}</p>
+
+          {achievements && achievements.length > 0 && (
+            <div>
+              <button
+                type="button"
+                onClick={() => setShowAchievements((pv) => !pv)}
+                className="mb-2 flex items-center gap-2 text-sm font-base text-[#00FF85] hover:opacity-90 transition-opacity"
+              >
+                <span>{showAchievements ? "Ver menos" : "Ver logros"}</span>
+                <FiChevronDown
+                  className={`transition-transform duration-200 ${showAchievements ? "rotate-180" : "rotate-0"}`}
+                />
+              </button>
+
+              {showAchievements && (
+                <ul className="space-y-1">
+                  {achievements.map((achievement, idx) => (
+                    <li key={idx} className="text-sm flex items-start gap-2">
+                      <FiAward className="text-[#00FF85] mt-1 flex-shrink-0" />
+                      <span>{achievement}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          )}
+        </div>
+      </Reveal>
     </motion.div>
   );
 };
