@@ -17,18 +17,17 @@ export const Projects = () => {
 };
 
 const projects = [
-  {
-    title: "Maternal Health App UI",
+/*   {
+    title: "System Design: Atomic",
     imgSrc: "/project-imgs/web-corporative.webp",
-    projectLink: "",
-    tech: ["Figma", "Illustrator"],
+    projectLink: "https://the-composable-codex.netlify.app",
+    tech: ["ReactJS", "TailwindCSS", "Sanity", "Motion", "Cursor", "Lottie Files"],
     description:
-      "A real-time coaching app for students learning to paint. This app is my baby, designed and built on my own.",
+      "Xyz",
     modalContent: (
       <>
         <p>
-          Because this isn&apos;t real, here&apos;s some gibberish to fill space{" "}
-          {":)"}
+          Pain.app is a real-time coaching app for students learning to paint.
         </p>
       </>
     ),
@@ -39,7 +38,7 @@ const projects = [
     projectLink: "https://voltron-data.netlify.app",
     tech: ["ReactJS", "TailwindCSS", "Sanity", "Motion", "Cursor", "Lottie Files"],
     description:
-      "A real-time coaching app for students learning to paint. This app is my baby, designed and built on my own.",
+      "Xyz",
     modalContent: (
       <>
         <p>
@@ -47,14 +46,14 @@ const projects = [
         </p>
       </>
     ),
-  },
+  }, */
   {
     title: "Website Corporative",
     imgSrc: "/project-imgs/web-corporative.webp",
-    projectLink: "",
+    projectLink: "https://voltrondata-v1.netlify.app",
     tech: ["Node", "JekyllRB", "TailwindCSS", "Markdown", "Figma", "Midjourney"],
     description:
-      "A social community for painters to connect with others in their community. I handle everything backend (50K monthly active users).",
+      "Xyz",
     galleryImages: [
       "/project-imgs/web-corporative/web-header.webp",
       "/project-imgs/web-corporative/web-about.webp",
@@ -77,7 +76,7 @@ const projects = [
     projectLink: "",
     tech: ["Notion", "Adobe CC", "Midjourney", "Google Slides", "Acrobat"],
     description:
-      "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
+      "Xyz",
     galleryImages: [
       "/project-imgs/brand-identity/branding-header.webp",
       "/project-imgs/brand-identity/branding-notion.webp",
@@ -89,12 +88,65 @@ const projects = [
     ],
   },
   {
+    title: "POS Systems Interface",
+    imgSrc: "/project-imgs/pos-niubiz.webp",
+    projectLink: "",
+    tech: ["Figma", "Illustrator", "Miro"],
+    description:
+      "Xyz",
+    galleryImages: [
+      "/project-imgs/pos-niubiz/pos-header.webp",
+      "/project-imgs/pos-niubiz/pos-user.webp",
+      "/project-imgs/pos-niubiz/pos-niubiz.webp",
+      "/project-imgs/pos-niubiz/pos-mobile.webp",
+      "/project-imgs/pos-niubiz/pos-landing.webp",
+      "/project-imgs/pos-niubiz/pos-ux1.webp",
+      "/project-imgs/pos-niubiz/pos-ux2.webp",
+    ],
+  },
+  {
+    title: "User Interfaces",
+    imgSrc: "/project-imgs/user-interfaces.webp",
+    projectLink: "",
+    tech: ["TailwindCSS", "Bootstrap", "HTML", "CSS", "Figma", "Illustrator"],
+    description:
+      "Xyz",
+    galleryImages: [
+      "/project-imgs/user-interface/ui-header.webp",
+      "/project-imgs/user-interface/ui-page.webp",
+      "/project-imgs/user-interface/ui-hero.webp",
+      "/project-imgs/user-interface/ui-content.webp",
+      "/project-imgs/user-interface/ui-conference.webp",
+      "/project-imgs/user-interface/ui-web.webp",
+    ],
+  },
+  {
+    title: "Web App Projects",
+    imgSrc: "/project-imgs/webapp-project.webp",
+    projectLink: "",
+    tech: ["Linux", "VueJS", "Vuetify", "Sass", "Materialize", "Adobe XD",],
+    description:
+      "Xyz",
+    galleryImages: [
+      "/project-imgs/app-project/app-header.webp",
+      "/project-imgs/app-project/app-login.webp",
+      "/project-imgs/app-project/app-blazing.webp",
+      "/project-imgs/app-project/app-dev.webp",
+      "/project-imgs/app-project/app-spacedat.webp",
+      "/project-imgs/app-project/app-navbar.webp",
+      "/project-imgs/app-project/app-dashboard.webp",
+      "/project-imgs/app-project/app-mystery.webp",
+      "/project-imgs/app-project/app-livetrade.webp",
+      "/project-imgs/app-project/app-mobile.webp",
+    ],
+  },
+  {
     title: "Social Media",
     imgSrc: "/project-imgs/social-media.webp",
     projectLink: "",
     tech: ["Illustrator", "Photoshop"],
     description:
-      "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
+      "Xyz",
     galleryImages: [
       "/project-imgs/social-media/social-header.webp",
       "/project-imgs/social-media/social-size.webp",
@@ -110,7 +162,7 @@ const projects = [
     projectLink: "",
     tech: ["Google Slides", "Keynote", "Illustrator"],
     description:
-      "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
+      "Xyz",
     galleryImages: [
       "/project-imgs/pitch-deck/slides-header.webp",
       "/project-imgs/pitch-deck/slides-guides.webp",
@@ -124,65 +176,12 @@ const projects = [
     ],
   },
   {
-    title: "Web App Projects",
-    imgSrc: "/project-imgs/webapp-project.webp",
-    projectLink: "",
-    tech: ["Linux", "VueJS", "Sass", "Materialize"],
-    description:
-      "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
-    galleryImages: [
-      "/project-imgs/app-project/app-header.webp",
-      "/project-imgs/app-project/app-login.webp",
-      "/project-imgs/app-project/app-blazing.webp",
-      "/project-imgs/app-project/app-dev.webp",
-      "/project-imgs/app-project/app-spacedat.webp",
-      "/project-imgs/app-project/app-navbar.webp",
-      "/project-imgs/app-project/app-dashboard.webp",
-      "/project-imgs/app-project/app-mystery.webp",
-      "/project-imgs/app-project/app-livetrade.webp",
-      "/project-imgs/app-project/app-mobile.webp",
-    ],
-  },
-  {
-    title: "User Interfaces",
-    imgSrc: "/project-imgs/user-interfaces.webp",
-    projectLink: "",
-    tech: ["TailwindCSS", "Figma"],
-    description:
-      "Think Zapier but for paint. Built with a team of four college friends and scaled to > 1 billion requests per day. This was a fun one.",
-    galleryImages: [
-      "/project-imgs/user-interface/ui-header.webp",
-      "/project-imgs/user-interface/ui-page.webp",
-      "/project-imgs/user-interface/ui-hero.webp",
-      "/project-imgs/user-interface/ui-content.webp",
-      "/project-imgs/user-interface/ui-conference.webp",
-      "/project-imgs/user-interface/ui-web.webp",
-    ],
-  },
-  {
-    title: "POS Systems Interface",
-    imgSrc: "/project-imgs/pos-niubiz.webp",
-    projectLink: "",
-    tech: ["Figma", "Illustrator", "Miro"],
-    description:
-      "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
-    galleryImages: [
-      "/project-imgs/pos-niubiz/pos-header.webp",
-      "/project-imgs/pos-niubiz/pos-user.webp",
-      "/project-imgs/pos-niubiz/pos-niubiz.webp",
-      "/project-imgs/pos-niubiz/pos-mobile.webp",
-      "/project-imgs/pos-niubiz/pos-landing.webp",
-      "/project-imgs/pos-niubiz/pos-ux1.webp",
-      "/project-imgs/pos-niubiz/pos-ux2.webp",
-    ],
-  },
-  {
     title: "Advertising Campaigns",
     imgSrc: "/project-imgs/ads-campaigns.webp",
     projectLink: "",
-    tech: ["Photoshop", "Office"],
+    tech: ["Illustrator", "Photoshop", "Microsoft Office"],
     description:
-      "I couldn't think of another paint reference app, so here we are. I think you get the idea, right? Use your imagination 🌈",
+      "Xyz",
     galleryImages: [
       "/project-imgs/ads-campaigns/ads-header.webp",
       "/project-imgs/ads-campaigns/ads-feed.webp",
