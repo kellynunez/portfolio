@@ -43,7 +43,6 @@ export const Stats = () => {
             <Chip>Vue</Chip>
             <Chip>TailwindCSS</Chip>
             <Chip>Sass</Chip>
-            <Chip>Less</Chip>
             <Chip>Framer Motion</Chip>
             <Chip>AnimeJS</Chip>
             <Chip>Vite</Chip>
