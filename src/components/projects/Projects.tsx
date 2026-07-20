@@ -17,23 +17,8 @@ export const Projects = () => {
 };
 
 const projects = [
-   {
-    title: "System Design: Atomic",
-    imgSrc: "/project-imgs/web-corporative.webp",
-    projectLink: "https://the-composable-codex.netlify.app",
-    tech: ["TailwindCSS", "Figma", "Lottie Files", "Analytics Tools", "Office Suite"],
-    description:
-      "Xyz",
-    modalContent: (
-      <>
-        <p>
-          Pain.app is a real-time coaching app for students learning to paint.
-        </p>
-      </>
-    ),
-  },
   {
-    title: "Theseus Dark Theme",
+    title: "Atomic System Design",
     imgSrc: "/project-imgs/web-corporative.webp",
     projectLink: "https://voltron-data.netlify.app",
     tech: ["ReactJS", "TailwindCSS", "Sanity", "Motion", "Cursor", "Lottie Files"],
@@ -71,6 +56,50 @@ const projects = [
     ],
   },
   {
+    title: "Mobile Interfaces",
+    imgSrc: "/project-imgs/pos-niubiz.webp",
+    projectLink: "",
+    tech: ["Figma", "Illustrator", "Photoshop", "Miro"],
+    description:
+      "Xyz",
+    galleryImages: [
+      "/project-imgs/pos-niubiz/pos-header.webp",
+      "/project-imgs/pos-niubiz/pos-user.webp",
+      "/project-imgs/pos-niubiz/pos-niubiz.webp",
+      "/project-imgs/pos-niubiz/pos-mobile.webp",
+      "/project-imgs/pos-niubiz/pos-ux1.webp",
+      "/project-imgs/pos-niubiz/pos-ux2.webp",
+      "/project-imgs/app-project/app-mystery.webp",
+      "/project-imgs/app-project/app-livetrade.webp",
+      "/project-imgs/app-project/app-mobile.webp",
+    ],
+  },
+  {
+    title: "Web UI Projects",
+    imgSrc: "/project-imgs/webapp-project.webp",
+    projectLink: "",
+    tech: ["Linux", "VueJS", "Vuetify", "TailwindCSS", "Bootstrap", "Figma", "Adobe"],
+    description:
+      "Xyz",
+    galleryImages: [
+      "/project-imgs/app-project/app-header.webp",
+      "/project-imgs/app-project/app-login.webp",
+      "/project-imgs/app-project/app-blazing.webp",
+      "/project-imgs/app-project/app-dev.webp",
+      "/project-imgs/user-interface/ui-hero.webp",
+      "/project-imgs/user-interface/ui-content.webp",
+      "/project-imgs/app-project/app-spacedat.webp",
+      "/project-imgs/app-project/app-navbar.webp",
+      "/project-imgs/app-project/app-dashboard.webp",
+      "/project-imgs/user-interface/ui-conference.webp",
+      "/project-imgs/user-interface/ui-web.webp",
+      "/project-imgs/user-interface/ui-header.webp",
+      "/project-imgs/user-interface/ui-page.webp",
+            "/project-imgs/pos-niubiz/pos-landing.webp",
+
+    ],
+  },
+  {
     title: "Brand Identity",
     imgSrc: "/project-imgs/brand-identity.webp",
     projectLink: "",
@@ -88,63 +117,10 @@ const projects = [
     ],
   },
   {
-    title: "POS Systems Interface",
-    imgSrc: "/project-imgs/pos-niubiz.webp",
-    projectLink: "",
-    tech: ["Figma", "Illustrator", "Miro"],
-    description:
-      "Xyz",
-    galleryImages: [
-      "/project-imgs/pos-niubiz/pos-header.webp",
-      "/project-imgs/pos-niubiz/pos-user.webp",
-      "/project-imgs/pos-niubiz/pos-niubiz.webp",
-      "/project-imgs/pos-niubiz/pos-mobile.webp",
-      "/project-imgs/pos-niubiz/pos-landing.webp",
-      "/project-imgs/pos-niubiz/pos-ux1.webp",
-      "/project-imgs/pos-niubiz/pos-ux2.webp",
-    ],
-  },
-  {
-    title: "User Interfaces",
-    imgSrc: "/project-imgs/user-interfaces.webp",
-    projectLink: "",
-    tech: ["TailwindCSS", "Bootstrap", "HTML", "CSS", "Figma", "Illustrator"],
-    description:
-      "Xyz",
-    galleryImages: [
-      "/project-imgs/user-interface/ui-header.webp",
-      "/project-imgs/user-interface/ui-page.webp",
-      "/project-imgs/user-interface/ui-hero.webp",
-      "/project-imgs/user-interface/ui-content.webp",
-      "/project-imgs/user-interface/ui-conference.webp",
-      "/project-imgs/user-interface/ui-web.webp",
-    ],
-  },
-  {
-    title: "Web App Projects",
-    imgSrc: "/project-imgs/webapp-project.webp",
-    projectLink: "",
-    tech: ["Linux", "VueJS", "Vuetify", "Sass", "Materialize", "Adobe XD",],
-    description:
-      "Xyz",
-    galleryImages: [
-      "/project-imgs/app-project/app-header.webp",
-      "/project-imgs/app-project/app-login.webp",
-      "/project-imgs/app-project/app-blazing.webp",
-      "/project-imgs/app-project/app-dev.webp",
-      "/project-imgs/app-project/app-spacedat.webp",
-      "/project-imgs/app-project/app-navbar.webp",
-      "/project-imgs/app-project/app-dashboard.webp",
-      "/project-imgs/app-project/app-mystery.webp",
-      "/project-imgs/app-project/app-livetrade.webp",
-      "/project-imgs/app-project/app-mobile.webp",
-    ],
-  },
-  {
     title: "Social Media",
     imgSrc: "/project-imgs/social-media.webp",
     projectLink: "",
-    tech: ["Illustrator", "Photoshop"],
+    tech: ["X", "LinkedIn", "Illustrator", "Photoshop", "LLMs"],
     description:
       "Xyz",
     galleryImages: [
@@ -154,6 +130,8 @@ const projects = [
       "/project-imgs/social-media/social-seo.webp",
       "/project-imgs/social-media/social-post.webp",
       "/project-imgs/social-media/social-monopoly.webp",
+      "/project-imgs/social-media/social-newsletter-engine.webp",
+      "/project-imgs/social-media/social-festivity.webp",
     ],
   },
   {
