@@ -20,7 +20,7 @@ const Hero = () => {
             </h1>
           </Reveal>
           <Reveal>
-            <h2 className="pointer-events-auto my-2 md:my-4 text-2xl md:text-3xl lg:text-4xl text-zinc-100">
+            <h2 className="pointer-events-auto my-1 sm:my-2 md:pb-5 text-3xl sm:text-3xl md:text-4xl xl:text-5xl text-zinc-100">
               <span 
                 className="font-semibold"
                 style={{
@@ -32,12 +32,12 @@ const Hero = () => {
                   animation: 'gradient-shift 3s ease-in-out infinite'
                 }}
               >
-                Design Engineer
+                Ingeniera de Diseño
               </span>
             </h2>
           </Reveal>
           <Reveal>
-            <p className="pointer-events-auto leading-relaxed md:leading-relaxed max-w-3xl text-base md:text-lg text-zinc-200 font-medium tracking-wide">
+            <p className="pointer-events-auto leading-relaxed md:leading-relaxed max-w-3xl text-base md:text-lg lg:text-xl text-zinc-200 font-normal tracking-wide">
               Especialista en arquitectura de interfaces. Integración de identidad de marca, diseño publicitario y sistemas UI/UX en arquitecturas frontend escalables.
             </p>
           </Reveal>

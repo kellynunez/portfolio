@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { SiBehance, SiGithub, SiInstagram, SiLinkedin, SiWhatsapp, SiGmail } from "react-icons/si";
+import { SiGithub, SiInstagram, SiLinkedin, SiGmail, SiWhatsapp, } from "react-icons/si";
 import { OutlineButton } from "../buttons/OutlineButton";
 
 export const Header = () => {
@@ -44,16 +44,6 @@ export const MyLinks = () => (
       <SiGithub />
     </Link>
     <Link
-      aria-label="Behance de Kelly Núñez"
-      title="Behance"
-      className="text-zinc-300 hover:text-[#1E90FF] transition-colors"
-      href="https://www.behance.net/kellynunezh"
-      target="_blank"
-      rel="nofollow"
-    >
-      <SiBehance />
-    </Link>
-    <Link
       aria-label="Instagram de Kelly Núñez"
       title="Instagram"
       className="text-zinc-300 hover:text-[#1E90FF] transition-colors"
@@ -64,6 +54,15 @@ export const MyLinks = () => (
       <SiInstagram />
     </Link>
     <Link
+      aria-label="Enviar correo a Kelly Núñez"
+      title="Correo"
+      className="text-zinc-300 hover:text-[#1E90FF] transition-colors"
+      href="mailto:kellynunezhu@gmail.com"
+      rel="nofollow"
+    >
+      <SiGmail />
+    </Link>
+    <Link
       aria-label="WhatsApp de Kelly Núñez"
       title="WhatsApp"
       className="text-zinc-300 hover:text-[#1E90FF] transition-colors"
@@ -72,15 +71,6 @@ export const MyLinks = () => (
       rel="nofollow"
     >
       <SiWhatsapp />
-    </Link>
-    <Link
-      aria-label="Enviar correo a Kelly Núñez"
-      title="Correo"
-      className="text-zinc-300 hover:text-[#1E90FF] transition-colors"
-      href="mailto:kellynunezhu@gmail.com"
-      rel="nofollow"
-    >
-      <SiGmail />
     </Link>
   </div>
 );

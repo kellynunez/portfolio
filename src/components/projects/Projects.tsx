@@ -120,7 +120,7 @@ const projects = [
     title: "Social Media",
     imgSrc: "/project-imgs/social-media.webp",
     projectLink: "",
-    tech: ["X", "LinkedIn", "Illustrator", "Photoshop", "LLMs"],
+    tech: ["X", "LinkedIn", "Facebook", "Illustrator", "Photoshop", "LLMs"],
     description:
       "Xyz",
     galleryImages: [
@@ -132,6 +132,7 @@ const projects = [
       "/project-imgs/social-media/social-monopoly.webp",
       "/project-imgs/social-media/social-newsletter-engine.webp",
       "/project-imgs/social-media/social-festivity.webp",
+      "/project-imgs/social-media/social-fashion.webp",
     ],
   },
   {
