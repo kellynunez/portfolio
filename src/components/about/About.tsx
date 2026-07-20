@@ -17,7 +17,7 @@ export const About = () => {
               <span className="bg-[#00FF85] text-black py-2 px-3 rounded font-bold mr-1 float-left text-2xl">
                 S
               </span>
-              oy Kelly Núñez, Design Engineer con más de 10 años de trayectoria liderando la intersección entre diseño estratégico y desarrollo técnico. Mi enfoque combina la agilidad del prototipado moderno con una visión creativa sólida, permitiéndome transformar conceptos de marca en interfaces digitales de alto impacto. Mi trabajo se orienta a optimizar procesos de iteración y validación, asegurando que cada solución no solo sea estética, sino funcionalmente superior.
+              oy Kelly Núñez, Design Engineer & Creative Lead con más de 10 años de trayectoria liderando la intersección entre diseño estratégico y desarrollo técnico. Mi enfoque combina la agilidad del prototipado moderno con una visión creativa sólida, permitiéndome transformar conceptos de marca en interfaces digitales de alto impacto. Mi trabajo se orienta a optimizar procesos de iteración y validación, asegurando que cada solución no solo sea estética, sino funcionalmente superior.
             </p>
           </Reveal>
           

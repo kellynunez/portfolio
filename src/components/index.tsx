@@ -39,7 +39,7 @@ export const HomPage = () => {
     <SideBar />
   </div>
 
-  <main>
+  <main className="flex-1 overflow-y-auto">
     <Header />
     <div className="mx-auto max-w-md md:max-w-3xl lg:max-w-5xl px-4 md:px-8 space-y-32 pb-24">
       <Hero />

@@ -114,6 +114,7 @@ const projects = [
       "/project-imgs/brand-identity/branding-stationary.webp",
       "/project-imgs/brand-identity/branding-merch.webp",
       "/project-imgs/brand-identity/branding-booth.webp",
+      "/project-imgs/brand-identity/branding-newyorkcity.webp",
     ],
   },
   {
