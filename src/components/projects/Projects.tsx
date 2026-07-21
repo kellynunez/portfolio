@@ -121,7 +121,9 @@ const projects = [
       "/project-imgs/brand-identity/logo-rapids.webp",
       "/project-imgs/brand-identity/logo-blazingsql.webp",
       "/project-imgs/brand-identity/logo-spacedat.webp",
-
+      "/project-imgs/brand-identity/unicod-header.webp",
+      "/project-imgs/brand-identity/unicod-logo.webp",
+      "/project-imgs/brand-identity/unicod-stationary.webp",
     ],
   },
   {
