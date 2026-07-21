@@ -231,7 +231,7 @@ const education = [
     institution: "ISIL Educación Ejecutiva",
     degree: "Certificado en espera",
     period: "2026",
-    time: "4 meses",
+    time: "70 horas",
     Icon: GlobeLock,
     description:
         "Formación que abarca desde la arquitectura Frontend y lógica Backend (Python/JS), hasta la integración de ecosistemas E-commerce y protocolos de ciberseguridad.",
@@ -294,7 +294,7 @@ const education = [
     time: "80 horas",
     Icon: SquareTerminal,
     description:
-        "Experto/a en el flujo de trabajo frontend completo, desde la construcción de sitios estáticos eficientes con Jekyll.js y la creación de interfaces interactivas con JavaScript y Tailwind CSS, hasta el despliegue continuo con Netlify y la colaboración con Git/GitHub.",
+        "Manejo del flujo de trabajo frontend completo, desde la construcción de sitios estáticos eficientes con Jekyll.js y la creación de interfaces interactivas con JavaScript y Tailwind CSS, hasta el despliegue continuo con Netlify y la colaboración con Git/GitHub.",
     achievements: [
         "Construcción y Despliegue de Sitios Web Estáticos Optimizado",
         "Desarrollo de Interfaces Interactivas y Gestión Colaborativa"
@@ -309,7 +309,7 @@ const education = [
     image: "/certs/privateacher-ingles.webp",
     Icon: Languages,
     description:
-        "Aprendizaje del idioma inglés de manera presencial priorizando el vocabulario y la pronunciación.",
+        "Aprendizaje del idioma inglés presencial priorizando el vocabulario y la pronunciación.",
     achievements: [
         "Buena pronunciación en el idioma",
         "Fluidez en la conversación"
@@ -319,8 +319,8 @@ const education = [
     title: "Branding y Gestión de Marca",
     institution: "Instituto Toulouse Lautrec",
     degree: "Especialización",
-    period: "2019 - 2020",
-    time: "100 horas",
+    period: "2020",
+    time: "80 horas",
     image: "/certs/toulouse-branding.webp",
     Icon: BookHeart,
     description:
@@ -331,25 +331,11 @@ const education = [
     ]
   },
   {
-    title: "Desarrollo de Aplicaciones Web",
-    institution: "Udemy",
-    degree: "Autodidacta",
-    period: "2018",
-    time: "40 horas",
-    Icon: FiGitPullRequest,
-    description:
-        "Adquirí experiencia práctica con frameworks front-end como Bootstrap, Materialize y Vue.js, y conocimientos esenciales en Node.js para el desarrollo back-end.",
-    achievements: [
-        "Personalización de estilos en las interfaces de usuario",
-        "Experiencia web práctica"
-    ]
-  },
-  {
     title: "Especialización en Diseño de Experiencia de Usuario",
     institution: "Instituto Toulouse Lautrec",
     degree: "Especialización",
     period: "2017",
-    time: "100 horas",
+    time: "76 horas",
     image: "/certs/toulouse-experiencia-usuario.webp",
     Icon: PanelsTopLeft,
     description:
@@ -364,7 +350,7 @@ const education = [
     institution: "Instituto Cibertec",
     degree: "4 ciclos",
     period: "2016 - 2017",
-    time: "18 meses",
+    time: "2 años",
     Icon: Computer,
     description:
         "Dominio en programación (Java, algoritmia y estructuras de datos), desarrollo web (HTML5, CSS3, JavaScript), bases de datos (SQL Server) y modelado de procesos de negocio (BPMN).",
@@ -378,7 +364,7 @@ const education = [
     institution: "Codecademy",
     degree: "Certificado",
     period: "2016",
-    time: "50 horas",
+    time: "40 horas",
     image: "/certs/codecademy-html-css.webp",
     Icon: LayoutTemplate,
     description:
@@ -386,20 +372,6 @@ const education = [
     achievements: [
         "Buen manejo de html, css, javascript, bootstrap, etc.",
         "Personalización de estilos en las interfaces de usuario"
-    ]
-  },
-  {
-    title: "Inglés Básico, Intermedio y Avanzado",
-    institution: "Británico",
-    degree: "Superintensivo",
-    period: "2014 - 2016",
-    time: "2 años",
-    Icon: FiGlobe,
-    description:
-      "Formación especializada en inglés básico, intermedio y avanzado. Aprendizaje de gramática, vocabulario y pronunciación.",
-    achievements: [
-      "Buena pronunciación y fluidez en el idioma",
-      "Buen manejo de la gramática y vocabulario"
     ]
   },
   {

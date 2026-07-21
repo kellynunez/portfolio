@@ -13,7 +13,7 @@ export const Contact = () => {
             <TerminalContact />
           </div>
           <div className="w-full text-center mb-0 md:mb-8">
-            <span className="text-zinc-700 text-sm">© 2011 - 2026 Kelly Núñez. Todos los derechos reservados.</span>
+            <span className="text-zinc-700 text-sm">© 2011 - 2026 Kelly Núñez.</span>
           </div>
         </Reveal>
       </div>

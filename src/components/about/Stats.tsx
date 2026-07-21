@@ -14,17 +14,16 @@ export const Stats = () => {
           </h4>
           <div className="flex flex-wrap gap-2 mb-12">
             <Chip>Figma</Chip>
+            <Chip>Framer</Chip>
             <Chip>ProtoPie</Chip>
             <Chip>Storybook</Chip>
-            <Chip>LottieFiles</Chip>
             <Chip>Lucidchart</Chip>
             <Chip>Miro</Chip>
-            <Chip>Framer</Chip>
+            <Chip>LottieFiles</Chip>
+            <Chip>Premiere</Chip>
             <Chip>Photoshop</Chip>
             <Chip>Illustrator</Chip>
             <Chip>InDesign</Chip>
-            <Chip>Premiere</Chip>
-            <Chip>Elementor</Chip>
           </div>
         </div>
       </Reveal>
@@ -37,18 +36,17 @@ export const Stats = () => {
           <div className="flex flex-wrap gap-2 mb-12">
             <Chip>HTML</Chip>
             <Chip>CSS</Chip>
-            <Chip>Less</Chip>
-            <Chip>Sass</Chip>
             <Chip>JavaScript</Chip>
             <Chip>TypeScript</Chip>
-            <Chip>PHP</Chip>
-            <Chip>NextJS</Chip>
             <Chip>React</Chip>
+            <Chip>NextJS</Chip>
             <Chip>Vue</Chip>
-            <Chip>Vite</Chip>
+            <Chip>TailwindCSS</Chip>
+            <Chip>Sass</Chip>
             <Chip>Framer Motion</Chip>
             <Chip>AnimeJS</Chip>
-            <Chip>TailwindCSS</Chip>
+            <Chip>Vite</Chip>
+            <Chip>PHP</Chip>
           </div>
         </div>
       </Reveal>
