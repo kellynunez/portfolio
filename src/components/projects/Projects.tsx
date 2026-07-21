@@ -111,12 +111,17 @@ const projects = [
       "/project-imgs/brand-identity/branding-notion.webp",
       "/project-imgs/brand-identity/branding-letterhead.webp",
       "/project-imgs/brand-identity/branding-stationary.webp",
-      "/project-imgs/brand-identity/branding-merch.webp",
-      "/project-imgs/brand-identity/branding-booth.webp",
       "/project-imgs/brand-identity/icons-lineal-voltron.webp",
       "/project-imgs/brand-identity/icons-architecture-gallery.webp",
       "/project-imgs/brand-identity/icons-graphics-codex.webp",
-      "/project-imgs/brand-identity/branding-newyorkcity.webp",
+      "/project-imgs/brand-identity/branding-merch.webp",
+      "/project-imgs/brand-identity/branding-booth.webp",
+      "/project-imgs/brand-identity/logo-codex.webp",
+      "/project-imgs/brand-identity/logo-theseus.webp",
+      "/project-imgs/brand-identity/logo-rapids.webp",
+      "/project-imgs/brand-identity/logo-blazingsql.webp",
+      "/project-imgs/brand-identity/logo-spacedat.webp",
+
     ],
   },
   {
@@ -174,6 +179,7 @@ const projects = [
       "/project-imgs/ads-campaigns/ads-mockup.webp",
       "/project-imgs/ads-campaigns/ads-news.webp",
       "/project-imgs/ads-campaigns/ads-flyer.webp",
+      "/project-imgs/brand-identity/branding-newyorkcity.webp",
     ],
   },
 ];
