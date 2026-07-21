@@ -17,7 +17,7 @@ export const Projects = () => {
 };
 
 const projects = [
-  {
+/*   {
     title: "Atomic System Design",
     imgSrc: "/project-imgs/web-corporative.webp",
     projectLink: "https://voltron-data.netlify.app",
@@ -31,7 +31,7 @@ const projects = [
         </p>
       </>
     ),
-  },
+  }, */
   {
     title: "Website Corporative",
     imgSrc: "/project-imgs/web-corporative.webp",
