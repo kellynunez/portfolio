@@ -1,6 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import { SideBar } from "./nav/SideBar";
+import { MobileNav } from "./nav/MobileNav";
 import { Header } from "./nav/Header";
 import Hero from "./hero/Hero";
 import RibbonWords from "./hero/RibbonWords";
@@ -32,30 +33,23 @@ const Contact = dynamic(
 
 export const HomPage = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-[54px_1fr]">
-  
-  {/* Ocultamos el Sidebar en móvil y lo mostramos en md */}
-  <div className="hidden md:block">
-    <SideBar />
-  </div>
+    <div className="min-h-screen">
+      <SideBar />
 
-  <main className="flex-1 overflow-y-auto">
-    <Header />
-    <div className="mx-auto max-w-md md:max-w-3xl lg:max-w-5xl px-4 md:px-8 space-y-32 pb-24">
-      <Hero />
-      <RibbonWords />
-      <About />
-      <Projects />
-      <Experience />
-      <Education />
-      <Contact />
+      <main className="relative md:pl-[54px]">
+        <Header />
+        <div className="mx-auto max-w-md space-y-32 px-4 pb-24 md:max-w-3xl md:px-8 lg:max-w-5xl">
+          <Hero />
+          <RibbonWords />
+          <About />
+          <Projects />
+          <Experience />
+          <Education />
+          <Contact />
+        </div>
+      </main>
+
+      <MobileNav />
     </div>
-  </main>
-
-  {/* Opcional: Un menú inferior solo para móviles si el Sidebar es vital */}
-  <div className="fixed bottom-0 w-full md:hidden">
-    {/* <MobileNav /> */}
-  </div>
-</div>
   );
 };

@@ -1,76 +1,60 @@
 import { useEffect, useState } from "react";
 import { SideBarLink } from "./SideBarLink";
+import { navItems } from "./navItems";
 
 export const SideBar = () => {
   const [selected, setSelected] = useState("");
 
   useEffect(() => {
-    const sections = document.querySelectorAll(".section-wrapper");
+    const sections = Array.from(document.querySelectorAll<HTMLElement>(".section-wrapper"));
 
-    const options = {
-      threshold: 0.3,
+    if (!sections.length) {
+      return;
+    }
+
+    const updateSelectedSection = () => {
+      const activationPoint = window.innerHeight * 0.35;
+
+      const activeSection =
+        sections.find((section) => {
+          const rect = section.getBoundingClientRect();
+          return rect.top <= activationPoint && rect.bottom > activationPoint;
+        }) ??
+        [...sections]
+          .reverse()
+          .find((section) => section.getBoundingClientRect().top <= activationPoint);
+
+      setSelected(activeSection?.id ?? "");
     };
 
-    const callback = (entries: any) => {
-      entries.forEach((entry: any) => {
-        if (entry.isIntersecting) {
-          setSelected(entry.target.id);
-        }
-      });
+    updateSelectedSection();
+
+    window.addEventListener("scroll", updateSelectedSection, { passive: true });
+    window.addEventListener("resize", updateSelectedSection);
+
+    return () => {
+      window.removeEventListener("scroll", updateSelectedSection);
+      window.removeEventListener("resize", updateSelectedSection);
     };
-
-    const observer = new IntersectionObserver(callback, options);
-
-    sections.forEach((section) => observer.observe(section));
   }, []);
 
   return (
-    <nav
-      className="no-scrollbar bg-zinc-950 h-screen sticky top-0 left-0 z-20 flex flex-col items-center overflow-y-scroll"
-    >
+    <nav className="no-scrollbar fixed inset-y-0 left-0 z-20 hidden h-screen w-[54px] flex-col items-center overflow-y-scroll bg-zinc-950 md:flex">
       <span className="shrink-0 text-xl font-black leading-[1] size-10 flex items-center justify-center my-4">
         K<span className="text-[#00FF85]">.</span>
       </span>
-      <SideBarLink
-        selected={selected}
-        setSelected={setSelected}
-        value="about"
-        href="#about"
-      >
-        About
-      </SideBarLink>
-      <SideBarLink
-        selected={selected}
-        setSelected={setSelected}
-        value="projects"
-        href="#projects"
-      >
-        Projects
-      </SideBarLink>
-      <SideBarLink
-        selected={selected}
-        setSelected={setSelected}
-        value="experience"
-        href="#experience"
-      >
-        Exp.
-      </SideBarLink>
-      <SideBarLink
-        selected={selected}
-        setSelected={setSelected}
-        value="education"
-        href="#education"
-      >
-        Education
-      </SideBarLink>
-      <SideBarLink
-        selected={selected}
-        setSelected={setSelected}
-        value="contact"
-        href="#contact"
-      >
-        Contact
-      </SideBarLink>
+      {navItems.map((item) => (
+        <SideBarLink
+          key={item.value}
+          selected={selected}
+          setSelected={setSelected}
+          value={item.value}
+          href={item.href}
+          variant="vertical"
+        >
+          {item.label}
+        </SideBarLink>
+      ))}
     </nav>
   );
 };
