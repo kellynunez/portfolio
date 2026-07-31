@@ -17,21 +17,36 @@ export const Projects = () => {
 };
 
 const projects = [
-/*   {
+   {
     title: "Atomic System Design",
     imgSrc: "/project-imgs/web-corporative.webp",
     projectLink: "https://voltron-data.netlify.app",
     tech: ["ReactJS", "TailwindCSS", "Sanity", "Motion", "Cursor", "Lottie Files"],
     description:
       "Xyz",
-    modalContent: (
-      <>
-        <p>
-          Pain.app is a real-time coaching app for students learning to paint.
-        </p>
-      </>
-    ),
-  }, */
+    galleryImages: [
+      "/project-imgs/design-system/design-system-voltron-1.webp",
+      "/project-imgs/design-system/design-system-voltron-2.webp",
+      "/project-imgs/design-system/design-system-voltron-3.webp",
+      "/project-imgs/design-system/design-system-voltron-4.webp",
+      "/project-imgs/design-system/design-system-voltron-5.webp",
+      "/project-imgs/design-system/design-system-voltron-6.webp",
+      "/project-imgs/design-system/design-system-voltron-7.webp",
+      "/project-imgs/design-system/design-system-voltron-8.webp",
+      "/project-imgs/design-system/design-system-voltron-9.webp",
+      "/project-imgs/design-system/design-system-voltron-10.webp",
+      "/project-imgs/design-system/design-system-voltron-11.webp",
+      "/project-imgs/design-system/design-system-voltron-12.webp",
+      "/project-imgs/design-system/design-system-voltron-13.webp",
+      "/project-imgs/design-system/design-system-voltron-14.webp",
+      "/project-imgs/design-system/design-system-voltron-15.webp",
+      "/project-imgs/design-system/design-system-voltron-16.webp",
+      "/project-imgs/design-system/design-system-voltron-17.webp",
+      "/project-imgs/design-system/design-system-voltron-18.webp",
+      "/project-imgs/design-system/design-system-voltron-19.webp",
+      "/project-imgs/design-system/design-system-voltron-20.webp",
+    ],
+  },
   {
     title: "Website Corporative",
     imgSrc: "/project-imgs/web-corporative.webp",
