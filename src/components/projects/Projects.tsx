@@ -17,7 +17,7 @@ export const Projects = () => {
 };
 
 const projects = [
-/*   {
+  {
     title: "Atomic System Design",
     imgSrc: "/project-imgs/web-corporative.webp",
     projectLink: "https://voltron-data.netlify.app",
@@ -31,7 +31,7 @@ const projects = [
         </p>
       </>
     ),
-  }, */
+  },
   {
     title: "Website Corporative",
     imgSrc: "/project-imgs/web-corporative.webp",
@@ -83,18 +83,18 @@ const projects = [
       "Xyz",
     galleryImages: [
       "/project-imgs/app-project/app-header.webp",
-      "/project-imgs/app-project/app-login.webp",
       "/project-imgs/app-project/app-blazing.webp",
+      "/project-imgs/app-project/app-login.webp",
       "/project-imgs/app-project/app-dev.webp",
       "/project-imgs/user-interface/ui-hero.webp",
       "/project-imgs/user-interface/ui-content.webp",
-      "/project-imgs/app-project/app-spacedat.webp",
-      "/project-imgs/app-project/app-navbar.webp",
-      "/project-imgs/app-project/app-dashboard.webp",
       "/project-imgs/user-interface/ui-conference.webp",
       "/project-imgs/user-interface/ui-web.webp",
       "/project-imgs/user-interface/ui-header.webp",
       "/project-imgs/user-interface/ui-page.webp",
+            "/project-imgs/app-project/app-spacedat.webp",
+      "/project-imgs/app-project/app-navbar.webp",
+      "/project-imgs/app-project/app-dashboard.webp",
             "/project-imgs/pos-niubiz/pos-landing.webp",
 
     ],
@@ -103,7 +103,7 @@ const projects = [
     title: "Brand Identity",
     imgSrc: "/project-imgs/brand-identity.webp",
     projectLink: "",
-    tech: ["Notion", "Adobe CC", "Midjourney", "Google Slides", "Acrobat"],
+    tech: ["Illustrator", "Photoshop", "Midjourney", "Google Slides", "Acrobat"],
     description:
       "Xyz",
     galleryImages: [

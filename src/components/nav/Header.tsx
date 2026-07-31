@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { SiGithub, SiInstagram, SiLinkedin, SiGmail, SiWhatsapp, } from "react-icons/si";
+import { SiGithub, SiInstagram, SiLinkedin, SiGmail, SiWhatsapp, SiBehance } from "react-icons/si";
 import { OutlineButton } from "../buttons/OutlineButton";
 
 export const Header = () => {
@@ -26,7 +26,7 @@ export const MyLinks = () => (
     <Link
       aria-label="LinkedIn de Kelly Núñez"
       title="LinkedIn"
-      className="text-zinc-300 hover:text-[#1E90FF] transition-colors"
+      className="text-zinc-300 hover:text-[#00FF85] transition-colors"
       href="https://www.linkedin.com/in/kellynunezh/"
       target="_blank"
       rel="nofollow"
@@ -34,19 +34,9 @@ export const MyLinks = () => (
       <SiLinkedin />
     </Link>
     <Link
-      aria-label="GitHub de Kelly Núñez"
-      title="GitHub"
-      className="text-zinc-300 hover:text-[#1E90FF] transition-colors"
-      href="https://github.com/kellynunez"
-      target="_blank"
-      rel="nofollow"
-    >
-      <SiGithub />
-    </Link>
-    <Link
       aria-label="Instagram de Kelly Núñez"
       title="Instagram"
-      className="text-zinc-300 hover:text-[#1E90FF] transition-colors"
+      className="text-zinc-300 hover:text-[#00FF85] transition-colors"
       href="https://www.instagram.com/kellynunz"
       target="_blank"
       rel="nofollow"
@@ -56,7 +46,7 @@ export const MyLinks = () => (
     <Link
       aria-label="Enviar correo a Kelly Núñez"
       title="Correo"
-      className="text-zinc-300 hover:text-[#1E90FF] transition-colors"
+      className="text-zinc-300 hover:text-[#00FF85] transition-colors"
       href="mailto:kellynunezhu@gmail.com"
       rel="nofollow"
     >
@@ -65,12 +55,32 @@ export const MyLinks = () => (
     <Link
       aria-label="WhatsApp de Kelly Núñez"
       title="WhatsApp"
-      className="text-zinc-300 hover:text-[#1E90FF] transition-colors"
+      className="text-zinc-300 hover:text-[#00FF85] transition-colors"
       href="https://wa.me/51957268339"
       target="_blank"
       rel="nofollow"
     >
       <SiWhatsapp />
+    </Link>
+    <Link
+      aria-label="GitHub de Kelly Núñez"
+      title="GitHub"
+      className="text-zinc-300 hover:text-[#00FF85] transition-colors"
+      href="https://github.com/kellynunez"
+      target="_blank"
+      rel="nofollow"
+    >
+      <SiGithub />
+    </Link>
+    <Link
+      aria-label="Behance de Kelly Núñez"
+      title="Behance"
+      className="text-zinc-300 hover:text-[#00FF85] transition-colors"
+      href="https://www.behance.net/kellynunezh"
+      target="_blank"
+      rel="nofollow"
+    >
+      <SiBehance />
     </Link>
   </div>
 );
