@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { twMerge } from "tailwind-merge";
 
 interface Props {
   selected: string;
@@ -10,6 +11,7 @@ interface Props {
   value: string;
   variant?: "vertical" | "horizontal";
   onNavigate?: () => void;
+  className?: string;
 }
 
 const MotionLink = motion(Link);
@@ -22,8 +24,19 @@ export const SideBarLink = ({
   value,
   variant = "vertical",
   onNavigate,
+  className,
 }: Props) => {
   const isVertical = variant === "vertical";
+  const baseClassName = isVertical
+    ? "writing-vertical h-24 w-full shrink-0 flex items-center justify-center border-r-2 text-md md:text-sm"
+    : "flex w-full items-center justify-center border px-4 py-3 text-center text-md md:text-sm";
+
+  const stateClassName =
+    selected === value
+      ? "bg-zinc-800 border-[#00FF85] opacity-100"
+      : isVertical
+        ? "border-transparent hover:border-r-zinc-50 opacity-50 hover:bg-zinc-900"
+        : "border-zinc-800 bg-zinc-900/60 opacity-80 hover:border-zinc-600 hover:bg-zinc-900";
 
   return (
     <MotionLink
@@ -35,17 +48,7 @@ export const SideBarLink = ({
         setSelected(value);
         onNavigate?.();
       }}
-      className={`${
-        isVertical
-          ? "writing-vertical h-24 w-full shrink-0 flex items-center justify-center border-r-2 text-sm"
-          : "flex w-full items-center justify-between rounded-2xl border px-4 py-3 text-left text-sm"
-      } transition-all ${
-        selected === value
-          ? "bg-zinc-800 border-[#00FF85] opacity-100"
-          : isVertical
-            ? "border-transparent hover:border-r-zinc-50 opacity-50 hover:bg-zinc-900"
-            : "border-zinc-800 bg-zinc-900/60 opacity-80 hover:border-zinc-600 hover:bg-zinc-900"
-      }`}
+      className={twMerge(baseClassName, "transition-all", stateClassName, className)}
     >
       {children}
     </MotionLink>

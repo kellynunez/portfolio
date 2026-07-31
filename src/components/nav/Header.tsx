@@ -6,11 +6,13 @@ import { OutlineButton } from "../buttons/OutlineButton";
 export const Header = () => {
   return (
     <header className="group h-[72px] px-4 flex items-center justify-between sticky top-0 z-20 bg-zinc-900/50 backdrop-blur-md">
-      <MyLinks />
-      <OutlineButton onClick={() => {
+      <div className="hidden md:flex">
+        <MyLinks />
+      </div>
+      <OutlineButton className="hidden md:flex" onClick={() => {
         const link = document.createElement('a');
-        link.href = "/cv-kellynunez-espanol.pdf";
-        link.download = "cv-kellynunez-espanol.pdf";
+        link.href = "/cv-kellynunez-es.pdf";
+        link.download = "cv-kellynunez-es.pdf";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -21,8 +23,8 @@ export const Header = () => {
   );
 };
 
-export const MyLinks = () => (
-  <div className="flex items-center text-lg gap-4">
+export const MyLinks = ({ className = "" }: { className?: string }) => (
+  <div className={`flex items-center text-lg gap-4 ${className}`}>
     <Link
       aria-label="LinkedIn de Kelly Núñez"
       title="LinkedIn"

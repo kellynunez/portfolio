@@ -6,36 +6,35 @@ export const SideBar = () => {
   const [selected, setSelected] = useState("");
 
   useEffect(() => {
-    const sections = Array.from(
-      document.querySelectorAll<HTMLElement>(".section-wrapper")
-    );
+    const sections = Array.from(document.querySelectorAll<HTMLElement>(".section-wrapper"));
 
     if (!sections.length) {
       return;
     }
 
-    setSelected(sections[0].id);
+    const updateSelectedSection = () => {
+      const activationPoint = window.innerHeight * 0.35;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleSections = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      const activeSection =
+        sections.find((section) => {
+          const rect = section.getBoundingClientRect();
+          return rect.top <= activationPoint && rect.bottom > activationPoint;
+        }) ??
+        [...sections]
+          .reverse()
+          .find((section) => section.getBoundingClientRect().top <= activationPoint);
 
-        if (visibleSections[0]) {
-          setSelected(visibleSections[0].target.id);
-        }
-      },
-      {
-        threshold: [0.2, 0.35, 0.5, 0.75],
-        rootMargin: "-20% 0px -50% 0px",
-      }
-    );
+      setSelected(activeSection?.id ?? "");
+    };
 
-    sections.forEach((section) => observer.observe(section));
+    updateSelectedSection();
+
+    window.addEventListener("scroll", updateSelectedSection, { passive: true });
+    window.addEventListener("resize", updateSelectedSection);
 
     return () => {
-      observer.disconnect();
+      window.removeEventListener("scroll", updateSelectedSection);
+      window.removeEventListener("resize", updateSelectedSection);
     };
   }, []);
 
