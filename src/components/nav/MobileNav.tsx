@@ -10,7 +10,7 @@ export const MobileNav = () => {
 
   return (
     <div className="md:hidden">
-      <div className="fixed inset-x-4 top-4 z-50 grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3">
+      <div className="fixed inset-x-1 top-1 z-50 grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 bg-zinc-900/50 py-3 px-2 backdrop-blur-md">
         
         <button
           type="button"
