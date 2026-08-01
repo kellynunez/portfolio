@@ -18,10 +18,10 @@ export const Projects = () => {
 
 const projects = [
    {
-    title: "Atomic System Design",
-    imgSrc: "/project-imgs/web-corporative.webp",
-    projectLink: "https://voltron-data.netlify.app",
-    tech: ["ReactJS", "TailwindCSS", "Sanity", "Motion", "Cursor", "Lottie Files"],
+    title: "Sistemas de Diseño",
+    imgSrc: "/project-imgs/system-design.webp",
+    projectLink: "https://voltrondata.netlify.app",
+    tech: ["ReactJS", "TailwindCSS", "Sanity", "Motion", "Lottie Files", "Copilot", "Figma"],
     description:
       "Xyz",
     galleryImages: [
@@ -48,7 +48,7 @@ const projects = [
     ],
   },
   {
-    title: "Website Corporative",
+    title: "Webs Corporativas",
     imgSrc: "/project-imgs/web-corporative.webp",
     projectLink: "https://voltrondata-v1.netlify.app",
     tech: ["Node", "JekyllRB", "TailwindCSS", "Markdown", "Figma", "Midjourney"],
@@ -71,7 +71,7 @@ const projects = [
     ],
   },
   {
-    title: "Mobile Interfaces",
+    title: "Interfaces Mobiles",
     imgSrc: "/project-imgs/pos-niubiz.webp",
     projectLink: "",
     tech: ["Figma", "Illustrator", "Photoshop", "Miro"],
@@ -90,7 +90,7 @@ const projects = [
     ],
   },
   {
-    title: "Web UI Projects",
+    title: "Proyectos Web UI",
     imgSrc: "/project-imgs/webapp-project.webp",
     projectLink: "",
     tech: ["Linux", "VueJS", "Vuetify", "TailwindCSS", "Bootstrap", "Figma", "Adobe"],
@@ -115,7 +115,7 @@ const projects = [
     ],
   },
   {
-    title: "Brand Identity",
+    title: "Identidad de Marca",
     imgSrc: "/project-imgs/brand-identity.webp",
     projectLink: "",
     tech: ["Illustrator", "Photoshop", "Midjourney", "Google Slides", "Acrobat"],
@@ -161,10 +161,10 @@ const projects = [
     ],
   },
   {
-    title: "Creative Pitch Deck",
+    title: "Slides Master",
     imgSrc: "/project-imgs/pitch-deck.webp",
     projectLink: "",
-    tech: ["Google Slides", "Keynote", "Illustrator"],
+    tech: ["Google Slides", "Keynote", "Illustrator", "Photoshop"],
     description:
       "Xyz",
     galleryImages: [
@@ -180,10 +180,10 @@ const projects = [
     ],
   },
   {
-    title: "Advertising Campaigns",
+    title: "Estrategias Creativas",
     imgSrc: "/project-imgs/ads-campaigns.webp",
     projectLink: "",
-    tech: ["Illustrator", "Photoshop", "Microsoft Office"],
+    tech: ["Illustrator", "Photoshop", "Office"],
     description:
       "Xyz",
     galleryImages: [
