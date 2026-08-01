@@ -40,7 +40,7 @@ export const SideBar = () => {
 
   return (
     <nav className="no-scrollbar fixed inset-y-0 left-0 z-20 hidden h-screen w-[54px] flex-col items-center overflow-y-scroll bg-zinc-950 md:flex">
-      <span className="shrink-0 text-xl font-black leading-[1] size-10 flex items-center justify-center my-4">
+      <span className="shrink-0 text-xl font-black leading-[1] size-10 flex items-center justify-center mt-4 mb-6">
         K<span className="text-[#00FF85]">.</span>
       </span>
       {navItems.map((item) => (

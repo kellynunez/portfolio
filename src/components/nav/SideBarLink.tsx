@@ -28,7 +28,7 @@ export const SideBarLink = ({
 }: Props) => {
   const isVertical = variant === "vertical";
   const baseClassName = isVertical
-    ? "writing-vertical h-24 w-full shrink-0 flex items-center justify-center border-r-2 text-md md:text-sm"
+    ? "writing-vertical h-[110px] w-full shrink-0 flex items-center justify-center border-r-2 text-md md:text-sm font-extralight tracking-light text-center"
     : "flex w-full items-center justify-center border px-4 py-3 text-center text-md md:text-sm";
 
   const stateClassName =
