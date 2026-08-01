@@ -33,7 +33,7 @@ export const SideBarLink = ({
 
   const stateClassName =
     selected === value
-      ? "bg-zinc-800 border-[#00FF85] opacity-100"
+      ? "bg-zinc-800 border-[#4B6E8E] opacity-100"
       : isVertical
         ? "border-transparent hover:border-r-zinc-50 opacity-50 hover:bg-zinc-900"
         : "border-zinc-800 bg-zinc-900/60 opacity-80 hover:border-zinc-600 hover:bg-zinc-900";

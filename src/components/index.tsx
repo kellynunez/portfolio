@@ -40,7 +40,7 @@ export const HomPage = () => {
         <Header />
         <div className="mx-auto max-w-md space-y-32 px-4 pb-24 md:max-w-3xl md:px-8 lg:max-w-5xl">
           <Hero />
-          <RibbonWords />
+          {/* <RibbonWords /> */}
           <About />
           <Projects />
           <Experience />

@@ -58,7 +58,7 @@ export const ExperienceItem = ({
 
       <div className="flex items-center justify-between mb-4">
         <Reveal>
-          <span className="text-[#00FF85] font-bold">{position}</span>
+          <span className="text-[#4B6E8E] font-bold">{position}</span>
         </Reveal>
         <Reveal>
           <span className="text-[#FF0099]">{mode}</span>

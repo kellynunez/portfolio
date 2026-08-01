@@ -161,7 +161,7 @@ const EducationCard = ({
     
       <Reveal>
         <div>
-          <h3 className="mb-4 text-2xl font-bold text-[#00FF85]">{title}</h3>
+          <h3 className="mb-4 text-2xl font-bold text-[#4B6E8E]">{title}</h3>
           <p className="mb-4 text-lg font-semibold">{institution}</p>
 
           <button 
@@ -169,14 +169,14 @@ const EducationCard = ({
             disabled={!hasCertificate}
             className={`group mb-2 text-sm flex items-center transition-colors ${
               hasCertificate 
-                ? "text-zinc-400 hover:text-[#00FF85] cursor-pointer" 
+                ? "text-zinc-400 hover:text-[#4B6E8E] cursor-pointer" 
                 : "text-zinc-600 cursor-not-allowed"
             }`}
           >          
             {hasCertificate ? (
               <>
-                <FiEye className="text-blue-600 group-hover:text-[#00FF85] inline-block mr-2 transition-colors" />
-                <span className="underline underline-offset-4 decoration-zinc-700 group-hover:decoration-[#00FF85]">
+                <FiEye className="text-blue-600 group-hover:text-[#4B6E8E] inline-block mr-2 transition-colors" />
+                <span className="underline underline-offset-4 decoration-zinc-700 group-hover:decoration-[#4B6E8E]">
                   Ver {degree}
                 </span>
               </>
@@ -199,7 +199,7 @@ const EducationCard = ({
               <button
                 type="button"
                 onClick={() => setShowAchievements((pv) => !pv)}
-                className="mb-2 flex items-center gap-2 text-sm font-base text-[#00FF85] hover:opacity-90 transition-opacity"
+                className="mb-2 flex items-center gap-2 text-sm font-base text-[#4B6E8E] hover:opacity-90 transition-opacity"
               >
                 <span>{showAchievements ? "Ver menos" : "Ver logros"}</span>
                 <FiChevronDown
@@ -211,7 +211,7 @@ const EducationCard = ({
                 <ul className="space-y-1">
                   {achievements.map((achievement, idx) => (
                     <li key={idx} className="text-sm flex items-start gap-2">
-                      <FiAward className="text-[#00FF85] mt-1 flex-shrink-0" />
+                      <FiAward className="text-[#4B6E8E] mt-1 flex-shrink-0" />
                       <span>{achievement}</span>
                     </li>
                   ))}

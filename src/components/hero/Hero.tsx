@@ -24,7 +24,7 @@ const Hero = () => {
               <span 
                 className="font-semibold"
                 style={{
-                  background: 'linear-gradient(90deg, #00FF85, #00FF85, #FF0099)',
+                  background: 'linear-gradient(90deg, #4B6E8E, #4B6E8E, #FF0099)',
                   backgroundSize: '200% 100%',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',

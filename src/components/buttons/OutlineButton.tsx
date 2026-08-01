@@ -22,7 +22,7 @@ export const OutlineButton = ({ children, className, ...rest }: Props) => {
       <div className="hover:text-black px-2 bg-white md:bg-white group-hover:bg-zinc-200 md:group-hover:bg-white h-[35px] flex items-center">
         {children}
       </div>
-      <div className="px-3 border-l hidden md:flex border-black group-hover:bg-[#00FF85] group-hover:text-black h-[35px] flex items-center">
+      <div className="px-3 border-l hidden md:flex border-black group-hover:bg-[#4B6E8E] group-hover:text-black h-[35px] flex items-center">
         <FiDownload />
       </div>
     </button>

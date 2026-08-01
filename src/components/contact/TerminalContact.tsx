@@ -20,7 +20,7 @@ const TerminalContact = () => {
   return (
     <section
       
-      className="px-0 pt-5 pb-8 max-w-xl mx-auto"
+      className="px-0 pt-5 pb-8 max-w-5xl mx-auto"
     >
         <div className="overflow-hidden">
           <TerminalHeader />
@@ -29,7 +29,7 @@ const TerminalContact = () => {
             onClick={() => {
               inputRef.current?.focus();
             }}
-            className="h-auto px-6 md:px-10 pb-14 bg-zinc-800 backdrop-blur w-full overflow-y-scroll shadow-xl cursor-text font-mono"
+            className="h-auto px-6 md:px-10 pb-16 bg-zinc-800 backdrop-blur w-full overflow-y-scroll shadow-xl cursor-text font-mono"
           >
             <TerminalBody inputRef={inputRef} containerRef={containerRef} />
           </div>
@@ -40,12 +40,10 @@ const TerminalContact = () => {
 
 const TerminalHeader = () => {
   return (
-    <div className="w-full pt-14 bg-zinc-800 flex items-center flex-col gap-1 sticky top-0">
+    <div className="w-full pt-14 pb-10 bg-zinc-800 flex items-center flex-col gap-1 sticky top-0">
       <span className="text-4xl md:text-5xl text-center font-black">
-        Contact<span className="text-[#00FF85]">.</span>
+        Contact<span className="text-[#ff0099]">.</span>
       </span>
-       
-      <p className="text-center pt-3 pb-4 md:pb-0 md:my-4 px-8 md:px-11 text-zinc-300 tracking-wide">Déjame tus datos y te responderé en breve.</p>
     </div>
   );
 };
@@ -125,10 +123,10 @@ const PreviousQuestions = ({ questions }: PreviousQuestionProps) => {
               <p>
                 {q.text || ""}
                 {q.postfix && (
-                  <span className="text-[#1E90FF]">{q.postfix}</span>
+                  <span className="text-white">{q.postfix}</span>
                 )}
               </p>
-              <p className="text-[#00FF85]">
+              <p className="text-[#ff0099]">
                 <FiCheckCircle className="inline-block mr-2" />
                 <span>{q.value}</span>
               </p>
@@ -148,7 +146,7 @@ const CurrentQuestion = ({ curQuestion }: CurrentQuestionProps) => {
     <p>
       {curQuestion.text || ""}
       {curQuestion.postfix && (
-        <span className="text-[#1E90FF]">{curQuestion.postfix}</span>
+        <span className="text-white">{curQuestion.postfix}</span>
       )}
     </p>
   );
@@ -189,7 +187,7 @@ const Summary = ({ questions, setQuestions }: SummaryProps) => {
   return (
     <>
       {complete ? (
-        <p className="text-[#00FF85] mt-2">
+        <p className="text-white mt-2">
           <FiCheckCircle className="inline-block mr-2" />
           <span>¡Enviado! Te responderé lo antes posible 😎</span>
         </p>
@@ -197,15 +195,15 @@ const Summary = ({ questions, setQuestions }: SummaryProps) => {
         <div className="flex gap-2 mt-6">
           <button
             onClick={handleSend}
-            className="px-4 py-1.5 text-base font-medium hover:opacity-90 transition-opacity bg-slate-100 text-zinc-800"
+            className="px-3 py-1.5 text-base font-medium transition-opacity bg-zinc-100 hover:bg-zinc-300 text-zinc-900"
           >
             Enviar
           </button>
           <button
             onClick={handleReset}
-            className="px-3.5 pt-[3.5px] pb-1.5 text-lg hover:opacity-90 transition-opacity bg-blue-600 text-white"
+            className="px-3.5 pt-[3.5px] pb-1.5 text-xl transition-opacity bg-[#4B6E8E] border border-[#4B6E8E] hover:bg-[#4B6E8E] hover:opacity-80"
           >
-            <span className="text-white">↺</span>
+            <span className="text-zinc-900">↺</span>
           </button>
           
         </div>
@@ -267,8 +265,7 @@ const CurLine = ({
         />
       </form>
       <p>
-        <span className="text-[#00FF85]">➜</span>{" "}
-        {/* <span className="text-[#1E90FF]">~</span>{" "} */}
+        <span className="text-[#ff0099]">➜</span>{" "}
         {command && <span className="opacity-50">Ingresa tu {command}: </span>}
         {text}
         {focused && (
@@ -293,8 +290,8 @@ export default TerminalContact;
 const QUESTIONS: QuestionType[] = [
   {
     key: "email",
-    text: "¿Podrías compartirme ",
-    postfix: "tu email?",
+    text: "Déjame tus datos ",
+    postfix: "y te responderé pronto.",
     complete: false,
     value: "",
   },

@@ -28,7 +28,7 @@ export const MyLinks = ({ className = "" }: { className?: string }) => (
     <Link
       aria-label="LinkedIn de Kelly Núñez"
       title="LinkedIn"
-      className="text-zinc-300 hover:text-[#00FF85] transition-colors"
+      className="text-zinc-300 hover:text-[#4B6E8E] transition-colors"
       href="https://www.linkedin.com/in/kellynunezh/"
       target="_blank"
       rel="nofollow"
@@ -38,7 +38,7 @@ export const MyLinks = ({ className = "" }: { className?: string }) => (
     <Link
       aria-label="Instagram de Kelly Núñez"
       title="Instagram"
-      className="text-zinc-300 hover:text-[#00FF85] transition-colors"
+      className="text-zinc-300 hover:text-[#4B6E8E] transition-colors"
       href="https://www.instagram.com/kellynunz"
       target="_blank"
       rel="nofollow"
@@ -48,7 +48,7 @@ export const MyLinks = ({ className = "" }: { className?: string }) => (
     <Link
       aria-label="Enviar correo a Kelly Núñez"
       title="Correo"
-      className="text-zinc-300 hover:text-[#00FF85] transition-colors"
+      className="text-zinc-300 hover:text-[#4B6E8E] transition-colors"
       href="mailto:kellynunezhu@gmail.com"
       rel="nofollow"
     >
@@ -57,7 +57,7 @@ export const MyLinks = ({ className = "" }: { className?: string }) => (
     <Link
       aria-label="WhatsApp de Kelly Núñez"
       title="WhatsApp"
-      className="text-zinc-300 hover:text-[#00FF85] transition-colors"
+      className="text-zinc-300 hover:text-[#4B6E8E] transition-colors"
       href="https://wa.me/51957268339"
       target="_blank"
       rel="nofollow"
@@ -67,7 +67,7 @@ export const MyLinks = ({ className = "" }: { className?: string }) => (
     <Link
       aria-label="GitHub de Kelly Núñez"
       title="GitHub"
-      className="text-zinc-300 hover:text-[#00FF85] transition-colors"
+      className="text-zinc-300 hover:text-[#4B6E8E] transition-colors"
       href="https://github.com/kellynunez"
       target="_blank"
       rel="nofollow"
@@ -77,7 +77,7 @@ export const MyLinks = ({ className = "" }: { className?: string }) => (
     <Link
       aria-label="Behance de Kelly Núñez"
       title="Behance"
-      className="text-zinc-300 hover:text-[#00FF85] transition-colors"
+      className="text-zinc-300 hover:text-[#4B6E8E] transition-colors"
       href="https://www.behance.net/kellynunezh"
       target="_blank"
       rel="nofollow"
