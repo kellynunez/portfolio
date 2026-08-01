@@ -32,6 +32,7 @@ export const Stats2 = () => {
             </h4>
             <div className="flex flex-wrap gap-2 mb-6">
               <Chip>Cursor</Chip>
+              <Chip>Copilot</Chip>
               <Chip>v0</Chip>
               <Chip>Figma</Chip>
               <Chip>Relume</Chip>
@@ -39,7 +40,6 @@ export const Stats2 = () => {
               <Chip>Perplexity</Chip>
               <Chip>LLMs</Chip>
               <Chip>Midjourney</Chip>
-              <Chip>Adobe Firefly</Chip>
             </div>
           </div>
         </Reveal>
