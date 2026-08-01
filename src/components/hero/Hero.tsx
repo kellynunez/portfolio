@@ -24,7 +24,7 @@ const Hero = () => {
               <span 
                 className="font-semibold"
                 style={{
-                  background: 'linear-gradient(90deg, #00FF85, #00FF85, #FF0099)',
+                  background: 'linear-gradient(90deg, #4B6E8E, #4B6E8E, #FF0099)',
                   backgroundSize: '200% 100%',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
@@ -38,7 +38,8 @@ const Hero = () => {
           </Reveal>
           <Reveal>
             <p className="pointer-events-auto leading-relaxed md:leading-relaxed max-w-3xl text-base md:text-lg lg:text-xl text-zinc-200 font-normal tracking-wide">
-              Especialista en arquitectura de interfaces. Integración de identidad de marca, diseño publicitario y sistemas UI/UX en arquitecturas frontend escalables.
+              Especialista Front-End y de sistemas de diseño UI/UX. 
+              Integración de identidad de marca, comunicación y diseño publicitario.
             </p>
           </Reveal>
           <Reveal>

@@ -16,7 +16,7 @@ export const SectionHeader = ({ title, dir = "r" }: Props) => {
         <Reveal>
           <span className="text-3xl md:text-5xl font-black text-end !leading-normal">
             {title}
-            <span className="text-[#00FF85]">.</span>
+            <span className="text-[#ff0099]">.</span>
           </span>
         </Reveal>
       </h2>

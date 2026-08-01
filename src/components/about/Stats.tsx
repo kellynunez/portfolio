@@ -9,10 +9,10 @@ export const Stats = () => {
       <Reveal>
         <div>
           <h4 className="flex items-center mb-6">
-            <AiFillLayout className="text-[#00FF85] text-2xl" />
+            <AiFillLayout className="text-[#4B6E8E] text-2xl" />
             <span className="font-bold ml-2">Diseño y prototipado</span>
           </h4>
-          <div className="flex flex-wrap gap-2 mb-12">
+          <div className="flex flex-wrap gap-2 mb-6 md:mb-16">
             <Chip>Figma</Chip>
             <Chip>Framer</Chip>
             <Chip>ProtoPie</Chip>
@@ -30,10 +30,10 @@ export const Stats = () => {
       <Reveal>
         <div>
           <h4 className="flex items-center mb-6">
-            <AiFillCode className="text-[#00FF85] text-2xl" />
+            <AiFillCode className="text-[#4B6E8E] text-2xl" />
             <span className="font-bold ml-2">Lenguajes, estilos y frontend</span>
           </h4>
-          <div className="flex flex-wrap gap-2 mb-12">
+          <div className="flex flex-wrap gap-2 mb-6 md:mb-16">
             <Chip>HTML</Chip>
             <Chip>CSS</Chip>
             <Chip>JavaScript</Chip>
@@ -45,7 +45,6 @@ export const Stats = () => {
             <Chip>Sass</Chip>
             <Chip>Framer Motion</Chip>
             <Chip>AnimeJS</Chip>
-            <Chip>Vite</Chip>
             <Chip>PHP</Chip>
           </div>
         </div>

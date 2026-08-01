@@ -28,12 +28,12 @@ export const SideBarLink = ({
 }: Props) => {
   const isVertical = variant === "vertical";
   const baseClassName = isVertical
-    ? "writing-vertical h-24 w-full shrink-0 flex items-center justify-center border-r-2 text-md md:text-sm"
+    ? "writing-vertical h-[110px] w-full shrink-0 flex items-center justify-center border-r-2 text-md md:text-sm font-extralight tracking-light text-center"
     : "flex w-full items-center justify-center border px-4 py-3 text-center text-md md:text-sm";
 
   const stateClassName =
     selected === value
-      ? "bg-zinc-800 border-[#00FF85] opacity-100"
+      ? "bg-zinc-800 border-[#4B6E8E] opacity-100"
       : isVertical
         ? "border-transparent hover:border-r-zinc-50 opacity-50 hover:bg-zinc-900"
         : "border-zinc-800 bg-zinc-900/60 opacity-80 hover:border-zinc-600 hover:bg-zinc-900";

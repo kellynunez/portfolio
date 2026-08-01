@@ -17,26 +17,47 @@ export const Projects = () => {
 };
 
 const projects = [
-/*   {
-    title: "Atomic System Design",
-    imgSrc: "/project-imgs/web-corporative.webp",
-    projectLink: "https://voltron-data.netlify.app",
-    tech: ["ReactJS", "TailwindCSS", "Sanity", "Motion", "Cursor", "Lottie Files"],
+   {
+    title: "Sistemas de Diseño",
+    imgSrc: "/project-imgs/system-design.webp",
+    projectLink: "https://voltron-data.netlify.app/codex",
+    tech: ["ReactJS", "TailwindCSS", "Sanity", "Motion", "Lottie Files", "Cursor", "Figma"],
     description:
       "Xyz",
-    modalContent: (
-      <>
-        <p>
-          Pain.app is a real-time coaching app for students learning to paint.
-        </p>
-      </>
-    ),
-  }, */
+    galleryImages: [
+      "/project-imgs/design-system/portada.webp",
+      "/project-imgs/design-system/design-system-voltron-1.webp",
+      "/project-imgs/design-system/design-system-voltron-2.webp",
+      "/project-imgs/design-system/design-system-voltron-3.webp",
+      "/project-imgs/design-system/design-system-voltron-4.webp",
+      "/project-imgs/design-system/design-system-voltron-5.webp",
+      "/project-imgs/design-system/design-system-voltron-6.webp",
+      "/project-imgs/design-system/design-system-voltron-7.webp",
+      "/project-imgs/design-system/design-system-voltron-8.webp",
+      "/project-imgs/design-system/design-system-voltron-9.webp",
+      "/project-imgs/design-system/design-system-voltron-10.webp",
+      "/project-imgs/design-system/design-system-voltron-11.webp",
+      "/project-imgs/design-system/design-system-voltron-12.webp",
+      "/project-imgs/design-system/design-system-voltron-13.webp",
+      "/project-imgs/design-system/design-system-voltron-14.webp",
+      "/project-imgs/design-system/design-system-voltron-15.webp",
+      "/project-imgs/design-system/design-system-voltron-16.webp",
+      "/project-imgs/design-system/design-system-voltron-17.webp",
+      "/project-imgs/design-system/design-system-voltron-18.webp",
+      "/project-imgs/design-system/design-system-voltron-19.webp",
+      "/project-imgs/design-system/design-system-voltron-20.webp",
+      "/project-imgs/design-system/atomos.webp",
+      "/project-imgs/design-system/moleculas.webp",
+      "/project-imgs/design-system/organismos.webp",
+      "/project-imgs/design-system/plantillas.webp",
+      "/project-imgs/design-system/paginas.webp",
+    ],
+  },
   {
-    title: "Website Corporative",
+    title: "Web, Apps & UI/UX",
     imgSrc: "/project-imgs/web-corporative.webp",
     projectLink: "https://voltrondata-v1.netlify.app",
-    tech: ["Node", "JekyllRB", "TailwindCSS", "Markdown", "Figma", "Midjourney"],
+    tech: ["Node", "JekyllRB", "Vue", "TailwindCSS", "Markdown", "Figma", "Midjourney"],
     description:
       "Xyz",
     galleryImages: [
@@ -53,10 +74,24 @@ const projects = [
       "/project-imgs/web-corporative/web-laptop-news.webp",
       "/project-imgs/web-corporative/web-news.webp",
       "/project-imgs/web-corporative/web-contact.webp",
+      "/project-imgs/app-project/app-header.webp",
+      "/project-imgs/app-project/app-blazing.webp",
+      "/project-imgs/app-project/app-login.webp",
+      "/project-imgs/app-project/app-dev.webp",
+      "/project-imgs/user-interface/ui-hero.webp",
+      "/project-imgs/user-interface/ui-content.webp",
+      "/project-imgs/user-interface/ui-conference.webp",
+      "/project-imgs/user-interface/ui-web.webp",
+      "/project-imgs/user-interface/ui-header.webp",
+      "/project-imgs/user-interface/ui-page.webp",
+      "/project-imgs/app-project/app-spacedat.webp",
+      "/project-imgs/app-project/app-navbar.webp",
+      "/project-imgs/app-project/app-dashboard.webp",
+      "/project-imgs/pos-niubiz/pos-landing.webp",
     ],
   },
   {
-    title: "Mobile Interfaces",
+    title: "Interfaces Mobiles",
     imgSrc: "/project-imgs/pos-niubiz.webp",
     projectLink: "",
     tech: ["Figma", "Illustrator", "Photoshop", "Miro"],
@@ -75,32 +110,7 @@ const projects = [
     ],
   },
   {
-    title: "Web UI Projects",
-    imgSrc: "/project-imgs/webapp-project.webp",
-    projectLink: "",
-    tech: ["Linux", "VueJS", "Vuetify", "TailwindCSS", "Bootstrap", "Figma", "Adobe"],
-    description:
-      "Xyz",
-    galleryImages: [
-      "/project-imgs/app-project/app-header.webp",
-      "/project-imgs/app-project/app-blazing.webp",
-      "/project-imgs/app-project/app-login.webp",
-      "/project-imgs/app-project/app-dev.webp",
-      "/project-imgs/user-interface/ui-hero.webp",
-      "/project-imgs/user-interface/ui-content.webp",
-      "/project-imgs/user-interface/ui-conference.webp",
-      "/project-imgs/user-interface/ui-web.webp",
-      "/project-imgs/user-interface/ui-header.webp",
-      "/project-imgs/user-interface/ui-page.webp",
-            "/project-imgs/app-project/app-spacedat.webp",
-      "/project-imgs/app-project/app-navbar.webp",
-      "/project-imgs/app-project/app-dashboard.webp",
-            "/project-imgs/pos-niubiz/pos-landing.webp",
-
-    ],
-  },
-  {
-    title: "Brand Identity",
+    title: "Identidad de Marca",
     imgSrc: "/project-imgs/brand-identity.webp",
     projectLink: "",
     tech: ["Illustrator", "Photoshop", "Midjourney", "Google Slides", "Acrobat"],
@@ -146,10 +156,10 @@ const projects = [
     ],
   },
   {
-    title: "Creative Pitch Deck",
+    title: "Slides Master",
     imgSrc: "/project-imgs/pitch-deck.webp",
     projectLink: "",
-    tech: ["Google Slides", "Keynote", "Illustrator"],
+    tech: ["Google Slides", "Keynote", "Illustrator", "Photoshop"],
     description:
       "Xyz",
     galleryImages: [
@@ -164,11 +174,11 @@ const projects = [
       "/project-imgs/pitch-deck/slides-university.webp",
     ],
   },
-  {
-    title: "Advertising Campaigns",
+/*   {
+    title: "Estrategias Creativas",
     imgSrc: "/project-imgs/ads-campaigns.webp",
     projectLink: "",
-    tech: ["Illustrator", "Photoshop", "Microsoft Office"],
+    tech: ["Illustrator", "Photoshop", "Office"],
     description:
       "Xyz",
     galleryImages: [
@@ -183,6 +193,6 @@ const projects = [
       "/project-imgs/ads-campaigns/ads-flyer.webp",
       "/project-imgs/brand-identity/branding-newyorkcity.webp",
     ],
-  },
+  }, */
 ];
 

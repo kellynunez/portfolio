@@ -97,9 +97,9 @@ export const Project = ({
             </h4>
             <div className="w-full h-[1px] bg-zinc-600" />
 
-            <AiOutlineExport className="w-8 text-zinc-300 hover:text-green-400 transition-colors cursor-pointer" onClick={() => setIsOpen(true)} />
+            <AiOutlineExport className="w-8 text-white transition-colors cursor-pointer" onClick={() => setIsOpen(true)} />
           </div>
-          <div className="flex flex-wrap gap-4 text-sm text-green-400 my-2">
+          <div className="flex flex-wrap gap-4 text-sm text-[#4B6E8E] my-2">
             {tech.join(" - ")}
           </div>
 {/*           <Reveal>

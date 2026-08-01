@@ -14,8 +14,11 @@ export const SideBar = () => {
 
     const updateSelectedSection = () => {
       const activationPoint = window.innerHeight * 0.35;
+      const isNearPageBottom =
+        window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 24;
 
       const activeSection =
+        (isNearPageBottom ? sections[sections.length - 1] : null) ??
         sections.find((section) => {
           const rect = section.getBoundingClientRect();
           return rect.top <= activationPoint && rect.bottom > activationPoint;
@@ -40,8 +43,8 @@ export const SideBar = () => {
 
   return (
     <nav className="no-scrollbar fixed inset-y-0 left-0 z-20 hidden h-screen w-[54px] flex-col items-center overflow-y-scroll bg-zinc-950 md:flex">
-      <span className="shrink-0 text-xl font-black leading-[1] size-10 flex items-center justify-center my-4">
-        K<span className="text-[#00FF85]">.</span>
+      <span className="shrink-0 text-xl font-black leading-[1] size-10 flex items-center justify-center mt-4 mb-6">
+        K<span className="text-[#ff0099]">.</span>
       </span>
       {navItems.map((item) => (
         <SideBarLink
