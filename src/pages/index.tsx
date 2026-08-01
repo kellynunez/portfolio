@@ -10,7 +10,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export default function Home() {
   const description = "Diseño y desarrollo soluciones digitales escalables. Especialista en la intersección del diseño gráfico, UI/UX y el desarrollo frontend. Enfocada en crear productos coherentes que combinan estética de marca y viabilidad técnica.";
-  const title = "Kelly Núñez | Design Engineer & Creative Lead | Branding, UI/UX & Frontend";
+  const title = "Kelly Núñez | Design Engineer & Creative Lead | Frontend, UI/UX & Branding";
   const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://kelly-nunez.com").replace(/\/$/, "");
   const imagePath = "/kelly-nunez-portfolio.png";
   const image = `${siteUrl}${imagePath}`;
@@ -20,7 +20,7 @@ export default function Home() {
     "@type": "Person",
     name: "Kelly Núñez",
     url: siteUrl,
-    jobTitle: "Design Engineer & Creative Lead | Branding, UI/UX & Frontend",
+    jobTitle: "Design Engineer & Creative Lead | Frontend, UI/UX & Branding",
     description: description,
     image: image,
     sameAs: [

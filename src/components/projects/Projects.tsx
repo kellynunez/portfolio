@@ -20,11 +20,12 @@ const projects = [
    {
     title: "Sistemas de Diseño",
     imgSrc: "/project-imgs/system-design.webp",
-    projectLink: "https://voltrondata.netlify.app",
+    projectLink: "https://voltron-data.netlify.app/codex",
     tech: ["ReactJS", "TailwindCSS", "Sanity", "Motion", "Lottie Files", "Copilot", "Figma"],
     description:
       "Xyz",
     galleryImages: [
+      "/project-imgs/design-system/portada.webp",
       "/project-imgs/design-system/design-system-voltron-1.webp",
       "/project-imgs/design-system/design-system-voltron-2.webp",
       "/project-imgs/design-system/design-system-voltron-3.webp",
@@ -45,13 +46,18 @@ const projects = [
       "/project-imgs/design-system/design-system-voltron-18.webp",
       "/project-imgs/design-system/design-system-voltron-19.webp",
       "/project-imgs/design-system/design-system-voltron-20.webp",
+      "/project-imgs/design-system/atomos.webp",
+      "/project-imgs/design-system/moleculas.webp",
+      "/project-imgs/design-system/organismos.webp",
+      "/project-imgs/design-system/plantillas.webp",
+      "/project-imgs/design-system/paginas.webp",
     ],
   },
   {
-    title: "Webs Corporativas",
+    title: "Web, Apps & UI/UX",
     imgSrc: "/project-imgs/web-corporative.webp",
     projectLink: "https://voltrondata-v1.netlify.app",
-    tech: ["Node", "JekyllRB", "TailwindCSS", "Markdown", "Figma", "Midjourney"],
+    tech: ["Node", "JekyllRB", "Vue", "TailwindCSS", "Markdown", "Figma", "Midjourney"],
     description:
       "Xyz",
     galleryImages: [
@@ -68,6 +74,20 @@ const projects = [
       "/project-imgs/web-corporative/web-laptop-news.webp",
       "/project-imgs/web-corporative/web-news.webp",
       "/project-imgs/web-corporative/web-contact.webp",
+      "/project-imgs/app-project/app-header.webp",
+      "/project-imgs/app-project/app-blazing.webp",
+      "/project-imgs/app-project/app-login.webp",
+      "/project-imgs/app-project/app-dev.webp",
+      "/project-imgs/user-interface/ui-hero.webp",
+      "/project-imgs/user-interface/ui-content.webp",
+      "/project-imgs/user-interface/ui-conference.webp",
+      "/project-imgs/user-interface/ui-web.webp",
+      "/project-imgs/user-interface/ui-header.webp",
+      "/project-imgs/user-interface/ui-page.webp",
+      "/project-imgs/app-project/app-spacedat.webp",
+      "/project-imgs/app-project/app-navbar.webp",
+      "/project-imgs/app-project/app-dashboard.webp",
+      "/project-imgs/pos-niubiz/pos-landing.webp",
     ],
   },
   {
@@ -87,31 +107,6 @@ const projects = [
       "/project-imgs/app-project/app-mystery.webp",
       "/project-imgs/app-project/app-livetrade.webp",
       "/project-imgs/app-project/app-mobile.webp",
-    ],
-  },
-  {
-    title: "Proyectos Web UI",
-    imgSrc: "/project-imgs/webapp-project.webp",
-    projectLink: "",
-    tech: ["Linux", "VueJS", "Vuetify", "TailwindCSS", "Bootstrap", "Figma", "Adobe"],
-    description:
-      "Xyz",
-    galleryImages: [
-      "/project-imgs/app-project/app-header.webp",
-      "/project-imgs/app-project/app-blazing.webp",
-      "/project-imgs/app-project/app-login.webp",
-      "/project-imgs/app-project/app-dev.webp",
-      "/project-imgs/user-interface/ui-hero.webp",
-      "/project-imgs/user-interface/ui-content.webp",
-      "/project-imgs/user-interface/ui-conference.webp",
-      "/project-imgs/user-interface/ui-web.webp",
-      "/project-imgs/user-interface/ui-header.webp",
-      "/project-imgs/user-interface/ui-page.webp",
-            "/project-imgs/app-project/app-spacedat.webp",
-      "/project-imgs/app-project/app-navbar.webp",
-      "/project-imgs/app-project/app-dashboard.webp",
-            "/project-imgs/pos-niubiz/pos-landing.webp",
-
     ],
   },
   {
@@ -179,7 +174,7 @@ const projects = [
       "/project-imgs/pitch-deck/slides-university.webp",
     ],
   },
-  {
+/*   {
     title: "Estrategias Creativas",
     imgSrc: "/project-imgs/ads-campaigns.webp",
     projectLink: "",
@@ -198,6 +193,6 @@ const projects = [
       "/project-imgs/ads-campaigns/ads-flyer.webp",
       "/project-imgs/brand-identity/branding-newyorkcity.webp",
     ],
-  },
+  }, */
 ];
 
