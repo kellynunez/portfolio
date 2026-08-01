@@ -34,7 +34,6 @@ export const Stats2 = () => {
               <Chip>Cursor</Chip>
               <Chip>Copilot</Chip>
               <Chip>v0</Chip>
-              <Chip>Figma</Chip>
               <Chip>Relume</Chip>
               <Chip>Claude Design</Chip>
               <Chip>Perplexity</Chip>
