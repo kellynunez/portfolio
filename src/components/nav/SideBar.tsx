@@ -14,8 +14,11 @@ export const SideBar = () => {
 
     const updateSelectedSection = () => {
       const activationPoint = window.innerHeight * 0.35;
+      const isNearPageBottom =
+        window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 24;
 
       const activeSection =
+        (isNearPageBottom ? sections[sections.length - 1] : null) ??
         sections.find((section) => {
           const rect = section.getBoundingClientRect();
           return rect.top <= activationPoint && rect.bottom > activationPoint;
