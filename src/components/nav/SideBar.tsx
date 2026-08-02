@@ -55,7 +55,7 @@ export const SideBar = () => {
             className="flex cursor-pointer items-center justify-between transition-colors"
             onClick={() => setOpen((value) => !value)}
           >
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-4">
               {/* Cambiamos 'grid place-content-center' por 'flex items-center' */}
               <div className="flex h-14 pl-4 shrink-0 items-center justify-center text-lg font-black text-zinc-200 hover:text-white">
                 <span>K</span>
@@ -64,7 +64,7 @@ export const SideBar = () => {
               {open && (
                 <div>
                   <span className="block text-sm font-medium text-zinc-100">Kelly Núñez</span>
-                  <span className="block text-xs text-zinc-400 tracking-snug">Design Engineer</span>
+                  <span className="block text-[14px] text-zinc-500">Design Engineer</span>
                 </div>
               )}
             </div>
@@ -85,7 +85,7 @@ export const SideBar = () => {
           </div>
         </div>
 
-        <div className="space-y-1 overflow-y-auto pr-1">
+        <div className="space-y-1 overflow-y-auto">
           {navItems.map((item) => (
             <SideBarLink
               key={item.value}

@@ -33,15 +33,15 @@ export const SideBarLink = ({
   const isVertical = variant === "vertical";
   const baseClassName = isVertical
     ? open
-      ? "flex h-11 w-full items-center justify-start gap-3 rounded-md px-4 text-sm font-medium"
-      : "flex h-11 w-11 items-center justify-center rounded-md px-0 text-[12px] font-semibold uppercase"
+      ? "flex h-12 w-full items-center justify-start gap-5 px-3 text-[14px] font-medium"
+      : "flex h-12 w-11 items-center justify-center px-0 text-[14px] font-medium uppercase"
     : "flex w-full items-center justify-center border px-4 py-2 text-center text-md md:text-sm";
 
   const stateClassName =
     selected === value
-      ? "bg-zinc-800 border-zinc-800 opacity-100 text-zinc-100"
+      ? "bg-zinc-800 border-zinc-800 opacity-100 font-light"
       : isVertical
-        ? "border border-transparent opacity-70 hover:border-zinc-700 hover:bg-zinc-900/80"
+        ? "border border-transparent text-zinc-500 font-light opacity-90 hover:border-zinc-700 hover:bg-zinc-900/80"
         : "border-zinc-800 bg-zinc-900/60 opacity-80 hover:border-zinc-600 hover:bg-zinc-900";
 
   return (
@@ -57,7 +57,7 @@ export const SideBarLink = ({
         <>
           {Icon ? (
             <span className="grid size-4 shrink-0 place-content-center overflow-hidden">
-              <Icon className="size-4 text-white pl-0.5" />
+              <Icon className="size-4 ml-0" />
             </span>
           ) : null}
           {open ? <span className="truncate">{children}</span> : null}
