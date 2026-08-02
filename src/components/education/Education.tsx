@@ -353,7 +353,7 @@ const education = [
     image: "/certs/usil-bachiller-comunicacion-publicidad.webp",
     Icon: GraduationCap,
     description:
-        "Conocimientos técnicos en teorías de la comunicación, marketing, publicidad, investigación de mercados y gestión de marcas, desarrollando habilidades en redacción, diseño, y estrategias de comunicación digital y tradicional.",
+        "Sólida base en comunicación y marketing, respaldada por una tesis en sistemas de diseño con mención honrosa; especializada en branding, estrategia y desarrollo digital.",
     achievements: [
         "Tercio Superior según ranking académico de la universidad",
         "Mencion Honorífica en tesis de licenciatura = 19"
@@ -382,7 +382,7 @@ const education = [
     time: "80 horas",
     Icon: SquareTerminal,
     description:
-        "Manejo del flujo de trabajo frontend completo, desde la construcción de sitios estáticos eficientes con Jekyll.js y la creación de interfaces interactivas con JavaScript y Tailwind CSS, hasta el despliegue continuo con Netlify y la colaboración con Git/GitHub.",
+        "Gestión integral del front-end: desarrollo de interfaces interactivas con React y Tailwind CSS, y despliegue continuo con Git, GitHub y Netlify.",
     achievements: [
         "Construcción y Despliegue de Sitios Web Estáticos Optimizado",
         "Desarrollo de Interfaces Interactivas y Gestión Colaborativa"

@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Script from "next/script";
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import { useRouter } from "next/router";
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID;
@@ -22,6 +22,40 @@ const pageview = (url: string) => {
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
+
+  useLayoutEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const previousScrollRestoration = window.history.scrollRestoration;
+    window.history.scrollRestoration = "manual";
+    const forceScrollToTop = () => {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+
+      if (window.location.hash) {
+        window.history.replaceState(null, "", window.location.pathname + window.location.search);
+      }
+    };
+
+    forceScrollToTop();
+    const firstFrame = window.requestAnimationFrame(() => {
+      forceScrollToTop();
+      window.requestAnimationFrame(forceScrollToTop);
+    });
+
+    const handlePageShow = () => {
+      forceScrollToTop();
+    };
+
+    window.addEventListener("pageshow", handlePageShow);
+
+    return () => {
+      window.cancelAnimationFrame(firstFrame);
+      window.removeEventListener("pageshow", handlePageShow);
+      window.history.scrollRestoration = previousScrollRestoration;
+    };
+  }, []);
 
   useEffect(() => {
     if (!SHOULD_LOAD_GA) return;
