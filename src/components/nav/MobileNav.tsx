@@ -83,9 +83,9 @@ export const MobileNav = () => {
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: -24, opacity: 0 }}
               transition={{ duration: 0.22, ease: "easeOut" }}
-              className="fixed left-4 right-4 top-1/4 z-50 mx-auto w-auto max-w-[20rem] overflow-hidden border border-white/10 bg-transparent shadow-2xl shadow-black/40 backdrop-blur-md"
+              className="fixed left-4 right-4 top-1/4 z-50 mx-auto w-auto max-w-[18rem] overflow-hidden bg-transparent shadow-2xl shadow-black/40 backdrop-blur-md"
             >
-              <nav className="flex max-h-[calc(100vh-9rem)] flex-col gap-4 overflow-y-auto p-3">
+              <nav className="flex max-h-[calc(100vh-9rem)] flex-col gap-3 overflow-y-auto p-4">
                 {navItems.map((item) => (
                   <SideBarLink
                     key={item.value}

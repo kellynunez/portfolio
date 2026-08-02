@@ -34,8 +34,8 @@ export const SideBarLink = ({
   const baseClassName = isVertical
     ? open
       ? "flex h-11 w-full items-center justify-start gap-3 rounded-md px-4 text-sm font-medium"
-      : "flex h-11 w-11 items-center justify-center rounded-md px-0 text-[11px] font-semibold uppercase"
-    : "flex w-full items-center justify-center border px-4 py-3 text-center text-md md:text-sm";
+      : "flex h-11 w-11 items-center justify-center rounded-md px-0 text-[12px] font-semibold uppercase"
+    : "flex w-full items-center justify-center border px-4 py-2 text-center text-md md:text-sm";
 
   const stateClassName =
     selected === value
