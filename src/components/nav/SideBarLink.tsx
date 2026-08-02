@@ -47,6 +47,8 @@ export const SideBarLink = ({
   return (
     <Link
       href={href}
+      aria-label={children}
+      title={children}
       onClick={() => {
         setSelected(value);
         onNavigate?.();
