@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   FiChevronLeft,
   FiChevronDown,
@@ -8,31 +8,58 @@ import {
   FiEyeOff,
   FiAward,
   FiCalendar,
-  FiGlobe,
-  FiGitPullRequest,
 } from "react-icons/fi";
-import { GraduationCap, HandHelping, SquareTerminal, Languages, BookHeart, Computer, LayoutTemplate, PanelsTopLeft, GlobeLock, SquaresIntersect } from 'lucide-react';
+import {
+  GraduationCap,
+  HandHelping,
+  SquareTerminal,
+  Languages,
+  BookHeart,
+  Computer,
+  LayoutTemplate,
+  PanelsTopLeft,
+  GlobeLock,
+  SquaresIntersect,
+} from "lucide-react";
+import type { ComponentType } from "react";
 import { SectionHeader } from "../util/SectionHeader";
 import Reveal from "../util/Reveal";
 
 interface EducationCardProps {
-  position: number;
-  index: number;
   title: string;
   institution: string;
   degree: string;
   period: string;
   time: string;
   description: string;
-  Icon: React.ComponentType<{ className?: string }>;
+  Icon: ComponentType<{ className?: string }>;
   achievements?: string[];
-  image?: string; // Propiedad añadida
-  onOpenModal: (img: string) => void; // Ajustada para recibir la imagen
+  image?: string;
+  onOpenModal: (img: string) => void;
 }
 
 export const Education = () => {
   const [position, setPosition] = useState(0);
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const carouselRef = useRef<HTMLDivElement | null>(null);
+  const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const dragState = useRef({
+    active: false,
+    pointerId: -1,
+    startX: 0,
+    startScrollLeft: 0,
+  });
+
+  const currentEducation = education[position];
+
+  useEffect(() => {
+    cardRefs.current[position]?.scrollIntoView({
+      behavior: "smooth",
+      inline: "start",
+      block: "nearest",
+    });
+  }, [position]);
 
   const shiftLeft = () => {
     if (position > 0) {
@@ -46,6 +73,55 @@ export const Education = () => {
     }
   };
 
+  const handlePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
+    const target = event.target as HTMLElement | null;
+
+    if (target?.closest("button,a,input,textarea,select,label")) {
+      return;
+    }
+
+    if (!carouselRef.current) {
+      return;
+    }
+
+    dragState.current = {
+      active: true,
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startScrollLeft: carouselRef.current.scrollLeft,
+    };
+    setIsDragging(true);
+    event.currentTarget.setPointerCapture(event.pointerId);
+  };
+
+  const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (!dragState.current.active || dragState.current.pointerId !== event.pointerId || !carouselRef.current) {
+      return;
+    }
+
+    const deltaX = event.clientX - dragState.current.startX;
+    carouselRef.current.scrollLeft = dragState.current.startScrollLeft - deltaX;
+  };
+
+  const finishDrag = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (!dragState.current.active || dragState.current.pointerId !== event.pointerId) {
+      return;
+    }
+
+    const threshold = 60;
+    const deltaX = event.clientX - dragState.current.startX;
+
+    if (deltaX > threshold) {
+      shiftLeft();
+    } else if (deltaX < -threshold) {
+      shiftRight();
+    }
+
+    dragState.current.active = false;
+    dragState.current.pointerId = -1;
+    setIsDragging(false);
+  };
+
   return (
     <section className="section-wrapper" id="education">
       <div className="flex justify-between gap-4">
@@ -55,7 +131,7 @@ export const Education = () => {
             type="button"
             aria-label="Ver educación anterior"
             title="Ver educación anterior"
-            className="h-fit bg-zinc-800 hover:bg-zinc-700 p-3 text-2xl text-zinc-300 transition-colors border border-zinc-700"
+            className="h-fit border border-zinc-700 bg-zinc-800 p-3 text-2xl text-zinc-300 transition-colors hover:bg-zinc-700"
             onClick={shiftLeft}
             disabled={position === 0}
           >
@@ -65,7 +141,7 @@ export const Education = () => {
             type="button"
             aria-label="Ver siguiente educación"
             title="Ver siguiente educación"
-            className="h-fit bg-zinc-800 hover:bg-zinc-700 p-3 text-2xl text-zinc-300 transition-colors border border-zinc-700"
+            className="h-fit border border-zinc-700 bg-zinc-800 p-3 text-2xl text-zinc-300 transition-colors hover:bg-zinc-700"
             onClick={shiftRight}
             disabled={position === education.length - 1}
           >
@@ -73,18 +149,41 @@ export const Education = () => {
           </button>
         </div>
       </div>
-      <div className="flex gap-4 overflow-hidden">
-        {education.map((edu, index) => (
-          <EducationCard 
-            {...edu} 
-            key={index} 
-            position={position} 
-            index={index} 
-            onOpenModal={(img) => setSelectedImg(img)}
-          />
-        ))}
+
+      <div className="relative left-1/2 right-1/2 w-screen -translate-x-1/2">
+        <div
+          ref={carouselRef}
+          className={`overflow-x-auto scroll-smooth pl-4 pr-0 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
+            isDragging ? "cursor-grabbing" : "cursor-grab"
+          } select-none touch-pan-y md:px-8 lg:px-12`}
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={finishDrag}
+          onPointerCancel={() => {
+            dragState.current.active = false;
+            dragState.current.pointerId = -1;
+            setIsDragging(false);
+          }}
+        >
+          <div className="flex gap-4 md:gap-6">
+            {education.map((edu, index) => (
+              <div
+                key={edu.title}
+                ref={(node) => {
+                  cardRefs.current[index] = node;
+                }}
+                className="basis-[88vw] shrink-0 md:basis-[42vw] lg:basis-[30vw]"
+              >
+                <EducationCard
+                  {...edu}
+                  onOpenModal={(img) => setSelectedImg(img)}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-      {/* Modal Creativo */}
+
       <AnimatePresence>
         {selectedImg && (
           <motion.div
@@ -92,28 +191,28 @@ export const Education = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedImg(null)}
-            className="fixed inset-0 z-[150] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md cursor-zoom-out"
+            className="fixed inset-0 z-[150] flex items-center justify-center bg-black/90 p-4 backdrop-blur-md cursor-zoom-out"
           >
             <motion.div
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-5xl w-full bg-zinc-900 border border-zinc-800 overflow-hidden shadow-2xl cursor-default"
+              className="relative w-full max-w-5xl overflow-hidden border border-zinc-800 bg-zinc-900 shadow-2xl cursor-default"
             >
-              <div className="flex items-center justify-between p-6 border-b border-zinc-800 bg-zinc-900/50">
-                <span className="text-zinc-400 text-sm font-medium">Vista previa</span>
-                <button 
+              <div className="flex items-center justify-between border-b border-zinc-800 bg-zinc-900/50 p-6">
+                <span className="text-sm font-medium text-zinc-400">Vista previa</span>
+                <button
                   onClick={() => setSelectedImg(null)}
-                  className="p-2 hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors"
+                  className="p-2 text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-white"
                 >
                   ✕
                 </button>
               </div>
-              <div className="p-2 flex justify-center bg-zinc-950">
-                <img 
-                  src={selectedImg} 
-                  alt="Certificado" 
+              <div className="flex justify-center bg-zinc-950 p-2">
+                <img
+                  src={selectedImg}
+                  alt="Certificado"
                   className="max-h-[75vh] w-auto object-contain shadow-lg"
                 />
               </div>
@@ -125,70 +224,58 @@ export const Education = () => {
   );
 };
 
-const EducationCard = ({ 
-  position, 
-  index, 
-  title, 
-  institution, 
-  degree, 
-  period, 
-  time, 
-  description, 
-  Icon, 
-  achievements, 
-  image, 
-  onOpenModal 
-}: EducationCardProps) => { // Usamos la interface aquí
-  
-  const translateAmt = position >= index ? index * 100 : index * 100 - 100 * (index - position);
-
+const EducationCard = ({
+  title,
+  institution,
+  degree,
+  period,
+  time,
+  description,
+  Icon,
+  achievements,
+  image,
+  onOpenModal,
+}: EducationCardProps) => {
   const hasCertificate = Boolean(image);
   const [showAchievements, setShowAchievements] = useState(false);
 
   return (
     <motion.div
-      animate={{ x: `${-translateAmt}%` }}
-      transition={{
-        ease: "easeInOut",
-        duration: 0.35,
-      }}
-      className={`relative flex min-h-[300px] w-10/12 max-w-lg shrink-0 flex-col justify-between overflow-hidden p-8 md:p-10 shadow-lg md:w-3/5 ${
-        index % 2 ? "bg-zinc-800 text-white" : "bg-zinc-900 text-zinc-300 border border-zinc-700"
-      }`}
+      initial={{ opacity: 0.95 }}
+      animate={{ opacity: 1 }}
+      transition={{ ease: "easeInOut", duration: 0.25 }}
+      className="relative flex h-full min-h-[300px] w-full flex-col justify-between overflow-hidden border border-zinc-700 bg-zinc-900 p-8 shadow-lg md:p-10"
     >
-    
-      <Icon className="absolute right-3 top-2 opacity-20 size-14 stroke-[0.5px]" />
-    
+      <Icon className="absolute right-3 top-2 size-14 stroke-[0.5px] opacity-20" />
+
       <Reveal>
         <div>
           <h3 className="mb-4 text-2xl font-bold text-[#4B6E8E]">{title}</h3>
-          <p className="mb-4 text-lg font-semibold">{institution}</p>
-
-          <button 
+          <button
             onClick={() => hasCertificate && image ? onOpenModal(image) : null}
             disabled={!hasCertificate}
-            className={`group mb-2 text-sm flex items-center transition-colors ${
-              hasCertificate 
-                ? "text-zinc-400 hover:text-[#4B6E8E] cursor-pointer" 
-                : "text-zinc-600 cursor-not-allowed"
+            className={`group mb-2 flex items-center text-sm transition-colors ${
+              hasCertificate
+                ? "cursor-pointer text-zinc-400 hover:text-[#4B6E8E]"
+                : "cursor-not-allowed text-zinc-600"
             }`}
-          >          
+          >
             {hasCertificate ? (
               <>
-                <FiEye className="text-blue-600 group-hover:text-[#4B6E8E] inline-block mr-2 transition-colors" />
+                <FiEye className="mr-2 inline-block text-blue-600 transition-colors group-hover:text-[#4B6E8E]" />
                 <span className="underline underline-offset-4 decoration-zinc-700 group-hover:decoration-[#4B6E8E]">
                   Ver {degree}
                 </span>
               </>
             ) : (
               <>
-                <FiEyeOff className="inline-block mr-2 text-zinc-600" />
+                <FiEyeOff className="mr-2 inline-block text-zinc-600" />
                 <span>{degree}</span>
               </>
             )}
           </button>
 
-          <div className="flex items-center gap-2 mb-4 text-sm text-zinc-400">
+          <div className="mb-4 flex items-center gap-2 text-sm text-zinc-400">
             <FiCalendar className="text-[#FF0099]" />
             <span>{period}</span> ({time})
           </div>
@@ -199,7 +286,7 @@ const EducationCard = ({
               <button
                 type="button"
                 onClick={() => setShowAchievements((pv) => !pv)}
-                className="mb-2 flex items-center gap-2 text-sm font-base text-[#4B6E8E] hover:opacity-90 transition-opacity"
+                className="mb-2 flex items-center gap-2 text-sm font-base text-[#4B6E8E] transition-opacity hover:opacity-90"
               >
                 <span>{showAchievements ? "Ver menos" : "Ver logros"}</span>
                 <FiChevronDown
@@ -210,8 +297,8 @@ const EducationCard = ({
               {showAchievements && (
                 <ul className="space-y-1">
                   {achievements.map((achievement, idx) => (
-                    <li key={idx} className="text-sm flex items-start gap-2">
-                      <FiAward className="text-[#4B6E8E] mt-1 flex-shrink-0" />
+                    <li key={idx} className="flex items-start gap-2 text-sm">
+                      <FiAward className="mt-1 flex-shrink-0 text-[#4B6E8E]" />
                       <span>{achievement}</span>
                     </li>
                   ))}
@@ -242,7 +329,7 @@ const education = [
     ]
   },
   {
-    title: "Prototipado UI Avanzado en Figma: Interactividad y Animación",
+    title: "Prototipado UI Avanzado en Figma",
     institution: "Facultad de Arte y Diseño (PUCP)",
     degree: "Certificado",
     period: "2025",
