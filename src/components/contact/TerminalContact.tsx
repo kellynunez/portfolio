@@ -42,7 +42,7 @@ const TerminalHeader = () => {
   return (
     <div className="w-full pt-14 pb-10 bg-zinc-800 flex items-center flex-col gap-1 sticky top-0">
       <span className="text-4xl md:text-5xl text-center font-black">
-        Contact<span className="text-[#ff0099]">.</span>
+        Contacto<span className="text-[#ff0099]">.</span>
       </span>
     </div>
   );

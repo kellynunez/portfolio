@@ -32,11 +32,15 @@ export const ProjectModal = ({
   useEffect(() => {
     const body = document.body;
     const previousOverflowY = body.style.overflowY;
+    const previousPaddingRight = body.style.paddingRight;
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
 
     body.style.overflowY = "hidden";
+    body.style.paddingRight = scrollbarWidth > 0 ? `${scrollbarWidth}px` : previousPaddingRight;
 
     return () => {
       body.style.overflowY = previousOverflowY || "scroll";
+      body.style.paddingRight = previousPaddingRight;
     };
   }, [isOpen]);
 

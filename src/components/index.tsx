@@ -33,10 +33,10 @@ const Contact = dynamic(
 
 export const HomPage = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen md:flex">
       <SideBar />
 
-      <main className="relative md:pl-[54px]">
+      <main className="relative z-0 min-w-0 flex-1 md:pl-[54px]">
         <Header />
         <div className="mx-auto max-w-md space-y-32 px-4 pb-24 md:max-w-3xl md:px-8 lg:max-w-5xl">
           <Hero />

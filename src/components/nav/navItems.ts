@@ -1,7 +1,9 @@
+import { FiBookOpen, FiBriefcase, FiFolder, FiMail, FiUser } from "react-icons/fi";
+
 export const navItems = [
-  { value: "about", href: "#about", label: "About" },
-  { value: "projects", href: "#projects", label: "Projects" },
-  { value: "experience", href: "#experience", label: "Experience" },
-  { value: "education", href: "#education", label: "Education" },
-  { value: "contact", href: "#contact", label: "Contact" },
+  { value: "about", href: "#about", label: "Sobre mi", Icon: FiUser },
+  { value: "projects", href: "#projects", label: "Proyectos", Icon: FiFolder },
+  { value: "experience", href: "#experience", label: "Experiencia", Icon: FiBriefcase },
+  { value: "education", href: "#education", label: "Educación", Icon: FiBookOpen },
+  { value: "contact", href: "#contact", label: "Contacto", Icon: FiMail },
 ] as const;

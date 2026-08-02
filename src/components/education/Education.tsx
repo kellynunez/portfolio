@@ -125,7 +125,7 @@ export const Education = () => {
   return (
     <section className="section-wrapper" id="education">
       <div className="flex justify-between gap-4">
-        <SectionHeader title="Education" dir="l" />
+        <SectionHeader title="Educación" dir="l" />
         <div className="flex gap-2">
           <button
             type="button"
@@ -153,7 +153,7 @@ export const Education = () => {
       <div className="relative left-1/2 right-1/2 w-screen -translate-x-1/2">
         <div
           ref={carouselRef}
-          className={`overflow-x-auto scroll-smooth pl-4 pr-0 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
+          className={`overflow-x-auto scroll-smooth px-4 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
             isDragging ? "cursor-grabbing" : "cursor-grab"
           } select-none touch-pan-y md:px-8 lg:px-12`}
           onPointerDown={handlePointerDown}
@@ -180,6 +180,7 @@ export const Education = () => {
                 />
               </div>
             ))}
+            <div aria-hidden="true" className="shrink-0 w-4 md:w-8 lg:w-12" />
           </div>
         </div>
       </div>

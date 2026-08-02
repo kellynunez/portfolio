@@ -94,10 +94,11 @@ export const MobileNav = () => {
                     value={item.value}
                     href={item.href}
                     variant="horizontal"
+                    Icon={item.Icon}
                     onNavigate={() => setOpen(false)}
                     className="justify-center text-center"
                   >
-                    {item.value === "experience" ? "Experience" : item.label}
+                    {item.label}
                   </SideBarLink>
                 ))}
               </nav>

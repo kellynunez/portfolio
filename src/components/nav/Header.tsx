@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { SiGithub, SiInstagram, SiLinkedin, SiGmail, SiWhatsapp, SiBehance } from "react-icons/si";
+import { SiGithub, SiInstagram, SiLinkedin, SiGmail, SiWhatsapp, SiBehance, SiPinterest } from "react-icons/si";
 import { OutlineButton } from "../buttons/OutlineButton";
 
 export const Header = () => {
@@ -35,7 +35,7 @@ export const MyLinks = ({ className = "" }: { className?: string }) => (
     >
       <SiLinkedin />
     </Link>
-    <Link
+{/*     <Link
       aria-label="Instagram de Kelly Núñez"
       title="Instagram"
       className="text-zinc-300 hover:text-[#4B6E8E] transition-colors"
@@ -44,8 +44,8 @@ export const MyLinks = ({ className = "" }: { className?: string }) => (
       rel="nofollow"
     >
       <SiInstagram />
-    </Link>
-    <Link
+    </Link> */}
+{/*     <Link
       aria-label="Enviar correo a Kelly Núñez"
       title="Correo"
       className="text-zinc-300 hover:text-[#4B6E8E] transition-colors"
@@ -53,17 +53,7 @@ export const MyLinks = ({ className = "" }: { className?: string }) => (
       rel="nofollow"
     >
       <SiGmail />
-    </Link>
-    <Link
-      aria-label="WhatsApp de Kelly Núñez"
-      title="WhatsApp"
-      className="text-zinc-300 hover:text-[#4B6E8E] transition-colors"
-      href="https://wa.me/51957268339"
-      target="_blank"
-      rel="nofollow"
-    >
-      <SiWhatsapp />
-    </Link>
+    </Link> */}
     <Link
       aria-label="GitHub de Kelly Núñez"
       title="GitHub"
@@ -83,6 +73,26 @@ export const MyLinks = ({ className = "" }: { className?: string }) => (
       rel="nofollow"
     >
       <SiBehance />
+    </Link>
+{/*     <Link
+      aria-label="WhatsApp de Kelly Núñez"
+      title="WhatsApp"
+      className="text-zinc-300 hover:text-[#4B6E8E] transition-colors"
+      href="https://wa.me/51957268339"
+      target="_blank"
+      rel="nofollow"
+    >
+      <SiPinterest />
+    </Link> */}
+    <Link
+      aria-label="WhatsApp de Kelly Núñez"
+      title="WhatsApp"
+      className="text-zinc-300 hover:text-[#4B6E8E] transition-colors"
+      href="https://wa.me/51957268339"
+      target="_blank"
+      rel="nofollow"
+    >
+      <SiWhatsapp />
     </Link>
   </div>
 );
