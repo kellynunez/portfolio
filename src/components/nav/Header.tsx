@@ -5,8 +5,8 @@ import { OutlineButton } from "../buttons/OutlineButton";
 
 export const Header = () => {
   return (
-    <header className="group h-[72px] px-4 flex items-center justify-between sticky top-0 z-20 bg-zinc-900/50 backdrop-blur-md">
-      <div className="hidden md:flex">
+    <header className="group h-[72px] px-6 flex items-center justify-between sticky top-0 z-20 bg-zinc-900/50 backdrop-blur-md">
+      <div className="hidden md:flex md:ml-3">
         <MyLinks />
       </div>
       <OutlineButton className="hidden md:flex" onClick={() => {
@@ -28,7 +28,7 @@ export const MyLinks = ({ className = "" }: { className?: string }) => (
     <Link
       aria-label="LinkedIn de Kelly Núñez"
       title="LinkedIn"
-      className="text-zinc-300 hover:text-[#4B6E8E] transition-colors"
+      className="text-zinc-200 hover:text-[#4B6E8E] transition-colors"
       href="https://www.linkedin.com/in/kellynunezh/"
       target="_blank"
       rel="nofollow"
@@ -38,7 +38,7 @@ export const MyLinks = ({ className = "" }: { className?: string }) => (
 {/*     <Link
       aria-label="Instagram de Kelly Núñez"
       title="Instagram"
-      className="text-zinc-300 hover:text-[#4B6E8E] transition-colors"
+      className="text-zinc-200 hover:text-[#4B6E8E] transition-colors"
       href="https://www.instagram.com/kellynunz"
       target="_blank"
       rel="nofollow"
@@ -48,7 +48,7 @@ export const MyLinks = ({ className = "" }: { className?: string }) => (
 {/*     <Link
       aria-label="Enviar correo a Kelly Núñez"
       title="Correo"
-      className="text-zinc-300 hover:text-[#4B6E8E] transition-colors"
+      className="text-zinc-200 hover:text-[#4B6E8E] transition-colors"
       href="mailto:kellynunezhu@gmail.com"
       rel="nofollow"
     >
@@ -57,7 +57,7 @@ export const MyLinks = ({ className = "" }: { className?: string }) => (
     <Link
       aria-label="GitHub de Kelly Núñez"
       title="GitHub"
-      className="text-zinc-300 hover:text-[#4B6E8E] transition-colors"
+      className="text-zinc-200 hover:text-[#4B6E8E] transition-colors"
       href="https://github.com/kellynunez"
       target="_blank"
       rel="nofollow"
@@ -67,7 +67,7 @@ export const MyLinks = ({ className = "" }: { className?: string }) => (
     <Link
       aria-label="Behance de Kelly Núñez"
       title="Behance"
-      className="text-zinc-300 hover:text-[#4B6E8E] transition-colors"
+      className="text-zinc-200 hover:text-[#4B6E8E] transition-colors"
       href="https://www.behance.net/kellynunezh"
       target="_blank"
       rel="nofollow"
@@ -77,7 +77,7 @@ export const MyLinks = ({ className = "" }: { className?: string }) => (
 {/*     <Link
       aria-label="WhatsApp de Kelly Núñez"
       title="WhatsApp"
-      className="text-zinc-300 hover:text-[#4B6E8E] transition-colors"
+      className="text-zinc-200 hover:text-[#4B6E8E] transition-colors"
       href="https://wa.me/51957268339"
       target="_blank"
       rel="nofollow"
@@ -87,7 +87,7 @@ export const MyLinks = ({ className = "" }: { className?: string }) => (
     <Link
       aria-label="WhatsApp de Kelly Núñez"
       title="WhatsApp"
-      className="text-zinc-300 hover:text-[#4B6E8E] transition-colors"
+      className="text-zinc-200 hover:text-[#4B6E8E] transition-colors"
       href="https://wa.me/51957268339"
       target="_blank"
       rel="nofollow"

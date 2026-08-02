@@ -50,7 +50,7 @@ export const MobileNav = () => {
         </button>
 
         <OutlineButton
-          className="h-9 min-h-0 w-fit justify-center mx-auto flex"
+          className="h-9 min-h-0 w-fit justify-center mx-auto flex mr-1"
           onClick={() => {
             const link = document.createElement("a");
             link.href = "/cv-kellynunez-es.pdf";

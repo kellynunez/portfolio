@@ -57,7 +57,7 @@ export const SideBar = () => {
           >
             <div className="flex items-center gap-5">
               {/* Cambiamos 'grid place-content-center' por 'flex items-center' */}
-              <div className="flex h-14 pl-4 shrink-0 items-center justify-center text-lg font-black text-[#4B6E8E]">
+              <div className="flex h-14 pl-4 shrink-0 items-center justify-center text-lg font-black text-zinc-200 hover:text-white">
                 <span>K</span>
                 <span className="text-[#ff0099]">.</span>
               </div>
