@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FiCheckCircle } from "react-icons/fi";
+import { FiSend } from "react-icons/fi";
 import {
   ChangeEvent,
   Dispatch,
@@ -42,7 +43,7 @@ const TerminalHeader = () => {
   return (
     <div className="w-full pt-14 pb-10 bg-zinc-800 flex items-center flex-col gap-1 sticky top-0">
       <span className="text-4xl md:text-5xl text-center font-black">
-        Contact<span className="text-[#ff0099]">.</span>
+        Contacto<span className="text-[#ff0099]">.</span>
       </span>
     </div>
   );
@@ -92,7 +93,7 @@ const TerminalBody = ({ containerRef, inputRef }: TerminalBodyProps) => {
       <PreviousQuestions questions={questions} />
       <CurrentQuestion curQuestion={curQuestion} />
       {error && (
-        <p className="text-red-400 font-semibold mb-2">{error}</p>
+        <p className="text-[#ff0099] font-medium mb-2">{error}</p>
       )}
       {curQuestion ? (
         <CurLine
@@ -126,9 +127,9 @@ const PreviousQuestions = ({ questions }: PreviousQuestionProps) => {
                   <span className="text-white">{q.postfix}</span>
                 )}
               </p>
-              <p className="text-[#ff0099]">
-                <FiCheckCircle className="inline-block mr-2" />
-                <span>{q.value}</span>
+              <p>
+                <FiCheckCircle className="inline-block mr-2 text-[#1E90FF]" />
+                <span className="text-zinc-300">{q.value}</span>
               </p>
             </Fragment>
           );
@@ -187,26 +188,32 @@ const Summary = ({ questions, setQuestions }: SummaryProps) => {
   return (
     <>
       {complete ? (
-        <p className="text-white mt-2">
-          <FiCheckCircle className="inline-block mr-2" />
-          <span>¡Enviado! Te responderé lo antes posible 😎</span>
-        </p>
-      ) : (
-        <div className="flex gap-2 mt-6">
-          <button
-            onClick={handleSend}
-            className="px-3 py-1.5 text-base font-medium transition-opacity bg-zinc-100 hover:bg-zinc-300 text-zinc-900"
-          >
-            Enviar
-          </button>
-          <button
-            onClick={handleReset}
-            className="px-3.5 pt-[3.5px] pb-1.5 text-xl transition-opacity bg-[#4B6E8E] border border-[#4B6E8E] hover:bg-[#4B6E8E] hover:opacity-80"
-          >
-            <span className="text-zinc-900">↺</span>
-          </button>
-          
+        <div className="mt-2 space-y-2">
+          <p>
+            <FiCheckCircle className="inline-block mr-2 text-[#4B6E8E]" />
+            <span className="text-white">¡Enviado! Te responderé lo antes posible 🦄</span>
+          </p>
         </div>
+      ) : (
+        <div className="flex w-full items-center justify-between mt-3">
+  {/* Botón 1: Enviar (Lado izquierdo) */}
+  <button
+    onClick={handleSend}
+    className="group relative z-0 flex h-[36px] items-center overflow-hidden border border-black bg-zinc-100 font-medium font-jetbrains-mono text-black transition-colors"
+  >
+    <div className="hidden items-center px-3 h-full transition-colors md:flex group-hover:bg-zinc-200 text-[16px] tracking-snug">
+      Enviar
+    </div>
+  </button>
+
+  {/* Botón 2: Reset (Lado derecho / Opuesto) */}
+  <button
+    onClick={handleReset}
+    className="flex h-[36px] w-[38px] items-center justify-center bg-transparent text-xl transition-colors hover:bg-zinc-800"
+  >
+    <span className="text-zinc-300 leading-none -mt-1">↺</span>
+  </button>
+</div>
       )}
     </>
   );
@@ -291,7 +298,7 @@ const QUESTIONS: QuestionType[] = [
   {
     key: "email",
     text: "Déjame tus datos ",
-    postfix: "y te responderé pronto.",
+    postfix: "y te respondo a la brevedad.",
     complete: false,
     value: "",
   },

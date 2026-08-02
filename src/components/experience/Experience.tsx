@@ -10,7 +10,7 @@ export const Experience = () => {
   
   return (
     <section className="section-wrapper" id="experience">
-      <SectionHeader title="Experience" dir="l" />
+      <SectionHeader title="Experiencia" dir="l" />
       {displayedExperience.map((item) => (
         <ExperienceItem key={item.title} {...item} />
       ))}

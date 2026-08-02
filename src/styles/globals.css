@@ -65,11 +65,17 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  scrollbar-gutter: stable;
 }
 
 html,
 body {
   overflow-x: clip;
+}
+
+.section-wrapper {
+  scroll-margin-top: 2rem;
 }
 
 button {

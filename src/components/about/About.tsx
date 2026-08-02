@@ -9,15 +9,12 @@ export const About = () => {
 
   return (
     <section id="about" className="section-wrapper">
-      <SectionHeader title="About" dir="l" />
+      <SectionHeader title="Sobre mí" dir="l" />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 text-normal tracking-lighter md:text-lg">
         <div className="space-y-4 pb-4 sm:pb-5 md:pb-8 col-span-2">
           <Reveal>
             <p className="leading-relaxed text-zinc-100">
-              <span className="bg-zinc-100 text-[#4B6E8E] mt-2 py-1.5 px-3.5 font-bold mr-2 float-left text-2xl">
-                K
-              </span>
-              elly Núñez, Ingeniera de Diseño & Líder Creativa con más de 10 años de trayectoria liderando la intersección entre diseño estratégico y desarrollo técnico. 
+              Kelly Núñez, Ingeniera de Diseño & Líder Creativa con más de 10 años de trayectoria liderando la intersección entre diseño estratégico y desarrollo técnico. 
               Combino prototipado ágil y visión creativa para transformar conceptos de marca en interfaces digitales de alto impacto, asegurando soluciones estéticas y funcionales.
             </p>
           </Reveal>

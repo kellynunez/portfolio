@@ -5,7 +5,7 @@ import { Project } from "./Project";
 export const Projects = () => {
   return (
     <section className="section-wrapper" id="projects">
-      <SectionHeader title="Projects" dir="r" />
+      <SectionHeader title="Proyectos" dir="r" />
 
       <div className="grid gap-12 grid-cols-1 md:grid-cols-2">
         {projects.map((project) => {
@@ -25,7 +25,6 @@ const projects = [
     description:
       "Xyz",
     galleryImages: [
-      "/project-imgs/design-system/portada.webp",
       "/project-imgs/design-system/design-system-voltron-1.webp",
       "/project-imgs/design-system/design-system-voltron-2.webp",
       "/project-imgs/design-system/design-system-voltron-3.webp",
