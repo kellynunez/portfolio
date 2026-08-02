@@ -65,7 +65,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 3rem;
+  scroll-padding-top: 2rem;
   scrollbar-gutter: stable;
 }
 
@@ -75,7 +75,7 @@ body {
 }
 
 .section-wrapper {
-  scroll-margin-top: 3rem;
+  scroll-margin-top: 2rem;
 }
 
 button {

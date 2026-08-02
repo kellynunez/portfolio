@@ -39,7 +39,7 @@ export const SideBarLink = ({
 
   const stateClassName =
     selected === value
-      ? "bg-zinc-800 border-[#4B6E8E] opacity-100 text-white"
+      ? "bg-zinc-800 border-zinc-800 opacity-100 text-zinc-100"
       : isVertical
         ? "border border-transparent opacity-70 hover:border-zinc-700 hover:bg-zinc-900/80"
         : "border-zinc-800 bg-zinc-900/60 opacity-80 hover:border-zinc-600 hover:bg-zinc-900";
@@ -56,8 +56,8 @@ export const SideBarLink = ({
       {isVertical ? (
         <>
           {Icon ? (
-            <span className="grid size-5 shrink-0 place-content-center overflow-hidden">
-              <Icon className="size-4 text-[#4B6E8E]" />
+            <span className="grid size-4 shrink-0 place-content-center overflow-hidden">
+              <Icon className="size-4 text-white pl-0.5" />
             </span>
           ) : null}
           {open ? <span className="truncate">{children}</span> : null}
