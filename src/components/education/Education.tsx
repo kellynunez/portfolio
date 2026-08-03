@@ -245,9 +245,9 @@ const EducationCard = ({
       initial={{ opacity: 0.95 }}
       animate={{ opacity: 1 }}
       transition={{ ease: "easeInOut", duration: 0.25 }}
-      className="relative flex h-full min-h-[300px] w-full flex-col justify-between overflow-hidden border border-zinc-700 bg-zinc-900 p-8 shadow-lg md:p-10"
+      className="relative flex h-full min-h-[300px] w-full flex-col justify-between overflow-hidden border border-zinc-700 bg-zinc-900 p-8 shadow-lg md:p-10 ml-16"
     >
-      <Icon className="absolute right-3 top-2 size-14 stroke-[0.5px] opacity-20" />
+      <Icon className="absolute right-3 top-3 size-10 stroke-[0.5px] opacity-20" />
 
       <Reveal>
         <div>
@@ -280,7 +280,7 @@ const EducationCard = ({
             <FiCalendar className="text-[#FF0099]" />
             <span>{period}</span> ({time})
           </div>
-          <p className="mb-4 leading-relaxed">{description}</p>
+          <p className="mb-4 leading-relaxed text-md text-zinc-300">{description}</p>
 
           {achievements && achievements.length > 0 && (
             <div>
