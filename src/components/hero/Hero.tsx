@@ -5,7 +5,7 @@ import TypewriterText from "../util/TypewriterText";
 
 const Hero = () => {
   return (
-    <section className="text-slate-100 overflow-hidden py-24 md:py-32 pb-6 md:pb-4 relative">
+    <section className="text-slate-100 overflow-hidden py-24 md:py-32 pb-6 md:pb-14 relative">
       <div className="relative z-10">
         <div className="pointer-events-none relative z-10">
           <Reveal>
@@ -32,7 +32,7 @@ const Hero = () => {
                   animation: 'gradient-shift 3s ease-in-out infinite'
                 }}
               >
-                Design Engineer & Creative Lead
+                Frontend Sr & Product Designer
               </span>
             </h2>
           </Reveal>

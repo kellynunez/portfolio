@@ -16,10 +16,8 @@ export const Stats2 = () => {
               <Chip>NodeJS</Chip>
               <Chip>NPM / Yarn</Chip>
               <Chip>Git / GitHub</Chip>
-              <Chip>Linux</Chip>
               <Chip>Shopify</Chip>
               <Chip>Wordpress + Woo</Chip>
-              <Chip>Webflow</Chip>
               <Chip>Netlify</Chip>
             </div>
           </div>
@@ -35,7 +33,7 @@ export const Stats2 = () => {
               <Chip>Copilot</Chip>
               <Chip>v0</Chip>
               <Chip>Relume</Chip>
-              <Chip>Claude Design</Chip>
+              <Chip>Claude</Chip>
               <Chip>Perplexity</Chip>
               <Chip>LLMs</Chip>
               <Chip>Midjourney</Chip>
@@ -55,6 +53,7 @@ export const Stats2 = () => {
             <Chip>Jira</Chip>
             <Chip>ClickUp</Chip>
             <Chip>Trello</Chip>
+            <Chip>Slack</Chip>
             </div>
           </div>
         </Reveal>

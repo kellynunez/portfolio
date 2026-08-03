@@ -131,7 +131,7 @@ export const Education = () => {
             type="button"
             aria-label="Ver educación anterior"
             title="Ver educación anterior"
-            className="h-fit border border-zinc-700 bg-zinc-800 p-3 text-2xl text-zinc-300 transition-colors hover:bg-zinc-700"
+            className="h-fit border border-zinc-700 bg-zinc-800 p-2 text-2xl text-zinc-300 transition-colors hover:bg-zinc-700"
             onClick={shiftLeft}
             disabled={position === 0}
           >
@@ -141,7 +141,7 @@ export const Education = () => {
             type="button"
             aria-label="Ver siguiente educación"
             title="Ver siguiente educación"
-            className="h-fit border border-zinc-700 bg-zinc-800 p-3 text-2xl text-zinc-300 transition-colors hover:bg-zinc-700"
+            className="h-fit border border-zinc-700 bg-zinc-800 p-2 text-2xl text-zinc-300 transition-colors hover:bg-zinc-700"
             onClick={shiftRight}
             disabled={position === education.length - 1}
           >
@@ -245,13 +245,13 @@ const EducationCard = ({
       initial={{ opacity: 0.95 }}
       animate={{ opacity: 1 }}
       transition={{ ease: "easeInOut", duration: 0.25 }}
-      className="relative flex h-full min-h-[300px] w-full flex-col justify-between overflow-hidden border border-zinc-700 bg-zinc-900 p-8 shadow-lg md:p-10"
+      className="relative flex h-full min-h-[300px] w-full flex-col justify-between overflow-hidden border border-zinc-700 bg-zinc-900 p-8 shadow-lg md:p-10 ml-7 md:ml-16"
     >
-      <Icon className="absolute right-3 top-2 size-14 stroke-[0.5px] opacity-20" />
+      <Icon className="absolute right-0 md:right-3 top-3 size-10 stroke-[0.5px] opacity-20" />
 
       <Reveal>
         <div>
-          <h3 className="mb-4 text-2xl font-bold text-[#4B6E8E]">{title}</h3>
+          <h3 className="mb-4 text-2xl font-bold text-zinc-100">{title}</h3>
           <button
             onClick={() => hasCertificate && image ? onOpenModal(image) : null}
             disabled={!hasCertificate}
@@ -280,7 +280,7 @@ const EducationCard = ({
             <FiCalendar className="text-[#FF0099]" />
             <span>{period}</span> ({time})
           </div>
-          <p className="mb-4 leading-relaxed">{description}</p>
+          <p className="mb-4 leading-relaxed text-md tracking-wide text-zinc-300">{description}</p>
 
           {achievements && achievements.length > 0 && (
             <div>

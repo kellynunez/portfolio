@@ -15,8 +15,6 @@ export const Stats = () => {
           <div className="flex flex-wrap gap-2 mb-6 md:mb-16">
             <Chip>Figma</Chip>
             <Chip>Framer</Chip>
-            <Chip>ProtoPie</Chip>
-            <Chip>Storybook</Chip>
             <Chip>Lucidchart</Chip>
             <Chip>Miro</Chip>
             <Chip>LottieFiles</Chip>
@@ -31,7 +29,7 @@ export const Stats = () => {
         <div>
           <h4 className="flex items-center mb-6">
             <AiFillCode className="text-[#4B6E8E] text-2xl" />
-            <span className="font-bold ml-2">Lenguajes, estilos y frontend</span>
+            <span className="font-bold ml-2">Lenguajes y estilos</span>
           </h4>
           <div className="flex flex-wrap gap-2 mb-6 md:mb-16">
             <Chip>HTML</Chip>

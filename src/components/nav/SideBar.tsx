@@ -63,9 +63,9 @@ export const SideBar = () => {
               </div>
               {open && (
                 <div>
-                  <span className="block text-sm font-medium text-zinc-100">Kelly Núñez</span>
-                  <span className="block text-[14px] text-zinc-500">Design Engineer</span>
-                </div>
+                  <span className="block text-normal font-medium text-zinc-100">Kelly Núñez</span>
+{/*                   <span className="block text-[14px] text-zinc-500">Frontend & Product Designer</span>
+ */}                </div>
               )}
             </div>
             {open && (

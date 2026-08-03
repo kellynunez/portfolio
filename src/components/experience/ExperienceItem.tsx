@@ -58,14 +58,14 @@ export const ExperienceItem = ({
 
       <div className="flex items-center justify-between mb-4">
         <Reveal>
-          <span className="text-[#4B6E8E] font-bold">{position}</span>
+          <span className="text-[#4B6E8E] font-bold tracking-wide">{position}</span>
         </Reveal>
         <Reveal>
           <span className="text-[#FF0099]">{mode}</span>
         </Reveal>
       </div>
       <Reveal>
-        <p className="mb-6 text-zinc-300 leading-relaxed">{description}</p>
+        <p className="mb-6 text-zinc-300 tracking-wide leading-relaxed">{description}</p>
       </Reveal>
       <Reveal>
         <div className="flex flex-wrap gap-2">
