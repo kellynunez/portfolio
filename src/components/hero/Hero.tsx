@@ -32,7 +32,7 @@ const Hero = () => {
                   animation: 'gradient-shift 3s ease-in-out infinite'
                 }}
               >
-                Design Engineer & Creative Lead
+                Frontend Sr & Product Designer
               </span>
             </h2>
           </Reveal>
