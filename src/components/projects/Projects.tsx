@@ -53,7 +53,7 @@ const projects = [
     ],
   },
   {
-    title: "Web, Apps & UI/UX",
+    title: "Web/App & Product Design",
     imgSrc: "/project-imgs/web-corporative.webp",
     projectLink: "https://voltrondata-v1.netlify.app",
     tech: ["Node", "JekyllRB", "Vue", "TailwindCSS", "Markdown", "Figma", "Midjourney"],
