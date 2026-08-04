@@ -93,7 +93,7 @@ const experience = [
     location: "Global",
     mode: "Remoto",
     description:
-      "Diseño prototipos interactivos y desarrollo sitios web responsivos con enfoque en UX/UI. También realicé diseño grafico e identidad visual, documentando todos los activos gráficos para su uso coherente en productos y comunicaciones.",
+      "Diseño prototipos interactivos y desarrollo sitios web responsivos con enfoque en UX/UI. También diseñé piezas gráficas y con identidad visual corporativa, documentando todos los activos gráficos para su uso coherente en productos y comunicaciones.",
     tech: ["React", "Framer Motion", "GitHub", "Cursor", "Figma", "Adobe CC", "Powerpoint"],
   },
 /*   {
