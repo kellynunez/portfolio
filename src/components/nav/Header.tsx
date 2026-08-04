@@ -5,23 +5,16 @@ import { OutlineButton } from "../buttons/OutlineButton";
 
 export const Header = () => {
   return (
-    <header className="sticky top-0 right-0 z-20 flex h-[72px] w-full items-center justify-end bg-transparent px-6 text-[14.5px]">
-  <div className="bg-zinc-900/50 p-2 backdrop-blur-md">
-    <OutlineButton 
-      className="hidden md:flex" 
-      onClick={() => {
-        const link = document.createElement('a');
-        link.href = "/cv-kellynunez-es.pdf";
-        link.download = "cv-kellynunez-es.pdf";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      }}
-    >
-      <span>Descargar CV</span>
-    </OutlineButton>
-  </div>
-</header>
+    <header className="sticky top-0 right-0 z-20 flex w-full items-center justify-end bg-transparent text-[14.5px]">
+      <div>
+        <OutlineButton className="hidden md:flex gap-2" onClick={() => {
+          document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+          }}>
+          <span className="text-[#ff0099]">◉</span>
+          <span>Hablemos</span>
+        </OutlineButton>
+      </div>
+    </header>
   );
 };
 

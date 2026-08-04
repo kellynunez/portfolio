@@ -74,11 +74,11 @@ const TerminalHeader = () => {
             link.click();
             document.body.removeChild(link);
           }}
-          className="group flex h-[42px] w-full items-center justify-between border border-black bg-zinc-100 px-4 font-medium text-black transition-colors hover:bg-zinc-400"
+          className="group flex h-[42px] w-full items-center justify-between border border-black bg-[#ff0099] px-4 font-medium text-white transition-colors hover:bg-[#ff0099]/80"
         >
           <div className="flex items-center gap-2 text-[15px] tracking-snug font-bold">
             <FiSend className="text-sm" />
-            <span>Enviar correo</span>
+            <span>Enviar Email</span>
           </div>
           <FiArrowRight className="transition-transform group-hover:translate-x-1" />
         </button>
