@@ -5,7 +5,7 @@ import { OutlineButton } from "../buttons/OutlineButton";
 
 export const Header = () => {
   return (
-    <header className="sticky top-0 right-0 z-20 flex h-[72px] w-full items-center justify-end bg-transparent px-6">
+    <header className="sticky top-0 right-0 z-20 flex h-[72px] w-full items-center justify-end bg-transparent px-6 text-[14.5px]">
   <div className="bg-zinc-900/50 p-2 backdrop-blur-md">
     <OutlineButton 
       className="hidden md:flex" 
@@ -18,7 +18,7 @@ export const Header = () => {
         document.body.removeChild(link);
       }}
     >
-      CVitae
+      <span>Descargar CV</span>
     </OutlineButton>
   </div>
 </header>

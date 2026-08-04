@@ -13,11 +13,15 @@ export const Contact = () => {
           <div className="mt-0 md:mt-8">
             <TerminalContact />
           </div>
+        </Reveal>
+        <Reveal>
           <div className="mb-6 mt-8 flex justify-center">
             <MyLinks className="gap-4 text-lg" />
           </div>
+        </Reveal>
+        <Reveal>
           <div className="w-full text-center mb-0 md:mb-8">
-            <span className="text-zinc-600 text-sm">© 2011 - 2026 Kelly Núñez.</span>
+            <span className="text-zinc-600 text-sm">© 2026 Kelly Núñez</span>
           </div>
         </Reveal>
       </div>
