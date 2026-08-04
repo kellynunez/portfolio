@@ -32,23 +32,23 @@ export const Experience = () => {
 const experience = [
   {
     title: "Voltron Data",
-    position: "Manager, Design & Front-End",
+    position: "Manager, Product Design & Front-End",
     time: "2021 - 2025",
     location: "Mountain View, CA",
     mode: "Remoto",
     description:
       "Rediseño y reconstrucción web con React, NodeJS y Tailwind, acelerando flujos con Cursor. Migración de la infraestructura de WordPress a Jekyll (Markdown) con Tailwind CSS. Lideré la creación de wireframes y prototipos UX/UI en Lucidchart y Figma (DevMode). Diseñé la identidad de marca de la startup tech y producción de piezas gráficas digital e impreso.",
-    tech: ["React",  "NextJS", "Netlify", "TailwindCSS", "Markdown",  "GitHub", "Figma", "Cursor", "Illustrator", "Midjourney", "Notion"],
+    tech: ["React", "NextJS", "Netlify", "Markdown", "TailwindCSS", "Lottie", "GitHub", "Figma", "Cursor", "Illustrator", "Midjourney", "Notion"],
   },
   {
     title: "BlazingSQL",
-    position: "Lead, Design & Front-End",
+    position: "Lead, Product Design & Front-End",
     time: "2015 - 2021",
     location: "Austin, TX",
     mode: "Híbrido",
     description:
       "Diseñé prototipos UX/UI en Figma y desarrollé websites y webapps interactivas desde cero. Implementé interfaces utilizando frameworks y librerías como Vue.js, Vuetify y Tailwind. Desarrollé el manual de marca y lideré el rediseño de la identidad corporativa. Diseñé presentaciones ejecutivas y realicé edición de video para diversos canales.",
-    tech: ["Vue", "Jekyll", "NodeJS", "JavaScript", "Sass", "GitHub", "Figma", "Illustrator", "Photoshop", "ClickUp"],
+    tech: ["Vue", "Jekyll", "NodeJS", "JavaScript", "Sass", "GitHub", "Figma", "Illustrator", "Photoshop", "Premiere", "ClickUp", "Airtable"],
   },
   {
     title: "Simply Technology",
