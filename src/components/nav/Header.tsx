@@ -10,7 +10,7 @@ export const Header = () => {
         <OutlineButton className="hidden md:flex gap-2" onClick={() => {
           document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
           }}>
-          <span className="text-[#ff0099]">◉</span>
+          <span className="text-[#38FF96]">◉</span>
           <span>Hablemos</span>
         </OutlineButton>
       </div>
@@ -33,7 +33,7 @@ export const MyLinks = ({ className = "" }: { className?: string }) => (
 {/*     <Link
       aria-label="Enviar correo a Kelly Núñez"
       title="Correo"
-      className="text-zinc-200 hover:text-[#4B6E8E] transition-colors"
+      className="text-zinc-200 hover:text-[#7C5CFF] transition-colors"
       href="mailto:kellynunezhu@gmail.com"
       rel="nofollow"
     >

@@ -255,20 +255,20 @@ const EducationCard = ({
       <Reveal>
         <div>
           <h3 className="mb-3 text-2xl font-bold text-zinc-100">{title}</h3>
-          <h4 className="mb-2 text-lg font-semibold text-[#4B6E8E]">{institution}</h4>
+          <h4 className="mb-2 text-lg font-semibold text-[#7C5CFF]">{institution}</h4>
           <button
             onClick={() => hasCertificate && image ? onOpenModal(image) : null}
             disabled={!hasCertificate}
             className={`group mb-3 flex items-center text-sm transition-colors ${
               hasCertificate
-                ? "cursor-pointer text-zinc-400 hover:text-[#4B6E8E]"
+                ? "cursor-pointer text-zinc-400 hover:text-[#7C5CFF]"
                 : "cursor-not-allowed text-zinc-600"
             }`}
           >
             {hasCertificate ? (
               <>
-                <FiEye className="mr-2 inline-block text-blue-600 transition-colors group-hover:text-[#4B6E8E]" />
-                <span className="underline underline-offset-4 decoration-zinc-700 group-hover:decoration-[#4B6E8E]">
+                <FiEye className="mr-2 inline-block text-blue-600 transition-colors group-hover:text-[#7C5CFF]" />
+                <span className="underline underline-offset-4 decoration-zinc-700 group-hover:decoration-[#7C5CFF]">
                   Ver {degree}
                 </span>
               </>
@@ -281,7 +281,7 @@ const EducationCard = ({
           </button>
 
           <div className="mb-4 flex items-center gap-2 text-sm text-zinc-400">
-            <FiCalendar className="text-[#FF0099]" />
+            <FiCalendar className="text-[#38FF96]" />
             <span>{period}</span> ({time})
           </div>
 
@@ -290,7 +290,7 @@ const EducationCard = ({
               <button
                 type="button"
                 onClick={onToggleAchievements}
-                className="mb-2 flex items-center gap-2 text-normal font-base text-[#4B6E8E] transition-opacity hover:opacity-90"
+                className="mb-2 flex items-center gap-2 text-normal font-base text-[#7C5CFF] transition-opacity hover:opacity-90"
               >
                 <span>{showAllAchievements ? "Ocultar" : "Ver logros"}</span>
                 <FiChevronDown
@@ -302,7 +302,7 @@ const EducationCard = ({
                 <ul className="space-y-1">
                   {achievements.map((achievement, idx) => (
                     <li key={idx} className="flex items-start gap-2 text-normal text-zinc-300 tracking-wide">
-                      <FiAward className="mt-1 flex-shrink-0 text-[#4B6E8E]" />
+                      <FiAward className="mt-1 flex-shrink-0 text-[#7C5CFF]" />
                       <span>{achievement}</span>
                     </li>
                   ))}

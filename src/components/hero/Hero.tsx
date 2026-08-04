@@ -12,7 +12,7 @@ const Hero = () => {
               <span 
                 className="font-semibold"
                 style={{
-                  background: 'linear-gradient(90deg, #4B6E8E, #4B6E8E, #FF0099)',
+                  background: 'linear-gradient(90deg, #7C5CFF, #7C5CFF, #38FF96)',
                   backgroundSize: '200% 100%',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
@@ -26,14 +26,26 @@ const Hero = () => {
           </Reveal>
 
           <Reveal>
-            <h1 className="pointer-events-auto md-0 md:-ml-1 text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-zinc-100 leading-tight pb-5 md:pb-6">
+            <h1 className="pointer-events-auto md-0 md:-ml-1 text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-zinc-100 leading-tight pb-5 md:pb-7">
               <TypewriterText
-                text="Product Designer & Frontend Sr."
+                text="Product "
                 speed={150}
                 delay={500}
                 className="text-zinc-100"
               />
-              <span className="ml-2 inline-block text-[#F5F000]">🦄</span>
+              <span className="text-[#38FF96] italic">
+                <TypewriterText
+                  text="Designer"
+                  speed={150}
+                  delay={1700} // Ajusta el delay según lo que dure el primer texto
+                />
+              </span>
+              <TypewriterText
+                text=" & Frontend Sr."
+                speed={150}
+                delay={2900}
+              />
+              <span className="ml-2 inline-block">🦄</span>
             </h1>
           </Reveal>
           

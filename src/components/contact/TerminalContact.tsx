@@ -44,7 +44,7 @@ const TerminalHeader = () => {
   return (
     <div className="w-full pt-16 pb-10 px-8 bg-zinc-800 flex items-center flex-col gap-1 sticky top-0">
       <div className="text-4xl text-center font-black mb-5 text-zinc-100">
-        ¿Construimos<br />algo <i className="text-[#ff0099] mr-1.5">juntos</i>?
+        ¿Construimos<br />algo <i className="text-[#38FF96] mr-1.5">juntos</i>?
       </div>
       <div className="text-zinc-500 text-lg text-center mb-6 w-full max-w-md">
         <p>Estoy disponible para oportunidades full-time y proyectos freelance.</p>
@@ -55,7 +55,7 @@ const TerminalHeader = () => {
           href="https://wa.me/51957268339" // Reemplaza con tu número de WhatsApp
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex h-[42px] w-full items-center justify-between border border-black bg-[#4B6E8E] px-4 font-medium text-white transition-colors hover:bg-[#4B6E8E]/80"
+          className="group flex h-[42px] w-full items-center justify-between border border-black bg-[#7C5CFF] px-4 font-medium text-white transition-colors hover:bg-[#7C5CFF]/80"
         >
           <div className="flex items-center gap-2 text-[15px] tracking-snug font-bold">
             <FaWhatsapp className="text-lg" />
@@ -74,7 +74,7 @@ const TerminalHeader = () => {
             link.click();
             document.body.removeChild(link);
           }}
-          className="group flex h-[42px] w-full items-center justify-between border border-black bg-[#ff0099] px-4 font-medium text-white transition-colors hover:bg-[#ff0099]/80"
+          className="group flex h-[42px] w-full items-center justify-between border border-black bg-[#38FF96] px-4 font-medium text-white transition-colors hover:bg-[#38FF96]/80"
         >
           <div className="flex items-center gap-2 text-[15px] tracking-snug font-bold">
             <FiSend className="text-sm" />
@@ -131,7 +131,7 @@ const TerminalBody = ({ containerRef, inputRef }: TerminalBodyProps) => {
       <PreviousQuestions questions={questions} />
       <CurrentQuestion curQuestion={curQuestion} />
       {error && (
-        <p className="text-[#ff0099] font-medium mb-2">{error}</p>
+        <p className="text-[#38FF96] font-medium mb-2">{error}</p>
       )}
       {curQuestion ? (
         <CurLine
@@ -228,7 +228,7 @@ const Summary = ({ questions, setQuestions }: SummaryProps) => {
       {complete ? (
         <div className="mt-2 space-y-2">
           <p>
-            <FiCheckCircle className="inline-block mr-2 text-[#4B6E8E]" />
+            <FiCheckCircle className="inline-block mr-2 text-[#7C5CFF]" />
             <span className="text-white">¡Enviado! Te responderé lo antes posible 🦄</span>
           </p>
         </div>
@@ -310,7 +310,7 @@ const CurLine = ({
         />
       </form>
       <p>
-        <span className="text-[#ff0099]">➜</span>{" "}
+        <span className="text-[#38FF96]">➜</span>{" "}
         {command && <span className="opacity-50">Ingresa tu {command}: </span>}
         {text}
         {focused && (

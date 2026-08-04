@@ -9,7 +9,7 @@ export const Stats2 = () => {
         <Reveal>
           <div>
             <h4 className="flex items-center mb-6">
-              <AiFillSetting className="text-[#4B6E8E] text-2xl" />
+              <AiFillSetting className="text-[#7C5CFF] text-2xl" />
               <span className="font-bold ml-2">Entorno y construcción</span>
             </h4>
             <div className="flex flex-wrap gap-2 mb-6">
@@ -25,7 +25,7 @@ export const Stats2 = () => {
         <Reveal>
           <div>
             <h4 className="flex items-center mb-6">
-              <AiFillSmile className="text-[#4B6E8E] text-2xl" />
+              <AiFillSmile className="text-[#7C5CFF] text-2xl" />
               <span className="font-bold ml-2">IA y asistentes creativos</span>
             </h4>
             <div className="flex flex-wrap gap-2 mb-6">
@@ -43,7 +43,7 @@ export const Stats2 = () => {
         <Reveal>
           <div>
             <h4 className="flex items-center mb-6">
-              <AiFillEdit className="text-[#4B6E8E] text-2xl" />
+              <AiFillEdit className="text-[#7C5CFF] text-2xl" />
               <span className="font-bold ml-2">Productividad y gestión</span>
             </h4>
             <div className="flex flex-wrap gap-2 mb-6">

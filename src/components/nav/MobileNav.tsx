@@ -46,7 +46,7 @@ export const MobileNav = () => {
           }}
           className="flex h-10 w-6 items-center justify-center mx-auto bg-transparent text-2xl font-black leading-none text-white"
         >
-          K<span className="text-[#4B6E8E]">.</span>
+          K<span className="text-[#7C5CFF]">.</span>
         </button>
 
         <OutlineButton
