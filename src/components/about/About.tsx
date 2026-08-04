@@ -13,19 +13,18 @@ export const About = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 tracking-wide">
         <div className="space-y-4 pb-4 sm:pb-5 md:pb-8 col-span-2">
           <Reveal>
-            <p className="leading-relaxed text-zinc-200 text-lg">
-              <b className="text-zinc-100">Líder Creativa Técnica Digital Multidisciplinaria</b>
-            </p>
-          </Reveal>
-          <Reveal>
-            <p className="leading-relaxed text-zinc-200 text-normal ">
-              Frontend Developer & Product Designer (UI/UX / Brand). Conecto el desarrollo técnico con el diseño de productos digitales de inicio a fin. Con más de 10 años de trayectoria global, lidero equipos de desarrolladores y creativos bajo metodologías ágiles para crear sistemas  escalable en ecosistemas corporativos y e-commerce.
+            <p className="leading-relaxed text-zinc-200 text-normal">
+              <b className="text-white">Soy Product Designer & Frontend Senior</b> con +10 años de experiencia en entornos tecnológicos para EE. UU. y LATAM. 
+              Conecto la estrategia de marca, el diseño UX/UI y el desarrollo Front-End para construir productos digitales. 
+              Lideré equipos creativos y DesignOps bajo metodologías ágiles y adopción de IA en flujos para ecosistemas corporativos y e-commerce.
             </p>
           </Reveal>
           
           <Reveal>
             <p className="leading-relaxed text-zinc-200 text-normal ">
-              Mi expertise técnico abarca el desarrollo de arquitecturas web modernas con React.js, Next.js, Vue.js, TypeScript, JavaScript y Jekyll. Implemento Design Systems mediante Tailwind y SCSS, integrando componentes accesibles y flujos avanzados en Figma (Tokens, Variables y Componentes) junto a la suite de Adobe (Ai, Ps, Pr). Domino Git/GitHub, la integración de APIs y optimizo flujos de desarrollo con agentes de IA como Cursor y Copilot, garantizando código limpio, escalable y optimizado para SEO y rendimiento web.
+              Mi expertise técnico abarca el desarrollo de arquitecturas web modernas con React.js, Next.js, TypeScript y Tailwind CSS, así como la configuración e integración de CMS avanzados. 
+              Domino Git/GitHub, APIs y flujos mediante herramientas y agentes de IA (Cursor, Copilot), garantizando diseño/código limpio, con rendimiento y alineado a los objetivos de producto. 
+              Asimismo, sistemas de diseño escalables y prototipado avanzado en Figma, integrando flujos centrados en el usuario, accesibilidad y creativas piezas gráficas publicitarias en entorno B2B.
             </p>
           </Reveal>
 

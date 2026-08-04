@@ -31,17 +31,20 @@ interface EducationCardProps {
   degree: string;
   period: string;
   time: string;
-  description: string;
+  description?: string;
   Icon: ComponentType<{ className?: string }>;
   achievements?: string[];
   image?: string;
   onOpenModal: (img: string) => void;
+  showAllAchievements: boolean;
+  onToggleAchievements: () => void;
 }
 
 export const Education = () => {
   const [position, setPosition] = useState(0);
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
   const [isDragging, setIsDragging] = useState(false);
+  const [showAllAchievements, setShowAllAchievements] = useState(false); // Estado global
   const carouselRef = useRef<HTMLDivElement | null>(null);
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
   const dragState = useRef({
@@ -50,8 +53,6 @@ export const Education = () => {
     startX: 0,
     startScrollLeft: 0,
   });
-
-  const currentEducation = education[position];
 
   useEffect(() => {
     cardRefs.current[position]?.scrollIntoView({
@@ -177,6 +178,8 @@ export const Education = () => {
                 <EducationCard
                   {...edu}
                   onOpenModal={(img) => setSelectedImg(img)}
+                  showAllAchievements={showAllAchievements}
+                  onToggleAchievements={() => setShowAllAchievements((prev) => !prev)}
                 />
               </div>
             ))}
@@ -231,14 +234,14 @@ const EducationCard = ({
   degree,
   period,
   time,
-  description,
   Icon,
   achievements,
   image,
   onOpenModal,
+  showAllAchievements,
+  onToggleAchievements,
 }: EducationCardProps) => {
   const hasCertificate = Boolean(image);
-  const [showAchievements, setShowAchievements] = useState(false);
 
   return (
     <motion.div
@@ -251,11 +254,12 @@ const EducationCard = ({
 
       <Reveal>
         <div>
-          <h3 className="mb-4 text-2xl font-bold text-zinc-100">{title}</h3>
+          <h3 className="mb-3 text-2xl font-bold text-zinc-100">{title}</h3>
+          <h4 className="mb-2 text-lg font-semibold text-[#4B6E8E]">{institution}</h4>
           <button
             onClick={() => hasCertificate && image ? onOpenModal(image) : null}
             disabled={!hasCertificate}
-            className={`group mb-2 flex items-center text-sm transition-colors ${
+            className={`group mb-3 flex items-center text-sm transition-colors ${
               hasCertificate
                 ? "cursor-pointer text-zinc-400 hover:text-[#4B6E8E]"
                 : "cursor-not-allowed text-zinc-600"
@@ -280,25 +284,24 @@ const EducationCard = ({
             <FiCalendar className="text-[#FF0099]" />
             <span>{period}</span> ({time})
           </div>
-          <p className="mb-4 leading-relaxed text-md tracking-wide text-zinc-300">{description}</p>
 
           {achievements && achievements.length > 0 && (
             <div>
               <button
                 type="button"
-                onClick={() => setShowAchievements((pv) => !pv)}
-                className="mb-2 flex items-center gap-2 text-sm font-base text-[#4B6E8E] transition-opacity hover:opacity-90"
+                onClick={onToggleAchievements}
+                className="mb-2 flex items-center gap-2 text-normal font-base text-[#4B6E8E] transition-opacity hover:opacity-90"
               >
-                <span>{showAchievements ? "Ver menos" : "Ver logros"}</span>
+                <span>{showAllAchievements ? "Ocultar" : "Ver logros"}</span>
                 <FiChevronDown
-                  className={`transition-transform duration-200 ${showAchievements ? "rotate-180" : "rotate-0"}`}
+                  className={`transition-transform duration-200 ${showAllAchievements ? "rotate-180" : "rotate-0"}`}
                 />
               </button>
 
-              {showAchievements && (
+              {showAllAchievements && (
                 <ul className="space-y-1">
                   {achievements.map((achievement, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-sm">
+                    <li key={idx} className="flex items-start gap-2 text-normal text-zinc-300 tracking-wide">
                       <FiAward className="mt-1 flex-shrink-0 text-[#4B6E8E]" />
                       <span>{achievement}</span>
                     </li>
@@ -321,42 +324,39 @@ const education = [
     period: "2026",
     time: "70 horas",
     Icon: GlobeLock,
-    description:
-        "Formación que abarca desde la arquitectura Frontend y lógica Backend (Python/JS), hasta la integración de ecosistemas E-commerce y protocolos de ciberseguridad.",
     achievements: [
-        "Fortalecimiento de la integridad digital (Ethical Hacking)",
-        "Gestión de plataformas E-commerce: Woocommerce y Shopify",
-        "Proyecto frontend y backend integrados con bases de datos y APIs",
+        "Arquitectura Frontend y lógica Backend (Python/JS).",
+        "Seguridad informática y Ethical Hacking.",
+        "Gestión de E-commerce (WooCommerce y Shopify).",
+        "Integración de APIs y bases de datos."
     ]
   },
   {
     title: "Prototipado UI Avanzado en Figma",
-    institution: "Facultad de Arte y Diseño (PUCP)",
+    institution: "Pontificia Universidad Católica del Perú (PUCP)",
     degree: "Certificado",
     period: "2025",
     time: "21 horas",
     image: "/certs/pucp-prototipado.webp",
     Icon: SquaresIntersect,
-    description:
-        "Creación de prototipos con interactividad avanzada. Uso de variables, condicionales y componentes para diseñar flujos complejos y sistemas visuales inteligentes listos para desarrollo.",
     achievements: [
-        "Arquitectura de Prototipos Inteligentes",
-        "Sistematización y Escalabilidad Visual de alta complejidad"
+        "Interactividad avanzada con variables y condicionales.",
+        "Diseño de flujos complejos y sistemas visuales.",
+        "Escalabilidad y arquitectura de prototipos inteligentes."
     ]
   },
   {
     title: "Comunicación y Publicidad",
-    institution: "Universidad San Ignasio de Loyola (USIL)",
+    institution: "Universidad San Ignacio de Loyola",
     degree: "Licenciatura en trámite Sunedu",
     period: "2021 - 2025",
     time: "5 años",
     image: "/certs/usil-bachiller-comunicacion-publicidad.webp",
     Icon: GraduationCap,
-    description:
-        "Sólida base en comunicación y marketing, respaldada por una tesis en sistemas de diseño con mención honrosa; especializada en branding, estrategia y desarrollo digital.",
     achievements: [
-        "Tercio Superior según ranking académico de la universidad",
-        "Mencion Honorífica en tesis de licenciatura = 19"
+        "Estrategia en comunicación, marketing y branding.",
+        "Tesis en sistemas de diseño (Nota: 19).",
+        "Pertenencia al Tercio Superior."
     ]
   },
   {
@@ -367,11 +367,10 @@ const education = [
     time: "108 horas",
     image: "/certs/pucp-human-centered-design.webp",
     Icon: HandHelping,
-    description:
-        "Materialización de prototipos interactivos de alta fidelidad en Figma (con implementación de componentes, flujos funcionales y organización de design systems",
     achievements: [
-        "Prototipos navegables, incluyendo lógica condicional para botones y simulación de flujos de usuario complejos, optimizando la gestión de componentes y *assets* para la eficiencia del workflow",
-        "Tercio Superior"
+        "Prototipos de alta fidelidad orientados al usuario.",
+        "Implementación de flujos funcionales y design systems.",
+        "Pertenencia al Tercio Superior."
     ]
   },
   {
@@ -381,11 +380,10 @@ const education = [
     period: "2022",
     time: "80 horas",
     Icon: SquareTerminal,
-    description:
-        "Gestión integral del front-end: desarrollo de interfaces interactivas con React y Tailwind CSS, y despliegue continuo con Git, GitHub y Netlify.",
     achievements: [
-        "Construcción y Despliegue de Sitios Web Estáticos Optimizado",
-        "Desarrollo de Interfaces Interactivas y Gestión Colaborativa"
+        "Interfaces interactivas con React y Tailwind CSS.",
+        "Control de versiones con Git y GitHub.",
+        "Despliegue continuo en Netlify."
     ]
   },
   {
@@ -396,11 +394,10 @@ const education = [
     time: "100 horas",
     image: "/certs/privateacher-ingles.webp",
     Icon: Languages,
-    description:
-        "Aprendizaje del idioma inglés presencial priorizando el vocabulario y la pronunciación.",
     achievements: [
-        "Buena pronunciación en el idioma",
-        "Fluidez en la conversación"
+        "Expresión oral y vocabulario profesional.",
+        "Fluidez en entornos de comunicación bilingüe.",
+        "Buena pronunciación y naturalidad conversacional."
     ]
   },
   {
@@ -411,11 +408,10 @@ const education = [
     time: "80 horas",
     image: "/certs/toulouse-branding.webp",
     Icon: BookHeart,
-    description:
-        "Me especialicé en la creación y gestión integral de marcas, abarcando desde la estrategia de branding y el diseño de identidad visual hasta el storytelling y el marketing digital.",
     achievements: [
-        "Experto/a en diseño de marca y estilo visual distintivo",
-        "Quinto Superior"
+        "Creación y gestión integral de identidad corporativa.",
+        "Estrategias de branding, storytelling y marketing digital.",
+        "Pertenencia al Quinto Superior."
     ]
   },
   {
@@ -426,11 +422,10 @@ const education = [
     time: "76 horas",
     image: "/certs/toulouse-experiencia-usuario.webp",
     Icon: PanelsTopLeft,
-    description:
-        "Aprendí a traducir ideas en experiencias digitales intuitivas y atractivas, desde la investigación y conceptualización hasta el prototipado y la validación con usuarios reales.",
     achievements: [
-        "Construir soluciones web y móviles en prototipos interactivos",
-        "Quinto Superior"
+        "Investigación, prototipado y validación de experiencias digitales.",
+        "Diseño de soluciones intuitivas para web y móvil.",
+        "Pertenencia al Quinto Superior."
     ]
   },
   {
@@ -440,11 +435,10 @@ const education = [
     period: "2016 - 2017",
     time: "2 años",
     Icon: Computer,
-    description:
-        "Dominio en programación (Java, algoritmia y estructuras de datos), desarrollo web (HTML5, CSS3, JavaScript), bases de datos (SQL Server) y modelado de procesos de negocio (BPMN).",
     achievements: [
-        "Desarrollo web robusto e interactivo",
-        "Tercio Superior"
+        "Programación orientada a objetos (Java) y estructuras de datos.",
+        "Desarrollo web y gestión de bases de datos SQL Server.",
+        "Pertenencia al Tercio Superior."
     ]
   },
   {
@@ -455,11 +449,10 @@ const education = [
     time: "40 horas",
     image: "/certs/codecademy-html-css.webp",
     Icon: LayoutTemplate,
-    description:
-        "Aprendizaje autodidacta en HTML, CSS Intermedio, Media Queries y Javascript.",
     achievements: [
-        "Buen manejo de html, css, javascript, bootstrap, etc.",
-        "Personalización de estilos en las interfaces de usuario"
+        "Fundamentos de HTML, CSS y JavaScript.",
+        "Maquetación adaptativa mediante Media Queries.",
+        "Personalización de estilos visuales."
     ]
   },
   {
@@ -470,11 +463,10 @@ const education = [
     time: "3 años",
     image: "/certs/leodesign-titulo-publicidad.webp",
     Icon: GraduationCap,
-    description:
-      "Formación especializada en diseño gráfico, identidad visual y comunicación visual. Aprendizaje de herramientas de software de diseño gráfico y dibujo técnico.",
     achievements: [
-      "Proyectos destacados en identidad corporativa y liderazgo en proyectos",
-      "Mención Honorífica - Quinto Superior"
+      "Identidad visual y comunicación gráfica publicitaria.",
+      "Dominio de software de diseño y dibujo técnico.",
+      "Mención Honorífica y Quinto Superior."
     ]
   },
 ];

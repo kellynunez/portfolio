@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="relative z-10">
         <div className="pointer-events-none relative z-10">
           <Reveal>
-            <h1 className="pointer-events-auto text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-zinc-100 leading-tight pb-3">
+            <h1 className="pointer-events-auto md-0 md:-ml-1 text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-zinc-100 leading-tight pb-3">
               <TypewriterText
                 text="Hola, soy Kelly"
                 speed={150}
@@ -20,7 +20,7 @@ const Hero = () => {
             </h1>
           </Reveal>
           <Reveal>
-            <h2 className="pointer-events-auto my-1 sm:my-2 md:pb-5 text-3xl sm:text-3xl md:text-4xl xl:text-5xl text-zinc-100">
+            <h2 className="pointer-events-auto my-2 sm:my-2 md:pb-5 text-2xl sm:text-3xl md:text-4xl xl:text-5xl text-zinc-100">
               <span 
                 className="font-semibold"
                 style={{
@@ -32,14 +32,13 @@ const Hero = () => {
                   animation: 'gradient-shift 3s ease-in-out infinite'
                 }}
               >
-                Frontend Sr & Product Designer
+                Product Designer & Frontend Sr
               </span>
             </h2>
           </Reveal>
           <Reveal>
-            <p className="pointer-events-auto leading-relaxed md:leading-relaxed max-w-3xl text-base md:text-lg lg:text-xl text-zinc-200 font-normal tracking-wide">
-              Especialista Front-End y de sistemas de diseño UI/UX. 
-              Integración de identidad de marca, comunicación y diseño publicitario.
+            <p className="pointer-events-auto leading-relaxed md:leading-relaxed max-w-3xl md:text-lg lg:text-xl text-zinc-300 font-medium tracking-wide">
+              Especialista en arquitecturas web modernas, sistemas de diseño UX/UI y rendimiento web. Integro la estrategia de marca, la comunicación y el diseño publicitario para construir productos digitales escalables, eficientes y creativos.
             </p>
           </Reveal>
           <Reveal>

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { FiCheckCircle } from "react-icons/fi";
-import { FiSend } from "react-icons/fi";
+import { FiCheckCircle, FiSend, FiArrowRight } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
+import { HiDocumentArrowDown } from "react-icons/hi2";
 import {
   ChangeEvent,
   Dispatch,
@@ -30,7 +31,7 @@ const TerminalContact = () => {
             onClick={() => {
               inputRef.current?.focus();
             }}
-            className="h-auto px-6 md:px-10 pb-16 bg-zinc-800 backdrop-blur w-full overflow-y-scroll shadow-xl cursor-text font-mono"
+            className="h-auto px-6 md:px-9 pb-16 bg-zinc-800 backdrop-blur w-full overflow-y-scroll shadow-xl cursor-text font-sans-serif"
           >
             <TerminalBody inputRef={inputRef} containerRef={containerRef} />
           </div>
@@ -41,10 +42,47 @@ const TerminalContact = () => {
 
 const TerminalHeader = () => {
   return (
-    <div className="w-full pt-14 pb-10 bg-zinc-800 flex items-center flex-col gap-1 sticky top-0">
-      <span className="text-4xl md:text-5xl text-center font-black">
-        Contacto<span className="text-[#ff0099]">.</span>
-      </span>
+    <div className="w-full pt-16 pb-10 px-8 bg-zinc-800 flex items-center flex-col gap-1 sticky top-0">
+      <div className="text-4xl text-center font-black mb-5 text-zinc-100">
+        ¿Construimos<br />algo <i className="text-[#ff0099] mr-1.5">juntos</i>?
+      </div>
+      <div className="text-zinc-500 text-lg text-center mb-6 w-full max-w-md">
+        <p>Estoy disponible para oportunidades full-time y proyectos freelance.</p>
+      </div>
+      <div className="w-full max-w-2xl grid grid-cols-1 md:grid-cols-2 gap-3">
+        {/* Botón 1: WhatsApp */}
+        <a
+          href="https://wa.me/51957268339" // Reemplaza con tu número de WhatsApp
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex h-[42px] w-full items-center justify-between border border-black bg-[#4B6E8E] px-4 font-medium text-white transition-colors hover:bg-[#4B6E8E]/80"
+        >
+          <div className="flex items-center gap-2 text-[15px] tracking-snug font-bold">
+            <FaWhatsapp className="text-lg" />
+            <span>WhatsApp</span>
+          </div>
+          <FiArrowRight className="transition-transform group-hover:translate-x-1" />
+        </a>
+
+        {/* Botón 2: Enviar un correo */}
+        <button
+          type="button"
+          onClick={() => {
+            const link = document.createElement("a");
+            link.href = "mailto:kellynunezhu@gmail.com";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          }}
+          className="group flex h-[42px] w-full items-center justify-between border border-black bg-zinc-100 px-4 font-medium text-black transition-colors hover:bg-zinc-400"
+        >
+          <div className="flex items-center gap-2 text-[15px] tracking-snug font-bold">
+            <FiSend className="text-sm" />
+            <span>Enviar correo</span>
+          </div>
+          <FiArrowRight className="transition-transform group-hover:translate-x-1" />
+        </button>
+      </div>
     </div>
   );
 };
@@ -89,7 +127,7 @@ const TerminalBody = ({ containerRef, inputRef }: TerminalBodyProps) => {
   };
 
   return (
-    <div className="px-2 md:px-1 text-slate-100 text-sm leading-[2]">
+    <div className="px-2 md:px-0 text-slate-100 text-normal leading-[2] tracking-wide ">
       <PreviousQuestions questions={questions} />
       <CurrentQuestion curQuestion={curQuestion} />
       {error && (
@@ -199,7 +237,7 @@ const Summary = ({ questions, setQuestions }: SummaryProps) => {
   {/* Botón 1: Enviar (Lado izquierdo) */}
   <button
     onClick={handleSend}
-    className="group relative z-0 flex h-[36px] items-center overflow-hidden border border-black bg-zinc-100 font-medium font-jetbrains-mono text-black transition-colors"
+    className="group relative z-0 flex h-[40px] items-center overflow-hidden border border-black bg-zinc-100 font-semibold text-black transition-colors"
   >
     <div className="hidden items-center px-3 h-full transition-colors md:flex group-hover:bg-zinc-200 text-[16px] tracking-snug">
       Enviar
@@ -209,7 +247,7 @@ const Summary = ({ questions, setQuestions }: SummaryProps) => {
   {/* Botón 2: Reset (Lado derecho / Opuesto) */}
   <button
     onClick={handleReset}
-    className="flex h-[36px] w-[38px] items-center justify-center bg-transparent text-xl transition-colors hover:bg-zinc-800"
+    className="flex h-[40px] w-[40px] items-center justify-center bg-transparent text-xl transition-colors hover:bg-zinc-800"
   >
     <span className="text-zinc-300 leading-none -mt-1">↺</span>
   </button>
@@ -353,4 +391,4 @@ interface SummaryProps {
 
 interface CurrentQuestionProps {
   curQuestion: QuestionType | undefined;
-} 
+}

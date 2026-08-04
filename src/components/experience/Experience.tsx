@@ -11,8 +11,14 @@ export const Experience = () => {
   return (
     <section className="section-wrapper" id="experience">
       <SectionHeader title="Experiencia" dir="l" />
-      {displayedExperience.map((item) => (
-        <ExperienceItem key={item.title} {...item} />
+      
+      {displayedExperience.map((item, index) => (
+        <ExperienceItem 
+          key={item.title} 
+          {...item} 
+          // AQUÍ ESTÁ EL CAMBIO: Evaluamos si es el último de la lista actual
+          isLast={index === displayedExperience.length - 1} 
+        />
       ))}
       
       {experience.length > 3 && (
@@ -32,33 +38,33 @@ export const Experience = () => {
 const experience = [
   {
     title: "Voltron Data",
-    position: "Manager, Design & Web Development",
+    position: "Manager, Product Design & Front-End",
     time: "2021 - 2025",
     location: "Mountain View, CA",
     mode: "Remoto",
     description:
-      "Lideré y rediseñé la identidad visual y el sistema de diseño digital, aplicando metodologías ágiles para asegurar entregas iterativas. Migré el sitio de WordPress a Jekyll y blog en Markdown, y luego reconstruí las más de 20 páginas en React.js a modo oscuro.",
-    tech: ["React",  "NextJS", "Netlify", "TailwindCSS", "Markdown", "Figma", "GitHub", "Illustrator", "Midjourney", "Notion"],
+      "Rediseño y reconstrucción web con React, NodeJS y Tailwind, acelerando flujos con Cursor. Migración de la infraestructura de WordPress a Jekyll (Markdown) con Tailwind CSS. Lideré la creación de wireframes y prototipos UX/UI en Lucidchart y Figma (DevMode). Diseñé la identidad de marca de la startup tech y producción de piezas gráficas digital e impreso.",
+    tech: ["React", "NextJS", "Netlify", "Markdown", "TailwindCSS", "Lottie", "GitHub", "Figma", "Cursor", "Illustrator", "Midjourney", "Notion"],
   },
   {
     title: "BlazingSQL",
-    position: "Lead, Design & Front-End",
+    position: "Lead, Product Design & Front-End",
     time: "2015 - 2021",
     location: "Austin, TX",
     mode: "Híbrido",
     description:
-      "Desarrollé interfaces UI/UX y sitios web interactivos, trabajé en aplicaciones web con enfoque en usabilidad y rendimiento, lideré el rediseño de marca en múltiples canales y elaboré presentaciones corporativas consistentes desde el slide master.",
-    tech: ["Vue", "Jekyll", "JavaScript", "Less", "Figma", "Illustrator", "Photoshop", "ClickUp"],
+      "Diseñé prototipos UX/UI en Figma y desarrollé websites y webapps interactivas desde cero. Implementé interfaces utilizando frameworks y librerías como Vue.js, Vuetify y Tailwind. Desarrollé el manual de marca y lideré el rediseño de la identidad corporativa. Diseñé presentaciones ejecutivas y realicé edición de video para diversos canales.",
+    tech: ["Vue", "Jekyll", "NodeJS", "JavaScript", "Sass", "GitHub", "Figma", "Illustrator", "Photoshop", "Premiere", "ClickUp", "Airtable"],
   },
   {
     title: "Simply Technology",
-    position: "Diseñadora UI/UX Sr.",
+    position: "Diseñadora UX/UI y Desarrolladora Web",
     time: "2015",
-    location: "Lima, Perú",
+    location: "USA / Perú",
     mode: "Híbrido",
     description:
-      "Desarrollé prototipos UI multiplataforma en Adobe XD, implementé un sitio web responsive con formulario de contacto automatizado y elaboré la identidad visual corporativa y manejo de redes sociales.",
-    tech: ["HTML", "CSS", "JavaScript", "Adobe XD", "Illustrator", "Photoshop", "Microsoft Office"],
+      "Desarrollé prototipos web y apps UX/UI responsive en Adobe XD, construí sitios web con HTML, CSS y JavaScript y elaboré la identidad visual corporativa y manejo de redes sociales.",
+    tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Adobe XD", "Illustrator", "Photoshop", "Microsoft Office"],
   },
   {
     title: "Outofthebox",
@@ -67,8 +73,8 @@ const experience = [
     location: "Lima, Perú",
     mode: "Presencial",
     description:
-      "Encargada del diseño de banners retail a escala real, gráficos para redes y retoque fotográfico, participando además en la creación y edición de catálogos de belleza y moda para marcas como Ésika, Viale, Claudia Jimenez y Platanitos.",
-    tech: ["Illustrator", "Photoshop", "InDesign", "Microsoft Office"],
+      "Encargada del diseño de banners retail a escala real, gráficos para redes y retoque fotográfico, participando en la creación y edición de catálogos de belleza y moda para marcas como Ésika, Viale, Claudia Jimenez y Platanitos.",
+    tech: ["Illustrator", "Photoshop", "Camera Raw", "InDesign", "Microsoft Office"],
   },
   {
     title: "Cargraft",
@@ -87,7 +93,7 @@ const experience = [
     location: "Global",
     mode: "Remoto",
     description:
-      "Diseño prototipos interactivos y desarrollo sitios web responsivos con enfoque en UI/UX. También realicé diseño grafico e identidad visual, documentando todos los activos gráficos para su uso coherente en productos y comunicaciones.",
+      "Diseño prototipos interactivos y desarrollo sitios web responsivos con enfoque en UX/UI. También diseñé piezas gráficas y con identidad visual corporativa, documentando todos los activos gráficos para su uso coherente en productos y comunicaciones.",
     tech: ["React", "Framer Motion", "GitHub", "Cursor", "Figma", "Adobe CC", "Powerpoint"],
   },
 /*   {
