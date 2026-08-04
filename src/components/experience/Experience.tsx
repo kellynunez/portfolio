@@ -54,7 +54,7 @@ const experience = [
     title: "Simply Technology",
     position: "Diseñadora UX/UI y Desarrolladora Web",
     time: "2015",
-    location: "Lima, Perú",
+    location: "USA / Perú",
     mode: "Híbrido",
     description:
       "Desarrollé prototipos web y apps UX/UI responsive en Adobe XD, construí sitios web con HTML, CSS y JavaScript y elaboré la identidad visual corporativa y manejo de redes sociales.",

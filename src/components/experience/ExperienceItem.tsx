@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { Chip } from "../util/Chip";
 import Reveal from "../util/Reveal";
 
@@ -15,17 +16,24 @@ interface Props {
 const getFlagEmoji = (location: string): string => {
   const locationLower = location.toLowerCase();
   
+  // 1. Evaluar primero la combinación de ambos países
+  if (locationLower.includes('usa / perú') || locationLower.includes('usa / peru')) {
+    return '🇺🇸 🇵🇪';
+  }
+  
+  // 2. Luego evaluar los países de forma individual
   if (locationLower.includes('perú') || locationLower.includes('peru') || locationLower.includes('lima')) {
     return '🇵🇪';
   }
   if (locationLower.includes('usa') || locationLower.includes('austin') || locationLower.includes('mountain view')) {
     return '🇺🇸';
   }
+  
+  // 3. Caso por defecto / global
   if (locationLower.includes('global')) {
     return '🌍';
   }
   
-  // Por defecto, si no se encuentra una coincidencia específica
   return '📍';
 };
 
@@ -39,6 +47,7 @@ export const ExperienceItem = ({
   tech,
 }: Props) => {
   const flagEmoji = getFlagEmoji(location);
+  const [isExpanded, setIsExpanded] = useState(false);
   
   return (
     <div className="mb-6 border-b pb-6 border-zinc-700">
@@ -56,7 +65,7 @@ export const ExperienceItem = ({
         </Reveal>
       </div>
 
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between mb-2">
         <Reveal>
           <span className="text-[#4B6E8E] font-bold tracking-wide">{position}</span>
         </Reveal>
@@ -64,9 +73,33 @@ export const ExperienceItem = ({
           <span className="text-[#FF0099]">{mode}</span>
         </Reveal>
       </div>
-      <Reveal>
-        <p className="mb-6 text-zinc-300 tracking-wide leading-relaxed">{description}</p>
-      </Reveal>
+
+      {/* Botón interactivo para desplegar / ocultar la descripción */}
+      <div className="mb-4">
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="flex items-center gap-2 text-xs font-medium text-zinc-400 hover:text-zinc-200 transition-colors focus:outline-none"
+          aria-expanded={isExpanded}
+        >
+          <span>{isExpanded ? 'Ocultar' : 'Leer detalles'}</span>
+          {isExpanded ? (
+            <svg className="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+            </svg>
+          ) : (
+            <svg className="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          )}
+        </button>
+
+        {isExpanded && (
+          <Reveal>
+            <p className="mt-3 text-zinc-300 tracking-wide leading-relaxed">{description}</p>
+          </Reveal>
+        )}
+      </div>
+
       <Reveal>
         <div className="flex flex-wrap gap-2">
           {tech.map((item) => (
