@@ -11,8 +11,14 @@ export const Experience = () => {
   return (
     <section className="section-wrapper" id="experience">
       <SectionHeader title="Experiencia" dir="l" />
-      {displayedExperience.map((item) => (
-        <ExperienceItem key={item.title} {...item} />
+      
+      {displayedExperience.map((item, index) => (
+        <ExperienceItem 
+          key={item.title} 
+          {...item} 
+          // AQUÍ ESTÁ EL CAMBIO: Evaluamos si es el último de la lista actual
+          isLast={index === displayedExperience.length - 1} 
+        />
       ))}
       
       {experience.length > 3 && (
