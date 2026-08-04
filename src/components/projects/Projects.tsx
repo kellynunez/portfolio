@@ -18,7 +18,7 @@ export const Projects = () => {
 
 const projects = [
    {
-    title: "Sistemas de Diseño",
+    title: "Atomic Design System",
     imgSrc: "/project-imgs/system-design.webp",
     projectLink: "https://voltron-data.netlify.app/codex",
     tech: ["ReactJS", "TailwindCSS", "Sanity", "Motion", "Lottie Files", "Cursor", "Figma"],
@@ -53,7 +53,7 @@ const projects = [
     ],
   },
   {
-    title: "Web, Apps & UI/UX",
+    title: "Web/App & Product Design",
     imgSrc: "/project-imgs/web-corporative.webp",
     projectLink: "https://voltrondata-v1.netlify.app",
     tech: ["Node", "JekyllRB", "Vue", "TailwindCSS", "Markdown", "Figma", "Midjourney"],
