@@ -14,7 +14,6 @@ export const Stats = () => {
           </h4>
           <div className="flex flex-wrap gap-2 mb-6 md:mb-16">
             <Chip>Figma</Chip>
-            <Chip>Framer</Chip>
             <Chip>Lucidchart</Chip>
             <Chip>Miro</Chip>
             <Chip>LottieFiles</Chip>

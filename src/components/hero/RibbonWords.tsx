@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const WORDS = ["Branding", "🖌️", "UI/UX", "📐", "Frontend", "🌐"];
+const WORDS = ["Branding", "🖌️", "UX/UI", "📐", "Frontend", "🌐"];
 
 const RibbonWords = () => {
   return (
