@@ -1,9 +1,9 @@
 import { useAnimation, useInView, motion } from "framer-motion";
-// import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { AiOutlineExport } from "react-icons/ai";
+import { Chip } from "../util/Chip";
 
 const ProjectModal = dynamic(
   () => import("./ProjectModal").then((mod) => mod.ProjectModal),
@@ -28,7 +28,6 @@ export const Project = ({
   tech,
 }: Props) => {
   const [hovered, setHovered] = useState(false);
-
   const [isOpen, setIsOpen] = useState(false);
 
   const controls = useAnimation();
@@ -59,14 +58,15 @@ export const Project = ({
         initial="hidden"
         animate={controls}
         transition={{ duration: 0.75 }}
+        onClick={() => setIsOpen(true)}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        className="flex flex-col group cursor-pointer"
       >
         <div
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
-          onClick={() => setIsOpen(true)}
           onContextMenu={blockImageActions}
           onDragStart={blockImageActions}
-          className="w-full aspect-video bg-zinc-700 cursor-pointer relative overflow-hidden select-none"
+          className="w-full aspect-video bg-zinc-800 cursor-pointer relative overflow-hidden select-none opacity-100 md:opacity-80 group-hover:opacity-100"
         >
           <Image
             src={imgSrc}
@@ -76,12 +76,7 @@ export const Project = ({
             unoptimized
             alt={`An image of the ${title} project.`}
             draggable={false}
-            style={{
-              width: hovered ? "92%" : "90%",
-              rotate: hovered ? "2deg" : "0deg",
-              height: "auto",
-            }}
-            className="w-[85%] absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/4 transition-all rounded"
+            className="transition-transform duration-500 ease-out group-hover:scale-105"
           />
           <div
             aria-hidden="true"
@@ -97,22 +92,13 @@ export const Project = ({
             </h4>
             <div className="w-full h-[1px] bg-zinc-600" />
 
-            <AiOutlineExport className="w-8 text-white transition-colors cursor-pointer" onClick={() => setIsOpen(true)} />
+            <AiOutlineExport className="w-8 text-white transition-colors cursor-pointer" />
           </div>
-          <div className="flex flex-wrap gap-4 text-sm text-[#7C5CFF] my-2">
-            {tech.join(" - ")}
+          <div className="flex flex-wrap font-mono gap-2 text-zinc-400 my-2">
+            {tech.map((item) => (
+              <Chip key={item}>{item}</Chip>
+            ))}
           </div>
-{/*           <Reveal>
-            <p className="text-zinc-300 leading-relaxed">
-              {description}{" "}
-              <span
-                className="inline-block text-sm text-indigo-300 cursor-pointer"
-                onClick={() => setIsOpen(true)}
-              >
-                Learn more {">"}
-              </span>
-            </p>
-          </Reveal> */}
         </div>
       </motion.div>
       {isOpen && (

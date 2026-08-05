@@ -55,7 +55,7 @@ const experience = [
     mode: "Híbrido",
     description:
       "Diseñé prototipos UX/UI en Figma y desarrollé websites y webapps interactivas desde cero. Implementé interfaces utilizando frameworks y librerías como Vue.js, Vuetify y Tailwind. Desarrollé el manual de marca y lideré el rediseño de la identidad corporativa. Diseñé presentaciones ejecutivas y realicé edición de video para diversos canales.",
-    tech: ["Vue", "Jekyll", "NodeJS", "JavaScript", "Sass", "GitHub", "Figma", "Illustrator", "Photoshop", "Premiere", "ClickUp", "Airtable"],
+    tech: ["Vue", "Jekyll", "NodeJS", "Netlify", "JavaScript", "Sass", "GitHub", "Figma", "Illustrator", "Photoshop", "Premiere", "ClickUp", "Airtable"],
   },
   {
     title: "Simply Technology",

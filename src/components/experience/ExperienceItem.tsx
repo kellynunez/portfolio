@@ -77,16 +77,16 @@ export const ExperienceItem = ({
             </div>
           </Reveal>
           <Reveal>
-            <span>{time}</span>
+            <span className="font-mono text-xs font-normal text-zinc-400">{time}</span>
           </Reveal>
         </div>
 
-        <div className="flex items-center justify-between mb-2">
+        <div className="block md:flex items-center justify-between mb-2">
           <Reveal>
             <span className="text-[#7C5CFF] font-bold tracking-wide">{position}</span>
           </Reveal>
           <Reveal>
-            <span className="text-[#38FF96]">{mode}</span>
+            <span className="text-[#38FF96] text-xs font-semibold">{mode}</span>
           </Reveal>
         </div>
 
@@ -94,7 +94,7 @@ export const ExperienceItem = ({
         <div className="mb-4">
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="flex items-center gap-2 text-sm font-base text-[#1E90FF] transition-opacity hover:opacity-90"
+            className="flex items-center gap-2 text-xs font-base text-[#1E90FF] transition-opacity hover:opacity-90"
             aria-expanded={isExpanded}
           >
             <span>{isExpanded ? 'Ocultar' : 'Leer detalles'}</span>
@@ -111,13 +111,13 @@ export const ExperienceItem = ({
 
           {isExpanded && (
             <Reveal>
-              <p className="mt-3 text-sm text-zinc-300 tracking-wide leading-relaxed">{description}</p>
+              <p className="mt-3 text-sm text-zinc-400 tracking-wide leading-relaxed">{description}</p>
             </Reveal>
           )}
         </div>
 
         <Reveal>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 text-zinc-400 font-mono">
             {tech.map((item) => (
               <Chip key={item}>{item}</Chip>
             ))}

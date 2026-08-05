@@ -54,7 +54,15 @@ export const MobileNav = () => {
 
         {/* Contenedor alineado a la derecha */}
         <div className="flex items-center justify-end text-xs">
-          <CVButton className="group flex gap-2">
+          <CVButton className="group flex gap-2"
+              onClick={() => {
+              const link = document.createElement("a");
+              link.href = "/cv-kellynunez-es.pdf";
+              link.download = "cv-kellynunez-es.pdf";
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }}>
             <span className="border-b-0 border-transparent group-hover:border-b-[0.1px] group-hover:border-zinc-400">CV</span>
           </CVButton>
 

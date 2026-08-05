@@ -248,33 +248,31 @@ const EducationCard = ({
       initial={{ opacity: 0.95 }}
       animate={{ opacity: 1 }}
       transition={{ ease: "easeInOut", duration: 0.25 }}
-      className="relative flex h-full min-h-[300px] w-full flex-col justify-between overflow-hidden border border-zinc-700 bg-zinc-900 p-8 shadow-lg md:p-10 ml-7 md:ml-16"
+      className="relative flex h-full min-h-[250px] w-full flex-col justify-between overflow-hidden border border-zinc-700 bg-zinc-900 p-8 shadow-lg md:p-10 ml-7 md:ml-16"
     >
       <Icon className="absolute right-0 md:right-3 top-3 size-10 stroke-[0.5px] opacity-20" />
 
       <Reveal>
         <div className="flex flex-col gap-2">
-          <h3 className="text-xl font-bold text-zinc-100">{title}</h3>
-          <h4 className="text-normal tracking-wide leading-tight font-semibold text-[#7C5CFF] mb-1">{institution}</h4>
-
-          <div className="flex items-center gap-2 text-sm text-zinc-400">
-            <FiCalendar className="text-[#38FF96]" />
+          <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
             <span>{period}</span> ({time})
           </div>
+          <h3 className="text-xl font-bold text-zinc-100">{title}</h3>
+          <h4 className="text-normal tracking-wide leading-tight font-semibold text-[#7C5CFF] my-1">{institution}</h4>
 
           <button
             onClick={() => hasCertificate && image ? onOpenModal(image) : null}
             disabled={!hasCertificate}
-            className={`group flex items-center text-sm transition-colors mb-1 ${
+            className={`group flex items-center text-sm font-normal transition-colors my-1 ${
               hasCertificate
-                ? "cursor-pointer text-zinc-400 hover:text-[#38FF96]"
+                ? "cursor-pointer text-zinc-400 text-left hover:text-[#38FF96]"
                 : "cursor-not-allowed text-zinc-600"
             }`}
           >
             {hasCertificate ? (
               <>
                 <FiEye className="mr-2 inline-block text-[#38FF96] transition-colors group-hover:text-[#38FF96]" />
-                <span className="underline underline-offset-4 decoration-zinc-700 group-hover:decoration-[#38FF96]">
+                <span className="border-b-0 border-b-transparent group-hover:border-b-[#38FF96] text-[#38FF96]">
                   Ver {degree}
                 </span>
               </>
@@ -291,7 +289,7 @@ const EducationCard = ({
               <button
                 type="button"
                 onClick={onToggleAchievements}
-                className="mb-4 flex items-center gap-2 text-sm font-base text-[#1E90FF] transition-opacity hover:opacity-90"
+                className="mb-4 flex items-center gap-2 text-xs font-base text-[#1E90FF] transition-opacity hover:opacity-90"
               >
                 <span>{showAllAchievements ? "Ocultar" : "Leer logros"}</span>
                 <FiChevronDown
