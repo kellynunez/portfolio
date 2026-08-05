@@ -14,7 +14,7 @@ export const About = () => {
         <div className="space-y-4 pb-4 sm:pb-5 md:pb-8 col-span-2">
           <Reveal>
             <p className="leading-relaxed text-zinc-200 text-normal">
-              <b className="text-white text-xl">Product Designer & Front-End Senior</b> con +10 años de experiencia en entornos tecnológicos para EE. UU. y LATAM. 
+              <b className="text-white text-xl">Product Designer & Front-End</b> con +10 años de experiencia en entornos tecnológicos para EE. UU. y LATAM. 
               Conecto la estrategia de marca, el diseño UX/UI y el desarrollo Front-End para construir productos digitales. 
               Lideré equipos creativos y DesignOps bajo metodologías ágiles y adopción de IA en flujos para ecosistemas corporativos y e-commerce.
             </p>
@@ -24,7 +24,7 @@ export const About = () => {
             <p className="leading-relaxed text-zinc-200 text-normal ">
               Mi expertise técnico abarca el desarrollo de arquitecturas web modernas con React.js, Next.js, TypeScript y Tailwind CSS, así como la configuración e integración de CMS avanzados. 
               Domino Git/GitHub, APIs y flujos mediante herramientas y agentes de IA (Cursor, Copilot), garantizando diseño/código limpio, con rendimiento y alineado a los objetivos de producto. 
-              Asimismo, sistemas de diseño escalables y prototipado avanzado en Figma, integrando flujos centrados en el usuario, accesibilidad y creativas piezas gráficas publicitarias en entorno B2B.
+              Asimismo, diseño sistemas escalables y prototipado avanzado en Figma, integrando flujos centrados en el usuario, accesibilidad y creativas piezas gráficas publicitarias en entorno B2B.
             </p>
           </Reveal>
 
