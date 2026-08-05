@@ -21,7 +21,7 @@ const projects = [
     title: "Atomic Design System",
     imgSrc: "/project-imgs/system-design.webp",
     projectLink: "https://voltron-data.netlify.app/codex",
-    tech: ["ReactJS", "TailwindCSS", "Sanity", "Motion", "Lottie Files", "Cursor", "Figma"],
+    tech: ["React", "Tailwind", "Sanity", "Motion", "Lottie Files", "Cursor", "Figma"],
     description:
       "Xyz",
     galleryImages: [

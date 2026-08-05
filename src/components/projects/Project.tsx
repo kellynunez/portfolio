@@ -87,14 +87,14 @@ export const Project = ({
         </div>
         <div className="mt-6">
           <div className="flex items-center gap-2 w-full">
-            <h4 className="font-bold text-lg shrink-0 max-w-[calc(100%_-_150px)]">
+            <h4 className="font-bold text-zinc-100 group-hover:text-white text-lg shrink-0 max-w-[calc(100%_-_150px)]">
               {title}
             </h4>
             <div className="w-full h-[1px] bg-zinc-600" />
 
-            <AiOutlineExport className="w-8 text-white transition-colors cursor-pointer" />
+            <AiOutlineExport className="w-8 text-zinc-400 group-hover:text-white transition-colors cursor-pointer" />
           </div>
-          <div className="flex flex-wrap font-mono gap-2 text-zinc-400 my-2">
+          <div className="flex flex-wrap font-mono gap-2 text-zinc-400 group-hover:text-zinc-200 my-2">
             {tech.map((item) => (
               <Chip key={item}>{item}</Chip>
             ))}

@@ -349,7 +349,7 @@ const QUESTIONS: QuestionType[] = [
   },
   {
     key: "comentario",
-    text: "Excelente!, y ",
+    text: "Excelente, y ",
     postfix: "¿cómo puedo ayudarte?",
     complete: false,
     value: "",
