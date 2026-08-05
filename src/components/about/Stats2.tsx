@@ -5,7 +5,7 @@ import { AiFillSmile, AiFillSetting, AiFillEdit } from "react-icons/ai";
 export const Stats2 = () => {
   return (
     <div className="relative">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-16">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-8 lg:gap-16">
         <Reveal>
           <div>
             <h4 className="flex items-center text-[#7C5CFF] mb-6">

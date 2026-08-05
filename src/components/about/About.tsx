@@ -10,7 +10,7 @@ export const About = () => {
   return (
     <section id="about" className="section-wrapper">
       <SectionHeader title="Sobre mí" dir="l" />
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 tracking-wide">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 gap-8 lg:gap-16 tracking-wide">
         <div className="space-y-4 pb-4 sm:pb-5 md:pb-8 col-span-2">
           <Reveal>
             <p className="leading-relaxed text-zinc-200 text-normal">
