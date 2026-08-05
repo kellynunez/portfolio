@@ -37,7 +37,7 @@ const Hero = () => {
                 <TypewriterText
                   text="Designer"
                   speed={150}
-                  delay={1700} // Ajusta el delay según lo que dure el primer texto
+                  delay={1800} // Ajusta el delay según lo que dure el primer texto
                 />
               </span>
               <TypewriterText

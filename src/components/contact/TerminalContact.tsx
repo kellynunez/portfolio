@@ -78,7 +78,7 @@ const TerminalHeader = () => {
         >
           <div className="flex items-center gap-2 text-sm tracking-snug font-semibold">
             <FiSend className="text-sm" />
-            <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-zinc-900">Enviar Email</span>
+            <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-zinc-900">Enviar Correo</span>
           </div>
           <FiArrowRight className="transition-transform group-hover:translate-x-1" />
         </button>

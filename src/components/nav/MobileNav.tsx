@@ -1,125 +1,268 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { OutlineButton } from "../buttons/OutlineButton";
-import { SideBarLink } from "./SideBarLink";
-import { navItems } from "./navItems";
 import { CVButton } from "../buttons/CVButton";
+import { OutlineButton } from "../buttons/OutlineButton";
+import { navItems } from "./navItems";
+import { FiArrowRight, FiSend } from "react-icons/fi";
+import { FaFileDownload } from "react-icons/fa";
 
 export const MobileNav = () => {
-  const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState("");
+  const [active, setActive] = useState(false);
+
+  const handleDownloadCV = () => {
+    const link = document.createElement("a");
+    link.href = "/cv-kellynunez-es.pdf";
+    link.download = "cv-kellynunez-es.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <div className="md:hidden">
-      <div className="fixed inset-x-0 top-0 z-50 grid grid-cols-[auto_1fr] items-center gap-3 bg-zinc-900/80 pl-6 pr-2 py-2 backdrop-blur-md">
-
-      {/* <button
-          type="button"
-          aria-label={open ? "Cerrar navegación" : "Abrir navegación"}
-          aria-expanded={open}
-          onClick={() => setOpen((value) => !value)}
-          className="flex h-10 w-10 items-center justify-center bg-transparent text-white"
-        >
-          <span className="relative flex h-5 w-5 items-center justify-center">
-            <span
-              className={`absolute h-0.5 w-5 bg-white transition-transform duration-300 ${
-                open ? "translate-y-0 rotate-45" : "-translate-y-1.5 rotate-0"
-              }`}
-            />
-            <span
-              className={`absolute h-0.5 w-5 bg-white transition-all duration-300 ${
-                open ? "opacity-0" : "opacity-100"
-              }`}
-            />
-            <span
-              className={`absolute h-0.5 w-5 bg-white transition-transform duration-300 ${
-                open ? "translate-y-0 -rotate-45" : "translate-y-1.5 rotate-0"
-              }`}
-            />
-          </span>
-        </button> */}
-
-        {/* Elemento a la izquierda */}
+      {/* Header superior fijo con la K a la izquierda y el botón hamburguesa / menú a la derecha */}
+      <div className="fixed inset-x-0 top-0 z-30 flex items-center justify-between bg-zinc-900/80 px-4 py-2 backdrop-blur-md border-b border-zinc-800">
         <button
           type="button"
           aria-label="Ir al inicio"
           onClick={() => {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
-          className="group flex h-10 items-center bg-transparent text-2xl font-black leading-none"
+          className="group flex h-10 items-center bg-transparent text-3xl font-black leading-none"
         >
           <span className="text-white group-hover:text-[#38FF96]">K</span>
           <span className="text-[#7C5CFF]">.</span>
         </button>
-
-        {/* Contenedor alineado a la derecha */}
-        <div className="flex items-center justify-end text-xs">
-          <CVButton className="group flex gap-2"
-              onClick={() => {
-              const link = document.createElement("a");
-              link.href = "/cv-kellynunez-es.pdf";
-              link.download = "cv-kellynunez-es.pdf";
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
-            }}>
-            <span className="border-b-0 border-transparent group-hover:border-b-[0.1px] group-hover:border-zinc-400">CV</span>
-          </CVButton>
-
-          <OutlineButton 
-            className="flex w-fit justify-center gap-2" 
-            onClick={() => {
-              document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            <span className="text-[#7C5CFF] pr-0.5">◉</span>
-            <span className="border-b-0 border-transparent group-hover:border-b-[0.1px] group-hover:border-[#38FF96]">Hablemos</span>
-          </OutlineButton>
-        </div>
-
       </div>
 
+      {/* Botón hamburguesa y overlay animados */}
+      <HamburgerButton active={active} setActive={setActive} />
       <AnimatePresence>
-        {open ? (
-          <>
-            <motion.button
-              type="button"
-              aria-label="Cerrar navegación"
-              onClick={() => setOpen(false)}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
-            />
-
-            <motion.aside
-              initial={{ x: -24, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: -24, opacity: 0 }}
-              transition={{ duration: 0.22, ease: "easeOut" }}
-              className="fixed left-4 right-4 top-1/4 z-50 mx-auto w-auto max-w-[18rem] overflow-hidden bg-transparent shadow-2xl shadow-black/40 backdrop-blur-md"
-            >
-              <nav className="flex max-h-[calc(100vh-9rem)] flex-col gap-3 overflow-y-auto p-4">
-                {navItems.map((item) => (
-                  <SideBarLink
-                    key={item.value}
-                    selected={selected}
-                    setSelected={setSelected}
-                    value={item.value}
-                    href={item.href}
-                    variant="horizontal"
-                    Icon={item.Icon}
-                    onNavigate={() => setOpen(false)}
-                    className="justify-center text-center"
-                  >
-                    {item.label}
-                  </SideBarLink>
-                ))}
-              </nav>
-            </motion.aside>
-          </>
-        ) : null}
+        {active && (
+          <LinksOverlay 
+            onClose={() => setActive(false)} 
+            onDownloadCV={handleDownloadCV} 
+          />
+        )}
       </AnimatePresence>
     </div>
   );
+};
+
+const LinksOverlay = ({ onClose, onDownloadCV }: { onClose: () => void; onDownloadCV: () => void }) => {
+  return (
+    <nav className="fixed right-4 top-4 z-40 h-[calc(100vh_-_32px)] w-[calc(100%_-_32px)] overflow-hidden flex flex-col justify-between p-6">
+      <LinksContainer onClose={onClose} />
+      <FooterCTAs onClose={onClose} onDownloadCV={onDownloadCV} />
+    </nav>
+  );
+};
+
+const LinksContainer = ({ onClose }: { onClose: () => void }) => {
+  return (
+    <motion.div className="space-y-5 pt-16 pl-2">
+      {/* Logo K al inicio del menú desplegable con animación */}
+      <motion.button
+        initial={{ opacity: 0, y: -8 }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            delay: 0.6,
+            duration: 0.5,
+            ease: "easeInOut",
+          },
+        }}
+        exit={{ opacity: 0, y: -8 }}
+        type="button"
+        aria-label="Ir al inicio"
+        onClick={() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          onClose();
+        }}
+        className="groupflex items-center bg-transparent text-3xl font-black leading-none"
+      >
+        <span className="text-zinc-100 group-hover:text-white">K</span>
+        <span className="text-[#7C5CFF]">.</span>
+      </motion.button>
+
+      {/* Elementos de navegación */}
+      {navItems.map((l, idx) => {
+        return (
+          <NavLink 
+            key={l.value} 
+            href={l.href} 
+            idx={idx} 
+            onClick={onClose}
+          >
+            {l.label}
+          </NavLink>
+        );
+      })}
+    </motion.div>
+  );
+};
+
+const NavLink = ({ children, href, idx, onClick }: { children: React.ReactNode; href: string; idx: number; onClick: () => void }) => {
+  return (
+    <motion.a
+      initial={{ opacity: 0, y: -8 }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          delay: 0.75 + idx * 0.125,
+          duration: 0.5,
+          ease: "easeInOut",
+        },
+      }}
+      exit={{ opacity: 0, y: -8 }}
+      href={href}
+      onClick={onClick}
+      className="block text-3xl font-semibold text-zinc-100 hover:text-white transition-colors"
+    >
+      {children}.
+    </motion.a>
+  );
+};
+
+const HamburgerButton = ({ active, setActive }: { active: boolean; setActive: React.Dispatch<React.SetStateAction<boolean>> }) => {
+  return (
+    <>
+      <motion.div
+        initial={false}
+        animate={active ? "open" : "closed"}
+        variants={UNDERLAY_VARIANTS}
+        style={{ top: 9, right: 16 }}
+        className="fixed z-40 bg-gradient-to-br from-zinc-900 to-zinc-900 shadow-lg backdrop-blur-md"
+      />
+
+      <motion.button
+        initial={false}
+        animate={active ? "open" : "closed"}
+        onClick={() => setActive((pv) => !pv)}
+        aria-label={active ? "Cerrar menú" : "Abrir menú"}
+        className={`group fixed right-4 top-1 z-50 h-12 w-10 bg-transparent transition-all ${
+          active ? "rounded-bl-xl rounded-tr-xl" : "rounded-xl"
+        }`}
+      >
+        <motion.span
+          variants={HAMBURGER_VARIANTS.top}
+          className="absolute block h-0.5 w-6 bg-white"
+          style={{ y: "-50%", left: "50%", x: "-50%" }}
+        />
+        <motion.span
+          variants={HAMBURGER_VARIANTS.middle}
+          className="absolute block h-0.5 w-6 bg-white"
+          style={{ left: "50%", x: "-50%", top: "50%", y: "-50%" }}
+        />
+        <motion.span
+          variants={HAMBURGER_VARIANTS.bottom}
+          className="absolute block h-0.5 w-2.5 bg-white"
+          style={{ x: "-50%", y: "50%" }}
+        />
+      </motion.button>
+    </>
+  );
+};
+
+const FooterCTAs = ({ onClose, onDownloadCV }: { onClose: () => void; onDownloadCV: () => void }) => {
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 8 }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        transition: { delay: 1.125, duration: 0.5, ease: "easeInOut" },
+      }}
+      exit={{ opacity: 0, y: 8 }}
+      className="flex flex-col pb-6 gap-4"
+    >
+
+      {/* Botón Enviar Correo */}
+      <a
+        href="mailto:kellynunezhu@gmail.com"
+        className="group cursor-pointer flex h-[42px] w-full items-center justify-between border border-black bg-[#7C5CFF] px-4 font-medium text-zinc-900 transition-colors hover:bg-[#7C5CFF]/80"
+        onClick={() => {
+          onClose();
+        }}
+      >
+        <div className="flex items-center gap-2 text-sm tracking-snug font-semibold">
+          <FiSend className="text-lg" />
+          <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-zinc-900">Enviar Correo</span>
+        </div>
+        <FiArrowRight className="transition-transform group-hover:translate-x-1" />
+      </a>
+
+      {/* Botón Descargar CV */}
+      <button
+        type="button"
+        className="group cursor-pointer flex h-[42px] w-full items-center justify-between border border-black bg-[#38FF96] px-4 font-medium text-zinc-900 transition-colors hover:bg-[#38FF96]/80"
+        onClick={(e) => {
+          e.preventDefault();
+          onDownloadCV();
+          onClose();
+        }}
+      >
+        <div className="flex items-center gap-2 text-sm tracking-snug font-semibold">
+          <FaFileDownload className="text-lg" />
+          <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-zinc-900">Descargar CV</span>
+        </div>
+        <FiArrowRight className="transition-transform group-hover:translate-x-1" />
+      </button>
+
+    </motion.div>
+  );
+};
+
+const UNDERLAY_VARIANTS = {
+  open: {
+    width: "calc(100% - 32px)",
+    height: "calc(100vh - 32px)",
+    transition: { type: "spring", mass: 3, stiffness: 400, damping: 50 },
+  },
+  closed: {
+    width: "40px",
+    height: "40px",
+    transition: {
+      delay: 0.75,
+      type: "spring",
+      mass: 3,
+      stiffness: 400,
+      damping: 50,
+    },
+  },
+};
+
+const HAMBURGER_VARIANTS = {
+  top: {
+    open: {
+      rotate: ["0deg", "0deg", "45deg"],
+      top: ["35%", "50%", "50%"],
+    },
+    closed: {
+      rotate: ["45deg", "0deg", "0deg"],
+      top: ["50%", "50%", "35%"],
+    },
+  },
+  middle: {
+    open: {
+      rotate: ["0deg", "0deg", "-45deg"],
+    },
+    closed: {
+      rotate: ["-45deg", "0deg", "0deg"],
+    },
+  },
+  bottom: {
+    open: {
+      rotate: ["0deg", "0deg", "45deg"],
+      bottom: ["35%", "50%", "50%"],
+      left: "50%",
+    },
+    closed: {
+      rotate: ["45deg", "0deg", "0deg"],
+      bottom: ["50%", "50%", "35%"],
+      left: "calc(50% + 7px)",
+    },
+  },
 };
