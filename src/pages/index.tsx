@@ -9,7 +9,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export default function Home() {
-  const description = "Especialista Front-End y de sistemas de diseño UX/UI. Integración de identidad de marca, comunicación y diseño publicitario.";
+  const description = "Especialista en arquitecturas web modernas y sistemas de diseño UX/UI. Integro la estrategia de marca, comunicación y diseño publicitario para construir productos digitales escalables, eficientes y creativos.";
   const title = "Kelly Núñez — Product Designer & Front-End";
   const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://kelly-nunez.com").replace(/\/$/, "");
   const imagePath = "/kelly-nunez-portfolio.png";
@@ -20,7 +20,7 @@ export default function Home() {
     "@type": "Person",
     name: "Kelly Núñez",
     url: siteUrl,
-    jobTitle: "Product Designer & Front-End",
+    jobTitle: "Product Designer & Front-End Developer",
     description: description,
     image: image,
     sameAs: [

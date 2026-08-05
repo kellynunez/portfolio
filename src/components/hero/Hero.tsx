@@ -41,7 +41,7 @@ const Hero = () => {
                 />
               </span>
               <TypewriterText
-                text=" & Frontend Sr."
+                text=" & Frontend Dev"
                 speed={150}
                 delay={2900}
               />
