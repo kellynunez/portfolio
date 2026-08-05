@@ -26,7 +26,7 @@ const Hero = () => {
           </Reveal>
 
           <Reveal>
-            <h1 className="pointer-events-auto md-0 md:-ml-1 text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-zinc-100 leading-tight pb-5 md:pb-7">
+            <h1 className="md-0 md:-ml-1 text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-zinc-100 leading-tight pb-5 md:pb-7">
               <TypewriterText
                 text="Product "
                 speed={150}
@@ -50,7 +50,7 @@ const Hero = () => {
           </Reveal>
           
           <Reveal>
-            <p className="pointer-events-auto leading-relaxed md:leading-relaxed max-w-3xl md:text-lg lg:text-xl text-zinc-100 font-medium tracking-wide">
+            <p className="font-mono leading-relaxed md:leading-relaxed max-w-3xl md:text-lg lg:text-xl text-zinc-400 font-medium tracking-wide">
               UI ARCHITECTURE — DESIGN SYSTEMS — WEB PERFORMANCE
             </p>
           </Reveal>

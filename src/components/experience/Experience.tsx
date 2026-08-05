@@ -22,12 +22,12 @@ export const Experience = () => {
       ))}
       
       {experience.length > 3 && (
-        <div className="group flex justify-center mt-8">
+        <div className="group flex justify-center mt-10">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="px-4 py-2.5 bg-[#7C5CFF] text-zinc-900 font-semibold group-hover:text-black transition-colors duration-200"
+            className="font-mono text-xs tracking-wide px-4 py-3 text-zinc-400 font-normal bg-white/10 transition-colors duration-200"
           >
-            <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-zinc-900 hover">{showAll ? "Mostrar menos" : `Mostrar ${experience.length - 3} más`}</span>
+            <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-white/50 pb-0.5">{showAll ? "Mostrar menos" : `Mostrar más`}</span>
             <FiArrowDown className={`inline-block ml-2 transition-transform duration-300 ${showAll ? "rotate-180" : ""}`} />
           </button>
         </div>

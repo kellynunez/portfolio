@@ -53,9 +53,9 @@ export const MobileNav = () => {
         </button>
 
         {/* Contenedor alineado a la derecha */}
-        <div className="flex items-center justify-end gap-2">
+        <div className="flex items-center justify-end text-xs">
           <CVButton className="group flex gap-2">
-            <span className="border-b-0 border-transparent group-hover:border-b-[0.1px] group-hover:border-[#38FF96]">CV</span>
+            <span className="border-b-0 border-transparent group-hover:border-b-[0.1px] group-hover:border-zinc-400">CV</span>
           </CVButton>
 
           <OutlineButton 
