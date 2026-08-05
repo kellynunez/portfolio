@@ -22,12 +22,12 @@ export const Experience = () => {
       ))}
       
       {experience.length > 3 && (
-        <div className="group flex justify-center mt-8">
+        <div className="group flex justify-center mt-10">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="px-4 py-2.5 bg-[#7C5CFF] text-zinc-900 font-semibold group-hover:text-black transition-colors duration-200"
+            className="font-mono text-xs tracking-wide px-4 py-3 text-zinc-400 font-normal bg-white/10 transition-colors duration-200"
           >
-            <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-zinc-900 hover">{showAll ? "Mostrar menos" : `Mostrar ${experience.length - 3} más`}</span>
+            <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-white/50 pb-0.5">{showAll ? "Mostrar menos" : `Mostrar más`}</span>
             <FiArrowDown className={`inline-block ml-2 transition-transform duration-300 ${showAll ? "rotate-180" : ""}`} />
           </button>
         </div>
@@ -55,7 +55,7 @@ const experience = [
     mode: "Híbrido",
     description:
       "Diseñé prototipos UX/UI en Figma y desarrollé websites y webapps interactivas desde cero. Implementé interfaces utilizando frameworks y librerías como Vue.js, Vuetify y Tailwind. Desarrollé el manual de marca y lideré el rediseño de la identidad corporativa. Diseñé presentaciones ejecutivas y realicé edición de video para diversos canales.",
-    tech: ["Vue", "Jekyll", "NodeJS", "JavaScript", "Sass", "GitHub", "Figma", "Illustrator", "Photoshop", "Premiere", "ClickUp", "Airtable"],
+    tech: ["Vue", "Jekyll", "NodeJS", "Netlify", "JavaScript", "Sass", "GitHub", "Figma", "Illustrator", "Photoshop", "Premiere", "ClickUp", "Airtable"],
   },
   {
     title: "Simply Technology",

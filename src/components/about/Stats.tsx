@@ -12,7 +12,7 @@ export const Stats = () => {
             <AiFillLayout className="text-lg text-[#38FF96]" />
             <span className="font-bold ml-2">Diseño y prototipado</span>
           </h4>
-          <div className="flex flex-wrap gap-2 mb-6 md:mb-16">
+          <div className="flex flex-wrap font-mono text-zinc-400 gap-2 mb-6 md:mb-16">
             <Chip>Figma</Chip>
             <Chip>Lucidchart</Chip>
             <Chip>Miro</Chip>
@@ -30,7 +30,7 @@ export const Stats = () => {
             <AiFillCode className="text-lg text-[#38FF96]" />
             <span className="font-bold ml-2">Lenguajes y estilos</span>
           </h4>
-          <div className="flex flex-wrap gap-2 mb-6 md:mb-16">
+          <div className="flex flex-wrap font-mono text-zinc-400 gap-2 mb-6 md:mb-16">
             <Chip>HTML</Chip>
             <Chip>CSS</Chip>
             <Chip>JavaScript</Chip>

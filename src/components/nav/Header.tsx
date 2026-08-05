@@ -6,9 +6,18 @@ import { CVButton } from "../buttons/CVButton";
 
 export const Header = () => {
   return (
-    <header className="sticky top-0 right-0 z-20 flex w-full items-center justify-end bg-transparent text-[14.5px]">
-        <CVButton className="group hidden md:flex gap-2">
-          <span className="border-b-0 border-transparent group-hover:border-b-[0.1px] group-hover:border-[#38FF96]">CV</span>
+    <header className="sticky top-0 right-0 z-20 flex w-full items-center justify-end bg-transparent text-xs py-1">
+        <CVButton className="group hidden md:flex gap-2"
+          onClick={() => {
+          const link = document.createElement("a");
+          link.href = "/cv-kellynunez-es.pdf";
+          link.download = "cv-kellynunez-es.pdf";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }}
+        >
+          <span className="border-b-0 border-transparent group-hover:border-b-[0.1px] group-hover:border-zinc-400">CV</span>
         </CVButton>
         <OutlineButton className="group hidden md:flex gap-2" onClick={() => {
           document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });

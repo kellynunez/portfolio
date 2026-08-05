@@ -10,11 +10,11 @@ export const About = () => {
   return (
     <section id="about" className="section-wrapper">
       <SectionHeader title="Sobre mí" dir="l" />
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 tracking-wide">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 gap-8 lg:gap-16 tracking-wide">
         <div className="space-y-4 pb-4 sm:pb-5 md:pb-8 col-span-2">
           <Reveal>
             <p className="leading-relaxed text-zinc-200 text-normal">
-              <b className="text-white text-xl">Product Designer & Frontend Senior</b> con +10 años de experiencia en entornos tecnológicos para EE. UU. y LATAM. 
+              <b className="text-white text-xl">Product Designer & Front-End Senior</b> con +10 años de experiencia en entornos tecnológicos para EE. UU. y LATAM. 
               Conecto la estrategia de marca, el diseño UX/UI y el desarrollo Front-End para construir productos digitales. 
               Lideré equipos creativos y DesignOps bajo metodologías ágiles y adopción de IA en flujos para ecosistemas corporativos y e-commerce.
             </p>
