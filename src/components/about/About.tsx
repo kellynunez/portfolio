@@ -24,7 +24,7 @@ export const About = () => {
             <p className="leading-relaxed text-zinc-200 text-normal ">
               Mi expertise técnico abarca el desarrollo de arquitecturas web modernas con React.js, Next.js, TypeScript y Tailwind CSS, así como la configuración e integración de CMS avanzados. 
               Domino Git/GitHub, APIs y flujos mediante herramientas y agentes de IA (Cursor, Copilot), garantizando diseño/código limpio, con rendimiento y alineado a los objetivos de producto. 
-              Asimismo, sistemas de diseño escalables y prototipado avanzado en Figma, integrando flujos centrados en el usuario, accesibilidad y creativas piezas gráficas publicitarias en entorno B2B.
+              Asimismo, diseño sistemas escalables y prototipado avanzado en Figma, integrando flujos centrados en el usuario, accesibilidad y creativas piezas gráficas publicitarias en entorno B2B.
             </p>
           </Reveal>
 
