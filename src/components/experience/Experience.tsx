@@ -1,6 +1,7 @@
 import { SectionHeader } from "../util/SectionHeader";
 import { ExperienceItem } from "./ExperienceItem";
 import { useState } from "react";
+import { FiArrowDown } from "react-icons/fi";
 
 export const Experience = () => {
   const [showAll, setShowAll] = useState(false);
@@ -16,18 +17,18 @@ export const Experience = () => {
         <ExperienceItem 
           key={item.title} 
           {...item} 
-          // AQUÍ ESTÁ EL CAMBIO: Evaluamos si es el último de la lista actual
           isLast={index === displayedExperience.length - 1} 
         />
       ))}
       
       {experience.length > 3 && (
-        <div className="flex justify-center mt-8">
+        <div className="group flex justify-center mt-8">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="px-6 py-3 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 transition-colors duration-200 border border-zinc-700 hover:border-zinc-600"
+            className="px-4 py-2.5 bg-[#7C5CFF] text-zinc-900 font-semibold group-hover:text-black transition-colors duration-200"
           >
-            {showAll ? "Mostrar menos" : `Mostrar ${experience.length - 3} más`}
+            <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-zinc-900 hover">{showAll ? "Mostrar menos" : `Mostrar ${experience.length - 3} más`}</span>
+            <FiArrowDown className={`inline-block ml-2 transition-transform duration-300 ${showAll ? "rotate-180" : ""}`} />
           </button>
         </div>
       )}
@@ -50,7 +51,7 @@ const experience = [
     title: "BlazingSQL",
     position: "Lead, Product Design & Front-End",
     time: "2015 - 2021",
-    location: "Austin, TX",
+    location: "USA / Perú",
     mode: "Híbrido",
     description:
       "Diseñé prototipos UX/UI en Figma y desarrollé websites y webapps interactivas desde cero. Implementé interfaces utilizando frameworks y librerías como Vue.js, Vuetify y Tailwind. Desarrollé el manual de marca y lideré el rediseño de la identidad corporativa. Diseñé presentaciones ejecutivas y realicé edición de video para diversos canales.",
@@ -88,13 +89,13 @@ const experience = [
   },
   {
     title: "Freelance",
-    position: "Diseñadora y Desarrolladora Web",
+    position: "Diseñadora UI/UX, Diseñadora Gráfica y Desarrolladora Front-End",
     time: "2010 - Actualidad",
     location: "Global",
     mode: "Remoto",
     description:
       "Diseño prototipos interactivos y desarrollo sitios web responsivos con enfoque en UX/UI. También diseñé piezas gráficas y con identidad visual corporativa, documentando todos los activos gráficos para su uso coherente en productos y comunicaciones.",
-    tech: ["React", "Framer Motion", "GitHub", "Cursor", "Figma", "Adobe CC", "Powerpoint"],
+    tech: ["React", "Framer Motion", "GitHub", "Netlify", "Cursor", "Copilot", "TailwindCSS", "Figma", "Adobe Creative Cloud", "Powerpoint"],
   },
 /*   {
     title: "My Little World",

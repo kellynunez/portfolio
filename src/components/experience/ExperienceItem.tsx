@@ -60,8 +60,8 @@ export const ExperienceItem = ({
         aria-label={`Seleccionar ${title}`}
         className={`absolute left-0 top-1.5 w-4 h-4 rounded-full border-2 transition-all focus:outline-none ${
           isSelected 
-            ? 'bg-[#FF0099] border-[#FF0099] scale-110 shadow-[0_0_10px_rgba(255,0,153,0.5)]' 
-            : 'bg-zinc-900 border-zinc-500 hover:border-[#FF0099]'
+            ? 'bg-[#38FF96] border-[#38FF96] scale-110 shadow-[0_0_10px_rgba(255,0,153,0.5)]' 
+            : 'bg-zinc-900 border-zinc-500 hover:border-[#38FF96]'
         }`}
       />
 
@@ -83,10 +83,10 @@ export const ExperienceItem = ({
 
         <div className="flex items-center justify-between mb-2">
           <Reveal>
-            <span className="text-[#4B6E8E] font-bold tracking-wide">{position}</span>
+            <span className="text-[#7C5CFF] font-bold tracking-wide">{position}</span>
           </Reveal>
           <Reveal>
-            <span className="text-[#FF0099]">{mode}</span>
+            <span className="text-[#38FF96]">{mode}</span>
           </Reveal>
         </div>
 
@@ -94,7 +94,7 @@ export const ExperienceItem = ({
         <div className="mb-4">
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="flex items-center gap-2 text-xs font-medium text-zinc-400 hover:text-zinc-200 transition-colors focus:outline-none"
+            className="flex items-center gap-2 text-sm font-base text-[#1E90FF] transition-opacity hover:opacity-90"
             aria-expanded={isExpanded}
           >
             <span>{isExpanded ? 'Ocultar' : 'Leer detalles'}</span>
@@ -111,7 +111,7 @@ export const ExperienceItem = ({
 
           {isExpanded && (
             <Reveal>
-              <p className="mt-3 text-zinc-300 tracking-wide leading-relaxed">{description}</p>
+              <p className="mt-3 text-sm text-zinc-300 tracking-wide leading-relaxed">{description}</p>
             </Reveal>
           )}
         </div>

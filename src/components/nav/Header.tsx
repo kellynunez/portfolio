@@ -2,26 +2,21 @@ import Link from "next/link";
 import React from "react";
 import { SiGithub, SiInstagram, SiLinkedin, SiGmail, SiWhatsapp, SiBehance, SiPinterest } from "react-icons/si";
 import { OutlineButton } from "../buttons/OutlineButton";
+import { CVButton } from "../buttons/CVButton";
 
 export const Header = () => {
   return (
-    <header className="sticky top-0 right-0 z-20 flex h-[72px] w-full items-center justify-end bg-transparent px-6 text-[14.5px]">
-  <div className="bg-zinc-900/50 p-2 backdrop-blur-md">
-    <OutlineButton 
-      className="hidden md:flex" 
-      onClick={() => {
-        const link = document.createElement('a');
-        link.href = "/cv-kellynunez-es.pdf";
-        link.download = "cv-kellynunez-es.pdf";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      }}
-    >
-      <span>Descargar CV</span>
-    </OutlineButton>
-  </div>
-</header>
+    <header className="sticky top-0 right-0 z-20 flex w-full items-center justify-end bg-transparent text-[14.5px]">
+        <CVButton className="group hidden md:flex gap-2">
+          <span className="border-b-0 border-transparent group-hover:border-b-[0.1px] group-hover:border-[#38FF96]">CV</span>
+        </CVButton>
+        <OutlineButton className="group hidden md:flex gap-2" onClick={() => {
+          document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+          }}>
+          <span className="text-[#7C5CFF] pr-0.5">◉</span>
+          <span className="border-b-0 border-transparent group-hover:border-b-[0.1px] group-hover:border-[#38FF96]">Hablemos</span>
+        </OutlineButton>
+    </header>
   );
 };
 
@@ -40,7 +35,7 @@ export const MyLinks = ({ className = "" }: { className?: string }) => (
 {/*     <Link
       aria-label="Enviar correo a Kelly Núñez"
       title="Correo"
-      className="text-zinc-200 hover:text-[#4B6E8E] transition-colors"
+      className="text-zinc-200 hover:text-[#7C5CFF] transition-colors"
       href="mailto:kellynunezhu@gmail.com"
       rel="nofollow"
     >

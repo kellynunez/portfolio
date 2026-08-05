@@ -105,7 +105,7 @@ const DotGrid = () => {
           key={`${i}-${j}`}
         >
           <div
-            className="dot-point h-2 w-2 rounded-full bg-gradient-to-b from-zinc-700 to-zinc-400 opacity-50 group-hover:from-[#FF0099] group-hover:to-[#FF0099]"
+            className="dot-point h-2 w-2 rounded-full bg-gradient-to-b from-zinc-700 to-zinc-400 opacity-50 group-hover:from-[#38FF96] group-hover:to-[#38FF96]"
             data-index={index}
           />
         </div>

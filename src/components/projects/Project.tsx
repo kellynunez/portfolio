@@ -99,7 +99,7 @@ export const Project = ({
 
             <AiOutlineExport className="w-8 text-white transition-colors cursor-pointer" onClick={() => setIsOpen(true)} />
           </div>
-          <div className="flex flex-wrap gap-4 text-sm text-[#4B6E8E] my-2">
+          <div className="flex flex-wrap gap-4 text-sm text-[#7C5CFF] my-2">
             {tech.join(" - ")}
           </div>
 {/*           <Reveal>

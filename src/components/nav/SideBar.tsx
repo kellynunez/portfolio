@@ -59,7 +59,7 @@ export const SideBar = () => {
               {/* Cambiamos 'grid place-content-center' por 'flex items-center' */}
               <div className="flex h-14 pl-4 shrink-0 items-center justify-center text-lg font-black text-zinc-200 hover:text-white">
                 <span>K</span>
-                <span className="text-[#ff0099]">.</span>
+                <span className="text-[#38FF96]">.</span>
               </div>
               {open && (
                 <div>

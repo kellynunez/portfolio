@@ -8,9 +8,9 @@ export const Stats2 = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-16">
         <Reveal>
           <div>
-            <h4 className="flex items-center mb-6">
-              <AiFillSetting className="text-[#4B6E8E] text-2xl" />
-              <span className="font-bold ml-2">Entorno y construcción</span>
+            <h4 className="flex items-center text-[#7C5CFF] mb-6">
+              <AiFillSetting className="text-lg text-[#38FF96]" />
+              <span className="font-bold ml-2 tracking-wide">Entorno y construcción</span>
             </h4>
             <div className="flex flex-wrap gap-2 mb-6">
               <Chip>NodeJS</Chip>
@@ -24,9 +24,9 @@ export const Stats2 = () => {
         </Reveal>
         <Reveal>
           <div>
-            <h4 className="flex items-center mb-6">
-              <AiFillSmile className="text-[#4B6E8E] text-2xl" />
-              <span className="font-bold ml-2">IA y asistentes creativos</span>
+            <h4 className="flex items-center text-[#7C5CFF] mb-6">
+              <AiFillSmile className="text-lg text-[#38FF96]" />
+              <span className="font-bold ml-2 tracking-wide">IA y asistentes creativos</span>
             </h4>
             <div className="flex flex-wrap gap-2 mb-6">
               <Chip>Cursor</Chip>
@@ -42,9 +42,9 @@ export const Stats2 = () => {
         </Reveal>
         <Reveal>
           <div>
-            <h4 className="flex items-center mb-6">
-              <AiFillEdit className="text-[#4B6E8E] text-2xl" />
-              <span className="font-bold ml-2">Productividad y gestión</span>
+            <h4 className="flex items-center text-[#7C5CFF] mb-6">
+              <AiFillEdit className="text-lg text-[#38FF96]" />
+              <span className="font-bold ml-2 tracking-wide">Productividad y gestión</span>
             </h4>
             <div className="flex flex-wrap gap-2 mb-6">
             <Chip>Notion</Chip>

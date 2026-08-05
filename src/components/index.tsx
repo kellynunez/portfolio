@@ -41,10 +41,11 @@ export const HomPage = () => {
         <div className="mx-auto max-w-md space-y-32 pb-24 md:max-w-3xl lg:max-w-5xl px-4 md:px-8">
           <Hero />
           {/* <RibbonWords /> */}
-          <About />
           <Projects />
           <Experience />
           <Education />
+                    <About />
+
           <Contact />
         </div>
       </main>

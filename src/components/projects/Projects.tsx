@@ -5,7 +5,7 @@ import { Project } from "./Project";
 export const Projects = () => {
   return (
     <section className="section-wrapper" id="projects">
-      <SectionHeader title="Proyectos" dir="r" />
+      <SectionHeader title="Proyectos" dir="l" />
 
       <div className="grid gap-12 grid-cols-1 md:grid-cols-2">
         {projects.map((project) => {

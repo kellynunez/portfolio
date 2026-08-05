@@ -253,22 +253,28 @@ const EducationCard = ({
       <Icon className="absolute right-0 md:right-3 top-3 size-10 stroke-[0.5px] opacity-20" />
 
       <Reveal>
-        <div>
-          <h3 className="mb-3 text-2xl font-bold text-zinc-100">{title}</h3>
-          <h4 className="mb-2 text-lg font-semibold text-[#4B6E8E]">{institution}</h4>
+        <div className="flex flex-col gap-2">
+          <h3 className="text-xl font-bold text-zinc-100">{title}</h3>
+          <h4 className="text-normal tracking-wide leading-tight font-semibold text-[#7C5CFF] mb-1">{institution}</h4>
+
+          <div className="flex items-center gap-2 text-sm text-zinc-400">
+            <FiCalendar className="text-[#38FF96]" />
+            <span>{period}</span> ({time})
+          </div>
+
           <button
             onClick={() => hasCertificate && image ? onOpenModal(image) : null}
             disabled={!hasCertificate}
-            className={`group mb-3 flex items-center text-sm transition-colors ${
+            className={`group flex items-center text-sm transition-colors mb-1 ${
               hasCertificate
-                ? "cursor-pointer text-zinc-400 hover:text-[#4B6E8E]"
+                ? "cursor-pointer text-zinc-400 hover:text-[#38FF96]"
                 : "cursor-not-allowed text-zinc-600"
             }`}
           >
             {hasCertificate ? (
               <>
-                <FiEye className="mr-2 inline-block text-blue-600 transition-colors group-hover:text-[#4B6E8E]" />
-                <span className="underline underline-offset-4 decoration-zinc-700 group-hover:decoration-[#4B6E8E]">
+                <FiEye className="mr-2 inline-block text-[#38FF96] transition-colors group-hover:text-[#38FF96]" />
+                <span className="underline underline-offset-4 decoration-zinc-700 group-hover:decoration-[#38FF96]">
                   Ver {degree}
                 </span>
               </>
@@ -280,19 +286,14 @@ const EducationCard = ({
             )}
           </button>
 
-          <div className="mb-4 flex items-center gap-2 text-sm text-zinc-400">
-            <FiCalendar className="text-[#FF0099]" />
-            <span>{period}</span> ({time})
-          </div>
-
           {achievements && achievements.length > 0 && (
             <div>
               <button
                 type="button"
                 onClick={onToggleAchievements}
-                className="mb-2 flex items-center gap-2 text-normal font-base text-[#4B6E8E] transition-opacity hover:opacity-90"
+                className="mb-4 flex items-center gap-2 text-sm font-base text-[#1E90FF] transition-opacity hover:opacity-90"
               >
-                <span>{showAllAchievements ? "Ocultar" : "Ver logros"}</span>
+                <span>{showAllAchievements ? "Ocultar" : "Leer logros"}</span>
                 <FiChevronDown
                   className={`transition-transform duration-200 ${showAllAchievements ? "rotate-180" : "rotate-0"}`}
                 />
@@ -301,8 +302,8 @@ const EducationCard = ({
               {showAllAchievements && (
                 <ul className="space-y-1">
                   {achievements.map((achievement, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-normal text-zinc-300 tracking-wide">
-                      <FiAward className="mt-1 flex-shrink-0 text-[#4B6E8E]" />
+                    <li key={idx} className="flex items-start gap-2 text-sm text-zinc-300 tracking-wide">
+                      <FiAward className="mt-1 flex-shrink-0 text-[#1E90FF]" />
                       <span>{achievement}</span>
                     </li>
                   ))}
@@ -319,7 +320,7 @@ const EducationCard = ({
 const education = [
   {
     title: "Frontend & Backend",
-    institution: "ISIL Educación Ejecutiva",
+    institution: "Instituto San Ignacio de Loyola (ISIL) - Educación Ejecutiva",
     degree: "Certificado en espera",
     period: "2026",
     time: "70 horas",
@@ -347,7 +348,7 @@ const education = [
   },
   {
     title: "Comunicación y Publicidad",
-    institution: "Universidad San Ignacio de Loyola",
+    institution: "Universidad San Ignacio de Loyola (USIL)",
     degree: "Licenciatura en trámite Sunedu",
     period: "2021 - 2025",
     time: "5 años",
