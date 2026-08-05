@@ -50,7 +50,7 @@ const experience = [
     title: "BlazingSQL",
     position: "Lead, Product Design & Front-End",
     time: "2015 - 2021",
-    location: "Austin, TX",
+    location: "USA / Perú",
     mode: "Híbrido",
     description:
       "Diseñé prototipos UX/UI en Figma y desarrollé websites y webapps interactivas desde cero. Implementé interfaces utilizando frameworks y librerías como Vue.js, Vuetify y Tailwind. Desarrollé el manual de marca y lideré el rediseño de la identidad corporativa. Diseñé presentaciones ejecutivas y realicé edición de video para diversos canales.",
@@ -88,13 +88,13 @@ const experience = [
   },
   {
     title: "Freelance",
-    position: "Diseñadora y Desarrolladora Web",
+    position: "Diseñadora UI/UX, Diseñadora Gráfica y Desarrolladora Front-End",
     time: "2010 - Actualidad",
     location: "Global",
     mode: "Remoto",
     description:
       "Diseño prototipos interactivos y desarrollo sitios web responsivos con enfoque en UX/UI. También diseñé piezas gráficas y con identidad visual corporativa, documentando todos los activos gráficos para su uso coherente en productos y comunicaciones.",
-    tech: ["React", "Framer Motion", "GitHub", "Cursor", "Figma", "Adobe CC", "Powerpoint"],
+    tech: ["React", "Framer Motion", "GitHub", "Netlify", "Cursor", "Copilot", "TailwindCSS", "Figma", "Adobe Creative Cloud", "Powerpoint"],
   },
 /*   {
     title: "My Little World",

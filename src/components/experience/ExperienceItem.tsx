@@ -94,7 +94,7 @@ export const ExperienceItem = ({
         <div className="mb-4">
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="flex items-center gap-2 text-xs font-medium text-zinc-400 hover:text-zinc-200 transition-colors focus:outline-none"
+            className="flex items-center gap-2 text-sm font-base text-[#1E90FF] transition-opacity hover:opacity-90"
             aria-expanded={isExpanded}
           >
             <span>{isExpanded ? 'Ocultar' : 'Leer detalles'}</span>
@@ -111,7 +111,7 @@ export const ExperienceItem = ({
 
           {isExpanded && (
             <Reveal>
-              <p className="mt-3 text-zinc-300 tracking-wide leading-relaxed">{description}</p>
+              <p className="mt-3 text-sm text-zinc-300 tracking-wide leading-relaxed">{description}</p>
             </Reveal>
           )}
         </div>
