@@ -2,18 +2,20 @@ import Link from "next/link";
 import React from "react";
 import { SiGithub, SiInstagram, SiLinkedin, SiGmail, SiWhatsapp, SiBehance, SiPinterest } from "react-icons/si";
 import { OutlineButton } from "../buttons/OutlineButton";
+import { CVButton } from "../buttons/CVButton";
 
 export const Header = () => {
   return (
     <header className="sticky top-0 right-0 z-20 flex w-full items-center justify-end bg-transparent text-[14.5px]">
-      <div>
+        <CVButton className="group hidden md:flex gap-2">
+          <span className="border-b-0 border-transparent group-hover:border-b-[0.1px] group-hover:border-[#38FF96]">CV</span>
+        </CVButton>
         <OutlineButton className="group hidden md:flex gap-2" onClick={() => {
           document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
           }}>
           <span className="text-[#7C5CFF] pr-0.5">◉</span>
           <span className="border-b-0 border-transparent group-hover:border-b-[0.1px] group-hover:border-[#38FF96]">Hablemos</span>
         </OutlineButton>
-      </div>
     </header>
   );
 };

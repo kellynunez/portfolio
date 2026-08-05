@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { OutlineButton } from "../buttons/OutlineButton";
 import { SideBarLink } from "./SideBarLink";
 import { navItems } from "./navItems";
+import { CVButton } from "../buttons/CVButton";
 
 export const MobileNav = () => {
   const [open, setOpen] = useState(false);
@@ -10,9 +11,9 @@ export const MobileNav = () => {
 
   return (
     <div className="md:hidden">
-      <div className="fixed inset-x-1 top-1 z-50 grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 bg-zinc-900/50 py-3 px-2 backdrop-blur-md">
-        
-        <button
+      <div className="fixed inset-x-0 top-0 z-50 grid grid-cols-[auto_1fr] items-center gap-3 bg-zinc-900/80 pl-6 pr-2 py-2 backdrop-blur-md">
+
+      {/* <button
           type="button"
           aria-label={open ? "Cerrar navegación" : "Abrir navegación"}
           aria-expanded={open}
@@ -36,32 +37,37 @@ export const MobileNav = () => {
               }`}
             />
           </span>
-        </button>
+        </button> */}
 
+        {/* Elemento a la izquierda */}
         <button
           type="button"
           aria-label="Ir al inicio"
           onClick={() => {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
-          className="flex h-10 w-6 items-center justify-center mx-auto bg-transparent text-2xl font-black leading-none text-white"
+          className="group flex h-10 items-center bg-transparent text-2xl font-black leading-none"
         >
-          K<span className="text-[#7C5CFF]">.</span>
+          <span className="text-white group-hover:text-[#38FF96]">K</span>
+          <span className="text-[#7C5CFF]">.</span>
         </button>
 
-        <OutlineButton
-          className="h-9 min-h-0 w-fit justify-center mx-auto flex mr-1"
-          onClick={() => {
-            const link = document.createElement("a");
-            link.href = "/cv-kellynunez-es.pdf";
-            link.download = "cv-kellynunez-es.pdf";
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-          }}
-        >
-          CV
-        </OutlineButton>
+        {/* Contenedor alineado a la derecha */}
+        <div className="flex items-center justify-end gap-2">
+          <CVButton className="group flex gap-2">
+            <span className="border-b-0 border-transparent group-hover:border-b-[0.1px] group-hover:border-[#38FF96]">CV</span>
+          </CVButton>
+
+          <OutlineButton 
+            className="flex w-fit justify-center gap-2" 
+            onClick={() => {
+              document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            <span className="text-[#7C5CFF] pr-0.5">◉</span>
+            <span className="border-b-0 border-transparent group-hover:border-b-[0.1px] group-hover:border-[#38FF96]">Hablemos</span>
+          </OutlineButton>
+        </div>
 
       </div>
 

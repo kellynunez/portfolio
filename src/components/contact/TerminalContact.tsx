@@ -55,11 +55,11 @@ const TerminalHeader = () => {
           href="https://wa.me/51957268339" // Reemplaza con tu número de WhatsApp
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex h-[42px] w-full items-center justify-between border border-black bg-[#7C5CFF] px-4 font-medium text-white transition-colors hover:bg-[#7C5CFF]/80"
+          className="group flex h-[42px] w-full items-center justify-between border border-black bg-[#38FF96] px-4 font-medium text-zinc-900 transition-colors hover:bg-[#38FF96]/80"
         >
           <div className="flex items-center gap-2 text-[15px] tracking-snug font-bold">
             <FaWhatsapp className="text-lg" />
-            <span>WhatsApp</span>
+            <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-zinc-900">WhatsApp</span>
           </div>
           <FiArrowRight className="transition-transform group-hover:translate-x-1" />
         </a>
@@ -74,11 +74,11 @@ const TerminalHeader = () => {
             link.click();
             document.body.removeChild(link);
           }}
-          className="group flex h-[42px] w-full items-center justify-between border border-black bg-[#38FF96] px-4 font-medium text-zinc-900 transition-colors hover:bg-[#38FF96]/80"
+          className="group flex h-[42px] w-full items-center justify-between border border-black bg-[#7C5CFF] px-4 font-medium text-zinc-900 transition-colors hover:bg-[#7C5CFF]/80"
         >
           <div className="flex items-center gap-2 text-[15px] tracking-snug font-bold">
             <FiSend className="text-sm" />
-            <span>Enviar Email</span>
+            <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-zinc-900">Enviar Email</span>
           </div>
           <FiArrowRight className="transition-transform group-hover:translate-x-1" />
         </button>
@@ -237,11 +237,11 @@ const Summary = ({ questions, setQuestions }: SummaryProps) => {
   {/* Botón 1: Enviar (Lado izquierdo) */}
   <button
     onClick={handleSend}
-    className="group relative z-0 flex h-[40px] items-center overflow-hidden border border-black bg-zinc-100 font-semibold text-black transition-colors"
-  >
-    <div className="hidden items-center px-3 h-full transition-colors md:flex group-hover:bg-zinc-200 text-[16px] tracking-snug">
-      Enviar
-    </div>
+    className="group relative z-0 flex px-4 py-2 flex items-center justify-center bg-white hover:bg-zinc-100 font-semibold text-black">
+      <FiSend className="mr-2" />
+      <div className="text-sm md:text-md tracking-wide">
+        <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-zinc-900 pb-0.5">Enviar datos</span>
+      </div>
   </button>
 
   {/* Botón 2: Reset (Lado derecho / Opuesto) */}

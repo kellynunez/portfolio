@@ -1,6 +1,7 @@
 import { SectionHeader } from "../util/SectionHeader";
 import { ExperienceItem } from "./ExperienceItem";
 import { useState } from "react";
+import { FiArrowDown } from "react-icons/fi";
 
 export const Experience = () => {
   const [showAll, setShowAll] = useState(false);
@@ -16,18 +17,18 @@ export const Experience = () => {
         <ExperienceItem 
           key={item.title} 
           {...item} 
-          // AQUÍ ESTÁ EL CAMBIO: Evaluamos si es el último de la lista actual
           isLast={index === displayedExperience.length - 1} 
         />
       ))}
       
       {experience.length > 3 && (
-        <div className="flex justify-center mt-8">
+        <div className="group flex justify-center mt-8">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="px-6 py-3 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 transition-colors duration-200 border border-zinc-700 hover:border-zinc-600"
+            className="px-4 py-2.5 bg-[#7C5CFF] text-zinc-900 font-semibold group-hover:text-black transition-colors duration-200"
           >
-            {showAll ? "Mostrar menos" : `Mostrar ${experience.length - 3} más`}
+            <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-zinc-900 hover">{showAll ? "Mostrar menos" : `Mostrar ${experience.length - 3} más`}</span>
+            <FiArrowDown className={`inline-block ml-2 transition-transform duration-300 ${showAll ? "rotate-180" : ""}`} />
           </button>
         </div>
       )}

@@ -50,7 +50,7 @@ const Hero = () => {
           </Reveal>
           
           <Reveal>
-            <p className="pointer-events-auto leading-relaxed md:leading-relaxed max-w-3xl md:text-lg lg:text-xl text-zinc-300 font-medium tracking-wide">
+            <p className="pointer-events-auto leading-relaxed md:leading-relaxed max-w-3xl md:text-lg lg:text-xl text-zinc-100 font-medium tracking-wide">
               UI ARCHITECTURE — DESIGN SYSTEMS — WEB PERFORMANCE
             </p>
           </Reveal>
