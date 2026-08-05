@@ -10,7 +10,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export default function Home() {
   const description = "Especialista en arquitecturas web modernas y sistemas de diseño UX/UI. Integro la estrategia de marca, comunicación y diseño publicitario para construir productos digitales escalables, eficientes y creativos.";
-  const title = "Kelly Núñez — Product Designer & Front-End";
+  const title = "Kelly Núñez — Product Designer & Front-End Developer";
   const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://kelly-nunez.com").replace(/\/$/, "");
   const imagePath = "/kelly-nunez-portfolio.png";
   const image = `${siteUrl}${imagePath}`;
@@ -20,7 +20,7 @@ export default function Home() {
     "@type": "Person",
     name: "Kelly Núñez",
     url: siteUrl,
-    jobTitle: "Product Designer & Front-End Developer",
+    jobTitle: "Product Design & Front-End Developer",
     description: description,
     image: image,
     sameAs: [
@@ -41,7 +41,7 @@ export default function Home() {
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
-        <meta name="keywords" content="Design Engineer, Creative Lead, Graphic Designer, Publicity, Product Designer, Web Developer, UX/UI, Frontend, Brand Identity, Branding Digital Products" />
+        <meta name="keywords" content="Design Engineer, Creative Lead, Graphic Designer, Publicity, Product Design, Web Developer, UX/UI, Frontend, Brand Identity, Branding Digital, Product" />
         <meta name="author" content="Kelly Núñez" />
         
         {/* Canonical URL */}
