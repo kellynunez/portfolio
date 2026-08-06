@@ -17,10 +17,10 @@ export const Stats = () => {
             <Chip>Lucidchart</Chip>
             <Chip>Miro</Chip>
             <Chip>LottieFiles</Chip>
-            <Chip>Premiere</Chip>
             <Chip>Photoshop</Chip>
             <Chip>Illustrator</Chip>
-            <Chip>InDesign</Chip>
+            <Chip>Premiere</Chip>
+            <Chip>Canvas</Chip>
           </div>
         </div>
       </Reveal>
@@ -42,7 +42,6 @@ export const Stats = () => {
             <Chip>Sass</Chip>
             <Chip>Framer Motion</Chip>
             <Chip>AnimeJS</Chip>
-            <Chip>PHP</Chip>
           </div>
         </div>
       </Reveal>

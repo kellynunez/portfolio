@@ -329,17 +329,17 @@ const EducationCard = ({
 
 const education = [
   {
-    title: "Frontend & Backend",
+    title: "Diplomado de Desarrollo Front-End",
     institution: "Instituto San Ignacio de Loyola (ISIL) - Educación Ejecutiva",
     degree: "Certificado en espera",
     period: "2026",
     time: "70 horas",
     Icon: GlobeLock,
     achievements: [
+        "Seguridad y Ethical Hacking.",
         "Arquitectura Frontend y lógica Backend (Python/JS).",
-        "Seguridad informática y Ethical Hacking.",
-        "Gestión de E-commerce (WooCommerce y Shopify).",
-        "Integración de APIs y bases de datos."
+        "Integración de APIs y bases de datos.",
+        "Gestión E-commerce con Wordpress (WooCommerce) y Shopify.",
     ]
   },
   {
@@ -426,7 +426,7 @@ const education = [
     ]
   },
   {
-    title: "Especialización en Diseño de Experiencia de Usuario",
+    title: "Diseño de Experiencia de Usuario",
     institution: "Instituto Toulouse Lautrec",
     degree: "Especialización",
     period: "2017",
@@ -453,7 +453,7 @@ const education = [
     ]
   },
   {
-    title: "Diseño Web Responsive",
+    title: "Desarrollo Web",
     institution: "Codecademy",
     degree: "Certificado",
     period: "2016",
