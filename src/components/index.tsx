@@ -4,6 +4,7 @@ import { MobileNav } from "./nav/MobileNav";
 import { Header } from "./nav/Header";
 import Hero from "./hero/Hero";
 import RibbonWords from "./hero/RibbonWords";
+import { useState } from "react";
 
 const Projects = dynamic(
   () => import("./projects/Projects").then((mod) => mod.Projects),
@@ -31,6 +32,9 @@ const Contact = dynamic(
 );
 
 export const HomPage = () => {
+
+  const [selectedImg, setSelectedImg] = useState<string | null>(null);
+
   return (
     <div className="min-h-screen md:flex">
       <main className="relative z-0 min-w-0 flex-1">
