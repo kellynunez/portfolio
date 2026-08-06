@@ -20,21 +20,6 @@ export const MobileNav = () => {
 
   return (
     <div className="md:hidden">
-      {/* Header superior fijo con la K a la izquierda y el botón hamburguesa / menú a la derecha */}
-      <div className="fixed inset-x-0 top-0 z-30 flex items-center justify-between px-4 py-2">
-{/*         <button
-          type="button"
-          aria-label="Ir al inicio"
-          onClick={() => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
-          className="group flex h-8 items-center bg-transparent text-2xl font-black leading-none"
-        >
-          <span className="text-white group-hover:text-[#38FF96]">K</span>
-          <span className="text-[#7C5CFF]">.</span>
-        </button> */}
-      </div>
-
       {/* Botón hamburguesa y overlay animados */}
       <HamburgerButton active={active} setActive={setActive} />
       <AnimatePresence>

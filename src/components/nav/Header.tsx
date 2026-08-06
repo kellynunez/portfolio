@@ -2,28 +2,26 @@ import Link from "next/link";
 import React from "react";
 import { SiGithub, SiInstagram, SiLinkedin, SiGmail, SiWhatsapp, SiBehance, SiPinterest } from "react-icons/si";
 import { OutlineButton } from "../buttons/OutlineButton";
-import { CVButton } from "../buttons/CVButton";
 
 export const Header = () => {
   return (
-    <header className="sticky top-0 right-0 z-20 flex w-full items-center justify-end bg-transparent text-sm py-1">
-{/*         <CVButton className="group hidden md:flex gap-2"
-          onClick={() => {
-          const link = document.createElement("a");
-          link.href = "/cv-kelly-nunez.pdf";
-          link.download = "cv-kelly-nunez.pdf";
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
+    <header className="sticky top-0 right-0 z-20 flex w-full items-center justify-between bg-transparent text-sm py-1 px-0 md:px-2 bg-transparent md:bg-zinc-900/80 md:backdrop-blur-sm">
+      <button
+        type="button"
+        aria-label="Ir al inicio"
+        onClick={() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
         }}
-        >
-          <span className="border-b border-b-transparent group-hover:border-b-zinc-900">CV</span>
-        </CVButton> */}
-        <OutlineButton className="group hidden md:flex gap-2" onClick={() => {
-          document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-          }}>
-          <span className="border-b border-b-transparent group-hover:border-b-zinc-900">Hablemos</span>
-        </OutlineButton>
+        className="group hidden md:flex h-10 items-center bg-transparent text-3xl font-black ml-2"
+      >
+        <span className="text-white group-hover:text-[#38FF96]">K</span>
+        <span className="text-[#7C5CFF]">.</span>
+      </button>
+      <OutlineButton className="group hidden md:flex gap-2" onClick={() => {
+        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+        }}>
+        <span className="border-b border-b-transparent group-hover:border-b-zinc-900">Hablemos</span>
+      </OutlineButton>
     </header>
   );
 };
@@ -40,15 +38,6 @@ export const MyLinks = ({ className = "" }: { className?: string }) => (
     >
       <SiLinkedin />
     </Link>
-{/*     <Link
-      aria-label="Enviar correo a Kelly Núñez"
-      title="Correo"
-      className="text-zinc-200 hover:text-[#7C5CFF] transition-colors"
-      href="mailto:kellynunezhu@gmail.com"
-      rel="nofollow"
-    >
-      <SiGmail />
-    </Link> */}
     <Link
       aria-label="GitHub de Kelly Núñez"
       title="GitHub"
