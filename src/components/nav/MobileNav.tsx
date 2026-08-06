@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { CVButton } from "../buttons/CVButton";
-import { OutlineButton } from "../buttons/OutlineButton";
 import { navItems } from "./navItems";
 import { FiArrowRight, FiSend } from "react-icons/fi";
 import { FaFileDownload } from "react-icons/fa";
