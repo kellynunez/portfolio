@@ -1,22 +1,17 @@
-# My Portfolio
+# Portafolio de Kelly Núñez
 
-This portfolio was custom-built with React, Next.js, and Tailwind CSS. If you're already comfortable with Next.js, feel free to dig in and get started. If not, we'll provide some details below to get you up and running.
+Soy Product Design & Front-End y construí mi portafolio diseñado y desarrollado con React, Next.js y Tailwind CSS.
 
-## Let's get things running
+Este proyecto está construido sobre [NextJS](https://nextjs.org/), un framework de desarrollo full stack basado en React.
+En la raíz del proyecto, verás un archivo `package.json` que define las dependencias del proyecto.
 
-This project is built on top of [NextJS](https://nextjs.org/), a full stack development framework built on top of React.
+Las dependencias principales incluyen:
 
-At the root of the project, you'll see a `package.json` file defining the project dependencies.
+- `framer-motion` -> Una librería de animación basada en React utilizada para la mayoría de las animaciones.
+- `animejs` -> Una librería de animación secundaria utilizada para la animación de cuadrícula escalonada en la sección principal (hero).
+- `tailwindcss` -> Todo el diseño de estilos utiliza Tailwind CSS en este proyecto.
 
-Key dependencies include:
-
-- `framer-motion` -> A react based animation library used for most animations
-- `animejs` -> A secondary animation library used for the staggered grid animation in the hero section.
-- `tailwindcss` -> All styling uses Tailwind CSS for this project
-
-Now that that's out of the way, you can get your project running by first installing dependencies.
-
-From your terminal, run:
+Desde tu terminal, ejecuta:
 
 ```
 npm install
@@ -24,7 +19,7 @@ npm install
 yarn install
 ```
 
-This will take a minute or two, but once that's done, you should be able to run the following command:
+Esto tomará uno o dos minutos, pero una vez completado, ejecuta:
 
 ```
 npm run dev
@@ -32,20 +27,20 @@ npm run dev
 yarn dev
 ```
 
-This will start your project on `localhost:3000`
+Esto iniciará el proyecto en `localhost:3000`
 
-## The file structure
+## Estructura de archivos
 
-Because this is a Next.js project, it follows the standard Next.js pattern for organizing files and components:
+Dado que se trata de un proyecto de Next.js, sigue el patrón estándar de Next.js para organizar archivos y componentes:
 
-- `_app.tsx/jsx` -> A file which wraps around every page in our app. For this project, we've left this empty.
-- `_document.tsx/jsx` -> The Next.js version of the base HTML document configured with Tailwind classes.
-- `index.tsx/jsx` -> Represents the home route. You can start exploring the codebase from here, along with custom font configurations.
+- `_app.tsx/jsx` -> Un archivo que envuelve cada página del sitio.
+- `_document.tsx/jsx` -> La versión de Next.js del documento HTML base configurado con clases de Tailwind.
+- `index.tsx/jsx` -> Representa la ruta de inicio. Puedes explorar el código base desde aquí, junto con las configuraciones de fuentes personalizadas.
 
-Inside of the `/src/components/` directory you'll find all of the modular components rendered throughout the portfolio.
+Dentro del directorio `/src/components/` encontrarás todos los componentes modulares renderizados a lo largo del portafolio.
 
-## Styling
+## Estilos
 
-Styling is implemented entirely using [Tailwind CSS](https://tailwindcss.com/).
+Los estilos se han implementado en su totalidad utilizando [Tailwind CSS](https://tailwindcss.com/).
 
-Open up the `tailwind.config.js/ts` file to customize your configuration, color palettes, and design tokens.
+Abre el archivo `tailwind.config.js/ts` para personalizar la configuración, paletas de colores y tokens de diseño.
