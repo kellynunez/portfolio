@@ -259,12 +259,12 @@ const EducationCard = ({
             <span>{period}</span> ({time})
           </div>
           <h3 className="text-xl font-bold text-zinc-100">{title}</h3>
-          <h4 className="text-normal tracking-wide leading-tight font-semibold text-[#7C5CFF] my-1">{institution}</h4>
+          <h4 className="text-normal tracking-wide leading-tight font-semibold text-[#7C5CFF] mt-1 mb-2">{institution}</h4>
 
           <button
             onClick={() => hasCertificate && image ? onOpenModal(image) : null}
             disabled={!hasCertificate}
-            className={`group flex items-center text-sm font-normal transition-colors my-1 ${
+            className={`group flex items-center text-sm font-normal transition-colors my-0 ${
               hasCertificate
                 ? "cursor-pointer text-zinc-400 text-left hover:text-[#38FF96]"
                 : "cursor-not-allowed text-zinc-600"
@@ -273,7 +273,7 @@ const EducationCard = ({
             {hasCertificate ? (
               <>
                 <FiEye className="mr-2 inline-block text-[#38FF96] transition-colors group-hover:text-[#38FF96]" />
-                <span className="text-zinc-400 group-hover:text-[#38FF96] border-b-0 border-b-transparent group-hover:border-b-[0.5px] group-hover:border-b-[#38FF96] text-[#38FF96]">
+                <span className="text-zinc-400 group-hover:text-zinc-400 border-b border-b-transparent group-hover:border-b-[0.5px] group-hover:border-b-zinc-400 text-[#38FF96]">
                   Ver {degree}
                 </span>
               </>
@@ -295,14 +295,14 @@ const EducationCard = ({
                 {showAllAchievements ? (
                   <>
                     <FiChevronUp className="mr-2 inline-block text-zinc-600 group-hover:text-[#38FF96]" />
-                    <span className="text-zinc-400 group-hover:text-[#38FF96]">
+                    <span className="text-zinc-400 group-hover:text-zinc-400 border-b border-b-transparent group-hover:border-b-[0.5px] group-hover:border-b-zinc-400 text-[#38FF96]">
                       Ocultar
                     </span>
                   </>
                 ) : (
                   <>
                     <FiChevronDown className="mr-2 inline-block text-[#38FF96] transition-colors group-hover:text-[#38FF96]" />
-                    <span className="text-zinc-400 group-hover:text-[#38FF96] border-b-0 border-b-transparent group-hover:border-b-[0.5px] group-hover:border-b-[#38FF96] text-[#38FF96]">
+                    <span className="text-zinc-400 group-hover:text-zinc-400 border-b border-transparent group-hover:border-b-[0.5px] group-hover:border-b-zinc-400 text-[#38FF96]">
                       Leer logros
                     </span>
                   </>

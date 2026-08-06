@@ -35,7 +35,6 @@ export const Header = () => {
         </AnimatePresence>
       </div>
 
-      {/* 2. Logo K (Absolutamente centrado respecto a toda la barra) */}
       <button
         type="button"
         aria-label="Ir al inicio"
@@ -48,7 +47,6 @@ export const Header = () => {
         <span className="text-[#7C5CFF]">.</span>
       </button>
 
-      {/* 3. Contenedor derecho (Botón Hablemos / Balanceador de espacio) */}
       <div className="flex hidden md:flex items-center justify-end w-auto">
         <OutlineButton 
           className="group flex gap-2" 
@@ -121,16 +119,9 @@ export const MyLinks = ({ className = "" }: { className?: string }) => (
 
 const LinksOverlay = ({ onClose, onDownloadCV }: { onClose: () => void; onDownloadCV: () => void }) => {
   return (
-    <nav className="grid grid-cols-2 fixed left-4 top-4 z-40 h-[calc(100vh_-_32px)] w-full overflow-hidden flex flex-col justify-between p-6">
-      <LinksContainer onClose={onClose} />
-      <FooterCTAs onClose={onClose} onDownloadCV={onDownloadCV} />
-    </nav>
-  );
-};
-
-const LinksContainer = ({ onClose }: { onClose: () => void }) => {
-  return (
-    <motion.div className="space-y-5 pt-16 pl-2">
+    <nav className="fixed left-0 top-0 z-40 h-[calc(100vh)] w-[calc(100%)] md:w-[calc(100%)] m-4 overflow-hidden grid grid-cols-1 md:grid-cols-2 items-center p-6 md:p-12 gap-8 bg-zinc-900/80 backdrop-blur-md rounded-lg">
+      
+      {/* Logo K flotante en la esquina superior izquierda */}
       <motion.button
         initial={{ opacity: 0, y: -8 }}
         animate={{
@@ -145,24 +136,41 @@ const LinksContainer = ({ onClose }: { onClose: () => void }) => {
           window.scrollTo({ top: 0, behavior: "smooth" });
           onClose();
         }}
-        className="group flex items-center bg-transparent text-3xl font-black leading-none pb-16"
+        className="absolute top-12 md:left-3 lg:left-2 group flex items-center bg-transparent md:text-4xl lg:text-5xl xl:text-6xl font-black leading-none z-10"
       >
         <span className="text-zinc-100 group-hover:text-white">K</span>
         <span className="text-[#7C5CFF]">.</span>
       </motion.button>
 
-      {navItems.map((l: { label: string; value: string; href: string }, idx: number) => {
-        return (
-          <NavLink 
-            key={l.value} 
-            href={l.href} 
-            idx={idx} 
-            onClick={onClose}
-          >
-            {l.label}
-          </NavLink>
-        );
-      })}
+      {/* Columna 1: Links de navegación centrados verticalmente */}
+      <LinksContainer onClose={onClose} />
+
+      {/* Columna 2: FooterCTAs (Botones de Enviar Correo y Descargar CV) */}
+      <div className="flex flex-col justify-center h-full">
+        <FooterCTAs onClose={onClose} onDownloadCV={onDownloadCV} />
+      </div>
+    </nav>
+  );
+};
+
+const LinksContainer = ({ onClose }: { onClose: () => void }) => {
+  return (
+    <motion.div className="flex flex-col justify-center h-full space-y-6 pt-12 md:pt-0">
+      <div className="flex flex-col space-y-3 lg:space-y-4">
+        {navItems.map((l: { label: string; value: string; href: string }, idx: number) => {
+          return (
+            <div className="ml-4 md:ml-12 lg:ml-20" key={l.value}>
+              <NavLink 
+                href={l.href} 
+                idx={idx} 
+                onClick={onClose}
+              >
+                {l.label}
+              </NavLink>
+            </div>
+          );
+        })}
+      </div>
     </motion.div>
   );
 };
@@ -183,7 +191,7 @@ const NavLink = ({ children, href, idx, onClick }: { children: React.ReactNode; 
       exit={{ opacity: 0, y: -8 }}
       href={href}
       onClick={onClick}
-      className="block text-3xl font-semibold text-zinc-100 hover:text-white transition-colors"
+      className="block md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-zinc-100 hover:text-white transition-colors"
     >
       {children}.
     </motion.a>
@@ -198,7 +206,7 @@ const HamburgerButton = ({ active, setActive }: { active: boolean; setActive: Re
         animate={active ? "open" : "closed"}
         variants={UNDERLAY_VARIANTS}
         style={{ top: 6, left: 16 }}
-        className="fixed z-40 bg-gradient-to-br from-zinc-900 to-zinc-900/90 shadow-lg backdrop-blur-md perspective-1000"
+        className="fixed z-40 bg-gradient-to-br from-zinc-900 to-zinc-900/90 backdrop-blur-md perspective-1000"
       />
 
       <motion.button
@@ -277,8 +285,8 @@ const FooterCTAs = ({ onClose, onDownloadCV }: { onClose: () => void; onDownload
 
 const UNDERLAY_VARIANTS = {
   open: {
-    width: "calc(100% - 32px)",
-    height: "calc(100vh - 32px)",
+    width: "calc(100%)",
+    height: "calc(100vh)",
     transition: { type: "spring", mass: 3, stiffness: 400, damping: 50 },
   },
   closed: {

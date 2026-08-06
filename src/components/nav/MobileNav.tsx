@@ -116,7 +116,7 @@ const HamburgerButton = ({ active, setActive }: { active: boolean; setActive: Re
         initial={false}
         animate={active ? "open" : "closed"}
         variants={UNDERLAY_VARIANTS}
-        style={{ top: 4, right: 16 }}
+        style={{ top: 0, right: 0 }}
         className="fixed z-40 bg-gradient-to-br from-zinc-900/80 to-zinc-900/80 shadow-lg backdrop-blur-md"
       />
 
@@ -125,7 +125,7 @@ const HamburgerButton = ({ active, setActive }: { active: boolean; setActive: Re
         animate={active ? "open" : "closed"}
         onClick={() => setActive((pv) => !pv)}
         aria-label={active ? "Cerrar menú" : "Abrir menú"}
-        className={`group fixed right-4 top-1 z-50 h-10 w-10 bg-transparent transition-all ${
+        className={`group fixed right-4 top-1 z-50 h-12 w-5 bg-transparent transition-all ${
           active ? "rounded-bl-xl rounded-tr-xl" : "rounded-xl"
         }`}
       >
@@ -200,8 +200,8 @@ const FooterCTAs = ({ onClose, onDownloadCV }: { onClose: () => void; onDownload
 
 const UNDERLAY_VARIANTS = {
   open: {
-    width: "calc(100% - 32px)",
-    height: "calc(100vh - 32px)",
+    width: "calc(100%)",
+    height: "calc(100vh)",
     transition: { type: "spring", mass: 3, stiffness: 400, damping: 50 },
   },
   closed: {
