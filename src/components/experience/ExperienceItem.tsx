@@ -7,6 +7,7 @@ interface Props {
   position: string;
   time: string;
   mode: string;
+  topic: string;
   location: string;
   description: string;
   tech: string[];
@@ -37,6 +38,7 @@ export const ExperienceItem = ({
   title,
   position,
   mode,
+  topic,
   time,
   location,
   description,
@@ -81,17 +83,19 @@ export const ExperienceItem = ({
           </Reveal>
         </div>
 
-        <div className="block md:flex items-center justify-between mb-2">
+        <div className="block md:flex items-center justify-between">
           <Reveal>
-            <span className="text-[#7C5CFF] font-bold tracking-wide">{position}</span>
+            <span className="text-[#7C5CFF] font-bold tracking-wide block">{position}</span>
+             <span className="text-zinc-400 text-xs tracking-wide">[{topic}]</span>
           </Reveal>
           <Reveal>
             <span className="text-[#38FF96] text-xs font-semibold">{mode}</span>
           </Reveal>
         </div>
 
+
         {/* Botón desplegable para la descripción */}
-        <div className="mb-4">
+        <div className="mt-2 mb-4">
           <button
             onClick={() => setIsExpanded(!isExpanded)}
             className="flex items-center gap-2 text-xs font-base text-[#1E90FF] transition-opacity hover:opacity-90"

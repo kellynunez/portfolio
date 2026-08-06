@@ -40,6 +40,7 @@ const experience = [
   {
     title: "Voltron Data",
     position: "Manager, Product Design & Front-End",
+    topic: "Startup global de software e infraestructura de datos",
     time: "2021 - 2025",
     location: "Mountain View, CA",
     mode: "Remoto",
@@ -51,6 +52,7 @@ const experience = [
     title: "BlazingSQL",
     position: "Lead, Product Design & Front-End",
     time: "2015 - 2021",
+    topic: "Startup de software y ciencia de datos",
     location: "USA / Perú",
     mode: "Híbrido",
     description:
@@ -61,6 +63,7 @@ const experience = [
     title: "Simply Technology",
     position: "Diseñadora UX/UI y Desarrolladora Web",
     time: "2015",
+    topic: "Consultora tecnológica",
     location: "USA / Perú",
     mode: "Híbrido",
     description:
@@ -71,6 +74,7 @@ const experience = [
     title: "Outofthebox",
     position: "Diseñadora Gráfica Publicitaria",
     time: "2012-2014",
+    topic: "Agencia de publicidad",
     location: "Lima, Perú",
     mode: "Presencial",
     description:
@@ -81,6 +85,7 @@ const experience = [
     title: "Cargraft",
     position: "Diseñadora Gráfica Jr.",
     time: "2011",
+    topic: "Imprenta digital",
     location: "Lima, Perú",
     mode: "Presencial",
     description:
@@ -89,8 +94,9 @@ const experience = [
   },
   {
     title: "Freelance",
-    position: "Diseñadora UI/UX, Diseñadora Gráfica y Desarrolladora Front-End",
+    position: "Diseñadora UI/UX y Gráfica + Desarrolladora Front-End",
     time: "2010 - Actualidad",
+    topic: "Servicios profesionales",
     location: "Global",
     mode: "Remoto",
     description:
