@@ -22,13 +22,13 @@ export const Experience = () => {
       ))}
       
       {experience.length > 3 && (
-        <div className="group flex justify-center mt-10">
+        <div className="flex justify-center">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="font-mono text-xs tracking-wide px-4 py-3 text-zinc-400 font-normal bg-white/10 transition-colors duration-200"
+            className="group text-sm tracking-wide px-4 py-3 text-zinc-400 font-normal"
           >
             <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-white/50 pb-0.5">{showAll ? "Mostrar menos" : `Mostrar más`}</span>
-            <FiArrowDown className={`inline-block ml-2 transition-transform duration-300 ${showAll ? "rotate-180" : ""}`} />
+            <FiArrowDown className={`inline-block ml-2 group-hover:translate-y-1 transition-transform duration-300 ${showAll ? "rotate-180" : ""}`} />
           </button>
         </div>
       )}
@@ -40,6 +40,7 @@ const experience = [
   {
     title: "Voltron Data",
     position: "Manager, Product Design & Front-End",
+    topic: "Startup global de software e infraestructura de datos",
     time: "2021 - 2025",
     location: "Mountain View, CA",
     mode: "Remoto",
@@ -51,6 +52,7 @@ const experience = [
     title: "BlazingSQL",
     position: "Lead, Product Design & Front-End",
     time: "2015 - 2021",
+    topic: "Startup de software y ciencia de datos",
     location: "USA / Perú",
     mode: "Híbrido",
     description:
@@ -61,6 +63,7 @@ const experience = [
     title: "Simply Technology",
     position: "Diseñadora UX/UI y Desarrolladora Web",
     time: "2015",
+    topic: "Consultora tecnológica",
     location: "USA / Perú",
     mode: "Híbrido",
     description:
@@ -71,6 +74,7 @@ const experience = [
     title: "Outofthebox",
     position: "Diseñadora Gráfica Publicitaria",
     time: "2012-2014",
+    topic: "Agencia de publicidad",
     location: "Lima, Perú",
     mode: "Presencial",
     description:
@@ -81,6 +85,7 @@ const experience = [
     title: "Cargraft",
     position: "Diseñadora Gráfica Jr.",
     time: "2011",
+    topic: "Imprenta digital",
     location: "Lima, Perú",
     mode: "Presencial",
     description:
@@ -89,8 +94,9 @@ const experience = [
   },
   {
     title: "Freelance",
-    position: "Diseñadora UI/UX, Diseñadora Gráfica y Desarrolladora Front-End",
+    position: "Diseñadora UI/UX y Gráfica + Desarrolladora Front-End",
     time: "2010 - Actualidad",
+    topic: "Servicios profesionales",
     location: "Global",
     mode: "Remoto",
     description:

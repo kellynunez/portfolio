@@ -30,11 +30,8 @@ export const Stats2 = () => {
             </h4>
             <div className="flex flex-wrap font-mono text-zinc-400 gap-2 mb-6">
               <Chip>Cursor</Chip>
-              <Chip>Copilot</Chip>
-              <Chip>v0</Chip>
-              <Chip>Relume</Chip>
+              <Chip>Github Copilot</Chip>
               <Chip>Claude</Chip>
-              <Chip>Perplexity</Chip>
               <Chip>LLMs</Chip>
               <Chip>Midjourney</Chip>
             </div>

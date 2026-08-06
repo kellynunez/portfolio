@@ -133,6 +133,7 @@ const projects = [
       "/project-imgs/brand-identity/unicod-header.webp",
       "/project-imgs/brand-identity/unicod-logo.webp",
       "/project-imgs/brand-identity/unicod-stationary.webp",
+      "/project-imgs/brand-identity/branding-newyorkcity.webp",
     ],
   },
   {
@@ -173,7 +174,7 @@ const projects = [
       "/project-imgs/pitch-deck/slides-university.webp",
     ],
   },
-/*   {
+/*    {
     title: "Estrategias Creativas",
     imgSrc: "/project-imgs/ads-campaigns.webp",
     projectLink: "",
@@ -190,8 +191,7 @@ const projects = [
       "/project-imgs/ads-campaigns/ads-mockup.webp",
       "/project-imgs/ads-campaigns/ads-news.webp",
       "/project-imgs/ads-campaigns/ads-flyer.webp",
-      "/project-imgs/brand-identity/branding-newyorkcity.webp",
     ],
-  }, */
+  },  */
 ];
 
