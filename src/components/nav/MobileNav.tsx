@@ -4,7 +4,14 @@ import { navItems } from "./navItems";
 import { FiArrowRight, FiSend } from "react-icons/fi";
 import { FaFileDownload } from "react-icons/fa";
 
-export const MobileNav = () => {
+interface MobileNavProps {
+  isModalOpen?: boolean;
+}
+
+export const MobileNav= ({ isModalOpen = false }: MobileNavProps) => {
+  // Si el modal está abierto, ocultamos todo el menú móvil por completo
+  if (isModalOpen) return null;
+
   const [active, setActive] = useState(false);
 
   const handleDownloadCV = () => {
@@ -15,6 +22,7 @@ export const MobileNav = () => {
     link.click();
     document.body.removeChild(link);
   };
+
 
   return (
     <div className="md:hidden">
@@ -117,7 +125,7 @@ const HamburgerButton = ({ active, setActive }: { active: boolean; setActive: Re
         animate={active ? "open" : "closed"}
         variants={UNDERLAY_VARIANTS}
         style={{ top: 0, right: 0 }}
-        className="fixed z-40 bg-gradient-to-br from-zinc-900/80 to-zinc-900/80 shadow-lg backdrop-blur-md"
+        className="fixed z-10 bg-gradient-to-br from-zinc-900/80 to-zinc-900/80 shadow-lg backdrop-blur-md"
       />
 
       <motion.button
@@ -125,7 +133,7 @@ const HamburgerButton = ({ active, setActive }: { active: boolean; setActive: Re
         animate={active ? "open" : "closed"}
         onClick={() => setActive((pv) => !pv)}
         aria-label={active ? "Cerrar menú" : "Abrir menú"}
-        className={`group fixed right-4 top-1 z-50 h-12 w-5 bg-transparent transition-all ${
+        className={`group fixed right-4 top-0.5 z-50 h-12 w-5 bg-transparent transition-all ${
           active ? "rounded-bl-xl rounded-tr-xl" : "rounded-xl"
         }`}
       >
@@ -205,8 +213,8 @@ const UNDERLAY_VARIANTS = {
     transition: { type: "spring", mass: 3, stiffness: 400, damping: 50 },
   },
   closed: {
-    width: "40px",
-    height: "40px",
+    width: "55px",
+    height: "55px",
     transition: {
       delay: 0.75,
       type: "spring",

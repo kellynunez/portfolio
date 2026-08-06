@@ -192,12 +192,12 @@ export const Education = () => {
       <AnimatePresence>
         {selectedImg && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelectedImg(null)}
-            className="fixed inset-0 z-[150] flex items-center justify-center bg-black/40 p-4 backdrop-blur-md cursor-zoom-out"
-          >
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  exit={{ opacity: 0 }}
+  onClick={() => setSelectedImg(null)}
+  className="fixed inset-0 z-[2147483647] isolate flex items-center justify-center bg-black/40 p-3 md:p-4 backdrop-blur-md cursor-exit"
+>
             <motion.div
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
@@ -208,7 +208,7 @@ export const Education = () => {
               <div className="p-6">
                 <button
                   onClick={() => setSelectedImg(null)}
-                  className="absolute top-4 left-1/2 -translate-x-1/2 z-10 pb-5 text-zinc-400 transition-colors hover:text-white text-lg"
+                  className="absolute top-0 md:top-4 left-1/2 -translate-x-1/2 pb-5 text-zinc-400 transition-colors hover:text-white text-2xl"
                 >
                   ✕
                 </button>
@@ -235,7 +235,7 @@ const EducationCard = ({
   period,
   time,
   Icon,
-  achievements = [], // Valor por defecto para evitar undefined
+  achievements = [],
   image,
   onOpenModal,
   showAllAchievements,

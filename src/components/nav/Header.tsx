@@ -20,7 +20,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 right-0 z-50 flex w-full items-center justify-between bg-transparent text-sm py-1 px-4 md:px-6 md:bg-zinc-900/80 md:backdrop-blur-sm">
+    <header className="sticky top-0 right-0 z-30 flex w-full items-center justify-between bg-transparent text-sm py-1 px-4 md:px-6 md:bg-zinc-900 md:backdrop-blur-sm">
       
       {/* 1. Contenedor izquierdo (Botón menú) */}
       <div className="hidden md:flex items-center w-12">
