@@ -119,7 +119,7 @@ export const MyLinks = ({ className = "" }: { className?: string }) => (
 
 const LinksOverlay = ({ onClose, onDownloadCV }: { onClose: () => void; onDownloadCV: () => void }) => {
   return (
-    <nav className="fixed left-0 top-0 z-40 h-[calc(100vh)] w-[calc(100%)] md:w-[calc(100%)] m-4 overflow-hidden grid grid-cols-1 md:grid-cols-2 items-center p-6 md:p-12 gap-8 bg-zinc-900/80 backdrop-blur-md rounded-lg">
+    <nav className="fixed left-0 top-0 z-40 h-[calc(100vh)] w-[100%] md:w-[100%] m-4 overflow-hidden grid grid-cols-1 md:grid-cols-2 items-center p-6 md:p-12 gap-8 bg-zinc-900/80 backdrop-blur-md rounded-lg">
       
       {/* Logo K flotante en la esquina superior izquierda */}
       <motion.button
@@ -285,8 +285,8 @@ const FooterCTAs = ({ onClose, onDownloadCV }: { onClose: () => void; onDownload
 
 const UNDERLAY_VARIANTS = {
   open: {
-    width: "calc(100%)",
-    height: "calc(100vh)",
+    width: "100%",
+    height: "100vh",
     transition: { type: "spring", mass: 3, stiffness: 400, damping: 50 },
   },
   closed: {
