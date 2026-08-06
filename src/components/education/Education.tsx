@@ -7,6 +7,7 @@ import {
   FiEye,
   FiEyeOff,
   FiAward,
+  FiChevronUp,
   FiCalendar,
 } from "react-icons/fi";
 import {
@@ -132,7 +133,7 @@ export const Education = () => {
             type="button"
             aria-label="Ver educación anterior"
             title="Ver educación anterior"
-            className="h-fit border border-zinc-700 bg-zinc-800 p-2 text-2xl text-zinc-300 transition-colors hover:bg-zinc-700"
+            className="h-fit bg-zinc-800 p-2 text-xl text-zinc-300 transition-colors hover:bg-zinc-800"
             onClick={shiftLeft}
             disabled={position === 0}
           >
@@ -142,7 +143,7 @@ export const Education = () => {
             type="button"
             aria-label="Ver siguiente educación"
             title="Ver siguiente educación"
-            className="h-fit border border-zinc-700 bg-zinc-800 p-2 text-2xl text-zinc-300 transition-colors hover:bg-zinc-700"
+            className="h-fit bg-zinc-800 p-2 text-xl text-zinc-300 transition-colors hover:bg-zinc-800"
             onClick={shiftRight}
             disabled={position === education.length - 1}
           >
@@ -195,25 +196,24 @@ export const Education = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedImg(null)}
-            className="fixed inset-0 z-[150] flex items-center justify-center bg-black/90 p-4 backdrop-blur-md cursor-zoom-out"
+            className="fixed inset-0 z-[150] flex items-center justify-center bg-black/40 p-4 backdrop-blur-md cursor-zoom-out"
           >
             <motion.div
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-5xl overflow-hidden border border-zinc-800 bg-zinc-900 shadow-2xl cursor-default"
+              className="relative w-full max-w-5xl overflow-hidden cursor-default"
             >
-              <div className="flex items-center justify-between border-b border-zinc-800 bg-zinc-900/50 p-6">
-                <span className="text-sm font-medium text-zinc-400">Vista previa</span>
+              <div className="p-6">
                 <button
                   onClick={() => setSelectedImg(null)}
-                  className="p-2 text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-white"
+                  className="absolute top-4 left-1/2 -translate-x-1/2 z-10 pb-5 text-zinc-400 transition-colors hover:text-white text-lg"
                 >
                   ✕
                 </button>
               </div>
-              <div className="flex justify-center bg-zinc-950 p-2">
+              <div className="flex justify-center p-2">
                 <img
                   src={selectedImg}
                   alt="Certificado"
@@ -235,13 +235,14 @@ const EducationCard = ({
   period,
   time,
   Icon,
-  achievements,
+  achievements = [], // Valor por defecto para evitar undefined
   image,
   onOpenModal,
   showAllAchievements,
   onToggleAchievements,
 }: EducationCardProps) => {
   const hasCertificate = Boolean(image);
+  const hasAchievements = Boolean(achievements && achievements.length > 0);
 
   return (
     <motion.div
@@ -250,7 +251,7 @@ const EducationCard = ({
       transition={{ ease: "easeInOut", duration: 0.25 }}
       className="relative flex h-full min-h-[250px] w-full flex-col justify-between overflow-hidden border border-zinc-700 bg-zinc-900 p-8 shadow-lg md:p-10 ml-7 md:ml-16"
     >
-      <Icon className="absolute right-0 md:right-3 top-3 size-10 stroke-[0.5px] opacity-20" />
+      <Icon className="absolute right-2 top-2 md:right-3 md:top-3 size-8 md:size-10 stroke-[0.5px] opacity-20" />
 
       <Reveal>
         <div className="flex flex-col gap-2">
@@ -272,7 +273,7 @@ const EducationCard = ({
             {hasCertificate ? (
               <>
                 <FiEye className="mr-2 inline-block text-[#38FF96] transition-colors group-hover:text-[#38FF96]" />
-                <span className="border-b-0 border-b-transparent group-hover:border-b-[#38FF96] text-[#38FF96]">
+                <span className="text-zinc-400 group-hover:text-[#38FF96] border-b-0 border-b-transparent group-hover:border-b-[0.5px] group-hover:border-b-[#38FF96] text-[#38FF96]">
                   Ver {degree}
                 </span>
               </>
@@ -284,23 +285,34 @@ const EducationCard = ({
             )}
           </button>
 
-          {achievements && achievements.length > 0 && (
-            <div>
+          {hasAchievements && (
+            <div className="mt-1">
               <button
                 type="button"
                 onClick={onToggleAchievements}
-                className="mb-4 flex items-center gap-2 text-xs font-base text-[#1E90FF] transition-opacity hover:opacity-90"
+                className="group flex items-center text-sm font-normal transition-colors cursor-pointer text-left text-zinc-400 hover:text-[#38FF96]"
               >
-                <span>{showAllAchievements ? "Ocultar" : "Leer logros"}</span>
-                <FiChevronDown
-                  className={`transition-transform duration-200 ${showAllAchievements ? "rotate-180" : "rotate-0"}`}
-                />
+                {showAllAchievements ? (
+                  <>
+                    <FiChevronUp className="mr-2 inline-block text-zinc-600 group-hover:text-[#38FF96]" />
+                    <span className="text-zinc-400 group-hover:text-[#38FF96]">
+                      Ocultar
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <FiChevronDown className="mr-2 inline-block text-[#38FF96] transition-colors group-hover:text-[#38FF96]" />
+                    <span className="text-zinc-400 group-hover:text-[#38FF96] border-b-0 border-b-transparent group-hover:border-b-[0.5px] group-hover:border-b-[#38FF96] text-[#38FF96]">
+                      Leer logros
+                    </span>
+                  </>
+                )}
               </button>
 
               {showAllAchievements && (
-                <ul className="space-y-1">
+                <ul className="space-y-1 mt-3">
                   {achievements.map((achievement, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-sm text-zinc-300 tracking-wide">
+                    <li key={idx} className="flex items-start gap-2 text-sm text-zinc-400 tracking-wide">
                       <FiAward className="mt-1 flex-shrink-0 text-[#1E90FF]" />
                       <span>{achievement}</span>
                     </li>

@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 import { FiArrowRight } from "react-icons/fi";
+import { FaUserAstronaut } from "react-icons/fa";
 
 type Props = {
   children: ReactNode;
@@ -11,11 +12,12 @@ export const OutlineButton = ({ children, className, ...rest }: Props) => {
   return (
     <button
       className={twMerge(
-        "group relative z-0 flex m-2 px-4 items-center overflow-hidden font-semibold text-[#38FF96] tracking-wide hover:text-[#38FF96] transition-all duration-300 bg-white/10 backdrop-blur-sm min-h-[38px]",
+        "group relative z-0 flex m-2 px-4 items-center overflow-hidden font-semibold text-zinc-900 tracking-wide transition-all duration-300 bg-zinc-100 hover:bg-[#38FF96]/90 backdrop-blur-sm min-h-[38px]",
         className
       )}
       {...rest}
     >
+      <FaUserAstronaut className="text-zinc-900" />
       {children}
       <FiArrowRight className="transition-transform group-hover:translate-x-1" />
     </button>

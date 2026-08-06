@@ -11,8 +11,8 @@ export const MobileNav = () => {
 
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/cv-kellynunez-es.pdf";
-    link.download = "cv-kellynunez-es.pdf";
+    link.href = "/cv-kelly-nunez.pdf";
+    link.download = "cv-kelly-nunez.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -21,18 +21,18 @@ export const MobileNav = () => {
   return (
     <div className="md:hidden">
       {/* Header superior fijo con la K a la izquierda y el botón hamburguesa / menú a la derecha */}
-      <div className="fixed inset-x-0 top-0 z-30 flex items-center justify-between bg-zinc-900/80 px-4 py-2 backdrop-blur-md border-b border-zinc-800">
-        <button
+      <div className="fixed inset-x-0 top-0 z-30 flex items-center justify-between px-4 py-2">
+{/*         <button
           type="button"
           aria-label="Ir al inicio"
           onClick={() => {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
-          className="group flex h-10 items-center bg-transparent text-3xl font-black leading-none"
+          className="group flex h-8 items-center bg-transparent text-2xl font-black leading-none"
         >
           <span className="text-white group-hover:text-[#38FF96]">K</span>
           <span className="text-[#7C5CFF]">.</span>
-        </button>
+        </button> */}
       </div>
 
       {/* Botón hamburguesa y overlay animados */}
@@ -80,7 +80,7 @@ const LinksContainer = ({ onClose }: { onClose: () => void }) => {
           window.scrollTo({ top: 0, behavior: "smooth" });
           onClose();
         }}
-        className="groupflex items-center bg-transparent text-3xl font-black leading-none"
+        className="group flex items-center bg-transparent text-3xl font-black leading-none"
       >
         <span className="text-zinc-100 group-hover:text-white">K</span>
         <span className="text-[#7C5CFF]">.</span>
@@ -133,8 +133,8 @@ const HamburgerButton = ({ active, setActive }: { active: boolean; setActive: Re
         initial={false}
         animate={active ? "open" : "closed"}
         variants={UNDERLAY_VARIANTS}
-        style={{ top: 9, right: 16 }}
-        className="fixed z-40 bg-gradient-to-br from-zinc-900 to-zinc-900 shadow-lg backdrop-blur-md"
+        style={{ top: 4, right: 16 }}
+        className="fixed z-40 bg-gradient-to-br from-zinc-900/80 to-zinc-900/80 shadow-lg backdrop-blur-md"
       />
 
       <motion.button
@@ -142,7 +142,7 @@ const HamburgerButton = ({ active, setActive }: { active: boolean; setActive: Re
         animate={active ? "open" : "closed"}
         onClick={() => setActive((pv) => !pv)}
         aria-label={active ? "Cerrar menú" : "Abrir menú"}
-        className={`group fixed right-4 top-1 z-50 h-12 w-10 bg-transparent transition-all ${
+        className={`group fixed right-4 top-1 z-50 h-10 w-10 bg-transparent transition-all ${
           active ? "rounded-bl-xl rounded-tr-xl" : "rounded-xl"
         }`}
       >

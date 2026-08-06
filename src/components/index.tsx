@@ -38,7 +38,7 @@ export const HomPage = () => {
 
       <main className="relative z-0 min-w-0 flex-1 md:pl-[54px]">
         <Header />
-        <div className="mx-auto max-w-md space-y-32 pb-24 md:max-w-3xl lg:max-w-5xl px-4 md:px-8">
+        <div className="mx-auto max-w-md space-y-32 pb-24 md:max-w-3xl lg:max-w-5xl px-5 md:px-8">
           <Hero />
           {/* <RibbonWords /> */}
           <Projects />

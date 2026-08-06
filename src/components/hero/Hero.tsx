@@ -1,14 +1,16 @@
 import Reveal from "../util/Reveal";
 import DotGrid from "./DotGrid";
 import TypewriterText from "../util/TypewriterText";
+import NeuFollowButton from "../buttons/NeuFollowButton";
+import { FiDownload } from "react-icons/fi";
 
 const Hero = () => {
   return (
-    <section className="text-slate-100 overflow-hidden pt-40 pb-24 md:py-32 pb-6 md:pb-14 relative">
+    <section className="text-slate-100 overflow-hidden pt-32 pb-24 md:py-32 pb-6 md:pb-14 relative">
       <div className="relative z-10">
         <div className="pointer-events-none relative z-10">
           <Reveal>
-            <h2 className="pointer-events-auto my-2 sm:my-2 md:pb-5 text-2xl sm:text-3xl md:text-4xl xl:text-5xl text-zinc-100">
+            <h2 className="pointer-events-auto mt-0 mb-8 sm:my-2 md:pb-5 text-3xl sm:text-4xl text-zinc-100">
               <span 
                 className="font-semibold"
                 style={{
@@ -26,31 +28,33 @@ const Hero = () => {
           </Reveal>
 
           <Reveal>
-            <h1 className="md-0 md:-ml-1 text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-zinc-100 leading-tight pb-5 md:pb-7">
+            <h1 className="md-0 md:-ml-1 text-5xl md:text-6xl lg:text-8xl font-black text-zinc-100 pb-5 md:pb-7">
               <TypewriterText
                 text="Product "
                 speed={150}
                 delay={500}
-                className="text-zinc-100"
+                className="text-zinc-100 tracking-tight"
               />
-              <span className="text-[#38FF96] italic">
+              <span>
                 <TypewriterText
                   text="Designer"
                   speed={150}
-                  delay={1800} // Ajusta el delay según lo que dure el primer texto
+                  delay={1800}
+                  className="text-zinc-100"
                 />
               </span>
               <TypewriterText
-                text=" & Frontend Dev"
+                text=" & Front-End"
                 speed={150}
                 delay={2900}
+                className="text-zinc-100"
               />
               <span className="ml-2 inline-block">🦄</span>
             </h1>
           </Reveal>
           
           <Reveal>
-            <p className="font-mono leading-relaxed md:leading-relaxed max-w-3xl md:text-lg lg:text-xl text-zinc-400 font-medium tracking-wide">
+            <p className="font-mono leading-relaxed md:leading-relaxed max-w-3xl text-sm md:text-lg lg:text-xl text-zinc-400 font-medium tracking-wide">
               UX/UI ARCHITECTURE — DESIGN SYSTEMS — WEB PERFORMANCE
             </p>
           </Reveal>
@@ -59,19 +63,24 @@ const Hero = () => {
               Especialista en arquitecturas web modernas, sistemas de diseño UX/UI y rendimiento web. Integro la estrategia de marca, la comunicación y el diseño publicitario para construir productos digitales escalables, eficientes y creativos.
             </p>
           </Reveal> */}
-        {/*       
+              
           <Reveal>
             <div className="pointer-events-auto mt-10">
               <NeuFollowButton
                 onClick={() => {
-                  document.getElementById("contact")?.scrollIntoView();
+          const link = document.createElement("a");
+          link.href = "/cv-kelly-nunez.pdf";
+          link.download = "cv-kelly-nunez.pdf";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
                 }}
-              >
-                Contáctame
+              >     
+                Descargar CV
               </NeuFollowButton>
             </div>
           </Reveal> 
-        */}
+        
         </div>
         <div className="block motion-reduce:hidden opacity-50">
           <DotGrid />

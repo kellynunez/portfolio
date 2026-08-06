@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
-import { FiDownload } from "react-icons/fi";
+import { FaFileDownload } from "react-icons/fa";
 
 type Props = {
   children: ReactNode;
@@ -11,13 +11,13 @@ export const CVButton = ({ children, className, ...rest }: Props) => {
   return (
     <button
       className={twMerge(
-        "group font-mono relative z-0 flex my-2 px-2 px-4 items-center overflow-hidden font-normal text-zinc-400 transition-all duration-300 bg-white/10 backdrop-blur-sm min-h-[38px]",
+        "group relative z-0 flex my-2 px-2 px-4 items-center overflow-hidden font-semibold text-zinc-900 transition-all duration-300 bg-[#7C5CFF] hover:bg-[#7C5CFF]/90 backdrop-blur-sm min-h-[38px]",
         className
       )}
       {...rest}
     >
+      <FaFileDownload className="text-zinc-900" />
       {children}
-      <FiDownload />
     </button>
   );
 };
