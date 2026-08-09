@@ -45,7 +45,7 @@ const Cards = () => {
     <div className="absolute inset-0 z-10" ref={containerRef}>
       <Card
         containerRef={containerRef}
-        src="/about/kelly-graduada.png"
+        src="/about/kelly-graduada.webp"
         alt="Foto 1 de Kelly Núñez en su Graduación de Comunicación y Publicidad"
 
         rotate="6deg"
@@ -55,7 +55,7 @@ const Cards = () => {
       />
       <Card
         containerRef={containerRef}
-        src="/about/kelly-arequipa.png"
+        src="/about/kelly-arequipa.webp"
         alt="Foto 2 de Kelly Núñez en Arequipa, Perú"
         rotate="-8deg"
         top="25%"
@@ -64,7 +64,7 @@ const Cards = () => {
       />
       <Card
         containerRef={containerRef}
-        src="/about/kelly-rafting.png"
+        src="/about/kelly-rafting.webp"
         alt="Foto 3 de Kelly Núñez haciendo rafting en el río Chili, Arequipa, Perú"
         rotate="20deg"
         top="17%"
