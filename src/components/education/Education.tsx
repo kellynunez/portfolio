@@ -329,7 +329,7 @@ const EducationCard = ({
 
 const education = [
   {
-    title: "Diplomado de Desarrollo Front-End",
+    title: "Diplomado de Desarrollo Web",
     institution: "Instituto San Ignacio de Loyola (ISIL) - Educación Ejecutiva",
     degree: "Certificado en espera",
     period: "2026",
@@ -343,7 +343,7 @@ const education = [
     ]
   },
   {
-    title: "Prototipado UI Avanzado en Figma",
+    title: "Prototipado UI en Figma (Avanzado)",
     institution: "Pontificia Universidad Católica del Perú (PUCP)",
     degree: "Certificado",
     period: "2025",

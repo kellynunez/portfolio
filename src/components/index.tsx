@@ -3,7 +3,6 @@ import dynamic from "next/dynamic";
 import { MobileNav } from "./nav/MobileNav";
 import { Header } from "./nav/Header";
 import Hero from "./hero/Hero";
-import RibbonWords from "./hero/RibbonWords";
 import { useState } from "react";
 
 const Projects = dynamic(
@@ -54,3 +53,4 @@ export const HomPage = () => {
     </div>
   );
 };
+

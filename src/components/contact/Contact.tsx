@@ -10,9 +10,7 @@ export const Contact = () => {
     <section className="section-wrapper" id="contact">
       <div className="flex flex-col items-center justify-center">
         <Reveal>
-          <div className="mt-0 md:mt-8">
             <TerminalContact />
-          </div>
         </Reveal>
         <Reveal>
           <div className="mb-6 mt-8 flex justify-center">
@@ -21,7 +19,7 @@ export const Contact = () => {
         </Reveal>
         <Reveal>
           <div className="w-full text-center mb-0 md:mb-8">
-            <span className="text-zinc-600 text-sm">© 2026 Kelly Núñez</span>
+            <span className="text-zinc-600 text-sm">© 2026 Kelly Núñez. Todos los derechos reservados.</span>
           </div>
         </Reveal>
       </div>
