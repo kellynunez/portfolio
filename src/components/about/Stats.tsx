@@ -50,7 +50,7 @@ export const Stats = () => {
             <Chip>Framer Motion</Chip>
             <Chip>Git/GitHub</Chip>
             <Chip>Netlify</Chip>
-            <Chip>Google Analytics</Chip>
+            <Chip>GA4</Chip>
             <Chip>Wordpress</Chip>
             <Chip>Shopify</Chip>
           </div>
