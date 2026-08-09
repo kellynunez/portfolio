@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Reveal } from "../util/Reveal";
 import { SectionHeader } from "../util/SectionHeader";
 import { Stats } from "./Stats";
-import { Stats2 } from "./Stats2";
 
 export const About = () => {
   const [showMore, setShowMore] = useState(false);
@@ -12,6 +11,7 @@ export const About = () => {
       <SectionHeader title="Sobre mí" dir="l" />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 gap-8 lg:gap-16 tracking-wide">
         <div className="space-y-4 pb-4 sm:pb-5 md:pb-8 col-span-2">
+          
           <Reveal>
             <p className="leading-relaxed text-zinc-200 text-normal">
               <b className="text-white text-xl">Líder de diseño, UX/UI y Front-End</b> con más de 10 años de experiencia creando soluciones en productos digitales de principio a fin en entornos tecnológicos para EE. UU. (B2B) y LATAM. Lidero equipos creativos bajo metodologías ágiles impulsando la adopción de IA para maximizar la eficiencia en flujos de diseño y web.
@@ -25,10 +25,10 @@ export const About = () => {
           </Reveal>
 
         </div>
-        <Stats />
+        
       </div>
       <div className="relative">
-        <Stats2 />
+        <Stats />
       </div>
     </section>
   );
