@@ -21,7 +21,6 @@ const TerminalContact = () => {
 
   return (
     <section
-      
       className="px-0 pt-5 pb-8 max-w-5xl mx-auto"
     >
         <div className="overflow-hidden">
@@ -52,7 +51,7 @@ const TerminalHeader = () => {
       <div className="w-full max-w-2xl grid grid-cols-1 md:grid-cols-2 gap-3">
         {/* Botón 1: WhatsApp */}
         <a
-          href="https://wa.me/51957268339" // Reemplaza con tu número de WhatsApp
+          href="https://wa.me/51957268339"
           target="_blank"
           rel="noopener noreferrer"
           className="group flex h-[42px] w-full items-center justify-between border border-black bg-[#38FF96] px-4 font-medium text-zinc-900 transition-colors hover:bg-[#38FF96]/80"
@@ -97,7 +96,6 @@ const TerminalBody = ({ containerRef, inputRef }: TerminalBodyProps) => {
   const curQuestion = questions.find((q) => !q.complete);
 
   const validateEmail = (email: string) => {
-    // Expresión regular simple para validar email
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
 
@@ -128,29 +126,146 @@ const TerminalBody = ({ containerRef, inputRef }: TerminalBodyProps) => {
 
   return (
     <div className="px-2 md:px-0 text-slate-100 text-normal leading-[2] tracking-wide ">
-      <PreviousQuestions questions={questions} />
-      <CurrentQuestion curQuestion={curQuestion} />
-      {error && (
-        <p className="text-[#38FF96] font-medium mb-2">{error}</p>
-      )}
-      {curQuestion ? (
-        <CurLine
-          text={text}
-          focused={focused}
-          setText={setText}
-          setFocused={setFocused}
-          inputRef={inputRef}
-          command={curQuestion?.key || ""}
-          handleSubmitLine={handleSubmitLine}
-          containerRef={containerRef}
-        />
-      ) : (
-        <Summary questions={questions} setQuestions={setQuestions} />
-      )}
+      {/* VISTA MÓVIL: Todo abierto con inputs interactivos y botones */}
+      <div className="block md:hidden">
+        <MobileFormView questions={questions} setQuestions={setQuestions} />
+      </div>
+
+      {/* VISTA DESKTOP: El comportamiento original paso a paso */}
+      <div className="hidden md:block">
+        <PreviousQuestions questions={questions} />
+        <CurrentQuestion curQuestion={curQuestion} />
+        {error && (
+          <p className="text-[#38FF96] font-medium mb-2">{error}</p>
+        )}
+        {curQuestion ? (
+          <CurLine
+            text={text}
+            focused={focused}
+            setText={setText}
+            setFocused={setFocused}
+            inputRef={inputRef}
+            command={curQuestion?.key || ""}
+            handleSubmitLine={handleSubmitLine}
+            containerRef={containerRef}
+          />
+        ) : (
+          <Summary questions={questions} setQuestions={setQuestions} />
+        )}
+      </div>
     </div>
   );
 };
 
+// Componente exclusivo para la vista Mobile con campos abiertos
+const MobileFormView = ({ questions, setQuestions }: SummaryProps) => {
+  const [complete, setComplete] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleInputChange = (key: string, value: string) => {
+    setQuestions((pv) =>
+      pv.map((q) => (q.key === key ? { ...q, value } : q))
+    );
+  };
+
+  const validateEmail = (email: string) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
+  const handleReset = () => {
+    setQuestions((pv) => pv.map((q) => ({ ...q, value: "", complete: false })));
+    setComplete(false);
+    setError("");
+  };
+
+  const handleSend = () => {
+    const emailQ = questions.find((q) => q.key === "email");
+    if (emailQ && !validateEmail(emailQ.value)) {
+      setError("Por favor, ingresa un email válido.");
+      return;
+    }
+    setError("");
+
+    const formData = questions.reduce((acc, val) => {
+      return { ...acc, [val.key]: val.value };
+    }, {});
+  
+    const body = new URLSearchParams({
+      "form-name": "contact-customer",
+      ...formData,
+    }).toString();
+  
+    fetch("/__forms.html", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: body,
+    })
+      .then((res) => {
+        if (res.ok) {
+          setComplete(true);
+        } else {
+          console.error("Error en servidor:", res.status);
+        }
+      })
+      .catch((err) => console.error("Error de red:", err));
+  };
+
+  return (
+    <div className="space-y-4 pt-4">
+      {complete ? (
+        <div className="mt-2 space-y-2">
+          <p>
+            <FiCheckCircle className="inline-block mr-2 text-[#38FF96]" />
+            <span className="text-white">¡Enviado! Gracias. 🦄</span>
+          </p>
+        </div>
+      ) : (
+        <>
+          {questions.map((q, i) => (
+            <div key={i} className="flex flex-col gap-1">
+              <label className="text-sm text-zinc-300">
+                {q.text} {q.postfix && <span className="text-white">{q.postfix}</span>}
+              </label>
+              <div className="flex items-center bg-zinc-900 border border-zinc-700 px-3 py-2 rounded">
+                <span className="text-[#38FF96] mr-2">➜</span>
+                <input
+                  type="text"
+                  value={q.value}
+                  onChange={(e) => handleInputChange(q.key, e.target.value)}
+                  placeholder={`Ingresa tu ${q.key}`}
+                  className="bg-transparent w-full text-white focus:outline-none text-sm"
+                />
+              </div>
+            </div>
+          ))}
+
+          {error && (
+            <p className="text-[#38FF96] text-sm font-medium">{error}</p>
+          )}
+
+          <div className="flex w-full items-center justify-between pt-2">
+            <button
+              onClick={handleSend}
+              className="group relative z-0 flex px-4 py-2 items-center justify-center bg-white hover:bg-zinc-100 font-semibold text-black rounded"
+            >
+              <FiSend className="mr-2" />
+              <div className="text-sm tracking-wide">
+                <span>Enviar datos</span>
+              </div>
+            </button>
+
+            <button
+              onClick={handleReset}
+              className="flex h-[40px] w-[40px] items-center justify-center bg-transparent text-xl transition-colors hover:bg-zinc-800 rounded"
+            >
+              <span className="text-zinc-300 leading-none -mt-1">↺</span>
+            </button>
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
 
 const PreviousQuestions = ({ questions }: PreviousQuestionProps) => {
   return (
@@ -204,11 +319,11 @@ const Summary = ({ questions, setQuestions }: SummaryProps) => {
     }, {});
   
     const body = new URLSearchParams({
-      "form-name": "contact-customer", // ESTRICTO: debe ser igual al name del form
+      "form-name": "contact-customer",
       ...formData,
     }).toString();
   
-    fetch("/__forms.html", { // Prueba apuntando directamente al archivo estático
+    fetch("/__forms.html", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: body,
@@ -234,24 +349,22 @@ const Summary = ({ questions, setQuestions }: SummaryProps) => {
         </div>
       ) : (
         <div className="flex w-full items-center justify-between mt-3">
-  {/* Botón 1: Enviar (Lado izquierdo) */}
-  <button
-    onClick={handleSend}
-    className="group relative z-0 flex px-4 py-2 flex items-center justify-center bg-white hover:bg-zinc-100 font-semibold text-black">
-      <FiSend className="mr-2" />
-      <div className="text-sm md:text-md tracking-wide">
-        <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-zinc-900 pb-0.5">Enviar datos</span>
-      </div>
-  </button>
+          <button
+            onClick={handleSend}
+            className="group relative z-0 flex px-4 py-2 items-center justify-center bg-white hover:bg-zinc-100 font-semibold text-black">
+              <FiSend className="mr-2" />
+              <div className="text-sm md:text-md tracking-wide">
+                <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-zinc-900 pb-0.5">Enviar datos</span>
+              </div>
+          </button>
 
-  {/* Botón 2: Reset (Lado derecho / Opuesto) */}
-  <button
-    onClick={handleReset}
-    className="flex h-[40px] w-[40px] items-center justify-center bg-transparent text-xl transition-colors hover:bg-zinc-800"
-  >
-    <span className="text-zinc-300 leading-none -mt-1">↺</span>
-  </button>
-</div>
+          <button
+            onClick={handleReset}
+            className="flex h-[40px] w-[40px] items-center justify-center bg-transparent text-xl transition-colors hover:bg-zinc-800"
+          >
+            <span className="text-zinc-300 leading-none -mt-1">↺</span>
+          </button>
+        </div>
       )}
     </>
   );
@@ -336,19 +449,19 @@ const QUESTIONS: QuestionType[] = [
   {
     key: "email",
     text: "Déjame tus datos ",
-    postfix: "y te respondo a la brevedad.",
+    postfix: "y te contactaré:",
     complete: false,
     value: "",
   },
   {
     key: "nombre",
-    text: "Perfecto, y ¿cuál es ",
-    postfix: "tu nombre?",
+    text: "¿Cuál es tu",
+    postfix: "nombre?",
     complete: false,
     value: "",
   },
   {
-    key: "comentario",
+    key: "mensaje",
     text: "Excelente, y ",
     postfix: "¿cómo puedo ayudarte?",
     complete: false,

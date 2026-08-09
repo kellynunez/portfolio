@@ -14,17 +14,13 @@ export const About = () => {
         <div className="space-y-4 pb-4 sm:pb-5 md:pb-8 col-span-2">
           <Reveal>
             <p className="leading-relaxed text-zinc-200 text-normal">
-              <b className="text-white text-xl">Product Designer & Front-End Developer</b> con +10 años de experiencia en entornos tecnológicos para EE. UU. y LATAM. 
-              Conecto la estrategia de marca, el diseño UX/UI y el desarrollo Front-End para construir productos digitales. 
-              Lideré equipos creativos y DesignOps bajo metodologías ágiles y adopción de IA en flujos para ecosistemas corporativos y e-commerce.
+              <b className="text-white text-xl">Líder de diseño, UX/UI y Front-End</b> con más de 10 años de experiencia creando soluciones en productos digitales de principio a fin en entornos tecnológicos para EE. UU. (B2B) y LATAM. Lidero equipos creativos bajo metodologías ágiles impulsando la adopción de IA para maximizar la eficiencia en flujos de diseño y web.
             </p>
           </Reveal>
           
           <Reveal>
             <p className="leading-relaxed text-zinc-200 text-normal ">
-              Mi expertise técnico abarca el desarrollo de arquitecturas web modernas con React.js, Next.js, TypeScript y Tailwind CSS, así como la configuración e integración de CMS avanzados. 
-              Domino Git/GitHub, APIs y flujos mediante herramientas y agentes de IA (Cursor, Copilot), garantizando diseño/código limpio, con rendimiento y alineado a los objetivos de producto. 
-              Asimismo, diseño sistemas escalables y prototipado avanzado en Figma, integrando flujos centrados en el usuario, accesibilidad y creativas piezas gráficas publicitarias en entorno B2B.
+              Ejecuto experiencias web de principio a fin, desde la UX/UI aplicando sistemas de diseño hasta el desarrollo de interfaces con stacks modernos y CMS. Organizo, planifico y desarrollo recursos gráficos corporativos. También diseño y realizo piezas gráficas creativas digitales e impresas.
             </p>
           </Reveal>
 
