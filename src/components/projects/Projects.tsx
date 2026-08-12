@@ -90,7 +90,7 @@ const projects = [
     ],
   },
   {
-    title: "Interfaces Mobiles",
+    title: "Interfaces Móviles",
     imgSrc: "/project-imgs/pos-niubiz.webp",
     projectLink: "",
     tech: ["Figma", "Illustrator", "Photoshop", "Miro"],
@@ -174,24 +174,5 @@ const projects = [
       "/project-imgs/pitch-deck/slides-university.webp",
     ],
   },
-/*    {
-    title: "Estrategias Creativas",
-    imgSrc: "/project-imgs/ads-campaigns.webp",
-    projectLink: "",
-    tech: ["Illustrator", "Photoshop", "Office"],
-    description:
-      "Xyz",
-    galleryImages: [
-      "/project-imgs/ads-campaigns/ads-header.webp",
-      "/project-imgs/ads-campaigns/ads-feed.webp",
-      "/project-imgs/ads-campaigns/ads-label.webp",
-      "/project-imgs/ads-campaigns/ads-banner.webp",
-      "/project-imgs/ads-campaigns/ads-exterior.webp",
-      "/project-imgs/ads-campaigns/ads-jingle.webp",
-      "/project-imgs/ads-campaigns/ads-mockup.webp",
-      "/project-imgs/ads-campaigns/ads-news.webp",
-      "/project-imgs/ads-campaigns/ads-flyer.webp",
-    ],
-  },  */
 ];
 
