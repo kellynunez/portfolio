@@ -329,9 +329,9 @@ const EducationCard = ({
 
 const education = [
   {
-    title: "Diplomado de Desarrollo Web",
+    title: "Desarrollo Web",
     institution: "Instituto San Ignacio de Loyola (ISIL) - Educación Ejecutiva",
-    degree: "Certificado en espera",
+    degree: "En espera del certificado",
     period: "2026",
     time: "70 horas",
     Icon: GlobeLock,
