@@ -37,36 +37,42 @@ export const About = () => {
 const Cards = () => {
   return (
     <div className="absolute inset-0">
-      <img
-        src="/about/kelly-graduada.webp"
-        alt="Foto 1 de Kelly Núñez en su Graduación de Comunicación y Publicidad"
-        style={{
-          top: "18%",
-          left: "12%",
-          transform: "rotate(6deg)",
-        }}
-        className="absolute bg-neutral-200 p-1 shadow-lg w-28 md:w-36 pointer-events-none"
-      />
-      <img
-        src="/about/kelly-arequipa.webp"
-        alt="Foto 2 de Kelly Núñez en Arequipa, Perú"
-        style={{
-          top: "30%",
-          left: "38%",
-          transform: "rotate(-8deg)",
-        }}
-        className="absolute bg-neutral-200 p-1 shadow-lg w-28 md:w-36 pointer-events-none"
-      />
-      <img
-        src="/about/kelly-rafting.webp"
-        alt="Foto 3 de Kelly Núñez haciendo rafting en el río Chili, Arequipa, Perú"
-        style={{
-          top: "15%",
-          left: "54%",
-          transform: "rotate(20deg)",
-        }}
-        className="absolute bg-neutral-200 p-1 shadow-lg w-36 md:w-44 pointer-events-none"
-      />
+      <Reveal>
+        <img
+          src="/about/kelly-graduada.webp"
+          alt="Foto 1 de Kelly Núñez en su Graduación de Comunicación y Publicidad"
+          style={{
+            top: "18%",
+            left: "12%",
+            transform: "rotate(6deg)",
+          }}
+          className="absolute bg-neutral-200 p-1 shadow-lg w-28 md:w-36 pointer-events-none"
+        />
+      </Reveal>
+      <Reveal>
+        <img
+          src="/about/kelly-arequipa.webp"
+          alt="Foto 2 de Kelly Núñez en Arequipa, Perú"
+          style={{
+            top: "30%",
+            left: "38%",
+            transform: "rotate(-8deg)",
+          }}
+          className="absolute bg-neutral-200 p-1 shadow-lg w-28 md:w-36 pointer-events-none"
+        />
+      </Reveal>
+      <Reveal>
+        <img
+          src="/about/kelly-rafting.webp"
+          alt="Foto 3 de Kelly Núñez haciendo rafting en el río Chili, Arequipa, Perú"
+          style={{
+            top: "15%",
+            left: "54%",
+            transform: "rotate(20deg)",
+          }}
+          className="absolute bg-neutral-200 p-1 shadow-lg w-36 md:w-44 pointer-events-none"
+        />
+      </Reveal>
     </div>
   );
 };
