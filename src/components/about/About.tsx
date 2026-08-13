@@ -45,7 +45,7 @@ const Cards = () => {
           left: "12%",
           transform: "rotate(6deg)",
         }}
-        className="absolute bg-neutral-200 p-1 shadow-lg w-28 md:w-36 pointer-events-none transition-all duration-700 ease-out hover:scale-105"
+        className="absolute bg-neutral-200 p-1 shadow-lg w-28 md:w-36 md:-mt-[50px] lg:mt-0 pointer-events-none transition-all duration-700 ease-out hover:scale-105"
       />
       <img
         src="/about/kelly-arequipa.webp"
