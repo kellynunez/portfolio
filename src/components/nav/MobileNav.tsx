@@ -16,8 +16,8 @@ export const MobileNav= ({ isModalOpen = false }: MobileNavProps) => {
 
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/cv-kelly-nunez.pdf";
-    link.download = "cv-kelly-nunez.pdf";
+    link.href = "/cv-kelly-nunez-product-design-frontend.pdf";
+    link.download = "cv-kelly-nunez-product-design-frontend.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
