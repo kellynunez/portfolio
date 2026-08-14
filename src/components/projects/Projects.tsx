@@ -79,10 +79,12 @@ const projects = [
     ],
 
     galleryMoreImages: [
-      "/project-imgs/user-interface/ui-hero.webp",
-      "/project-imgs/user-interface/ui-content.webp",
+      "/project-imgs/user-interface/voltron-data-website.webp",
 
       "/project-imgs/user-interface/portafolio-personal.webp",
+
+      "/project-imgs/user-interface/ui-hero.webp",
+      "/project-imgs/user-interface/ui-content.webp",
 
       "/project-imgs/user-interface/ui-header.webp",
       "/project-imgs/user-interface/ui-page.webp",
