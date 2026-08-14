@@ -53,10 +53,10 @@ const projects = [
     ],
   },
   {
-    title: "Web / Apps",
+    title: "Diseño y Web Responsive",
     imgSrc: "/project-imgs/web-corporative.webp",
     projectLink: "https://voltrondata-v1.netlify.app",
-    tech: ["Node", "JekyllRB", "Vue", "TailwindCSS", "Markdown", "Figma", "Midjourney"],
+    tech: ["Jekyll", "Vue", "Tailwind", "Markdown", "Figma", "Midjourney", "Wordpress"],
     description:
       "Xyz",
     galleryImages: [
@@ -73,37 +73,49 @@ const projects = [
       "/project-imgs/web-corporative/web-laptop-news.webp",
       "/project-imgs/web-corporative/web-news.webp",
       "/project-imgs/web-corporative/web-contact.webp",
-      "/project-imgs/app-project/app-header.webp",
-      "/project-imgs/app-project/app-blazing.webp",
-      "/project-imgs/app-project/app-login.webp",
-      "/project-imgs/app-project/app-dev.webp",
+      
       "/project-imgs/user-interface/ui-hero.webp",
       "/project-imgs/user-interface/ui-content.webp",
-      "/project-imgs/user-interface/ui-conference.webp",
-      "/project-imgs/user-interface/ui-web.webp",
+
       "/project-imgs/user-interface/ui-header.webp",
       "/project-imgs/user-interface/ui-page.webp",
-      "/project-imgs/app-project/app-spacedat.webp",
-      "/project-imgs/app-project/app-navbar.webp",
-      "/project-imgs/app-project/app-dashboard.webp",
+      
       "/project-imgs/pos-niubiz/pos-landing.webp",
+
+      "/project-imgs/user-interface/ui-conference.webp",
+
+      "/project-imgs/user-interface/ui-web.webp",
     ],
   },
   {
-    title: "Interfaces Móviles",
-    imgSrc: "/project-imgs/pos-niubiz.webp",
-    projectLink: "",
-    tech: ["Figma", "Illustrator", "Photoshop", "Miro"],
+    title: "UI/UX & Prototipos Móviles",
+    imgSrc: "/project-imgs/apps-mobile.webp",
+    projectLink: "https://goo.su/ziNdk",
+    tech: ["Figma", "Lucidchart", "Midjourney", "Adobe XD", "Miro"],
     description:
       "Xyz",
     galleryImages: [
+      "/project-imgs/app-project/miwawa-1.webp",
+      "/project-imgs/app-project/miwawa-2.webp",
+
       "/project-imgs/pos-niubiz/pos-header.webp",
       "/project-imgs/pos-niubiz/pos-user.webp",
       "/project-imgs/pos-niubiz/pos-niubiz.webp",
       "/project-imgs/pos-niubiz/pos-mobile.webp",
       "/project-imgs/pos-niubiz/pos-ux1.webp",
       "/project-imgs/pos-niubiz/pos-ux2.webp",
+
+      "/project-imgs/app-project/app-header.webp",
+      "/project-imgs/app-project/app-blazing.webp",
+      "/project-imgs/app-project/app-login.webp",
+      "/project-imgs/app-project/app-dev.webp",
+
+      "/project-imgs/app-project/app-spacedat.webp",
+      "/project-imgs/app-project/app-navbar.webp",
+      "/project-imgs/app-project/app-dashboard.webp",
+
       "/project-imgs/app-project/app-mystery.webp",
+      
       "/project-imgs/app-project/app-livetrade.webp",
       "/project-imgs/app-project/app-mobile.webp",
     ],
@@ -140,7 +152,7 @@ const projects = [
     title: "Social Media",
     imgSrc: "/project-imgs/social-media.webp",
     projectLink: "",
-    tech: ["X", "LinkedIn", "Facebook", "Illustrator", "Photoshop", "LLMs"],
+    tech: ["X", "LinkedIn", "Facebook", "Illustrator", "Photoshop", "CapCutAi", "LLMs"],
     description:
       "Xyz",
     galleryImages: [
@@ -159,7 +171,7 @@ const projects = [
     title: "Slides Master",
     imgSrc: "/project-imgs/pitch-deck.webp",
     projectLink: "",
-    tech: ["Google Slides", "Keynote", "Illustrator", "Photoshop"],
+    tech: ["Google Slides", "Gemini", "Keynote", "Illustrator", "Photoshop"],
     description:
       "Xyz",
     galleryImages: [
