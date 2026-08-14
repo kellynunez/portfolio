@@ -25,6 +25,7 @@ import {
 import type { ComponentType } from "react";
 import { SectionHeader } from "../util/SectionHeader";
 import Reveal from "../util/Reveal";
+import { image } from "framer-motion/client";
 
 interface EducationCardProps {
   title: string;
@@ -329,11 +330,12 @@ const EducationCard = ({
 
 const education = [
   {
-    title: "Desarrollo Web",
+    title: "Diseño y Desarrollo Web",
     institution: "Instituto San Ignacio de Loyola (ISIL) - Educación Ejecutiva",
-    degree: "En espera del certificado",
+    degree: "Certificado",
     period: "2026",
-    time: "70 horas",
+    time: "96 horas",
+    image: "/certs/certificado-isil-diseno-web.webp",
     Icon: GlobeLock,
     achievements: [
         "Seguridad y Ethical Hacking.",
