@@ -11,7 +11,7 @@ export const About = () => {
         <div className="space-y-4 pb-0 md:pb-12">
           <Reveal>
             <p className="leading-relaxed text-zinc-200 text-normal">
-              <b className="text-white text-xl">Líder de diseño, UX/UI y Front-End</b> con más de 10 años de experiencia creando soluciones en productos digitales de principio a fin en entornos tecnológicos para EE. UU. (B2B) y LATAM. Lidero equipos creativos bajo metodologías ágiles impulsando la adopción de IA para maximizar la eficiencia en flujos de diseño y web.
+              <b className="text-white text-xl">Líder de diseño, UX/UI y Front-End</b> con más de 10 años de experiencia creando soluciones en productos digitales de principio a fin en entornos tecnológicos para EE. UU. y LATAM. Lidero equipos creativos bajo metodologías ágiles impulsando la adopción de IA para maximizar la eficiencia en flujos de diseño y web.
             </p>
           </Reveal>
           

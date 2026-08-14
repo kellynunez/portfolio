@@ -14,10 +14,12 @@ interface Props {
   projectLink: string;
   tech: string[];
   galleryImages: string[];
+  galleryMoreImages?: string[]; // Opcional para evitar errores si un proyecto no tiene este bloque
 }
 
 export const ProjectModal = ({
-  galleryImages,
+  galleryImages = [],
+  galleryMoreImages = [],
   projectLink,
   setIsOpen,
   imgSrc,
@@ -62,7 +64,7 @@ export const ProjectModal = ({
         animate={{ y: 0, opacity: 1 }}
         onClick={(e) => e.stopPropagation()}
         onContextMenu={blockImageActions}
-        className="w-full max-w-2xl h-fit overflow-hidden bg-slate-100 shadow-lg cursor-auto"
+        className="w-full max-w-2xl lg:max-w-4xl h-fit overflow-hidden bg-slate-100 shadow-lg cursor-auto"
       >
         <div
           className="relative"
@@ -105,33 +107,69 @@ export const ProjectModal = ({
             </div>
           )}
 
-          <div className="space-y-4 my-6 leading-relaxed text-sm text-gray-800">
-            {galleryImages.map((imageSrc) => (
-              <div
-                key={imageSrc}
-                className="relative"
-                onContextMenu={blockImageActions}
-                onDragStart={blockImageActions}
-              >
-                <Image
-                  src={imageSrc}
-                  width={1200}
-                  height={675}
-                  sizes="(max-width: 768px) 95vw, 900px"
-                  unoptimized
-                  className="w-full h-auto select-none"
-                  alt={`${title} showcase`}
-                  draggable={false}
-                />
+          {/* Primer bloque de imágenes */}
+          {galleryImages && galleryImages.length > 0 && (
+            <div className="space-y-4 my-6 leading-relaxed text-sm text-gray-800">
+              {galleryImages.map((imageSrc, index) => (
                 <div
-                  aria-hidden="true"
-                  className="absolute inset-0 z-10 bg-transparent"
+                  key={`gallery-${index}-${imageSrc}`}
+                  className="relative"
                   onContextMenu={blockImageActions}
                   onDragStart={blockImageActions}
-                />
-              </div>
-            ))}
-          </div>
+                >
+                  <Image
+                    src={imageSrc}
+                    width={1200}
+                    height={675}
+                    sizes="(max-width: 768px) 95vw, 900px"
+                    unoptimized
+                    className="w-full h-auto select-none"
+                    alt={`${title} showcase ${index + 1}`}
+                    draggable={false}
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 z-10 bg-transparent"
+                    onContextMenu={blockImageActions}
+                    onDragStart={blockImageActions}
+                  />
+                </div>
+              ))}
+            </div>
+          )}
+
+          <h5 className="text-normal font-semibold text-gray-600 pt-5">+ Más proyectos:</h5>
+
+          {/* Segundo bloque de imágenes (galleryMoreImages) */}
+          {galleryMoreImages && galleryMoreImages.length > 0 && (
+            <div className="space-y-4 my-6 leading-relaxed text-sm text-gray-800">
+              {galleryMoreImages.map((imageSrc, index) => (
+                <div
+                  key={`more-${index}-${imageSrc}`}
+                  className="relative"
+                  onContextMenu={blockImageActions}
+                  onDragStart={blockImageActions}
+                >
+                  <Image
+                    src={imageSrc}
+                    width={1200}
+                    height={675}
+                    sizes="(max-width: 768px) 95vw, 900px"
+                    unoptimized
+                    className="w-full h-auto select-none"
+                    alt={`${title} extra showcase ${index + 1}`}
+                    draggable={false}
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 z-10 bg-transparent"
+                    onContextMenu={blockImageActions}
+                    onDragStart={blockImageActions}
+                  />
+                </div>
+              ))}
+            </div>
+          )}
 
         </div>
       </motion.div>
