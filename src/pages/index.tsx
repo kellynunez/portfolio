@@ -9,8 +9,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export default function Home() {
-  const description = "Especialista en arquitecturas web modernas y sistemas de diseño UX/UI. Integro la estrategia de marca, comunicación y diseño publicitario para construir productos digitales escalables, eficientes y creativos.";
-  const title = "Kelly Núñez — Product Designer & Front-End Developer";
+  const description = "Diseñadora de productos digitales y desarrolladora frontend. Creo experiencias web de principio a fin con interfaces modernos y sistemas de diseño escalables.";
+  const title = "Kelly Núñez — Product Designer & Frontend Developer";
   const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://kelly-nunez.com").replace(/\/$/, "");
   const imagePath = "/kelly-nunez-portfolio.png";
   const image = `${siteUrl}${imagePath}`;
