@@ -51,6 +51,9 @@ const projects = [
       "/project-imgs/design-system/plantillas.webp",
       "/project-imgs/design-system/paginas.webp",
     ],
+
+    galleryMoreImages: [
+    ],
   },
   {
     title: "Diseño y Web Responsive",
@@ -73,7 +76,9 @@ const projects = [
       "/project-imgs/web-corporative/web-laptop-news.webp",
       "/project-imgs/web-corporative/web-news.webp",
       "/project-imgs/web-corporative/web-contact.webp",
-      
+    ],
+
+    galleryMoreImages: [
       "/project-imgs/user-interface/ui-hero.webp",
       "/project-imgs/user-interface/ui-content.webp",
 
@@ -99,7 +104,9 @@ const projects = [
     galleryImages: [
       "/project-imgs/app-project/miwawa-1.webp",
       "/project-imgs/app-project/miwawa-2.webp",
+    ],
 
+    galleryMoreImages: [
       "/project-imgs/pos-niubiz/pos-header.webp",
       "/project-imgs/pos-niubiz/pos-user.webp",
       "/project-imgs/pos-niubiz/pos-niubiz.webp",
@@ -149,6 +156,9 @@ const projects = [
       "/project-imgs/brand-identity/unicod-stationary.webp",
       "/project-imgs/brand-identity/branding-newyorkcity.webp",
     ],
+
+    galleryMoreImages: [
+    ],
   },
   {
     title: "Social Media",
@@ -168,6 +178,9 @@ const projects = [
       "/project-imgs/social-media/social-festivity.webp",
       "/project-imgs/social-media/social-fashion.webp",
     ],
+
+    galleryMoreImages: [
+    ],
   },
   {
     title: "Slides Master",
@@ -186,6 +199,9 @@ const projects = [
       "/project-imgs/pitch-deck/slides-lalucha.webp",
       "/project-imgs/pitch-deck/slides-cybergarden.webp",
       "/project-imgs/pitch-deck/slides-university.webp",
+    ],
+
+    galleryMoreImages: [
     ],
   },
 ];

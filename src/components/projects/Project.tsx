@@ -12,6 +12,7 @@ const ProjectModal = dynamic(
 
 interface Props {
   galleryImages?: string[];
+  galleryMoreImages?: string[]; // <-- 1. Añadido aquí
   description: string;
   projectLink: string;
   imgSrc: string;
@@ -21,6 +22,7 @@ interface Props {
 
 export const Project = ({
   galleryImages,
+  galleryMoreImages, // <-- 2. Destructurado aquí
   projectLink,
   // description,
   imgSrc,
@@ -104,6 +106,7 @@ export const Project = ({
       {isOpen && (
         <ProjectModal
           galleryImages={galleryImages ?? [imgSrc]}
+          galleryMoreImages={galleryMoreImages}
           projectLink={projectLink}
           setIsOpen={setIsOpen}
           isOpen={isOpen}
