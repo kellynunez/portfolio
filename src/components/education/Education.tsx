@@ -368,7 +368,7 @@ const education = [
     Icon: GraduationCap,
     achievements: [
         "Estrategia en comunicación, marketing y branding.",
-        "Tesis en sistemas de diseño (Nota: 19).",
+        "Tesis en sistemas de diseño (Mención Honorífica: 19).",
         "Pertenencia al Tercio Superior."
     ]
   },
