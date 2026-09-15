@@ -12,8 +12,8 @@ export const Header = () => {
 
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/cv-kelly-nunez-product-design-frontend.pdf";
-    link.download = "cv-kelly-nunez-product-design-frontend.pdf";
+    link.href = "/Senior_Product_Designer-Kelly_Nunez.pdf";
+    link.download = "Senior_Product_Designer-Kelly_Nunez.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
