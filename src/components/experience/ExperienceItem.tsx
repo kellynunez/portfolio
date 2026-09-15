@@ -9,12 +9,11 @@ interface Props {
   mode: string;
   topic: string;
   location: string;
-  description: string;
+  description: string | string[]; // <--- Acepta string o arreglo de strings
   tech: string[];
-  isLast?: boolean; // Prop para controlar si es el último elemento
+  isLast?: boolean;
 }
 
-// Función para obtener el emoji de la bandera basado en la ubicación
 const getFlagEmoji = (location: string): string => {
   const locationLower = location.toLowerCase();
   
@@ -51,12 +50,10 @@ export const ExperienceItem = ({
   
   return (
     <div className="relative pl-8 mb-8 group">
-      {/* Línea vertical: solo se muestra si NO es el último elemento */}
       {!isLast && (
         <div className="absolute left-[7px] top-3 bottom-[-32px] w-[2px] bg-zinc-700" />
       )}
 
-      {/* Círculo interactivo de la línea de tiempo */}
       <button
         onClick={() => setIsSelected(!isSelected)}
         aria-label={`Seleccionar ${title}`}
@@ -67,7 +64,6 @@ export const ExperienceItem = ({
         }`}
       />
 
-      {/* Contenido de la experiencia */}
       <div className="border-b pb-6 border-zinc-700">
         <div className="flex items-center justify-between mb-2">
           <Reveal>
@@ -86,15 +82,13 @@ export const ExperienceItem = ({
         <div className="block md:flex items-center justify-between">
           <Reveal>
             <span className="text-[#7C5CFF] font-bold tracking-wide block">{position}</span>
-             <span className="text-zinc-400 text-xs tracking-wide">[{topic}]</span>
+            <span className="text-zinc-400 text-xs tracking-wide">[{topic}]</span>
           </Reveal>
           <Reveal>
             <span className="text-[#38FF96] text-xs font-semibold">{mode}</span>
           </Reveal>
         </div>
 
-
-        {/* Botón desplegable para la descripción */}
         <div className="mt-2 mb-4">
           <button
             onClick={() => setIsExpanded(!isExpanded)}
@@ -115,7 +109,19 @@ export const ExperienceItem = ({
 
           {isExpanded && (
             <Reveal>
-              <p className="mt-3 text-sm text-zinc-400 tracking-wide leading-relaxed">{description}</p>
+              <div className="mt-3 text-sm text-zinc-400 tracking-wide leading-relaxed">
+                {Array.isArray(description) ? (
+                  <ul className="list-disc pl-5 space-y-2">
+                    {description.map((bullet, i) => (
+                      <li key={i} className="pl-1">
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>{description}</p>
+                )}
+              </div>
             </Reveal>
           )}
         </div>
