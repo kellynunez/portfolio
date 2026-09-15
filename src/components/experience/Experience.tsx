@@ -42,78 +42,74 @@ export const Experience = () => {
 const experience = [
   {
     title: "Voltron Data",
-    position: "Manager, Design & Front-End",
+    position: "Manager, Product Design & Frontend",
     topic: "Startup global de software e infraestructura de datos",
     time: "2021 - 2025",
     location: "Mountain View, CA",
     mode: "Remoto",
-    description:
-      "Rediseño y reconstrucción web con React, NodeJS y Tailwind, acelerando flujos con Cursor. Migración de la infraestructura de WordPress a Jekyll (Markdown) con Tailwind CSS. Lideré la creación de wireframes y prototipos UX/UI en Lucidchart y Figma (DevMode). Diseñé la identidad de marca de la startup tech y producción de piezas gráficas digital e impreso.",
+    description: [
+      "Lideré el diseño UI/UX y la implementación frontend (React/TypeScript) para activos B2B como The Composable Codex, integrando herramientas de IA (Cursor, Copilot) para acelerar el ciclo de desarrollo e impulsando la captación de leads en un 22%.",
+      "Orquesté la migración del sitio web de WordPress a Jekyll (estructura completa y 40+ artículos), reduciendo los tiempos de carga en un 46% y generando un ahorro operativo de $5K mensuales al internalizar el desarrollo y mantenimiento que gestionaba una agencia externa (Highseas).",
+      "Lideré el ciclo de producto implementando un sistema de diseño integral en Figma, lo que aseguró la consistencia visual y aceleró los tiempos de desarrollo (handoff) en un 30%.",
+      "Dirigí el rediseño del frontend bajo estándares WCAG, garantizando la accesibilidad global y mejorando las métricas de retención en la plataforma.",
+      "Lideré el área de diseño y la estrategia de marca, supervisando la ejecución de activos digitales."
+    ],
     tech: ["React", "NextJS", "Netlify", "Markdown", "TailwindCSS", "Lottie", "GitHub", "Figma", "Cursor", "Illustrator", "Midjourney", "Notion"],
   },
   {
     title: "BlazingSQL",
-    position: "Lead, Design & Web",
-    time: "2015 - 2021",
+    position: "Lead, Product Design & Web Development",
     topic: "Startup de software y ciencia de datos",
+    time: "2016 - 2021",
     location: "USA / Perú",
     mode: "Híbrido",
-    description:
-      "Diseñé prototipos UX/UI en Figma y desarrollé websites y webapps interactivas desde cero. Implementé interfaces utilizando frameworks y librerías como Vue.js, Vuetify y Tailwind. Desarrollé el manual de marca y lideré el rediseño de la identidad corporativa. Diseñé presentaciones ejecutivas y realicé edición de video para diversos canales.",
+    description: [
+      "Arquitecté aplicaciones web interactivas desde cero con Vue.js y TypeScript, entregando plataformas hasta 3x más rápidas y escalables mediante despliegues automatizados en Netlify.",
+      "Dirigí la estrategia UX/UI para herramientas de ciencia de datos, reduciendo la fricción en flujos complejos y aumentando la adopción del producto en un 25%.",
+      "Unifiqué la identidad corporativa creando un sistema de diseño escalable, disminuyendo las inconsistencias visuales y ahorrando horas de iteración entre diseño y código.",
+      "Gestioné el área creativa y la dirección de arte, fortaleciendo el posicionamiento de marca en canales digitales. Diseñé banners, gráficos digitales e impresas para eventos internacionales."
+    ],
     tech: ["Vue", "Jekyll", "NodeJS", "Netlify", "JavaScript", "Sass", "GitHub", "Figma", "Illustrator", "Photoshop", "Premiere", "ClickUp", "Airtable"],
   },
   {
     title: "Simply Technology",
-    position: "Diseño, UX/UI y Web",
-    time: "2015",
+    position: "Diseñadora Senior, UX/UI y Web",
     topic: "Consultora tecnológica",
+    time: "2015",
     location: "USA / Perú",
     mode: "Híbrido",
-    description:
-      "Desarrollé prototipos web y apps UX/UI responsive en Adobe XD, construí sitios web con HTML, CSS y JavaScript y elaboré la identidad visual corporativa y manejo de redes sociales.",
+    description: [
+      "Desarrollé el sitio web corporativo responsivo desde cero (HTML/CSS y JS), optimizando el diseño responsive y fortaleciendo la presencia digital B2B de la consultora.",
+      "Lideré el diseño de interfaces (UI/UX) mediante wireframes y prototipos en Adobe XD, acelerando la validación de requerimientos y reduciendo los tiempos en el ciclo de desarrollo.",
+      "Diseñé la identidad visual corporativa y el ecosistema de activos de marketing, consolidando una imagen de marca cohesiva que potenció el posicionamiento en canales digitales."
+    ],
     tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Adobe XD", "Illustrator", "Photoshop", "Microsoft Office"],
   },
   {
-    title: "Outofthebox",
-    position: "Diseño Gráfico Publicitario",
-    time: "2012-2014",
-    topic: "Agencia de publicidad",
-    location: "Lima, Perú",
-    mode: "Presencial",
-    description:
-      "Encargada del diseño de banners retail a escala real, gráficos para redes y retoque fotográfico, participando en la creación y edición de catálogos de belleza y moda para marcas como Ésika, Viale, Claudia Jimenez y Platanitos.",
-    tech: ["Illustrator", "Photoshop", "Camera Raw", "InDesign", "Microsoft Office"],
-  },
-  {
-    title: "Cargraft",
-    position: "Diseño Gráfica",
-    time: "2011",
-    topic: "Imprenta digital",
-    location: "Lima, Perú",
-    mode: "Presencial",
-    description:
-      "Diseñé identidades visuales y materiales gráficos (logotipos, empaques, papelería, merchandising) en Corel Draw y Photoshop, incluyendo preparación para impresión y digital con ajuste de color y gestión de perfiles ICC.",
-    tech: ["CorelDraw", "Photoshop", "Acrobat", "Microsoft Word"],
-  },
-  {
     title: "Freelance",
-    position: "Diseño, UX/UI y Desarrollo Web",
-    time: "2010 - Actualidad",
-    topic: "Servicios profesionales",
+    position: "Diseño UI/UX y Desarrollo Web",
+    topic: "Houzen Inmobiliaria, Spacedat, Overall Livetrade, Socios en Salud (Miwawa)",
+    time: "2016 - 2026",
     location: "Global",
     mode: "Remoto",
-    description:
-      "Diseño prototipos interactivos y desarrollo sitios web responsivos con enfoque en UX/UI. También diseñé piezas gráficas y con identidad visual corporativa, documentando todos los activos gráficos para su uso coherente en productos y comunicaciones.",
+    description: [
+      "Lideré la estrategia UX/UI para plataformas B2B/B2C en sectores de tecnología, inmobiliario y salud (Miwawa), desde la investigación con usuarios y wireframing hasta prototipos interactivos en Figma.",
+      "Arquitecté UI Kits y sistemas de diseño escalables garantizando la consistencia visual omnicanal y optimizando la entrega técnica en la documentación.",
+      "Diseñé e implementé interfaces web responsivas y accesibles en React, TypeScript y Tailwind CSS, convirtiendo flujos complejos en experiencias de usuario intuitivas y de alto rendimiento."
+    ],
     tech: ["React", "Framer Motion", "GitHub", "Netlify", "Cursor", "Copilot", "TailwindCSS", "Figma", "Adobe Creative Cloud", "Powerpoint"],
   },
-/*   {
-    title: "My Little World",
-    position: "Auxiliar de Inicial",
-    time: "2013",
+  {
+    title: "Outofthebox.pe",
+    position: "Diseñadora Publicitaria",
+    topic: "Agencia Publicitaria",
+    time: "2012 - 2014",
     location: "Lima, Perú",
     mode: "Presencial",
-    description:
-      "Realicé manualidades, decoraciones festivas, inventarios de útiles y revisión de tareas a los alumnos.",
-    tech: ["Photoshop", "Microsoft Office"],
-  }, */
+    description: [
+      "Diseñé banners y recursos gráficos para campañas digitales e impresas con retoque fotográfico.",
+      "Organicé, diseñé y edité catálogos para marcas como Ésika, Viale, Claudia Jimenez, Platanitos."
+    ],
+    tech: ["Illustrator", "Photoshop", "Camera Raw", "InDesign", "Microsoft Office"],
+  },
 ];

@@ -11,13 +11,13 @@ export const About = () => {
         <div className="space-y-4 pb-0 md:pb-12">
           <Reveal>
             <p className="leading-relaxed text-zinc-200 text-normal">
-              <b className="text-white text-xl">Líder de diseño, UX/UI y Front-End</b> con más de 10 años de experiencia creando soluciones en productos digitales de principio a fin en entornos tecnológicos para EE. UU. y LATAM. Lidero equipos creativos bajo metodologías ágiles impulsando la adopción de IA para maximizar la eficiencia en flujos de diseño y web.
+              <b className="text-white text-xl">Senior Product Designer, UX/UI y Frontend.</b><br />Más de 10 años de experiencia liderando la creación de productos digitales B2B/B2C en EE. UU. y LATAM, resolviendo problemas complejos para sectores como tecnología (SaaS), salud, finanzas, retail e inmobiliario.
             </p>
           </Reveal>
           
           <Reveal>
             <p className="leading-relaxed text-zinc-200 text-normal ">
-              Ejecuto experiencias web de principio a fin, desde la UX/UI aplicando sistemas de diseño hasta el desarrollo de interfaces con stacks modernos y/o CMS. Organizo, planifico y desarrollo recursos gráficos corporativos. También diseño y realizo piezas gráficas creativas digitales e impresas.
+              Soy un perfil híbrido (Design Engineer) que conecta la visión sistémica de la experiencia de usuario con el desarrollo frontend escalable (React, Next.js, TypeScript). Aporto autonomía ejecutiva, integro herramientas de IA para multiplicar la eficiencia técnica y construyo Design Systems y arquitecturas (Figma, HCD) enfocadas en tres pilares: accesibilidad global, escalabilidad del producto y retorno de inversión (ROI).
             </p>
           </Reveal>
         </div>

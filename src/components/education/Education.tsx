@@ -129,7 +129,7 @@ export const Education = () => {
     <section className="section-wrapper" id="education">
       <div className="flex justify-between gap-4">
         <SectionHeader title="Educación" dir="l" />
-        <div className="flex gap-2">
+        <div className="hidden gap-2 md:flex">
           <button
             type="button"
             aria-label="Ver educación anterior"
@@ -156,7 +156,7 @@ export const Education = () => {
       <div className="relative left-1/2 right-1/2 w-screen -translate-x-1/2">
         <div
           ref={carouselRef}
-          className={`overflow-x-auto scroll-smooth px-4 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
+          className={`overflow-visible px-4 pb-2 md:overflow-x-auto md:scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
             isDragging ? "cursor-grabbing" : "cursor-grab"
           } select-none touch-pan-y md:px-8 lg:px-12`}
           onPointerDown={handlePointerDown}
@@ -168,14 +168,14 @@ export const Education = () => {
             setIsDragging(false);
           }}
         >
-          <div className="flex gap-4 md:gap-6">
+          <div className="flex flex-col gap-4 md:flex-row md:gap-6">
             {education.map((edu, index) => (
               <div
                 key={edu.title}
                 ref={(node) => {
                   cardRefs.current[index] = node;
                 }}
-                className="basis-[88vw] shrink-0 md:basis-[42vw] lg:basis-[30vw]"
+                className="w-full md:basis-[42vw] md:shrink-0 lg:basis-[30vw]"
               >
                 <EducationCard
                   {...edu}
@@ -185,7 +185,7 @@ export const Education = () => {
                 />
               </div>
             ))}
-            <div aria-hidden="true" className="shrink-0 w-4 md:w-8 lg:w-12" />
+            <div aria-hidden="true" className="hidden md:block md:shrink-0 md:w-8 lg:w-12" />
           </div>
         </div>
       </div>
@@ -250,7 +250,7 @@ const EducationCard = ({
       initial={{ opacity: 0.95 }}
       animate={{ opacity: 1 }}
       transition={{ ease: "easeInOut", duration: 0.25 }}
-      className="relative flex h-full min-h-[250px] w-full flex-col justify-between overflow-hidden border border-zinc-700 bg-zinc-900 p-8 shadow-lg md:p-10 ml-7 md:ml-16"
+      className="relative flex h-full min-h-auto md:min-h-[240px] w-full flex-col justify-between overflow-hidden border-0 md:hover:border border-zinc-700 bg-zinc-900 py-4 px-8 md:p-8 shadow-lg md:ml-16 md:p-10"
     >
       <Icon className="absolute right-2 top-2 md:right-3 md:top-3 size-8 md:size-10 stroke-[0.5px] opacity-20" />
 
@@ -287,7 +287,7 @@ const EducationCard = ({
           </button>
 
           {hasAchievements && (
-            <div className="mt-1">
+            <div className="mt-1 hidden">
               <button
                 type="button"
                 onClick={onToggleAchievements}
