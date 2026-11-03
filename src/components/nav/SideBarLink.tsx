@@ -2,7 +2,6 @@ import { Dispatch, SetStateAction } from "react";
 import Link from "next/link";
 import { twMerge } from "tailwind-merge";
 import type { ComponentType } from "react";
-import { navigateToSection } from "./navItems";
 
 interface Props {
   selected: string;
@@ -50,11 +49,9 @@ export const SideBarLink = ({
       href={href}
       aria-label={children}
       title={children}
-      onClick={(event) => {
-        event.preventDefault();
+      onClick={() => {
         setSelected(value);
         onNavigate?.();
-        navigateToSection(href);
       }}
       className={twMerge(baseClassName, "transition-all", stateClassName, className)}
     >
