@@ -11,13 +11,19 @@ export const About = () => {
         <div className="space-y-4 pb-0 md:pb-12">
           <Reveal>
             <p className="leading-relaxed text-zinc-200 text-normal">
-              <b className="text-white text-xl">Senior Product Designer, UX/UI y Frontend.</b><br />Más de 10 años de experiencia liderando la creación de productos digitales B2B/B2C en EE. UU. y LATAM, resolviendo problemas complejos para sectores como tecnología (SaaS), salud, finanzas, retail e inmobiliario.
+              Más de 10 años de experiencia liderando la creación de productos digitales B2B/B2C en EE. UU. y LATAM, resolviendo problemas complejos para sectores como tecnología (SaaS), salud, finanzas, retail e inmobiliario.
+            </p>
+          </Reveal>
+
+          <Reveal>
+            <p className="leading-relaxed text-zinc-200 text-normal">
+              <b className="text-white text-xl">Digital Product Designer | UX/UI, Brand Designer & Frontend</b><br />
             </p>
           </Reveal>
           
           <Reveal>
             <p className="leading-relaxed text-zinc-200 text-normal ">
-              Soy un perfil híbrido (Design Engineer) que conecta la visión sistémica de la experiencia de usuario con el desarrollo frontend escalable (React, Next.js, TypeScript). Aporto autonomía ejecutiva, integro herramientas de IA para multiplicar la eficiencia técnica y construyo Design Systems y arquitecturas (Figma, HCD) enfocadas en tres pilares: accesibilidad global, escalabilidad del producto y retorno de inversión (ROI).
+              Soy un perfil híbrido (Design Engineer) que conecta la visión sistémica de la experiencia de usuario con el desarrollo frontend escalable (React, Next.js, TypeScript). Aporto autonomía ejecutiva, integro herramientas de IA para multiplicar la eficiencia técnica y construyo Design Systems y arquitecturas (Figma, HCD) enfocadas en dos pilares: accesibilidad global y escalabilidad del producto.
             </p>
           </Reveal>
         </div>

@@ -2,7 +2,6 @@ import Reveal from "../util/Reveal";
 import DotGrid from "./DotGrid";
 import TypewriterText from "../util/TypewriterText";
 import NeuFollowButton from "../buttons/NeuFollowButton";
-import { FiDownload } from "react-icons/fi";
 
 const Hero = () => {
   return (
@@ -55,7 +54,7 @@ const Hero = () => {
           
           <Reveal>
             <p className="font-mono leading-relaxed md:leading-relaxed max-w-3xl text-sm md:text-lg lg:text-xl text-zinc-400 font-medium tracking-wide">
-              UX/UI ARCHITECTURE \ DESIGN SYSTEMS \ WEB PERFORMANCE
+              UX/UI \ DESIGN SYSTEMS \ WEB PERFORMANCE \ BRAND DESIGNER
             </p>
           </Reveal>
 {/*           <Reveal>
@@ -68,15 +67,12 @@ const Hero = () => {
             <div className="pointer-events-auto mt-10">
               <NeuFollowButton
                 onClick={() => {
-          const link = document.createElement("a");
-          link.href = "/Senior_Product_Designer-Kelly_Nunez.pdf";
-          link.download = "Senior_Product_Designer-Kelly_Nunez.pdf";
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
+                  document.getElementById("projects")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
                 }}
               >     
-                Descargar CV
+                Ver Proyectos
               </NeuFollowButton>
             </div>
           </Reveal> 

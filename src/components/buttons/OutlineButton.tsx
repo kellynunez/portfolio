@@ -19,7 +19,6 @@ export const OutlineButton = ({ children, className, ...rest }: Props) => {
     >
       <FaUserAstronaut className="text-zinc-900" />
       {children}
-      <FiArrowRight className="transition-transform group-hover:translate-x-1" />
     </button>
   );
 };

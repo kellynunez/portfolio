@@ -5,8 +5,7 @@ import {
   useMotionValue,
   useSpring,
 } from "framer-motion";
-import { FiArrowRight, FiArrowDown } from "react-icons/fi";
-import { FiDownload } from "react-icons/fi";
+import { FiEye } from "react-icons/fi";
 
 const SPRING_OPTIONS = {
   mass: 1.5,
@@ -142,8 +141,8 @@ const Copy: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
 const Arrow = () => (
   <div className="pointer-events-none flex h-6 w-6 overflow-hidden text-2xl">
-    <FiDownload className="shrink-0 -translate-x-full text-black transition-transform duration-300 group-hover:translate-x-0" />
-    <FiDownload className="shrink-0 -translate-x-full text-black transition-transform duration-300 group-hover:translate-x-0" />
+    <FiEye className="shrink-0 -translate-x-full text-black transition-transform duration-300 group-hover:translate-x-0" />
+    <FiEye className="shrink-0 -translate-x-full text-black transition-transform duration-300 group-hover:translate-x-0" />
   </div>
 );
 
