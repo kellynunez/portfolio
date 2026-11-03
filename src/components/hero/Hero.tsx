@@ -54,7 +54,7 @@ const Hero = () => {
           
           <Reveal>
             <p className="font-mono leading-relaxed md:leading-relaxed max-w-3xl text-sm md:text-lg lg:text-xl text-zinc-400 font-medium tracking-wide">
-              UX/UI ARCHITECTURE \ DESIGN SYSTEMS \ WEB PERFORMANCE
+              UX/UI \ DESIGN SYSTEMS \ WEB PERFORMANCE \ BRAND DESIGNER
             </p>
           </Reveal>
 {/*           <Reveal>

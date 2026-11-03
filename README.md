@@ -1,6 +1,6 @@
 # Portafolio de Kelly Núñez
 
-Soy Product Design & Front-End y construí mi portafolio diseñado y desarrollado con React, Next.js y Tailwind CSS.
+Soy Product Design, UI/UX & Front-End. Construí mi portafolio diseñado y desarrollado con React, Next.js y Tailwind CSS.
 
 Este proyecto está construido sobre [NextJS](https://nextjs.org/), un framework de desarrollo full stack basado en React.
 En la raíz del proyecto, verás un archivo `package.json` que define las dependencias del proyecto.
