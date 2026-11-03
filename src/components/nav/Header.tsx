@@ -98,7 +98,7 @@ export const MyLinks = ({ className = "" }: { className?: string }) => (
       aria-label="WhatsApp de Kelly Núñez"
       title="WhatsApp"
       className="text-zinc-600 hover:text-white transition-colors"
-      href="https://w.app/kelly-nunez"
+      href="https://wa.me/957268339"
       target="_blank"
       rel="nofollow"
     >

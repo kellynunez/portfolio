@@ -51,7 +51,7 @@ const TerminalHeader = () => {
       <div className="w-full max-w-2xl grid grid-cols-1 md:grid-cols-2 gap-3">
         {/* Botón 1: WhatsApp */}
         <a
-          href="https://w.app/kelly-nunez"
+          href="https://wa.me/957268339"
           target="_blank"
           rel="noopener noreferrer"
           className="group flex h-[42px] w-full items-center justify-between border border-black bg-[#38FF96] px-4 font-medium text-zinc-900 transition-colors hover:bg-[#38FF96]/80"

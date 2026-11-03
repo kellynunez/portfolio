@@ -2,7 +2,6 @@ import Reveal from "../util/Reveal";
 import DotGrid from "./DotGrid";
 import TypewriterText from "../util/TypewriterText";
 import NeuFollowButton from "../buttons/NeuFollowButton";
-import { FiDownload } from "react-icons/fi";
 
 const Hero = () => {
   return (
@@ -68,15 +67,12 @@ const Hero = () => {
             <div className="pointer-events-auto mt-10">
               <NeuFollowButton
                 onClick={() => {
-          const link = document.createElement("a");
-          link.href = "/Senior_Product_Designer-Kelly_Nunez.pdf";
-          link.download = "Senior_Product_Designer-Kelly_Nunez.pdf";
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
+                  document.getElementById("projects")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
                 }}
               >     
-                Descargar CV
+                Ver Proyectos
               </NeuFollowButton>
             </div>
           </Reveal> 
