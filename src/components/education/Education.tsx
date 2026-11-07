@@ -26,6 +26,7 @@ import type { ComponentType } from "react";
 import { SectionHeader } from "../util/SectionHeader";
 import Reveal from "../util/Reveal";
 import { image } from "framer-motion/client";
+import { useI18n } from "../../i18n/I18nProvider";
 
 interface EducationCardProps {
   title: string;
@@ -35,7 +36,7 @@ interface EducationCardProps {
   time: string;
   description?: string;
   Icon: ComponentType<{ className?: string }>;
-  achievements?: string[];
+  achievements?: readonly string[];
   image?: string;
   onOpenModal: (img: string) => void;
   showAllAchievements: boolean;
@@ -43,6 +44,11 @@ interface EducationCardProps {
 }
 
 export const Education = () => {
+  const { dictionary } = useI18n();
+  const localizedEducation = education.map((item, index) => ({
+    ...item,
+    ...dictionary.education.items[index],
+  }));
   const [position, setPosition] = useState(0);
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -128,12 +134,12 @@ export const Education = () => {
   return (
     <section className="section-wrapper" id="education">
       <div className="flex justify-between gap-4">
-        <SectionHeader title="Educación" dir="l" />
+        <SectionHeader title={dictionary.education.title} dir="l" />
         <div className="hidden gap-2 md:flex">
           <button
             type="button"
-            aria-label="Ver educación anterior"
-            title="Ver educación anterior"
+            aria-label={dictionary.actions.previousEducation}
+            title={dictionary.actions.previousEducation}
             className="h-fit bg-zinc-800 p-2 text-xl text-zinc-300 transition-colors hover:bg-zinc-800"
             onClick={shiftLeft}
             disabled={position === 0}
@@ -142,8 +148,8 @@ export const Education = () => {
           </button>
           <button
             type="button"
-            aria-label="Ver siguiente educación"
-            title="Ver siguiente educación"
+            aria-label={dictionary.actions.nextEducation}
+            title={dictionary.actions.nextEducation}
             className="h-fit bg-zinc-800 p-2 text-xl text-zinc-300 transition-colors hover:bg-zinc-800"
             onClick={shiftRight}
             disabled={position === education.length - 1}
@@ -169,7 +175,7 @@ export const Education = () => {
           }}
         >
           <div className="flex flex-col gap-4 md:flex-row md:gap-6">
-            {education.map((edu, index) => (
+            {localizedEducation.map((edu, index) => (
               <div
                 key={edu.title}
                 ref={(node) => {
@@ -242,6 +248,7 @@ const EducationCard = ({
   showAllAchievements,
   onToggleAchievements,
 }: EducationCardProps) => {
+  const { dictionary } = useI18n();
   const hasCertificate = Boolean(image);
   const hasAchievements = Boolean(achievements && achievements.length > 0);
 
@@ -275,7 +282,7 @@ const EducationCard = ({
               <>
                 <FiEye className="mr-2 inline-block text-[#38FF96] transition-colors group-hover:text-[#38FF96]" />
                 <span className="text-zinc-400 group-hover:text-zinc-400 border-b border-b-transparent group-hover:border-b-[0.5px] group-hover:border-b-zinc-400 text-[#38FF96]">
-                  Ver {degree}
+                  {dictionary.actions.certificate}
                 </span>
               </>
             ) : (

@@ -2,28 +2,30 @@ import React from "react";
 import { Reveal } from "../util/Reveal";
 import { SectionHeader } from "../util/SectionHeader";
 import { Stats } from "./Stats";
+import { useI18n } from "../../i18n/I18nProvider";
 
 export const About = () => {
+  const { dictionary } = useI18n();
   return (
     <section id="about" className="section-wrapper">
-      <SectionHeader title="Sobre mí" dir="l" />
+      <SectionHeader title={dictionary.about.title} dir="l" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center tracking-wide">
         <div className="space-y-4 pb-0 md:pb-12">
           <Reveal>
             <p className="leading-relaxed text-zinc-200 text-normal">
-              Más de 10 años de experiencia liderando la creación de productos digitales B2B/B2C en EE. UU. y LATAM, resolviendo problemas complejos para sectores como tecnología (SaaS), salud, finanzas, retail e inmobiliario.
+              {dictionary.about.intro}
             </p>
           </Reveal>
 
           <Reveal>
             <p className="leading-relaxed text-zinc-200 text-normal">
-              <b className="text-white text-xl">Digital Product Designer | UX/UI, Brand Designer & Frontend</b><br />
+              <b className="text-white text-xl">{dictionary.about.role}</b><br />
             </p>
           </Reveal>
           
           <Reveal>
             <p className="leading-relaxed text-zinc-200 text-normal ">
-              Soy un perfil híbrido (Design Engineer) que conecta la visión sistémica de la experiencia de usuario con el desarrollo frontend escalable (React, Next.js, TypeScript). Aporto autonomía ejecutiva, integro herramientas de IA para multiplicar la eficiencia técnica y construyo Design Systems y arquitecturas (Figma, HCD) enfocadas en dos pilares: accesibilidad global y escalabilidad del producto.
+              {dictionary.about.body}
             </p>
           </Reveal>
         </div>

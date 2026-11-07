@@ -3,6 +3,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { navItems } from "./navItems";
 import { FiArrowRight, FiSend } from "react-icons/fi";
 import { FaFileDownload } from "react-icons/fa";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import { useI18n } from "../../i18n/I18nProvider";
 
 interface MobileNavProps {
   isModalOpen?: boolean;
@@ -26,6 +28,7 @@ export const MobileNav= ({ isModalOpen = false }: MobileNavProps) => {
 
   return (
     <div className="md:hidden">
+      <div className="fixed left-4 top-3 z-50"><LanguageSwitcher /></div>
       {/* Botón hamburguesa y overlay animados */}
       <HamburgerButton active={active} setActive={setActive} />
       <AnimatePresence>
@@ -50,6 +53,7 @@ const LinksOverlay = ({ onClose, onDownloadCV }: { onClose: () => void; onDownlo
 };
 
 const LinksContainer = ({ onClose }: { onClose: () => void }) => {
+  const { dictionary } = useI18n();
   return (
     <motion.div className="space-y-5 pt-16 pl-2">
       {/* Logo K al inicio del menú desplegable con animación */}
@@ -86,7 +90,7 @@ const LinksContainer = ({ onClose }: { onClose: () => void }) => {
             idx={idx} 
             onClick={onClose}
           >
-            {l.label}
+            {dictionary.nav[l.labelKey]}
           </NavLink>
         );
       })}
@@ -158,6 +162,7 @@ const HamburgerButton = ({ active, setActive }: { active: boolean; setActive: Re
 };
 
 const FooterCTAs = ({ onClose, onDownloadCV }: { onClose: () => void; onDownloadCV: () => void }) => {
+  const { dictionary } = useI18n();
   return (
     <motion.div 
       initial={{ opacity: 0, y: 8 }}
@@ -180,7 +185,7 @@ const FooterCTAs = ({ onClose, onDownloadCV }: { onClose: () => void; onDownload
       >
         <div className="flex items-center gap-2 text-sm tracking-snug font-semibold">
           <FiSend className="text-lg" />
-          <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-zinc-900">Enviar Correo</span>
+          <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-zinc-900">{dictionary.actions.sendEmail}</span>
         </div>
         <FiArrowRight className="transition-transform group-hover:translate-x-1" />
       </a>
@@ -197,7 +202,7 @@ const FooterCTAs = ({ onClose, onDownloadCV }: { onClose: () => void; onDownload
       >
         <div className="flex items-center gap-2 text-sm tracking-snug font-semibold">
           <FaFileDownload className="text-lg" />
-          <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-zinc-900">Descargar CV</span>
+          <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-zinc-900">{dictionary.actions.downloadCv}</span>
         </div>
         <FiArrowRight className="transition-transform group-hover:translate-x-1" />
       </button>

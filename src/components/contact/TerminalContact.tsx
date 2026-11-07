@@ -14,6 +14,8 @@ import {
   useRef,
   useState,
 } from "react";
+import { useI18n } from "../../i18n/I18nProvider";
+import type { Translation } from "../../i18n/translations";
 
 const TerminalContact = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -40,13 +42,14 @@ const TerminalContact = () => {
 };
 
 const TerminalHeader = () => {
+  const { dictionary } = useI18n();
   return (
     <div className="w-full pt-16 pb-8 px-8 bg-zinc-800 flex items-center flex-col gap-1 sticky top-0">
       <div className="text-4xl text-center font-black mb-5 text-zinc-100">
-        ¿Construimos<br />algo <i className="text-[#38FF96] mr-1.5">juntos</i>?
+        {dictionary.contact.title}
       </div>
       <div className="text-zinc-500 text-lg text-center mb-6 w-full max-w-md">
-        <p>Estoy disponible para oportunidades full-time y proyectos freelance.</p>
+        <p>{dictionary.contact.availability}</p>
       </div>
       <div className="w-full max-w-2xl grid grid-cols-1 md:grid-cols-2 gap-3">
         {/* Botón 1: WhatsApp */}
@@ -77,7 +80,7 @@ const TerminalHeader = () => {
         >
           <div className="flex items-center gap-2 text-sm tracking-snug font-semibold">
             <FiSend className="text-sm" />
-            <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-zinc-900">Enviar Correo</span>
+            <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-zinc-900">{dictionary.contact.sendEmail}</span>
           </div>
           <FiArrowRight className="transition-transform group-hover:translate-x-1" />
         </button>
@@ -87,11 +90,22 @@ const TerminalHeader = () => {
 };
 
 const TerminalBody = ({ containerRef, inputRef }: TerminalBodyProps) => {
+  const { dictionary } = useI18n();
   const [focused, setFocused] = useState(false);
   const [text, setText] = useState("");
   const [error, setError] = useState("");
 
-  const [questions, setQuestions] = useState(QUESTIONS);
+  const [questions, setQuestions] = useState(() => createQuestions(dictionary));
+
+  useEffect(() => {
+    setQuestions((currentQuestions) =>
+      createQuestions(dictionary).map((question, index) => ({
+        ...question,
+        value: currentQuestions[index]?.value ?? "",
+        complete: currentQuestions[index]?.complete ?? false,
+      }))
+    );
+  }, [dictionary]);
 
   const curQuestion = questions.find((q) => !q.complete);
 
@@ -103,7 +117,7 @@ const TerminalBody = ({ containerRef, inputRef }: TerminalBodyProps) => {
     if (curQuestion) {
       if (curQuestion.key.toLowerCase() === "email") {
         if (!validateEmail(value)) {
-          setError("Por favor, ingresa un email válido.");
+          setError(dictionary.contact.invalidEmail);
           return;
         } else {
           setError("");
@@ -145,7 +159,8 @@ const TerminalBody = ({ containerRef, inputRef }: TerminalBodyProps) => {
             setText={setText}
             setFocused={setFocused}
             inputRef={inputRef}
-            command={curQuestion?.key || ""}
+            command={curQuestion?.placeholder || ""}
+            fieldLabel={dictionary.contact.formField}
             handleSubmitLine={handleSubmitLine}
             containerRef={containerRef}
           />
@@ -159,6 +174,7 @@ const TerminalBody = ({ containerRef, inputRef }: TerminalBodyProps) => {
 
 // Componente exclusivo para la vista Mobile con campos abiertos
 const MobileFormView = ({ questions, setQuestions }: SummaryProps) => {
+  const { dictionary } = useI18n();
   const [complete, setComplete] = useState(false);
   const [error, setError] = useState("");
 
@@ -181,7 +197,7 @@ const MobileFormView = ({ questions, setQuestions }: SummaryProps) => {
   const handleSend = () => {
     const emailQ = questions.find((q) => q.key === "email");
     if (emailQ && !validateEmail(emailQ.value)) {
-      setError("Por favor, ingresa un email válido.");
+      setError(dictionary.contact.invalidEmail);
       return;
     }
     setError("");
@@ -216,7 +232,7 @@ const MobileFormView = ({ questions, setQuestions }: SummaryProps) => {
         <div className="mt-2 space-y-2">
           <p>
             <FiCheckCircle className="inline-block mr-2 text-[#38FF96]" />
-            <span className="text-white">¡Enviado! Gracias. 🦄</span>
+            <span className="text-white">{dictionary.contact.sent}</span>
           </p>
         </div>
       ) : (
@@ -232,7 +248,7 @@ const MobileFormView = ({ questions, setQuestions }: SummaryProps) => {
                   type="text"
                   value={q.value}
                   onChange={(e) => handleInputChange(q.key, e.target.value)}
-                  placeholder={`Ingresa tu ${q.key}`}
+                  placeholder={q.placeholder}
                   className="bg-transparent w-full text-white focus:outline-none text-sm"
                 />
               </div>
@@ -250,7 +266,7 @@ const MobileFormView = ({ questions, setQuestions }: SummaryProps) => {
             >
               <FiSend className="mr-2" />
               <div className="text-sm tracking-wide">
-                <span>Enviar datos</span>
+                <span>{dictionary.actions.sendData}</span>
               </div>
             </button>
 
@@ -307,6 +323,7 @@ const CurrentQuestion = ({ curQuestion }: CurrentQuestionProps) => {
 };
 
 const Summary = ({ questions, setQuestions }: SummaryProps) => {
+  const { dictionary } = useI18n();
   const [complete, setComplete] = useState(false);
 
   const handleReset = () => {
@@ -344,7 +361,7 @@ const Summary = ({ questions, setQuestions }: SummaryProps) => {
         <div className="mt-2 space-y-2">
           <p>
             <FiCheckCircle className="inline-block mr-2 text-[#38FF96]" />
-            <span className="text-white">¡Enviado! Gracias. 🦄</span>
+            <span className="text-white">{dictionary.contact.sent}</span>
           </p>
         </div>
       ) : (
@@ -354,7 +371,7 @@ const Summary = ({ questions, setQuestions }: SummaryProps) => {
             className="group relative z-0 flex px-4 py-2 items-center justify-center bg-white hover:bg-zinc-100 font-semibold text-black">
               <FiSend className="mr-2" />
               <div className="text-sm md:text-md tracking-wide">
-                <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-zinc-900 pb-0.5">Enviar datos</span>
+                <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-zinc-900 pb-0.5">{dictionary.actions.sendData}</span>
               </div>
           </button>
 
@@ -377,6 +394,7 @@ const CurLine = ({
   setFocused,
   inputRef,
   command,
+  fieldLabel,
   handleSubmitLine,
   containerRef,
 }: CurrentLineProps) => {
@@ -408,7 +426,7 @@ const CurLine = ({
     <>
       <form onSubmit={onSubmit}>
         <label htmlFor="terminal-contact-input" className="sr-only">
-          Campo de respuesta del formulario de contacto
+          {fieldLabel}
         </label>
         <input
           id="terminal-contact-input"
@@ -424,7 +442,7 @@ const CurLine = ({
       </form>
       <p>
         <span className="text-[#38FF96]">➜</span>{" "}
-        {command && <span className="opacity-50">Ingresa tu {command}: </span>}
+        {command && <span className="opacity-50">{command}: </span>}
         {text}
         {focused && (
           <motion.span
@@ -445,25 +463,28 @@ const CurLine = ({
 
 export default TerminalContact;
 
-const QUESTIONS: QuestionType[] = [
+const createQuestions = (dictionary: Translation): QuestionType[] => [
   {
     key: "email",
-    text: "Déjame tus datos ",
-    postfix: "y te contactaré:",
+    text: dictionary.contact.leaveData,
+    postfix: dictionary.contact.contactYou,
+    placeholder: dictionary.contact.emailPlaceholder,
     complete: false,
     value: "",
   },
   {
     key: "nombre",
-    text: "¿Cuál es tu",
-    postfix: "nombre?",
+    text: dictionary.contact.nameQuestion,
+    postfix: dictionary.contact.namePostfix,
+    placeholder: dictionary.contact.namePlaceholder,
     complete: false,
     value: "",
   },
   {
     key: "mensaje",
-    text: "Excelente, y ",
-    postfix: "¿cómo puedo ayudarte?",
+    text: dictionary.contact.helpQuestion,
+    postfix: dictionary.contact.helpPostfix,
+    placeholder: dictionary.contact.messagePlaceholder,
     complete: false,
     value: "",
   },
@@ -476,6 +497,7 @@ interface CurrentLineProps {
   setFocused: Dispatch<SetStateAction<boolean>>;
   inputRef: MutableRefObject<HTMLInputElement | null>;
   command: string;
+  fieldLabel: string;
   handleSubmitLine: Function;
   containerRef: MutableRefObject<HTMLDivElement | null>;
 }
@@ -484,6 +506,7 @@ type QuestionType = {
   key: string;
   text: string;
   postfix?: string;
+  placeholder: string;
   complete: boolean;
   value: string;
 };

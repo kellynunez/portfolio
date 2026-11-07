@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { AiOutlineExport } from "react-icons/ai";
 import { MdClose } from "react-icons/md";
+import { useI18n } from "../../i18n/I18nProvider";
 
 interface Props {
   isOpen: boolean;
@@ -27,6 +28,7 @@ export const ProjectModal = ({
   title,
   tech,
 }: Props) => {
+  const { dictionary, locale } = useI18n();
   const blockImageActions = (e: React.SyntheticEvent) => {
     e.preventDefault();
   };
@@ -78,7 +80,7 @@ export const ProjectModal = ({
             height={675}
             sizes="(max-width: 768px) 95vw, 900px"
             unoptimized
-            alt={`An image of the ${title} project.`}
+            alt={locale === "es" ? `Imagen del proyecto ${title}.` : `An image of the ${title} project.`}
             draggable={false}
           />
           <div
@@ -102,7 +104,7 @@ export const ProjectModal = ({
                 className="text-blue-500 hover:text-blue-700 transition-colors flex items-center gap-1"
                 href={projectLink}
               >
-                <AiOutlineExport /> Live Project
+                <AiOutlineExport /> {dictionary.actions.liveProject}
               </Link>
             </div>
           )}
@@ -138,7 +140,7 @@ export const ProjectModal = ({
             </div>
           )}
 
-          <h5 className="text-normal font-semibold text-gray-600 pt-5">+ Más proyectos:</h5>
+          <h5 className="text-normal font-semibold text-gray-600 pt-5">{dictionary.actions.moreProjects}:</h5>
 
           {/* Segundo bloque de imágenes (galleryMoreImages) */}
           {galleryMoreImages && galleryMoreImages.length > 0 && (

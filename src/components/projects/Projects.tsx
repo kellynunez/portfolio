@@ -1,15 +1,23 @@
 import React from "react";
 import { SectionHeader } from "../util/SectionHeader";
 import { Project } from "./Project";
+import { useI18n } from "../../i18n/I18nProvider";
 
 export const Projects = () => {
+  const { dictionary } = useI18n();
   return (
     <section className="section-wrapper" id="projects">
-      <SectionHeader title="Proyectos" dir="l" />
+      <SectionHeader title={dictionary.nav.projects} dir="l" />
 
       <div className="grid gap-12 grid-cols-1 md:grid-cols-2">
-        {projects.map((project) => {
-          return <Project key={project.title} {...project} />;
+        {projects.map((project, index) => {
+          return (
+            <Project
+              key={project.title}
+              {...project}
+              title={dictionary.projects.titles[index]}
+            />
+          );
         })}
       </div>
     </section>

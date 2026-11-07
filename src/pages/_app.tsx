@@ -3,6 +3,8 @@ import type { AppProps } from "next/app";
 import Script from "next/script";
 import { useEffect, useLayoutEffect } from "react";
 import { useRouter } from "next/router";
+import { I18nProvider } from "../i18n/I18nProvider";
+import type { Locale } from "../i18n/translations";
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID;
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
@@ -22,6 +24,7 @@ const pageview = (url: string) => {
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
+  const initialLocale: Locale | undefined = router.pathname === "/en" ? "en" : undefined;
 
   useLayoutEffect(() => {
     if (typeof window === "undefined") return;
@@ -104,7 +107,9 @@ export default function App({ Component, pageProps }: AppProps) {
           </Script>
         </>
       )}
-      <Component {...pageProps} />
+      <I18nProvider initialLocale={initialLocale}>
+        <Component {...pageProps} />
+      </I18nProvider>
     </>
   );
 }

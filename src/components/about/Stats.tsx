@@ -2,15 +2,17 @@ import Reveal from "../util/Reveal";
 import { Chip } from "../util/Chip";
 import { AiFillCode, AiFillLayout, AiFillSmile, AiFillSignal, AiFillFire, AiFillProduct, AiFillThunderbolt} from "react-icons/ai";
 import { MyLinks } from "../nav/Header";
+import { useI18n } from "../../i18n/I18nProvider";
 
 export const Stats = () => {
+  const { dictionary } = useI18n();
   return (
     <div className="relative">
       <Reveal>
         <div>
           <h4 className="flex items-center text-[#7C5CFF] mb-6">
             <AiFillLayout className="text-lg text-[#38FF96]" />
-            <span className="font-bold ml-2">Diseño UI/UX & Producto</span>
+            <span className="font-bold ml-2">{dictionary.stats.ui}</span>
           </h4>
           <div className="flex flex-wrap font-mono text-zinc-400 gap-2 mb-6">
             <Chip>Figma Avanzado</Chip>
@@ -34,7 +36,7 @@ export const Stats = () => {
         <div>
           <h4 className="flex items-center text-[#7C5CFF] mb-6">
             <AiFillSignal className="text-lg text-[#38FF96]" />
-            <span className="font-bold ml-2">Testing & Validaciones</span>
+            <span className="font-bold ml-2">{dictionary.stats.testing}</span>
           </h4>
           <div className="flex flex-wrap font-mono text-zinc-400 gap-2 mb-6">
             <Chip>Maze</Chip>  
@@ -52,7 +54,7 @@ export const Stats = () => {
         <div>
           <h4 className="flex items-center text-[#7C5CFF] mb-6">
             <AiFillCode className="text-lg text-[#38FF96]" />
-            <span className="font-bold ml-2">Desarrollo Frontend</span>
+            <span className="font-bold ml-2">{dictionary.stats.frontend}</span>
           </h4>
           <div className="flex flex-wrap font-mono text-zinc-400 gap-2 mb-6">
             <Chip>React.js</Chip>
@@ -73,7 +75,7 @@ export const Stats = () => {
         <div>
           <h4 className="flex items-center text-[#7C5CFF] mb-6">
             <AiFillThunderbolt className="text-lg text-[#38FF96]" />
-            <span className="font-bold ml-2">Herramientas & Despliegue</span>
+            <span className="font-bold ml-2">{dictionary.stats.tools}</span>
           </h4>
           <div className="flex flex-wrap font-mono text-zinc-400 gap-2 mb-6">
             <Chip>Git</Chip>
@@ -92,7 +94,7 @@ export const Stats = () => {
         <div>
           <h4 className="flex items-center text-[#7C5CFF] mb-6">
             <AiFillSmile className="text-lg text-[#38FF96]" />
-            <span className="font-bold ml-2 tracking-wide">Productividad & Agentes IA</span>
+            <span className="font-bold ml-2 tracking-wide">{dictionary.stats.ai}</span>
           </h4>
           <div className="flex flex-wrap font-mono text-zinc-400 gap-2 mb-6">
             <Chip>Cursor</Chip>
@@ -109,7 +111,7 @@ export const Stats = () => {
         <div>
           <h4 className="flex items-center text-[#7C5CFF] mb-6">
             <AiFillProduct className="text-lg text-[#38FF96]" />
-            <span className="font-bold ml-2 tracking-wide">Gestión & Liderazgo</span>
+            <span className="font-bold ml-2 tracking-wide">{dictionary.stats.leadership}</span>
           </h4>
           <div className="flex flex-wrap font-mono text-zinc-400 gap-2 mb-6">
             <Chip>Project Manager</Chip>

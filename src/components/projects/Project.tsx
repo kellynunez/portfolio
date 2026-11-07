@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { AiOutlineExport } from "react-icons/ai";
 import { Chip } from "../util/Chip";
+import { useI18n } from "../../i18n/I18nProvider";
 
 const ProjectModal = dynamic(
   () => import("./ProjectModal").then((mod) => mod.ProjectModal),
@@ -29,6 +30,7 @@ export const Project = ({
   title,
   tech,
 }: Props) => {
+  const { locale } = useI18n();
   const [hovered, setHovered] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -76,7 +78,7 @@ export const Project = ({
             height={675}
             sizes="(max-width: 768px) 92vw, (max-width: 1200px) 46vw, 520px"
             unoptimized
-            alt={`An image of the ${title} project.`}
+            alt={locale === "es" ? `Imagen del proyecto ${title}.` : `An image of the ${title} project.`}
             draggable={false}
             className="transition-transform duration-500 ease-out group-hover:scale-105"
           />

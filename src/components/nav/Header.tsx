@@ -6,9 +6,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import { FiArrowRight, FiSend } from "react-icons/fi";
 import { FaFileDownload } from "react-icons/fa";
 import { navItems } from "./navItems";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import { useI18n } from "../../i18n/I18nProvider";
 
 export const Header = () => {
   const [active, setActive] = useState<boolean>(false);
+  const { dictionary } = useI18n();
 
   const handleDownloadCV = () => {
     const link = document.createElement("a");
@@ -48,13 +51,14 @@ export const Header = () => {
       </button>
 
       <div className="flex hidden md:flex items-center justify-end w-auto">
+        <LanguageSwitcher />
         <OutlineButton 
           className="group flex gap-2" 
           onClick={() => {
             document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
           }}
         >
-          <span className="border-b border-b-transparent group-hover:border-b-zinc-900">Hablemos</span>
+          <span className="border-b border-b-transparent group-hover:border-b-zinc-900">{dictionary.actions.talk}</span>
         </OutlineButton>
       </div>
 
@@ -154,10 +158,11 @@ const LinksOverlay = ({ onClose, onDownloadCV }: { onClose: () => void; onDownlo
 };
 
 const LinksContainer = ({ onClose }: { onClose: () => void }) => {
+  const { dictionary } = useI18n();
   return (
     <motion.div className="flex flex-col justify-center h-full space-y-6 pt-12 md:pt-0">
       <div className="flex flex-col space-y-3 lg:space-y-4">
-        {navItems.map((l: { label: string; value: string; href: string }, idx: number) => {
+        {navItems.map((l, idx) => {
           return (
             <div className="ml-4 md:ml-12 lg:ml-20" key={l.value}>
               <NavLink 
@@ -165,7 +170,7 @@ const LinksContainer = ({ onClose }: { onClose: () => void }) => {
                 idx={idx} 
                 onClick={onClose}
               >
-                {l.label}
+                {dictionary.nav[l.labelKey]}
               </NavLink>
             </div>
           );

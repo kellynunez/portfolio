@@ -3,8 +3,10 @@ import { motion } from "framer-motion";
 import { FiChevronsLeft, FiChevronsRight, FiLogIn } from "react-icons/fi";
 import { SideBarLink } from "./SideBarLink";
 import { navItems } from "./navItems";
+import { useI18n } from "../../i18n/I18nProvider";
 
 export const SideBar = () => {
+  const { dictionary } = useI18n();
   const [selected, setSelected] = useState("");
   const [open, setOpen] = useState(false);
 
@@ -101,11 +103,11 @@ export const SideBar = () => {
                   ? "Ex"
                   : item.value === "education"
                     ? "Ed"
-                    : item.label.slice(0, 1)
+                      : dictionary.nav[item.labelKey].slice(0, 1)
               }
               className={open ? "justify-start" : "justify-center"}
             >
-              {item.label}
+              {dictionary.nav[item.labelKey]}
             </SideBarLink>
           ))}
         </div>
