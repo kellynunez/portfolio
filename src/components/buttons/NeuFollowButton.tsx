@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   motion,
   useMotionTemplate,
@@ -31,6 +31,10 @@ const NeuFollowButton: React.FC<NeuFollowButtonProps> = ({
   const ref = useRef<HTMLButtonElement>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const [text, setText] = useState(children as string);
+
+  useEffect(() => {
+    setText(children as string);
+  }, [children]);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);

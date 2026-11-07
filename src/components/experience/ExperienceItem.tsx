@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Chip } from "../util/Chip";
 import Reveal from "../util/Reveal";
+import { useI18n } from "../../i18n/I18nProvider";
 
 interface Props {
   title: string;
@@ -9,7 +10,7 @@ interface Props {
   mode: string;
   topic: string;
   location: string;
-  description: string | string[]; // <--- Acepta string o arreglo de strings
+  description: string | readonly string[];
   tech: string[];
   isLast?: boolean;
 }
@@ -44,6 +45,7 @@ export const ExperienceItem = ({
   tech,
   isLast = false,
 }: Props) => {
+  const { dictionary } = useI18n();
   const flagEmoji = getFlagEmoji(location);
   const [isExpanded, setIsExpanded] = useState(false);
   const [isSelected, setIsSelected] = useState(false);
@@ -56,7 +58,7 @@ export const ExperienceItem = ({
 
       <button
         onClick={() => setIsSelected(!isSelected)}
-        aria-label={`Seleccionar ${title}`}
+        aria-label={`${dictionary.actions.select} ${title}`}
         className={`absolute left-0 top-1.5 w-4 h-4 rounded-full border-2 transition-all focus:outline-none ${
           isSelected 
             ? 'bg-[#38FF96] border-[#38FF96] scale-110 shadow-[0_0_10px_rgba(255,0,153,0.5)]' 
@@ -95,7 +97,7 @@ export const ExperienceItem = ({
             className="flex items-center gap-2 text-xs font-base text-[#1E90FF] transition-opacity hover:opacity-90"
             aria-expanded={isExpanded}
           >
-            <span>{isExpanded ? 'Ocultar' : 'Leer detalles'}</span>
+            <span>{isExpanded ? dictionary.experience.hideDetails : dictionary.experience.showDetails}</span>
             {isExpanded ? (
               <svg className="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />

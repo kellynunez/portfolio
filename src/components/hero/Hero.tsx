@@ -2,8 +2,10 @@ import Reveal from "../util/Reveal";
 import DotGrid from "./DotGrid";
 import TypewriterText from "../util/TypewriterText";
 import NeuFollowButton from "../buttons/NeuFollowButton";
+import { useI18n } from "../../i18n/I18nProvider";
 
 const Hero = () => {
+  const { dictionary } = useI18n();
   return (
     <section className="text-slate-100 overflow-hidden pt-32 pb-24 md:py-32 pb-6 md:pb-14 relative">
       <div className="relative z-10">
@@ -21,7 +23,7 @@ const Hero = () => {
                   animation: 'gradient-shift 3s ease-in-out infinite'
                 }}
               >
-                Hola, soy Kelly Núñez
+                {dictionary.hero.greeting}
               </span>
             </h2>
           </Reveal>
@@ -54,7 +56,7 @@ const Hero = () => {
           
           <Reveal>
             <p className="font-mono leading-relaxed md:leading-relaxed max-w-3xl text-sm md:text-lg lg:text-xl text-zinc-400 font-medium tracking-wide">
-              UX/UI \ DESIGN SYSTEMS \ WEB PERFORMANCE \ BRAND DESIGNER
+              {dictionary.hero.focus}
             </p>
           </Reveal>
 {/*           <Reveal>
@@ -72,7 +74,7 @@ const Hero = () => {
                   });
                 }}
               >     
-                Ver Proyectos
+                {dictionary.actions.viewProjects}
               </NeuFollowButton>
             </div>
           </Reveal> 

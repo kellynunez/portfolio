@@ -3,24 +3,31 @@ import { ExperienceItem } from "./ExperienceItem";
 import { useState } from "react";
 import { FiArrowDown } from "react-icons/fi";
 import { Reveal } from "../util/Reveal";
+import { useI18n } from "../../i18n/I18nProvider";
 
 export const Experience = () => {
   const [showAll, setShowAll] = useState(false);
+  const { dictionary } = useI18n();
   
   // Mostrar solo los primeros 3 elementos inicialmente
   const displayedExperience = showAll ? experience : experience.slice(0, 3);
   
   return (
     <section className="section-wrapper" id="experience">
-      <SectionHeader title="Experiencia" dir="l" />
+      <SectionHeader title={dictionary.experience.title} dir="l" />
       
-      {displayedExperience.map((item, index) => (
-        <ExperienceItem 
-          key={item.title} 
-          {...item} 
-          isLast={index === displayedExperience.length - 1} 
-        />
-      ))}
+      {displayedExperience.map((item, index) => {
+        const localizedItem = dictionary.experience.items[index];
+        return <ExperienceItem
+          key={item.title}
+          {...item}
+          position={localizedItem.position}
+          topic={localizedItem.topic}
+          mode={localizedItem.mode}
+          description={localizedItem.description}
+          isLast={index === displayedExperience.length - 1}
+        />;
+      })}
       
       {experience.length > 3 && (
         <div className="flex justify-center">
@@ -29,7 +36,7 @@ export const Experience = () => {
               onClick={() => setShowAll(!showAll)}
               className="group text-sm tracking-wide px-4 py-3 text-zinc-400 font-normal"
             >
-              <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-white/50 pb-0.5">{showAll ? "Mostrar menos" : `Mostrar más`}</span>
+              <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-white/50 pb-0.5">{showAll ? dictionary.experience.showLess : dictionary.experience.showMore}</span>
               <FiArrowDown className={`inline-block ml-2 group-hover:translate-y-1 transition-transform duration-300 ${showAll ? "rotate-180" : ""}`} />
             </button>
           </Reveal>
@@ -58,7 +65,7 @@ const experience = [
   },
   {
     title: "BlazingSQL",
-    position: "Lead, Product Design & Web Development",
+    position: "Lead, Design & Web Development",
     topic: "Startup de software y ciencia de datos",
     time: "2016 - 2021",
     location: "USA / Perú",
