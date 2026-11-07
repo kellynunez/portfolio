@@ -2,7 +2,6 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { navItems } from "./navItems";
 import { FiArrowRight, FiSend } from "react-icons/fi";
-import { FaFileDownload } from "react-icons/fa";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { useI18n } from "../../i18n/I18nProvider";
 
@@ -16,16 +15,6 @@ export const MobileNav= ({ isModalOpen = false }: MobileNavProps) => {
 
   const [active, setActive] = useState(false);
 
-  const handleDownloadCV = () => {
-    const link = document.createElement("a");
-    link.href = "/Senior_Product_Designer-Kelly_Nunez.pdf";
-    link.download = "Senior_Product_Designer-Kelly_Nunez.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
-
   return (
     <div className="md:hidden">
       <div className="fixed left-4 top-3 z-50"><LanguageSwitcher /></div>
@@ -35,7 +24,6 @@ export const MobileNav= ({ isModalOpen = false }: MobileNavProps) => {
         {active && (
           <LinksOverlay 
             onClose={() => setActive(false)} 
-            onDownloadCV={handleDownloadCV} 
           />
         )}
       </AnimatePresence>
@@ -43,11 +31,11 @@ export const MobileNav= ({ isModalOpen = false }: MobileNavProps) => {
   );
 };
 
-const LinksOverlay = ({ onClose, onDownloadCV }: { onClose: () => void; onDownloadCV: () => void }) => {
+const LinksOverlay = ({ onClose }: { onClose: () => void }) => {
   return (
     <nav className="fixed right-4 top-4 z-40 h-[calc(100vh_-_32px)] w-[calc(100%_-_32px)] overflow-hidden flex flex-col justify-between p-6">
       <LinksContainer onClose={onClose} />
-      <FooterCTAs onClose={onClose} onDownloadCV={onDownloadCV} />
+      <FooterCTAs onClose={onClose} />
     </nav>
   );
 };
@@ -161,7 +149,7 @@ const HamburgerButton = ({ active, setActive }: { active: boolean; setActive: Re
   );
 };
 
-const FooterCTAs = ({ onClose, onDownloadCV }: { onClose: () => void; onDownloadCV: () => void }) => {
+const FooterCTAs = ({ onClose }: { onClose: () => void }) => {
   const { dictionary } = useI18n();
   return (
     <motion.div 
@@ -190,22 +178,20 @@ const FooterCTAs = ({ onClose, onDownloadCV }: { onClose: () => void; onDownload
         <FiArrowRight className="transition-transform group-hover:translate-x-1" />
       </a>
 
-      {/* Botón Descargar CV */}
-      <button
-        type="button"
+      {/* Botón Ver proyectos */}
+      <a
+        href="#projects"
         className="group cursor-pointer flex h-[42px] w-full items-center justify-between border border-black bg-[#38FF96] px-4 font-medium text-zinc-900 transition-colors hover:bg-[#38FF96]/80"
-        onClick={(e) => {
-          e.preventDefault();
-          onDownloadCV();
+        onClick={() => {
           onClose();
         }}
       >
         <div className="flex items-center gap-2 text-sm tracking-snug font-semibold">
-          <FaFileDownload className="text-lg" />
-          <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-zinc-900">{dictionary.actions.downloadCv}</span>
+          <FiArrowRight className="text-lg" />
+          <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-zinc-900">{dictionary.actions.viewProjects}</span>
         </div>
         <FiArrowRight className="transition-transform group-hover:translate-x-1" />
-      </button>
+      </a>
 
     </motion.div>
   );

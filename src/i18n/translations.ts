@@ -30,7 +30,7 @@ export const translations = {
       select: "Seleccionar",
       certificate: "Ver certificado",
     },
-    language: { label: "Idioma", switchTo: "Cambiar a inglés" },
+    language: { label: "Idioma", switchTo: "Cambiar idioma" },
     hero: {
       greeting: "Hola, soy Kelly Núñez",
       role: "Product Designer & Front-End",
@@ -114,7 +114,7 @@ export const translations = {
   en: {
     nav: { projects: "Projects", experience: "Experience", education: "Education", about: "About me", contact: "Contact" },
     actions: { talk: "Let's talk", viewProjects: "View projects", showMore: "Show more", showLess: "Show less", readDetails: "Read details", hide: "Hide", downloadCv: "Download CV", sendEmail: "Send email", sendData: "Send details", liveProject: "Live project", moreProjects: "+ More projects", previousEducation: "View previous education", nextEducation: "View next education", closeMenu: "Close menu", openMenu: "Open menu", goHome: "Go home", retractSidebar: "Retract sidebar", select: "Select", certificate: "View certificate" },
-    language: { label: "Language", switchTo: "Switch to Spanish" },
+    language: { label: "Language", switchTo: "Change language" },
     hero: { greeting: "Hi, I'm Kelly Núñez", role: "Product Designer & Front-End", focus: "UX/UI \\ DESIGN SYSTEMS \\ WEB PERFORMANCE \\ BRAND DESIGNER" },
     about: { title: "About me", intro: "Over 10 years of experience leading the creation of B2B/B2C digital products in the US and LATAM, solving complex problems for technology (SaaS), healthcare, finance, retail, and real estate sectors.", role: "Digital Product Designer | UX/UI, Brand Designer & Frontend", body: "I am a hybrid Design Engineer who connects a systemic view of user experience with scalable frontend development (React, Next.js, TypeScript). I bring executive autonomy, integrate AI tools to multiply technical efficiency, and build Design Systems and architectures (Figma, HCD) focused on two pillars: global accessibility and product scalability." },
     stats: { ui: "UI/UX & Product Design", testing: "Testing & Validation", frontend: "Frontend Development", tools: "Tools & Deployment", ai: "Productivity & AI Agents", leadership: "Management & Leadership", advancedFigma: "Advanced Figma", informationArchitecture: "Information Architecture", interactivePrototyping: "Interactive Prototyping", accessibility: "Accessibility (WCAG)", seoAudits: "SEO Audits", performance: "Performance (Lighthouse)", creativeDirection: "Creative Direction" },

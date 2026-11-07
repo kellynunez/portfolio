@@ -1,10 +1,8 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { SiGithub, SiInstagram, SiLinkedin, SiWhatsapp, SiBehance } from "react-icons/si";
-import { OutlineButton } from "../buttons/OutlineButton";
 import { AnimatePresence, motion } from "framer-motion";
-import { FiArrowRight, FiSend } from "react-icons/fi";
-import { FaFileDownload } from "react-icons/fa";
+import { FiArrowRight, FiPhone, FiSend } from "react-icons/fi";
 import { navItems } from "./navItems";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { useI18n } from "../../i18n/I18nProvider";
@@ -12,15 +10,6 @@ import { useI18n } from "../../i18n/I18nProvider";
 export const Header = () => {
   const [active, setActive] = useState<boolean>(false);
   const { dictionary } = useI18n();
-
-  const handleDownloadCV = () => {
-    const link = document.createElement("a");
-    link.href = "/Senior_Product_Designer-Kelly_Nunez.pdf";
-    link.download = "Senior_Product_Designer-Kelly_Nunez.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
 
   return (
     <header className="sticky top-0 right-0 z-30 flex w-full items-center justify-between bg-transparent text-sm py-1 px-4 md:px-6 md:bg-zinc-900 md:backdrop-blur-sm">
@@ -32,7 +21,6 @@ export const Header = () => {
           {active && (
             <LinksOverlay 
               onClose={() => setActive(false)} 
-              onDownloadCV={handleDownloadCV} 
             />
           )}
         </AnimatePresence>
@@ -50,16 +38,19 @@ export const Header = () => {
         <span className="text-[#7C5CFF]">.</span>
       </button>
 
-      <div className="flex hidden md:flex items-center justify-end w-auto">
+      <div className="flex hidden md:flex items-center justify-end w-auto space-x-2 my-1">
         <LanguageSwitcher />
-        <OutlineButton 
-          className="group flex gap-2" 
+        <button
+          type="button"
+          aria-label={dictionary.actions.talk}
+          title={dictionary.actions.talk}
+          className="flex h-8 items-center border border-zinc-700 bg-zinc-900/80 px-2 text-[11px] font-bold tracking-wider text-zinc-400 transition-colors hover:border-[#38FF96] hover:text-white"
           onClick={() => {
             document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
           }}
         >
-          <span className="border-b border-b-transparent group-hover:border-b-zinc-900">{dictionary.actions.talk}</span>
-        </OutlineButton>
+          <FiPhone aria-hidden="true" className="text-sm" />
+        </button>
       </div>
 
     </header>
@@ -121,7 +112,7 @@ export const MyLinks = ({ className = "" }: { className?: string }) => (
   </div>
 );
 
-const LinksOverlay = ({ onClose, onDownloadCV }: { onClose: () => void; onDownloadCV: () => void }) => {
+const LinksOverlay = ({ onClose }: { onClose: () => void }) => {
   return (
     <nav className="fixed left-0 top-0 z-40 h-[calc(100vh)] w-[100%] md:w-[100%] m-4 overflow-hidden grid grid-cols-1 md:grid-cols-2 items-center p-6 md:p-12 gap-8 bg-zinc-900/80 backdrop-blur-md rounded-lg">
       
@@ -149,9 +140,9 @@ const LinksOverlay = ({ onClose, onDownloadCV }: { onClose: () => void; onDownlo
       {/* Columna 1: Links de navegación centrados verticalmente */}
       <LinksContainer onClose={onClose} />
 
-      {/* Columna 2: FooterCTAs (Botones de Enviar Correo y Descargar CV) */}
+      {/* Columna 2: FooterCTAs */}
       <div className="flex flex-col justify-center h-full">
-        <FooterCTAs onClose={onClose} onDownloadCV={onDownloadCV} />
+        <FooterCTAs onClose={onClose} />
       </div>
     </nav>
   );
@@ -225,17 +216,17 @@ const HamburgerButton = ({ active, setActive }: { active: boolean; setActive: Re
       >
         <motion.span
           variants={HAMBURGER_VARIANTS.top}
-          className="absolute block h-0.5 w-6 bg-white"
+          className="absolute block h-0.5 w-5 bg-zinc-700"
           style={{ y: "-50%", left: "50%", x: "-50%" }}
         />
         <motion.span
           variants={HAMBURGER_VARIANTS.middle}
-          className="absolute block h-0.5 w-6 bg-white"
+          className="absolute block h-0.5 w-5 bg-zinc-700"
           style={{ left: "50%", x: "-50%", top: "50%", y: "-50%" }}
         />
         <motion.span
           variants={HAMBURGER_VARIANTS.bottom}
-          className="absolute block h-0.5 w-2.5 bg-white"
+          className="absolute block h-0.5 w-1.5 bg-zinc-700"
           style={{ x: "-50%", y: "50%" }}
         />
       </motion.button>
@@ -243,7 +234,9 @@ const HamburgerButton = ({ active, setActive }: { active: boolean; setActive: Re
   );
 };
 
-const FooterCTAs = ({ onClose, onDownloadCV }: { onClose: () => void; onDownloadCV: () => void }) => {
+const FooterCTAs = ({ onClose }: { onClose: () => void }) => {
+  const { dictionary } = useI18n();
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 8 }}
@@ -269,21 +262,19 @@ const FooterCTAs = ({ onClose, onDownloadCV }: { onClose: () => void; onDownload
         <FiArrowRight className="transition-transform group-hover:translate-x-1" />
       </a>
 
-      <button
-        type="button"
+      <a
+        href="#projects"
         className="group cursor-pointer flex h-[42px] w-full items-center justify-between border border-black bg-[#38FF96] px-4 font-medium text-zinc-900 transition-colors hover:bg-[#38FF96]/80"
-        onClick={(e) => {
-          e.preventDefault();
-          onDownloadCV();
+        onClick={() => {
           onClose();
         }}
       >
         <div className="flex items-center gap-2 text-sm tracking-snug font-semibold">
-          <FaFileDownload className="text-lg" />
-          <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-zinc-900">Descargar CV</span>
+          <FiArrowRight className="text-lg" />
+          <span className="border-b-0 border-b-transparent group-hover:border-b group-hover:border-b-zinc-900">{dictionary.actions.viewProjects}</span>
         </div>
         <FiArrowRight className="transition-transform group-hover:translate-x-1" />
-      </button>
+      </a>
     </motion.div>
   );
 };
